@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TotalPlay - Internet de Fibra Óptica | Juan Meléndez</title>
+    <meta name="description" content="Contrata TotalPlay con Juan Meléndez - Internet de fibra óptica, TV en 4K y llamadas ilimitadas. Paquetes desde 100 hasta 1200 Megas.">
+    <style>
+        :root {
+            --color-primary: #e4002b;
+            --color-secondary: #59cbe8;
+            --color-accent: #ffbf3f;
+            --color-dark: #1a1a1a;
+            --color-light: #ffffff;
+            --color-gray: #75787b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--color-dark), #370A44);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo span:nth-child(1) { color: var(--color-secondary); }
+        .logo span:nth-child(2) { color: var(--color-accent); }
+        .logo span:nth-child(3) { color: var(--color-primary); }
+        
+        .contact-header {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+        
+        .btn-phone {
+            background-color: var(--color-primary);
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1563014959-7aaa83350992?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Tabs */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0 20px;
+        }
+        
+        .tab-button {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #2c2c2c, #370A44);
+            border: none;
+            color: #aaa;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 20px 0 0 20px;
+        }
+        
+        .tab-button:last-child {
+            border-radius: 0 20px 20px 0;
+        }
+        
+        .tab-button.active {
+            color: #fff;
+            border: 1px solid #fff;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--color-light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            padding: 20px;
+            color: white;
+            position: relative;
+        }
+        
+        .header-100 { background: linear-gradient(135deg, #b06ebf, #ec6f91); }
+        .header-200 { background: linear-gradient(135deg, #8cc63f, #a7cf3b); }
+        .header-300 { background: linear-gradient(135deg, #a52aff, #ed217c); }
+        .header-500 { background: linear-gradient(135deg, #6e00ff, #9f3aff); }
+        .header-1200 { background: linear-gradient(135deg, #ff6e27, #ff8f4d); }
+        
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--color-accent);
+            color: var(--color-dark);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .features {
+            margin: 15px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .feature-item img {
+            width: 24px;
+            margin-right: 10px;
+        }
+        
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            color: var(--color-dark);
+        }
+        
+        .btn-card {
+            display: block;
+            text-align: center;
+            background: var(--color-primary);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        /* Form */
+        .form-section {
+            background: var(--color-light);
+            padding: 50px 20px;
+            text-align: center;
+        }
+        
+        .form-group {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--color-dark);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .tab-content.active {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                Total<span>P</span><span>l</span><span>a</span>y<span>®</span>
+            </div>
+            <div class="contact-header">
+                <a href="https://api.whatsapp.com/send?phone=528131191393&text=Hola,%20me%20interesa%20contratar%20TotalPlay" class="btn btn-whatsapp">WhatsApp</a>
+                <a href="tel:8131191393" class="btn btn-phone">Llamar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Internet de Fibra Óptica TotalPlay</h1>
+            <p>El internet más premiado de México con la mejor velocidad y estabilidad</p>
+            <p><strong>Asesor: Juan Meléndez</strong></p>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="container">
+        <div class="tabs">
+            <button class="tab-button active" data-tab="internet">Solo Internet</button>
+            <button class="tab-button" data-tab="tv">Internet + TV</button>
+        </div>
+
+        <!-- Internet Only -->
+        <div id="internet" class="tab-content active">
+            <!-- 100 Megas -->
+            <div class="card">
+                <div class="card-header header-100">
+                    <h2>100 Megas</h2>
+                    <p>Internet Simétrico</p>
+                </div>
+                <div class="card-body">
+                    <div class="features">
+                        <div class="feature-item">
+                            <span>✓ Fibra óptica</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ WiFi Pro</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Club WiFi Totalplay</span>
+                        </div>
+                    </div>
+                    <div class="price">$460/mes</div>
+                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%20100%20Megas%20de%20Internet" class="btn-card">Contratar</a>
+                </div>
+            </div>
+
+            <!-- 200 Megas -->
+            <div class="card">
+                <div class="card-header header-200">
+                    <div class="badge">Más vendido</div>
+                    <h2>200 Megas</h2>
+                    <p>Internet Simétrico</p>
+                </div>
+                <div class="card-body">
+                    <div class="features">
+                        <div class="feature-item">
+                            <span>✓ Fibra óptica</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ WiFi Pro</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Club WiFi Totalplay</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Apple TV+ 1 año</span>
+                        </div>
+                    </div>
+                    <div class="price">$570/mes</div>
+                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%20200%20Megas%20de%20Internet" class="btn-card">Contratar</a>
+                </div>
+            </div>
+
+            <!-- 300 Megas -->
+            <div class="card">
+                <div class="card-header header-300">
+                    <h2>300 Megas</h2>
+                    <p>Internet Simétrico</p>
+                </div>
+                <div class="card-body">
+                    <div class="features">
+                        <div class="feature-item">
+                            <span>✓ Fibra óptica</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ WiFi Pro</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Club WiFi Totalplay</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Apple TV+ 1 año</span>
+                        </div>
+                    </div>
+                    <div class="price">$680/mes</div>
+                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%20300%20Megas%20de%20Internet" class="btn-card">Contratar</a>
+                </div>
+            </div>
+
+            <!-- 500 Megas -->
+            <div class="card">
+                <div class="card-header header-500">
+                    <h2>500 Megas</h2>
+                    <p>Internet Simétrico</p>
+                </div>
+                <div class="card-body">
+                    <div class="features">
+                        <div class="feature-item">
+                            <span>✓ Fibra óptica</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ WiFi 6</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Club WiFi Totalplay</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Apple TV+ 1 año</span>
+                        </div>
+                    </div>
+                    <div class="price">$830/mes</div>
+                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%20500%20Megas%20de%20Internet" class="btn-card">Contratar</a>
+                </div>
+            </div>
+
+            <!-- 1200 Megas -->
+            <div class="card">
+                <div class="card-header header-1200">
+                    <h2>1200 Megas</h2>
+                    <p>Internet Simétrico</p>
+                </div>
+                <div class="card-body">
+                    <div class="features">
+                        <div class="feature-item">
+                            <span>✓ Fibra óptica</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ WiFi 6</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Club WiFi Totalplay</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Apple TV+ 1 año</span>
+                        </div>
+                    </div>
+                    <div class="price">$1470/mes</div>
+                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%201200%20Megas%20de%20Internet" class="btn-card">Contratar</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Internet + TV -->
+        <div id="tv" class="tab-content">
+            <!-- 100 Megas + TV -->
+            <div class="card">
+                <div class="card-header header-100">
+                    <h2>100 Megas + TV</h2>
+                    <p>Internet + Canales</p>
+                </div>
+                <div class="card-body">
+                    <div class="features">
+                        <div class="feature-item">
+                            <span>✓ Fibra óptica</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ WiFi Pro</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Club WiFi Totalplay</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ 185 Canales</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Convertidor Smart TV</span>
+                        </div>
+                    </div>
+                    <div class="price">$600/mes</div>
+                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%20100%20Megas%20%2B%20TV" class="btn-card">Contratar</a>
+                </div>
+            </div>
+
+            <!-- 200 Megas + TV -->
+            <div class="card">
+                <div class="card-header header-200">
+                    <div class="badge">Más vendido</div>
+                    <h2>200 Megas + TV</h2>
+                    <p>Internet + Canales</p>
+                </div>
+                <div class="card-body">
+                    <div class="features">
+                        <div class="feature-item">
+                            <span>✓ Fibra óptica</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ WiFi Pro</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Club WiFi Totalplay</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ 185 Canales</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Convertidor Smart TV</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Comando de voz Alexa</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Apple TV+ 1 año</span>
+                        </div>
+                    </div>
+                    <div class="price">$710/mes</div>
+                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%20200%20Megas%20%2B%20TV" class="btn-card">Contratar</a>
+                </div>
+            </div>
+
+            <!-- 300 Megas + TV -->
+            <div class="card">
+                <div class="card-header header-300">
+                    <h2>300 Megas + TV</h2>
+                    <p>Internet + Canales</p>
+                </div>
+                <div class="card-body">
+                    <div class="features">
+                        <div class="feature-item">
+                            <span>✓ Fibra óptica</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ WiFi Pro</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Club WiFi Totalplay</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ 185 Canales</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Convertidor Smart TV</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Comando de voz Alexa</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Apple TV+ 1 año</span>
+                        </div>
+                    </div>
+                    <div class="price">$820/mes</div>
+                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%20300%20Megas%20%2B%20TV" class="btn-card">Contratar</a>
+                </div>
+            </div>
+
+            <!-- 500 Megas + TV -->
+            <div class="card">
+                <div class="card-header header-500">
+                    <h2>500 Megas + TV</h2>
+                    <p>Internet + Canales</p>
+                </div>
+                <div class="card-body">
+                    <div class="features">
+                        <div class="feature-item">
+                            <span>✓ Fibra óptica</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ WiFi 6</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Club WiFi Totalplay</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ 185 Canales</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Convertidor Smart TV</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Comando de voz Alexa</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Bocinas Bang & Olufsen</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Apple TV+ 1 año</span>
+                        </div>
+                    </div>
+                    <div class="price">$1000/mes</div>
+                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%20500%20Megas%20%2B%20TV" class="btn-card">Contratar</a>
+                </div>
+            </div>
+
+            <!-- 1200 Megas + TV -->
+            <div class="card">
+                <div class="card-header header-1200">
+                    <h2>1200 Megas + TV</h2>
+                    <p>Internet + Canales</p>
+                </div>
+                <div class="card-body">
+                    <div class="features">
+                        <div class="feature-item">
+                            <span>✓ Fibra óptica</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ WiFi 6</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Club WiFi Totalplay</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ 185 Canales</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Convertidor Smart TV</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Comando de voz Alexa</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Bocinas Bang & Olufsen</span>
+                        </div>
+                        <div class="feature-item">
+                            <span>✓ Apple TV+ 1 año</span>
+                        </div>
+                    </div>
+                    <div class="price">$1640/mes</div>
+                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%201200%20Megas%20%2B%20TV" class="btn-card">Contratar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="form-section">
+        <div class="container">
+            <h2>Solicitar información</h2>
+            <p>Déjanos tus datos y Juan Meléndez se comunicará contigo</p>
+            
+            <form class="form-group">
+                <input type="text" class="form-input" placeholder="Nombre completo" required>
+                <input type="email" class="form-input" placeholder="Correo electrónico" required>
+                <input type="tel" class="form-input" placeholder="WhatsApp" required>
+                <button type="submit" class="btn-card">Enviar información</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Página creada por Juan Meléndez - Asesor de Ventas TotalPlay</p>
+            <p>Teléfono: <a href="tel:8131191393" style="color: white;">8131191393</a></p>
+            <p>© 2024 TotalPlay. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Hola,%20me%20interesa%20contratar%20TotalPlay" class="whatsapp-float">
+        <svg viewBox="0 0 32 32" fill="white">
+            <path d="M16 0c-8.836 0-16 7.164-16 16s7.164 16 16 16 16-7.164 16-16-7.164-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zM22.572 19.925c-0.348 0.812-1.027 1.399-1.836 1.728-0.511 0.206-1.371 0.347-2.573 0.347-0.107 0-0.214 0-0.321-0.001-0.002 0-0.004 0-0.006 0h-0.001c-0.002 0-0.004 0-0.006 0-1.203-0.034-2.877-0.389-4.006-1.416-1.028-0.934-2.173-2.729-2.173-2.729s-1.774-2.342-1.946-4.964c-0.171-2.621 0.812-4.235 1.514-5.086 0.348-0.812 1.027-1.399 1.836-1.728 0.511-0.206 1.371-0.347 2.573-0.347 0.107 0 0.214 0 0.321 0.001 0.002 0 0.004 0 0.006 0h0.001c0.002 0 0.004 0 0.006 0 1.203 0.034 2.877 0.389 4.006 1.416 1.028 0.934 2.173 2.729 2.173 2.729s1.774 2.342 1.946 4.964c0.171 2.621-0.812 4.235-1.514 5.086zM13.5 11c-0.828 0-1.5 0.672-1.5 1.5s0.672 1.5 1.5 1.5 1.5-0.672 1.5-1.5-0.672-1.5-1.5-1.5zM18.5 11c-0.828 0-1.5 0.672-1.5 1.5s0.672 1.5 1.5 1.5 1.5-0.672 1.5-1.5-0.672-1.5-1.5-1.5z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+                document.getElementById(btn.dataset.tab).classList.add('active');
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Gracias por tu interés. Juan Meléndez se comunicará contigo pronto.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
