@@ -153,6 +153,7 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            position: relative;
         }
         
         .card:hover {
@@ -174,7 +175,7 @@
         .badge {
             position: absolute;
             top: 15px;
-            left: 15px;
+            right: 15px;
             background: var(--color-accent);
             color: var(--color-dark);
             padding: 5px 10px;
@@ -220,27 +221,77 @@
             text-decoration: none;
             font-weight: bold;
             margin-top: 15px;
+            cursor: pointer;
         }
         
-        /* Form */
-        .form-section {
+        /* Adicionales Section */
+        .additional-section {
+            display: none;
             background: var(--color-light);
-            padding: 50px 20px;
-            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 30px auto;
+            max-width: 800px;
         }
         
-        .form-group {
-            max-width: 500px;
-            margin: 0 auto;
+        .additional-options {
+            margin: 20px 0;
         }
         
-        .form-input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
+        .additional-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            font-size: 16px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .additional-item:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .additional-item.selected {
+            border-color: var(--color-primary);
+            background-color: rgba(228, 0, 43, 0.1);
+        }
+        
+        .additional-price {
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+        
+        /* Summary Section */
+        .summary-section {
+            display: none;
+            background: var(--color-light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 30px auto;
+            max-width: 800px;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
         }
         
         /* Footer */
@@ -339,14 +390,11 @@
                             <span>✓ Fibra óptica</span>
                         </div>
                         <div class="feature-item">
-                            <span>✓ WiFi Pro</span>
-                        </div>
-                        <div class="feature-item">
                             <span>✓ Club WiFi Totalplay</span>
                         </div>
                     </div>
                     <div class="price">$460/mes</div>
-                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%20100%20Megas%20de%20Internet" class="btn-card">Contratar</a>
+                    <button class="btn-card" data-plan="100 Megas Solo Internet" data-price="460">Seleccionar</button>
                 </div>
             </div>
 
@@ -363,9 +411,6 @@
                             <span>✓ Fibra óptica</span>
                         </div>
                         <div class="feature-item">
-                            <span>✓ WiFi Pro</span>
-                        </div>
-                        <div class="feature-item">
                             <span>✓ Club WiFi Totalplay</span>
                         </div>
                         <div class="feature-item">
@@ -373,7 +418,7 @@
                         </div>
                     </div>
                     <div class="price">$570/mes</div>
-                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%20200%20Megas%20de%20Internet" class="btn-card">Contratar</a>
+                    <button class="btn-card" data-plan="200 Megas Solo Internet" data-price="570">Seleccionar</button>
                 </div>
             </div>
 
@@ -389,9 +434,6 @@
                             <span>✓ Fibra óptica</span>
                         </div>
                         <div class="feature-item">
-                            <span>✓ WiFi Pro</span>
-                        </div>
-                        <div class="feature-item">
                             <span>✓ Club WiFi Totalplay</span>
                         </div>
                         <div class="feature-item">
@@ -399,7 +441,7 @@
                         </div>
                     </div>
                     <div class="price">$680/mes</div>
-                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%20300%20Megas%20de%20Internet" class="btn-card">Contratar</a>
+                    <button class="btn-card" data-plan="300 Megas Solo Internet" data-price="680">Seleccionar</button>
                 </div>
             </div>
 
@@ -415,9 +457,6 @@
                             <span>✓ Fibra óptica</span>
                         </div>
                         <div class="feature-item">
-                            <span>✓ WiFi 6</span>
-                        </div>
-                        <div class="feature-item">
                             <span>✓ Club WiFi Totalplay</span>
                         </div>
                         <div class="feature-item">
@@ -425,7 +464,7 @@
                         </div>
                     </div>
                     <div class="price">$830/mes</div>
-                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%20500%20Megas%20de%20Internet" class="btn-card">Contratar</a>
+                    <button class="btn-card" data-plan="500 Megas Solo Internet" data-price="830">Seleccionar</button>
                 </div>
             </div>
 
@@ -441,9 +480,6 @@
                             <span>✓ Fibra óptica</span>
                         </div>
                         <div class="feature-item">
-                            <span>✓ WiFi 6</span>
-                        </div>
-                        <div class="feature-item">
                             <span>✓ Club WiFi Totalplay</span>
                         </div>
                         <div class="feature-item">
@@ -451,7 +487,7 @@
                         </div>
                     </div>
                     <div class="price">$1470/mes</div>
-                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%201200%20Megas%20de%20Internet" class="btn-card">Contratar</a>
+                    <button class="btn-card" data-plan="1200 Megas Solo Internet" data-price="1470">Seleccionar</button>
                 </div>
             </div>
         </div>
@@ -470,9 +506,6 @@
                             <span>✓ Fibra óptica</span>
                         </div>
                         <div class="feature-item">
-                            <span>✓ WiFi Pro</span>
-                        </div>
-                        <div class="feature-item">
                             <span>✓ Club WiFi Totalplay</span>
                         </div>
                         <div class="feature-item">
@@ -483,7 +516,7 @@
                         </div>
                     </div>
                     <div class="price">$600/mes</div>
-                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%20100%20Megas%20%2B%20TV" class="btn-card">Contratar</a>
+                    <button class="btn-card" data-plan="100 Megas + TV" data-price="600">Seleccionar</button>
                 </div>
             </div>
 
@@ -498,9 +531,6 @@
                     <div class="features">
                         <div class="feature-item">
                             <span>✓ Fibra óptica</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ WiFi Pro</span>
                         </div>
                         <div class="feature-item">
                             <span>✓ Club WiFi Totalplay</span>
@@ -519,7 +549,7 @@
                         </div>
                     </div>
                     <div class="price">$710/mes</div>
-                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%20200%20Megas%20%2B%20TV" class="btn-card">Contratar</a>
+                    <button class="btn-card" data-plan="200 Megas + TV" data-price="710">Seleccionar</button>
                 </div>
             </div>
 
@@ -533,9 +563,6 @@
                     <div class="features">
                         <div class="feature-item">
                             <span>✓ Fibra óptica</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ WiFi Pro</span>
                         </div>
                         <div class="feature-item">
                             <span>✓ Club WiFi Totalplay</span>
@@ -554,7 +581,7 @@
                         </div>
                     </div>
                     <div class="price">$820/mes</div>
-                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%20300%20Megas%20%2B%20TV" class="btn-card">Contratar</a>
+                    <button class="btn-card" data-plan="300 Megas + TV" data-price="820">Seleccionar</button>
                 </div>
             </div>
 
@@ -568,9 +595,6 @@
                     <div class="features">
                         <div class="feature-item">
                             <span>✓ Fibra óptica</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ WiFi 6</span>
                         </div>
                         <div class="feature-item">
                             <span>✓ Club WiFi Totalplay</span>
@@ -592,7 +616,7 @@
                         </div>
                     </div>
                     <div class="price">$1000/mes</div>
-                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%20500%20Megas%20%2B%20TV" class="btn-card">Contratar</a>
+                    <button class="btn-card" data-plan="500 Megas + TV" data-price="1000">Seleccionar</button>
                 </div>
             </div>
 
@@ -606,9 +630,6 @@
                     <div class="features">
                         <div class="feature-item">
                             <span>✓ Fibra óptica</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ WiFi 6</span>
                         </div>
                         <div class="feature-item">
                             <span>✓ Club WiFi Totalplay</span>
@@ -630,25 +651,76 @@
                         </div>
                     </div>
                     <div class="price">$1640/mes</div>
-                    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Me%20interesa%20el%20paquete%20de%201200%20Megas%20%2B%20TV" class="btn-card">Contratar</a>
+                    <button class="btn-card" data-plan="1200 Megas + TV" data-price="1640">Seleccionar</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form -->
-    <section class="form-section">
-        <div class="container">
-            <h2>Solicitar información</h2>
-            <p>Déjanos tus datos y Juan Meléndez se comunicará contigo</p>
+    <!-- Adicionales Section -->
+    <section class="additional-section container" id="additional-section">
+        <h2>¿Deseas agregar algún adicional?</h2>
+        
+        <div class="additional-options">
+            <h3>Netflix (opcional)</h3>
+            <div class="additional-item" data-additional="Netflix con anuncios" data-price="110">
+                <div>
+                    <strong>Netflix con anuncios</strong>
+                    <p>Calidad HD con anuncios</p>
+                </div>
+                <span class="additional-price">$110/mes</span>
+            </div>
             
-            <form class="form-group">
-                <input type="text" class="form-input" placeholder="Nombre completo" required>
-                <input type="email" class="form-input" placeholder="Correo electrónico" required>
-                <input type="tel" class="form-input" placeholder="WhatsApp" required>
-                <button type="submit" class="btn-card">Enviar información</button>
-            </form>
+            <div class="additional-item" data-additional="Netflix Estándar" data-price="229">
+                <div>
+                    <strong>Netflix Estándar</strong>
+                    <p>Para 2 dispositivos, sin anuncios</p>
+                </div>
+                <span class="additional-price">$229/mes</span>
+            </div>
+            
+            <div class="additional-item" data-additional="Netflix Premium" data-price="299">
+                <div>
+                    <strong>Netflix Premium</strong>
+                    <p>Hasta 4 dispositivos, Ultra HD</p>
+                </div>
+                <span class="additional-price">$299/mes</span>
+            </div>
+            
+            <h3>Otros adicionales</h3>
+            <div class="additional-item" data-additional="WifiPro" data-price="69">
+                <div>
+                    <strong>WifiPro</strong>
+                    <p>Extender la señal del wifi</p>
+                </div>
+                <span class="additional-price">$69/mes</span>
+            </div>
         </div>
+        
+        <button class="btn-card" id="continue-summary">Continuar</button>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="summary-section container" id="summary-section">
+        <h2>Resumen de tu pedido</h2>
+        
+        <div id="summary-content">
+            <div class="summary-item">
+                <span>Plan seleccionado:</span>
+                <span id="summary-plan"></span>
+            </div>
+            
+            <div id="summary-additionals">
+                <!-- Los adicionales se agregarán aquí dinámicamente -->
+            </div>
+            
+            <div class="summary-total">
+                <span>Total mensual:</span>
+                <span id="summary-total"></span>
+            </div>
+        </div>
+        
+        <button class="btn-card" id="confirm-order">Confirmar pedido</button>
     </section>
 
     <!-- Footer -->
@@ -662,12 +734,17 @@
 
     <!-- WhatsApp Float -->
     <a href="https://api.whatsapp.com/send?phone=528131191393&text=Hola,%20me%20interesa%20contratar%20TotalPlay" class="whatsapp-float">
-        <svg viewBox="0 0 32 32" fill="white">
+        <svg viewBox="0 0 32 32" width="32" height="32" fill="white">
             <path d="M16 0c-8.836 0-16 7.164-16 16s7.164 16 16 16 16-7.164 16-16-7.164-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zM22.572 19.925c-0.348 0.812-1.027 1.399-1.836 1.728-0.511 0.206-1.371 0.347-2.573 0.347-0.107 0-0.214 0-0.321-0.001-0.002 0-0.004 0-0.006 0h-0.001c-0.002 0-0.004 0-0.006 0-1.203-0.034-2.877-0.389-4.006-1.416-1.028-0.934-2.173-2.729-2.173-2.729s-1.774-2.342-1.946-4.964c-0.171-2.621 0.812-4.235 1.514-5.086 0.348-0.812 1.027-1.399 1.836-1.728 0.511-0.206 1.371-0.347 2.573-0.347 0.107 0 0.214 0 0.321 0.001 0.002 0 0.004 0 0.006 0h0.001c0.002 0 0.004 0 0.006 0 1.203 0.034 2.877 0.389 4.006 1.416 1.028 0.934 2.173 2.729 2.173 2.729s1.774 2.342 1.946 4.964c0.171 2.621-0.812 4.235-1.514 5.086zM13.5 11c-0.828 0-1.5 0.672-1.5 1.5s0.672 1.5 1.5 1.5 1.5-0.672 1.5-1.5-0.672-1.5-1.5-1.5zM18.5 11c-0.828 0-1.5 0.672-1.5 1.5s0.672 1.5 1.5 1.5 1.5-0.672 1.5-1.5-0.672-1.5-1.5-1.5z"/>
         </svg>
     </a>
 
     <script>
+        // Variables globales para almacenar la selección
+        let selectedPlan = null;
+        let selectedPlanPrice = 0;
+        let selectedAdditionals = [];
+        
         // Tab functionality
         document.querySelectorAll('.tab-button').forEach(btn => {
             btn.addEventListener('click', () => {
@@ -677,12 +754,120 @@
                 document.getElementById(btn.dataset.tab).classList.add('active');
             });
         });
-
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Gracias por tu interés. Juan Meléndez se comunicará contigo pronto.');
-            this.reset();
+        
+        // Plan selection
+        document.querySelectorAll('.btn-card').forEach(btn => {
+            if (btn.dataset.plan) {
+                btn.addEventListener('click', () => {
+                    selectedPlan = btn.dataset.plan;
+                    selectedPlanPrice = parseInt(btn.dataset.price);
+                    selectedAdditionals = [];
+                    
+                    // Mostrar sección de adicionales
+                    document.getElementById('additional-section').style.display = 'block';
+                    
+                    // Scroll a la sección de adicionales
+                    document.getElementById('additional-section').scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Resetear selección de adicionales
+                    document.querySelectorAll('.additional-item').forEach(item => {
+                        item.classList.remove('selected');
+                    });
+                });
+            }
+        });
+        
+        // Selección de adicionales (solo uno de Netflix)
+        document.querySelectorAll('.additional-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const additionalType = item.dataset.additional;
+                
+                // Si es un plan de Netflix, deseleccionar otros Netflix
+                if (additionalType.includes('Netflix')) {
+                    document.querySelectorAll('.additional-item').forEach(netflixItem => {
+                        if (netflixItem.dataset.additional.includes('Netflix')) {
+                            netflixItem.classList.remove('selected');
+                            // Eliminar de los adicionales seleccionados
+                            selectedAdditionals = selectedAdditionals.filter(a => !a.name.includes('Netflix'));
+                        }
+                    });
+                }
+                
+                // Toggle selección
+                item.classList.toggle('selected');
+                
+                // Agregar o eliminar de los adicionales seleccionados
+                if (item.classList.contains('selected')) {
+                    selectedAdditionals.push({
+                        name: item.dataset.additional,
+                        price: parseInt(item.dataset.price)
+                    });
+                } else {
+                    selectedAdditionals = selectedAdditionals.filter(a => a.name !== item.dataset.additional);
+                }
+            });
+        });
+        
+        // Continuar al resumen
+        document.getElementById('continue-summary').addEventListener('click', () => {
+            // Actualizar resumen
+            document.getElementById('summary-plan').textContent = `${selectedPlan} - $${selectedPlanPrice}/mes`;
+            
+            // Limpiar adicionales anteriores
+            const additionalsContainer = document.getElementById('summary-additionals');
+            additionalsContainer.innerHTML = '';
+            
+            // Agregar adicionales seleccionados
+            let totalPrice = selectedPlanPrice;
+            
+            selectedAdditionals.forEach(additional => {
+                const additionalElement = document.createElement('div');
+                additionalElement.className = 'summary-item';
+                additionalElement.innerHTML = `
+                    <span>${additional.name}:</span>
+                    <span>$${additional.price}/mes</span>
+                `;
+                additionalsContainer.appendChild(additionalElement);
+                totalPrice += additional.price;
+            });
+            
+            // Actualizar total
+            document.getElementById('summary-total').textContent = `$${totalPrice}/mes`;
+            
+            // Mostrar resumen
+            document.getElementById('summary-section').style.display = 'block';
+            
+            // Scroll al resumen
+            document.getElementById('summary-section').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Confirmar pedido
+        document.getElementById('confirm-order').addEventListener('click', () => {
+            // Calcular total
+            let totalPrice = selectedPlanPrice;
+            selectedAdditionals.forEach(additional => {
+                totalPrice += additional.price;
+            });
+            
+            // Crear mensaje para WhatsApp
+            let message = `Hola, me interesa contratar el siguiente plan:\n\n`;
+            message += `*Plan:* ${selectedPlan} - $${selectedPlanPrice}/mes\n\n`;
+            
+            if (selectedAdditionals.length > 0) {
+                message += `*Adicionales:*\n`;
+                selectedAdditionals.forEach(additional => {
+                    message += `- ${additional.name}: $${additional.price}/mes\n`;
+                });
+                message += `\n`;
+            }
+            
+            message += `*Total mensual:* $${totalPrice}/mes`;
+            
+            // Codificar mensaje para URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Redirigir a WhatsApp
+            window.location.href = `https://api.whatsapp.com/send?phone=528131191393&text=${encodedMessage}`;
         });
     </script>
 </body>
