@@ -1,874 +1,1683 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TotalPlay - Internet de Fibra Óptica | Juan Meléndez</title>
-    <meta name="description" content="Contrata TotalPlay con Juan Meléndez - Internet de fibra óptica, TV en 4K y llamadas ilimitadas. Paquetes desde 100 hasta 1200 Megas.">
-    <style>
-        :root {
-            --color-primary: #e4002b;
-            --color-secondary: #59cbe8;
-            --color-accent: #ffbf3f;
-            --color-dark: #1a1a1a;
-            --color-light: #ffffff;
-            --color-gray: #75787b;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--color-dark), #370A44);
-            color: white;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        
-        .logo span:nth-child(1) { color: var(--color-secondary); }
-        .logo span:nth-child(2) { color: var(--color-accent); }
-        .logo span:nth-child(3) { color: var(--color-primary); }
-        
-        .contact-header {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: white;
-        }
-        
-        .btn-phone {
-            background-color: var(--color-primary);
-            color: white;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1563014959-7aaa83350992?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
-        
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        /* Tabs */
-        .tabs {
-            display: flex;
-            justify-content: center;
-            margin: 40px 0 20px;
-        }
-        
-        .tab-button {
-            padding: 12px 25px;
-            background: linear-gradient(135deg, #2c2c2c, #370A44);
-            border: none;
-            color: #aaa;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 20px 0 0 20px;
-        }
-        
-        .tab-button:last-child {
-            border-radius: 0 20px 20px 0;
-        }
-        
-        .tab-button.active {
-            color: #fff;
-            border: 1px solid #fff;
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            padding: 20px;
-        }
-        
-        /* Cards */
-        .card {
-            background: var(--color-light);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .card-header {
-            padding: 20px;
-            color: white;
-            position: relative;
-        }
-        
-        .header-100 { background: linear-gradient(135deg, #b06ebf, #ec6f91); }
-        .header-200 { background: linear-gradient(135deg, #8cc63f, #a7cf3b); }
-        .header-300 { background: linear-gradient(135deg, #a52aff, #ed217c); }
-        .header-500 { background: linear-gradient(135deg, #6e00ff, #9f3aff); }
-        .header-1200 { background: linear-gradient(135deg, #ff6e27, #ff8f4d); }
-        
-        .badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--color-accent);
-            color: var(--color-dark);
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        
-        .card-body {
-            padding: 20px;
-        }
-        
-        .features {
-            margin: 15px 0;
-        }
-        
-        .feature-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .feature-item img {
-            width: 24px;
-            margin-right: 10px;
-        }
-        
-        .price {
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-            margin: 20px 0;
-            color: var(--color-dark);
-        }
-        
-        .btn-card {
-            display: block;
-            text-align: center;
-            background: var(--color-primary);
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            cursor: pointer;
-        }
-        
-        /* Adicionales Section */
-        .additional-section {
-            display: none;
-            background: var(--color-light);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin: 30px auto;
-            max-width: 800px;
-        }
-        
-        .additional-options {
-            margin: 20px 0;
-        }
-        
-        .additional-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .additional-item:hover {
-            background-color: #f9f9f9;
-        }
-        
-        .additional-item.selected {
-            border-color: var(--color-primary);
-            background-color: rgba(228, 0, 43, 0.1);
-        }
-        
-        .additional-price {
-            font-weight: bold;
-            color: var(--color-primary);
-        }
-        
-        /* Summary Section */
-        .summary-section {
-            display: none;
-            background: var(--color-light);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin: 30px auto;
-            max-width: 800px;
-        }
-        
-        .summary-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .summary-total {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px solid #ddd;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--color-dark);
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
-        
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            background-color: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 100;
-            animation: pulse 2s infinite;
-        }
-        
-        .whatsapp-float img {
-            width: 35px;
-            height: 35px;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .tab-content.active {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Totalplay Fibra Óptica | Contratación</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ----- ESTILOS BASE ----- */
+    :root {
+      --primary: #00e0dc;
+      --secondary: #3498db;
+      --accent: #ff5eb0;
+      --dark: #1a1a1a;
+      --light: #ffffff;
+      --gray: #f5f5f5;
+      --text: #333333;
+      --success: #27ae60;
+      --warning: #f39c12;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: white;
+      line-height: 1.6;
+      background-color: black;
+      padding-top: 70px; /* Espacio para el header fijo */
+    }
+
+    /* ----- HEADER ----- */
+    .header {
+      background-color: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--primary);
+    }
+    
+    .logo-text {
+      font-size: 28px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo-total {
+      color: white;
+    }
+    
+    .logo-p {
+      color: #3498db; /* Azul */
+    }
+    
+    .logo-l {
+      color: #27ae60; /* Verde */
+    }
+    
+    .logo-a {
+      color: #ff8c00; /* Naranja */
+    }
+    
+    .logo-y {
+      color: #e74c3c; /* Rojo */
+    }
+    
+    .support-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .support-link {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    
+    .support-link:hover {
+      color: var(--primary);
+    }
+    
+    .whatsapp-btn {
+      background-color: #25D366;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    
+    .whatsapp-btn:hover {
+      background-color: #128C7E;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.5);
+    }
+
+    /* ----- HERO SECTION ----- */
+    .hero {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #6e3b9c, 0 0 20px #6e3b9c;
+    }
+    
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: black;
+      color: #ff073a;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      border: 2px solid #f7d417;
+      box-shadow: 0 0 15px #f7d417, 0 0 30px rgba(247, 212, 23, 0.5);
+      transition: all 0.3s;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(247, 212, 23, 0.7);
+    }
+    
+    .hero-note {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* ----- PROMO BANNER ----- */
+    .promo-banner {
+      background: linear-gradient(to right, #d50000, #ff6d00);
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin: 20px 0;
+      border-radius: 5px;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.01); }
+      100% { transform: scale(1); }
+    }
+
+    /* ----- BENEFICIOS ----- */
+    .benefits {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .benefits h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    
+    .benefits-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .benefit-item {
+      flex: 1;
+      min-width: 200px;
+      max-width: 250px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border: 1px solid var(--primary);
+      transition: all 0.3s;
+    }
+    
+    .benefit-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 224, 220, 0.3);
+    }
+    
+    .benefit-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+    
+    .benefit-item h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    
+    .benefit-item p {
+      color: #aaa;
+    }
+
+    /* ----- TESTIMONIOS ----- */
+    .testimonials {
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .testimonials h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: var(--primary);
+    }
+    
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .testimonial-card {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border: 1px solid var(--primary);
+    }
+    
+    .stars {
+      color: var(--secondary);
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 15px;
+      color: #aaa;
+    }
+    
+    .testimonial-author {
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    /* ----- FOOTER ----- */
+    .footer {
+      background-color: black;
+      color: #aaa;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+      border-top: 1px solid var(--primary);
+    }
+    
+    .footer p {
+      margin-bottom: 10px;
+    }
+    
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* ----- SECCIÓN DE PLANES (CÓDIGO 2) ----- */
+    #plans-section {
+      display: none;
+      padding: 20px;
+      background-color: #f5f5f5;
+      min-height: 100vh;
+    }
+    
+    /* Estilos para la sección de planes */
+    .plans-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin: 0 0 20px;
+    }
+    
+    .tab-button {
+      padding: 12px 25px;
+      background: linear-gradient(135deg, #2c2c2c, #370A44);
+      border: none;
+      color: #aaa;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 20px 0 0 20px;
+    }
+    
+    .tab-button:last-child {
+      border-radius: 0 20px 20px 0;
+    }
+    
+    .tab-button.active {
+      color: #fff;
+      border: 1px solid #fff;
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 20px;
+    }
+    
+    /* Cards */
+    .card {
+      background: var(--light);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .card-header {
+      padding: 20px;
+      color: white;
+      position: relative;
+    }
+    
+    .header-100 { background: linear-gradient(135deg, #b06ebf, #ec6f91); }
+    .header-200 { background: linear-gradient(135deg, #8cc63f, #a7cf3b); }
+    .header-300 { background: linear-gradient(135deg, #a52aff, #ed217c); }
+    .header-500 { background: linear-gradient(135deg, #6e00ff, #9f3aff); }
+    .header-1200 { background: linear-gradient(135deg, #ff6e27, #ff8f4d); }
+    
+    .badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: var(--accent);
+      color: var(--dark);
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    
+    .card-body {
+      padding: 20px;
+    }
+    
+    .features {
+      margin: 15px 0;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    .feature-item span {
+      color: #333;
+    }
+    
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px 0;
+      color: var(--dark);
+    }
+    
+    .btn-card {
+      display: block;
+      text-align: center;
+      background: #e4002b;
+      color: white;
+      padding: 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      font-size: 16px;
+    }
+    
+    /* EFECTO DE DESTACADO PARA PLAN RECOMENDADO */
+    .recommended-plan {
+      border: 3px solid #ffd700;
+      position: relative;
+    }
+    
+    .recommended-plan::after {
+      content: "RECOMENDADO";
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #ffd700;
+      color: #111;
+      padding: 3px 8px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: bold;
+    }
+    
+    /* SECCIÓN DE ADICIONALES */
+    #addons-section {
+      display: none;
+      margin-top: 40px;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      color: #333;
+    }
+    
+    #addons-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+    
+    .addons-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .addon-category {
+      margin-bottom: 30px;
+    }
+    
+    .addon-category h3 {
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #e4002b;
+      color: var(--dark);
+    }
+    
+    .checkbox-option {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.2s;
+    }
+    
+    .checkbox-option:hover {
+      background-color: #f9f9f9;
+    }
+    
+    .checkbox-option input[type="checkbox"] {
+      margin-right: 10px;
+      width: 18px;
+      height: 18px;
+    }
+    
+    .checkbox-option label {
+      flex-grow: 1;
+      cursor: pointer;
+      color: #333;
+    }
+    
+    .addon-price {
+      color: #e4002b;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    
+    .netflix-options, .bundle-apps {
+      margin-left: 20px;
+      padding-left: 15px;
+      border-left: 2px solid #eee;
+    }
+    
+    .bundle-option {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    
+    .app-option {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    
+    .app-option input[type="checkbox"] {
+      margin-right: 8px;
+    }
+    
+    .app-option label {
+      color: #333;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    #selected-plan-info {
+      background: #f8f8f8;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+    
+    #selected-plan-info h3 {
+      margin-bottom: 10px;
+      color: #e4002b;
+    }
+    
+    #selection-summary {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    
+    #selection-summary h3 {
+      margin-bottom: 15px;
+      color: var(--dark);
+      border-bottom: 2px solid #e4002b;
+      padding-bottom: 5px;
+    }
+    
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .summary-item:last-child {
+      border-bottom: none;
+    }
+    
+    .summary-item .name {
+      font-weight: 500;
+      color: #333;
+    }
+    
+    .summary-item .price {
+      font-weight: bold;
+      color: #e4002b;
+      font-size: 1rem;
+      margin: 0;
+    }
+    
+    .summary-subitem {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 20px;
+      margin-bottom: 5px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    
+    #total-price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #e4002b;
+      margin-top: 20px;
+      text-align: center;
+      padding: 15px;
+      background: #f0f0f0;
+      border-radius: 5px;
+    }
+    
+    #confirm-selection {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background: #e4002b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+    
+    #confirm-selection:hover {
+      background: #c40022;
+    }
+    
+    .back-button {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #75787b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: background-color 0.3s;
+    }
+    
+    .back-button:hover {
+      background: #5a5d60;
+    }
+    
+    .selection-limit {
+      font-size: 0.8rem;
+      color: #e4002b;
+      margin-top: 5px;
+      font-style: italic;
+    }
+    
+    /* Botón para volver a la página principal */
+    .back-to-main {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background: var(--primary);
+      color: black;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .back-to-main:hover {
+      background: #00c9c5;
+      transform: translateY(-2px);
+    }
+
+    /* ----- RESPONSIVE ----- */
+    @media (max-width: 768px) {
+      body {
+        padding-top: 120px; /* Más espacio para el header en móviles */
+      }
+      
+      .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+      }
+      
+      .support-info {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .benefits-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .benefit-item {
+        max-width: 100%;
+      }
+      
+      .tab-content.active {
+        grid-template-columns: 1fr;
+      }
+      
+      .addons-container {
+        padding: 0 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-content">
-            <div class="logo">
-                Total<span>P</span><span>l</span><span>a</span>y<span>®</span>
-            </div>
-            <div class="contact-header">
-                <a href="https://api.whatsapp.com/send?phone=528131191393&text=Hola,%20me%20interesa%20contratar%20TotalPlay" class="btn btn-whatsapp">WhatsApp</a>
-                <a href="tel:8131191393" class="btn btn-phone">Llamar</a>
-            </div>
-        </div>
-    </header>
+  <!-- HEADER (solo visible en la sección principal) -->
+  <header class="header" id="main-header">
+    <div class="logo-text">
+      <span class="logo-total">Total</span>
+      <span class="logo-p">p</span>
+      <span class="logo-l">l</span>
+      <span class="logo-a">a</span>
+      <span class="logo-y">y</span>
+    </div>
+    <div class="support-info">
+      <a href="tel:8005100510" class="support-link">
+        <i class="fas fa-phone-alt"></i> ¿Tienes fallas? Llama al 800 510 0510
+      </a>
+      <a href="https://wa.link/gyb1ty" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i> Soporte técnico
+      </a>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
+  <!-- SECCIÓN PRINCIPAL (CÓDIGO 1) -->
+  <div id="main-section">
+    <!-- HERO SECTION -->
     <section class="hero">
-        <div class="container">
-            <h1>Internet de Fibra Óptica TotalPlay</h1>
-            <p>El internet más premiado de México con la mejor velocidad y estabilidad</p>
-            <p><strong>Asesor: Juan Meléndez</strong></p>
+      <h1>Fibra óptica directa - Velocidad garantizada</h1>
+      <p>Precios fijos en pago puntual + Bono de Bienvenida</p>
+      
+      <section class="promo-banner">
+        <div>
+          <strong>¡PROMOCIÓN POR TIEMPO LIMITADO!</strong><br>
+          Descuentos exclusivos al contratar HOY y con ¡Instalación Express!
         </div>
+      </section>
+      
+      <button class="cta-button" id="view-plans-btn">VER PLANES</button>
+      
+      <p class="hero-note">¡INSTALACIÓN SIN COSTO EXTRA Y EXPRESS!</p>
     </section>
 
-    <!-- Packages Section -->
-    <section class="container">
-        <div class="tabs">
-            <button class="tab-button active" data-tab="internet">Solo Internet</button>
-            <button class="tab-button" data-tab="tv">Internet + TV</button>
+    <!-- BENEFICIOS -->
+    <section class="benefits">
+      <h2>Beneficios de contratar con nosotros</h2>
+      <div class="benefits-container">
+        <div class="benefit-item">
+          <div class="benefit-icon">⚡</div>
+          <h3>Velocidad simétrica</h3>
+          <p>Misma velocidad de subida y bajada para mejor experiencia</p>
         </div>
-
-        <!-- Internet Only -->
-        <div id="internet" class="tab-content active">
-            <!-- 100 Megas -->
-            <div class="card">
-                <div class="card-header header-100">
-                    <h2>100 Megas</h2>
-                    <p>Internet Simétrico</p>
-                </div>
-                <div class="card-body">
-                    <div class="features">
-                        <div class="feature-item">
-                            <span>✓ Fibra óptica</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Club WiFi Totalplay</span>
-                        </div>
-                    </div>
-                    <div class="price">$460/mes</div>
-                    <button class="btn-card" data-plan="100 Megas Solo Internet" data-price="460">Seleccionar</button>
-                </div>
-            </div>
-
-            <!-- 200 Megas -->
-            <div class="card">
-                <div class="card-header header-200">
-                    <div class="badge">Más vendido</div>
-                    <h2>200 Megas</h2>
-                    <p>Internet Simétrico</p>
-                </div>
-                <div class="card-body">
-                    <div class="features">
-                        <div class="feature-item">
-                            <span>✓ Fibra óptica</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Club WiFi Totalplay</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Apple TV+ 1 año</span>
-                        </div>
-                    </div>
-                    <div class="price">$570/mes</div>
-                    <button class="btn-card" data-plan="200 Megas Solo Internet" data-price="570">Seleccionar</button>
-                </div>
-            </div>
-
-            <!-- 300 Megas -->
-            <div class="card">
-                <div class="card-header header-300">
-                    <h2>300 Megas</h2>
-                    <p>Internet Simétrico</p>
-                </div>
-                <div class="card-body">
-                    <div class="features">
-                        <div class="feature-item">
-                            <span>✓ Fibra óptica</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Club WiFi Totalplay</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Apple TV+ 1 año</span>
-                        </div>
-                    </div>
-                    <div class="price">$680/mes</div>
-                    <button class="btn-card" data-plan="300 Megas Solo Internet" data-price="680">Seleccionar</button>
-                </div>
-            </div>
-
-            <!-- 500 Megas -->
-            <div class="card">
-                <div class="card-header header-500">
-                    <h2>500 Megas</h2>
-                    <p>Internet Simétrico</p>
-                </div>
-                <div class="card-body">
-                    <div class="features">
-                        <div class="feature-item">
-                            <span>✓ Fibra óptica</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Club WiFi Totalplay</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Apple TV+ 1 año</span>
-                        </div>
-                    </div>
-                    <div class="price">$830/mes</div>
-                    <button class="btn-card" data-plan="500 Megas Solo Internet" data-price="830">Seleccionar</button>
-                </div>
-            </div>
-
-            <!-- 1200 Megas -->
-            <div class="card">
-                <div class="card-header header-1200">
-                    <h2>1200 Megas</h2>
-                    <p>Internet Simétrico</p>
-                </div>
-                <div class="card-body">
-                    <div class="features">
-                        <div class="feature-item">
-                            <span>✓ Fibra óptica</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Club WiFi Totalplay</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Apple TV+ 1 año</span>
-                        </div>
-                    </div>
-                    <div class="price">$1470/mes</div>
-                    <button class="btn-card" data-plan="1200 Megas Solo Internet" data-price="1470">Seleccionar</button>
-                </div>
-            </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🛡️</div>
+          <h3>Precio fijo</h3>
+          <p>Mismo precio por 12 meses al pagar puntual</p>
         </div>
-
-        <!-- Internet + TV -->
-        <div id="tv" class="tab-content">
-            <!-- 100 Megas + TV -->
-            <div class="card">
-                <div class="card-header header-100">
-                    <h2>100 Megas + TV</h2>
-                    <p>Internet + Canales</p>
-                </div>
-                <div class="card-body">
-                    <div class="features">
-                        <div class="feature-item">
-                            <span>✓ Fibra óptica</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Club WiFi Totalplay</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ 185 Canales</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Convertidor Smart TV</span>
-                        </div>
-                    </div>
-                    <div class="price">$600/mes</div>
-                    <button class="btn-card" data-plan="100 Megas + TV" data-price="600">Seleccionar</button>
-                </div>
-            </div>
-
-            <!-- 200 Megas + TV -->
-            <div class="card">
-                <div class="card-header header-200">
-                    <div class="badge">Más vendido</div>
-                    <h2>200 Megas + TV</h2>
-                    <p>Internet + Canales</p>
-                </div>
-                <div class="card-body">
-                    <div class="features">
-                        <div class="feature-item">
-                            <span>✓ Fibra óptica</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Club WiFi Totalplay</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ 185 Canales</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Convertidor Smart TV</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Comando de voz Alexa</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Apple TV+ 1 año</span>
-                        </div>
-                    </div>
-                    <div class="price">$710/mes</div>
-                    <button class="btn-card" data-plan="200 Megas + TV" data-price="710">Seleccionar</button>
-                </div>
-            </div>
-
-            <!-- 300 Megas + TV -->
-            <div class="card">
-                <div class="card-header header-300">
-                    <h2>300 Megas + TV</h2>
-                    <p>Internet + Canales</p>
-                </div>
-                <div class="card-body">
-                    <div class="features">
-                        <div class="feature-item">
-                            <span>✓ Fibra óptica</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Club WiFi Totalplay</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ 185 Canales</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Convertidor Smart TV</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Comando de voz Alexa</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Apple TV+ 1 año</span>
-                        </div>
-                    </div>
-                    <div class="price">$820/mes</div>
-                    <button class="btn-card" data-plan="300 Megas + TV" data-price="820">Seleccionar</button>
-                </div>
-            </div>
-
-            <!-- 500 Megas + TV -->
-            <div class="card">
-                <div class="card-header header-500">
-                    <h2>500 Megas + TV</h2>
-                    <p>Internet + Canales</p>
-                </div>
-                <div class="card-body">
-                    <div class="features">
-                        <div class="feature-item">
-                            <span>✓ Fibra óptica</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Club WiFi Totalplay</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ 185 Canales</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Convertidor Smart TV</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Comando de voz Alexa</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Bocinas Bang & Olufsen</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Apple TV+ 1 año</span>
-                        </div>
-                    </div>
-                    <div class="price">$1000/mes</div>
-                    <button class="btn-card" data-plan="500 Megas + TV" data-price="1000">Seleccionar</button>
-                </div>
-            </div>
-
-            <!-- 1200 Megas + TV -->
-            <div class="card">
-                <div class="card-header header-1200">
-                    <h2>1200 Megas + TV</h2>
-                    <p>Internet + Canales</p>
-                </div>
-                <div class="card-body">
-                    <div class="features">
-                        <div class="feature-item">
-                            <span>✓ Fibra óptica</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Club WiFi Totalplay</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ 185 Canales</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Convertidor Smart TV</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Comando de voz Alexa</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Bocinas Bang & Olufsen</span>
-                        </div>
-                        <div class="feature-item">
-                            <span>✓ Apple TV+ 1 año</span>
-                        </div>
-                    </div>
-                    <div class="price">$1640/mes</div>
-                    <button class="btn-card" data-plan="1200 Megas + TV" data-price="1640">Seleccionar</button>
-                </div>
-            </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">📞</div>
+          <h3>Soporte prioritario</h3>
+          <p>Atención técnica 24/7 con respuesta rápida</p>
         </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🎁</div>
+          <h3>Bono bienvenida</h3>
+          <p>Descuento especial al contratar hoy</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Adicionales Section -->
-    <section class="additional-section container" id="additional-section">
-        <h2>¿Deseas agregar algún adicional?</h2>
-        
-        <div class="additional-options">
-            <h3>Netflix (opcional)</h3>
-            <div class="additional-item" data-additional="Netflix con anuncios" data-price="110">
-                <div>
-                    <strong>Netflix con anuncios</strong>
-                    <p>Calidad HD con anuncios</p>
-                </div>
-                <span class="additional-price">$110/mes</span>
-            </div>
-            
-            <div class="additional-item" data-additional="Netflix Estándar" data-price="229">
-                <div>
-                    <strong>Netflix Estándar</strong>
-                    <p>Para 2 dispositivos, sin anuncios</p>
-                </div>
-                <span class="additional-price">$229/mes</span>
-            </div>
-            
-            <div class="additional-item" data-additional="Netflix Premium" data-price="299">
-                <div>
-                    <strong>Netflix Premium</strong>
-                    <p>Hasta 4 dispositivos, Ultra HD</p>
-                </div>
-                <span class="additional-price">$299/mes</span>
-            </div>
-            
-            <h3>Otros adicionales</h3>
-            <div class="additional-item" data-additional="WifiPro" data-price="69">
-                <div>
-                    <strong>WifiPro</strong>
-                    <p>Extender la señal del wifi</p>
-                </div>
-                <span class="additional-price">$69/mes</span>
-            </div>
+    <!-- TESTIMONIOS -->
+    <section class="testimonials">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"El técnico resolvió todo en 30 minutos, excelente servicio."</p>
+          <p class="testimonial-author">- Carlos M., Plan 200 Megas</p>
         </div>
-        
-        <button class="btn-card" id="continue-summary">Continuar</button>
+        <div class="testimonial-card">
+          <div class="stars">★★★★☆</div>
+          <p class="testimonial-text">"Buena velocidad y te respetan el precio pagando puntual."</p>
+          <p class="testimonial-author">- Ana K., Plan 100 Megas</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Nunca he tenido problemas con la conexión, 100% recomendado."</p>
+          <p class="testimonial-author">- Luis G., Plan 500 Megas</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Summary Section -->
-    <section class="summary-section container" id="summary-section">
-        <h2>Resumen de tu pedido</h2>
-        
-        <div id="summary-content">
-            <div class="summary-item">
-                <span>Plan seleccionado:</span>
-                <span id="summary-plan"></span>
-            </div>
-            
-            <div id="summary-additionals">
-                <!-- Los adicionales se agregarán aquí dinámicamente -->
-            </div>
-            
-            <div class="summary-total">
-                <span>Total mensual:</span>
-                <span id="summary-total"></span>
-            </div>
-        </div>
-        
-        <button class="btn-card" id="confirm-order">Confirmar pedido</button>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>Página creada por Juan Meléndez - Asesor de Ventas TotalPlay</p>
-            <p>Teléfono: <a href="tel:8131191393" style="color: white;">8131191393</a></p>
-            <p>© 2024 TotalPlay. Todos los derechos reservados.</p>
-        </div>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>Sitio creado por Juan Meléndez - Asesor Autorizado Totalplay</p>
+      <p>© 2025 Todos los derechos reservados</p>
     </footer>
+  </div>
 
-    <!-- WhatsApp Float -->
-    <a href="https://api.whatsapp.com/send?phone=528131191393&text=Hola,%20me%20interesa%20contratar%20TotalPlay" class="whatsapp-float">
-        <svg viewBox="0 0 32 32" width="32" height="32" fill="white">
-            <path d="M16 0c-8.836 0-16 7.164-16 16s7.164 16 16 16 16-7.164 16-16-7.164-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zM22.572 19.925c-0.348 0.812-1.027 1.399-1.836 1.728-0.511 0.206-1.371 0.347-2.573 0.347-0.107 0-0.214 0-0.321-0.001-0.002 0-0.004 0-0.006 0h-0.001c-0.002 0-0.004 0-0.006 0-1.203-0.034-2.877-0.389-4.006-1.416-1.028-0.934-2.173-2.729-2.173-2.729s-1.774-2.342-1.946-4.964c-0.171-2.621 0.812-4.235 1.514-5.086 0.348-0.812 1.027-1.399 1.836-1.728 0.511-0.206 1.371-0.347 2.573-0.347 0.107 0 0.214 0 0.321 0.001 0.002 0 0.004 0 0.006 0h0.001c0.002 0 0.004 0 0.006 0 1.203 0.034 2.877 0.389 4.006 1.416 1.028 0.934 2.173 2.729 2.173 2.729s1.774 2.342 1.946 4.964c0.171 2.621-0.812 4.235-1.514 5.086zM13.5 11c-0.828 0-1.5 0.672-1.5 1.5s0.672 1.5 1.5 1.5 1.5-0.672 1.5-1.5-0.672-1.5-1.5-1.5zM18.5 11c-0.828 0-1.5 0.672-1.5 1.5s0.672 1.5 1.5 1.5 1.5-0.672 1.5-1.5-0.672-1.5-1.5-1.5z"/>
-        </svg>
-    </a>
+  <!-- SECCIÓN DE PLANES (CÓDIGO 2) -->
+  <section id="plans-section" class="plans-container">
+    <button class="back-to-main" id="back-to-main">← Volver a la página principal</button>
+    
+    <div class="tabs">
+      <button class="tab-button active" data-tab="internet">Solo Internet</button>
+      <button class="tab-button" data-tab="tv">Internet + TV</button>
+    </div>
 
-    <script>
-        // Variables globales para almacenar la selección
-        let selectedPlan = null;
-        let selectedPlanPrice = 0;
-        let selectedAdditionals = [];
+    <!-- Internet Only -->
+    <div id="internet" class="tab-content active">
+      <!-- 100 Megas -->
+      <div class="card" data-plan="100 Megas Internet" data-price="460">
+        <div class="card-header header-100">
+          <h2>100 Megas</h2>
+          <p>Internet Simétrico</p>
+        </div>
+        <div class="card-body">
+          <div class="features">
+            <div class="feature-item">
+              <span>✓ Fibra óptica</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Club WiFi Totalplay</span>
+            </div>
+          </div>
+          <div class="price">$460/mes</div>
+          <button class="btn-card select-plan">Seleccionar</button>
+        </div>
+      </div>
+
+      <!-- 200 Megas -->
+      <div class="card recommended-plan" data-plan="200 Megas Internet" data-price="570">
+        <div class="card-header header-200">
+          <h2>200 Megas</h2>
+          <p>Internet Simétrico</p>
+        </div>
+        <div class="card-body">
+          <div class="features">
+            <div class="feature-item">
+              <span>✓ Fibra óptica</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Club WiFi Totalplay</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Apple TV+ 1 año</span>
+            </div>
+          </div>
+          <div class="price">$570/mes</div>
+          <button class="btn-card select-plan">Seleccionar</button>
+        </div>
+      </div>
+
+      <!-- 300 Megas -->
+      <div class="card" data-plan="300 Megas Internet" data-price="680">
+        <div class="card-header header-300">
+          <h2>300 Megas</h2>
+          <p>Internet Simétrico</p>
+        </div>
+        <div class="card-body">
+          <div class="features">
+            <div class="feature-item">
+              <span>✓ Fibra óptica</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Club WiFi Totalplay</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Apple TV+ 1 año</span>
+            </div>
+          </div>
+          <div class="price">$680/mes</div>
+          <button class="btn-card select-plan">Seleccionar</button>
+        </div>
+      </div>
+
+      <!-- 500 Megas -->
+      <div class="card" data-plan="500 Megas Internet" data-price="830">
+        <div class="card-header header-500">
+          <h2>500 Megas</h2>
+          <p>Internet Simétrico</p>
+        </div>
+        <div class="card-body">
+          <div class="features">
+            <div class="feature-item">
+              <span>✓ Fibra óptica</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ WiFi 6</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Club WiFi Totalplay</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Apple TV+ 1 año</span>
+            </div>
+          </div>
+          <div class="price">$830/mes</div>
+          <button class="btn-card select-plan">Seleccionar</button>
+        </div>
+      </div>
+
+      <!-- 1200 Megas -->
+      <div class="card" data-plan="1200 Megas Internet" data-price="1470">
+        <div class="card-header header-1200">
+          <h2>1200 Megas</h2>
+          <p>Internet Simétrico</p>
+        </div>
+        <div class="card-body">
+          <div class="features">
+            <div class="feature-item">
+              <span>✓ Fibra óptica</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ WiFi 6</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Club WiFi Totalplay</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Apple TV+ 1 año</span>
+            </div>
+          </div>
+          <div class="price">$1470/mes</div>
+          <button class="btn-card select-plan">Seleccionar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Internet + TV -->
+    <div id="tv" class="tab-content">
+      <!-- 100 Megas + TV -->
+      <div class="card" data-plan="100 Megas + TV" data-price="600" data-has-tv="true">
+        <div class="card-header header-100">
+          <h2>100 Megas + TV</h2>
+          <p>Internet + Canales</p>
+        </div>
+        <div class="card-body">
+          <div class="features">
+            <div class="feature-item">
+              <span>✓ Fibra óptica</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Club WiFi Totalplay</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ 185 Canales</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Convertidor Smart TV</span>
+            </div>
+          </div>
+          <div class="price">$600/mes</div>
+          <button class="btn-card select-plan">Seleccionar</button>
+        </div>
+      </div>
+
+      <!-- 200 Megas + TV -->
+      <div class="card recommended-plan" data-plan="200 Megas + TV" data-price="710" data-has-tv="true">
+        <div class="card-header header-200">
+          <h2>200 Megas + TV</h2>
+          <p>Internet + Canales</p>
+        </div>
+        <div class="card-body">
+          <div class="features">
+            <div class="feature-item">
+              <span>✓ Fibra óptica</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Club WiFi Totalplay</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ 185 Canales</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Convertidor Smart TV</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Comando de voz Alexa</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Apple TV+ 1 año</span>
+            </div>
+          </div>
+          <div class="price">$710/mes</div>
+          <button class="btn-card select-plan">Seleccionar</button>
+        </div>
+      </div>
+
+      <!-- 300 Megas + TV -->
+      <div class="card" data-plan="300 Megas + TV" data-price="820" data-has-tv="true">
+        <div class="card-header header-300">
+          <h2>300 Megas + TV</h2>
+          <p>Internet + Canales</p>
+        </div>
+        <div class="card-body">
+          <div class="features">
+            <div class="feature-item">
+              <span>✓ Fibra óptica</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Club WiFi Totalplay</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ 185 Canales</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Convertidor Smart TV</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Comando de voz Alexa</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Apple TV+ 1 año</span>
+            </div>
+          </div>
+          <div class="price">$820/mes</div>
+          <button class="btn-card select-plan">Seleccionar</button>
+        </div>
+      </div>
+
+      <!-- 500 Megas + TV -->
+      <div class="card" data-plan="500 Megas + TV" data-price="1000" data-has-tv="true">
+        <div class="card-header header-500">
+          <h2>500 Megas + TV</h2>
+          <p>Internet + Canales</p>
+        </div>
+        <div class="card-body">
+          <div class="features">
+            <div class="feature-item">
+              <span>✓ Fibra óptica</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ WiFi 6</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Club WiFi Totalplay</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ 185 Canales</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Convertidor Smart TV</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Comando de voz Alexa</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Bocinas Bang & Olufsen</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Apple TV+ 1 año</span>
+            </div>
+          </div>
+          <div class="price">$1000/mes</div>
+          <button class="btn-card select-plan">Seleccionar</button>
+        </div>
+      </div>
+
+      <!-- 1200 Megas + TV -->
+      <div class="card" data-plan="1200 Megas + TV" data-price="1640" data-has-tv="true">
+        <div class="card-header header-1200">
+          <h2>1200 Megas + TV</h2>
+          <p>Internet + Canales</p>
+        </div>
+        <div class="card-body">
+          <div class="features">
+            <div class="feature-item">
+              <span>✓ Fibra óptica</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ WiFi 6</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Club WiFi Totalplay</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ 185 Canales</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Convertidor Smart TV</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Comando de voz Alexa</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Bocinas Bang & Olufsen</span>
+            </div>
+            <div class="feature-item">
+              <span>✓ Apple TV+ 1 año</span>
+            </div>
+          </div>
+          <div class="price">$1640/mes</div>
+          <button class="btn-card select-plan">Seleccionar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de Adicionales -->
+    <section id="addons-section">
+      <button class="back-button" id="back-to-plans">← Volver a planes</button>
+      
+      <h2>Personaliza tu plan</h2>
+      
+      <div id="selected-plan-info">
+        <h3>Plan seleccionado: <span id="selected-plan-name"></span></h3>
+        <p>Precio base: $<span id="selected-plan-price"></span>/mes</p>
+      </div>
+      
+      <div id="selection-summary">
+        <h3>Resumen de tu selección</h3>
+        <div id="summary-items">
+          <!-- Aquí se mostrarán los elementos seleccionados -->
+        </div>
+        <div id="total-price">
+          Precio total: $<span id="final-price">0</span>/mes
+        </div>
+      </div>
+      
+      <div class="addons-container">
+        <div class="addon-category">
+          <h3>Opciones de Streaming (Selecciona solo una)</h3>
+          <div class="checkbox-option">
+            <input type="checkbox" id="amazon-prime" name="amazon-prime" data-monthly="90" class="streaming-option">
+            <label for="amazon-prime">
+              <strong>Amazon Prime</strong>
+              <span class="addon-price">+$90/mes</span>
+            </label>
+          </div>
+          
+          <div class="netflix-options">
+            <div class="checkbox-option">
+              <input type="checkbox" id="netflix-with-ads" name="netflix-with-ads" data-monthly="110" class="streaming-option netflix-option">
+              <label for="netflix-with-ads">
+                <strong>Netflix con Anuncios</strong>
+                <span class="addon-price">+$110/mes</span>
+              </label>
+            </div>
+            <div class="checkbox-option">
+              <input type="checkbox" id="netflix-standard" name="netflix-standard" data-monthly="229" class="streaming-option netflix-option">
+              <label for="netflix-standard">
+                <strong>Netflix Estándar (2 pantallas)</strong>
+                <span class="addon-price">+$229/mes</span>
+              </label>
+            </div>
+            <div class="checkbox-option">
+              <input type="checkbox" id="netflix-premium" name="netflix-premium" data-monthly="299" class="streaming-option netflix-option">
+              <label for="netflix-premium">
+                <strong>Netflix Premium (4 pantallas)</strong>
+                <span class="addon-price">+$299/mes</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="addon-category">
+          <h3>Dispositivos</h3>
+          <div class="checkbox-option">
+            <input type="checkbox" id="wifi-extender" name="wifi-extender" data-monthly="69">
+            <label for="wifi-extender">
+              <strong>WifiPro</strong>
+              <span class="addon-price">+$69/mes</span>
+            </label>
+          </div>
+          
+          <!-- TV Adicional (solo para Internet + Canales) -->
+          <div id="tv-addons" class="hidden">
+            <div class="checkbox-option">
+              <input type="checkbox" id="extra-tv" name="extra-tv" data-monthly="129">
+              <label for="extra-tv">
+                <strong>TV Adicional</strong>
+                <span class="addon-price">+$129/mes</span>
+              </label>
+            </div>
+            <div class="checkbox-option">
+              <input type="checkbox" id="extra-tv-alexa" name="extra-tv-alexa" data-monthly="280">
+              <label for="extra-tv-alexa">
+                <strong>TV Adicional con Alexa</strong>
+                <span class="addon-price">+$280/mes</span>
+              </label>
+            </div>
+            <div class="checkbox-option" id="surround-sound-option" style="display: none;">
+              <input type="checkbox" id="surround-sound" name="surround-sound" data-monthly="199">
+              <label for="surround-sound">
+                <strong>Sonido Totalplay Surround</strong>
+                <span class="addon-price">+$199/mes</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="addon-category">
+          <h3>Paquetes de Aplicaciones (Selecciona solo uno)</h3>
+          
+          <div class="bundle-option">
+            <div class="checkbox-option">
+              <input type="checkbox" id="bundle-basic" name="bundle-basic" data-monthly="199" class="bundle-option-check" data-bundle-name="Paquete 2 Aplicaciones Básicas" data-max-apps="2">
+              <label for="bundle-basic">
+                <strong>Paquete 2 Aplicaciones Básicas</strong>
+                <span class="addon-price">+$199/mes</span>
+              </label>
+            </div>
+            <div class="bundle-apps" id="basic-apps">
+              <p>Selecciona 2 aplicaciones:</p>
+              <div class="app-option">
+                <input type="checkbox" id="app-prime" name="app-prime" data-bundle="basic" data-app-name="Amazon Prime">
+                <label for="app-prime">Amazon Prime</label>
+              </div>
+              <div class="app-option">
+                <input type="checkbox" id="app-hbo" name="app-hbo" data-bundle="basic" data-app-name="HBO CON ANUNCIOS">
+                <label for="app-hbo">HBO CON ANUNCIOS</label>
+              </div>
+              <div class="app-option">
+                <input type="checkbox" id="app-paramount" name="app-paramount" data-bundle="basic" data-app-name="PARAMOUNT+">
+                <label for="app-paramount">PARAMOUNT+</label>
+              </div>
+              <div class="selection-limit" id="basic-limit" style="display: none;">Límite alcanzado: Solo puedes seleccionar 2 aplicaciones</div>
+            </div>
+          </div>
+
+          <div class="bundle-option">
+            <div class="checkbox-option">
+              <input type="checkbox" id="bundle-standard" name="bundle-standard" data-monthly="399" class="bundle-option-check" data-bundle-name="Paquete 2 Aplicaciones Estándar" data-max-apps="2">
+              <label for="bundle-standard">
+                <strong>Paquete 2 Aplicaciones Estándar</strong>
+                <span class="addon-price">+$399/mes</span>
+              </label>
+            </div>
+            <div class="bundle-apps" id="standard-apps">
+              <p>Selecciona 2 aplicaciones:</p>
+              <div class="app-option">
+                <input type="checkbox" id="app-fox" name="app-fox" data-bundle="standard" data-app-name="Fox Sports Premium">
+                <label for="app-fox">Fox Sports Premium</label>
+              </div>
+              <div class="app-option">
+                <input type="checkbox" id="app-nba" name="app-nba" data-bundle="standard" data-app-name="NBA League PASS">
+                <label for="app-nba">NBA League PASS</label>
+              </div>
+              <div class="app-option">
+                <input type="checkbox" id="app-hbo-max" name="app-hbo-max" data-bundle="standard" data-app-name="HBO MAX">
+                <label for="app-hbo-max">HBO MAX</label>
+              </div>
+              <div class="app-option">
+                <input type="checkbox" id="app-disney" name="app-disney" data-bundle="standard" data-app-name="DISNEY+ Estandar">
+                <label for="app-disney">DISNEY+ Estandar</label>
+              </div>
+              <div class="selection-limit" id="standard-limit" style="display: none;">Límite alcanzado: Solo puedes seleccionar 2 aplicaciones</div>
+            </div>
+          </div>
+
+          <div class="bundle-option">
+            <div class="checkbox-option">
+              <input type="checkbox" id="bundle-premium" name="bundle-premium" data-monthly="599" class="bundle-option-check" data-bundle-name="Paquete 3 Aplicaciones Estándar" data-max-apps="3">
+              <label for="bundle-premium">
+                <strong>Paquete 3 Aplicaciones Estándar</strong>
+                <span class="addon-price">+$599/mes</span>
+              </label>
+            </div>
+            <div class="bundle-apps" id="premium-apps">
+              <p>Selecciona 3 aplicaciones:</p>
+              <div class="app-option">
+                <input type="checkbox" id="app-fox2" name="app-fox2" data-bundle="premium" data-app-name="Fox Sports Premium">
+                <label for="app-fox2">Fox Sports Premium</label>
+              </div>
+              <div class="app-option">
+                <input type="checkbox" id="app-nba2" name="app-nba2" data-bundle="premium" data-app-name="NBA League PASS">
+                <label for="app-nba2">NBA League PASS</label>
+              </div>
+              <div class="app-option">
+                <input type="checkbox" id="app-hbo-max2" name="app-hbo-max2" data-bundle="premium" data-app-name="HBO MAX">
+                <label for="app-hbo-max2">HBO MAX</label>
+              </div>
+              <div class="app-option">
+                <input type="checkbox" id="app-disney2" name="app-disney2" data-bundle="premium" data-app-name="DISNEY+ Estandar">
+                <label for="app-disney2">DISNEY+ Estandar</label>
+              </div>
+              <div class="selection-limit" id="premium-limit" style="display: none;">Límite alcanzado: Solo puedes seleccionar 3 aplicaciones</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button id="confirm-selection">Confirmar selección y enviar por WhatsApp</button>
+    </section>
+  </section>
+
+  <script>
+    // Variables globales
+    let selectedPlan = null;
+    let selectedAddons = [];
+    
+    // Función para cambiar entre secciones
+    document.getElementById('view-plans-btn').addEventListener('click', function() {
+      document.getElementById('main-section').style.display = 'none';
+      document.getElementById('main-header').style.display = 'none'; // Ocultar header
+      document.getElementById('plans-section').style.display = 'block';
+      document.body.style.backgroundColor = '#f5f5f5'; // Cambiar fondo para la sección de planes
+      document.body.style.paddingTop = '0'; // Quitar padding para el header
+    });
+    
+    document.getElementById('back-to-main').addEventListener('click', function() {
+      document.getElementById('plans-section').style.display = 'none';
+      document.getElementById('addons-section').style.display = 'none';
+      document.getElementById('main-section').style.display = 'block';
+      document.getElementById('main-header').style.display = 'flex'; // Mostrar header
+      document.body.style.backgroundColor = 'black'; // Restaurar fondo negro
+      document.body.style.paddingTop = '70px'; // Restaurar padding para el header
+      
+      // En dispositivos móviles
+      if (window.innerWidth <= 768) {
+        document.body.style.paddingTop = '120px';
+      }
+    });
+    
+    // Tab functionality
+    document.querySelectorAll('.tab-button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+    
+    // Botón para volver a planes
+    document.getElementById('back-to-plans').addEventListener('click', function() {
+      document.getElementById('plans-section').style.display = 'block';
+      document.getElementById('addons-section').style.display = 'none';
+    });
+    
+    // Selección de plan
+    document.querySelectorAll('.select-plan').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const card = this.closest('.card');
+        selectedPlan = {
+          name: card.dataset.plan,
+          price: parseInt(card.dataset.price),
+          hasTv: card.dataset.hasTv === 'true'
+        };
         
-        // Tab functionality
-        document.querySelectorAll('.tab-button').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
-                document.getElementById(btn.dataset.tab).classList.add('active');
-            });
-        });
+        // Ocultar sección de planes y mostrar adicionales
+        document.getElementById('plans-section').style.display = 'none';
+        document.getElementById('addons-section').style.display = 'block';
         
-        // Plan selection
-        document.querySelectorAll('.btn-card').forEach(btn => {
-            if (btn.dataset.plan) {
-                btn.addEventListener('click', () => {
-                    selectedPlan = btn.dataset.plan;
-                    selectedPlanPrice = parseInt(btn.dataset.price);
-                    selectedAdditionals = [];
-                    
-                    // Mostrar sección de adicionales
-                    document.getElementById('additional-section').style.display = 'block';
-                    
-                    // Scroll a la sección de adicionales
-                    document.getElementById('additional-section').scrollIntoView({ behavior: 'smooth' });
-                    
-                    // Resetear selección de adicionales
-                    document.querySelectorAll('.additional-item').forEach(item => {
-                        item.classList.remove('selected');
-                    });
-                });
+        // Mostrar información del plan seleccionado
+        document.getElementById('selected-plan-name').textContent = selectedPlan.name;
+        document.getElementById('selected-plan-price').textContent = selectedPlan.price;
+        
+        // Mostrar/ocultar opciones de TV adicional según el plan
+        const tvAddons = document.getElementById('tv-addons');
+        if (selectedPlan.hasTv) {
+          tvAddons.classList.remove('hidden');
+        } else {
+          tvAddons.classList.add('hidden');
+          // Desmarcar opciones de TV si estaban seleccionadas
+          document.querySelectorAll('#tv-addons input[type="checkbox"]').forEach(cb => {
+            cb.checked = false;
+          });
+        }
+        
+        // Actualizar resumen
+        updateSummary();
+        
+        // Calcular precio total
+        calculateTotalPrice();
+      });
+    });
+    
+    // Manejo de opciones de streaming (solo una seleccionada)
+    document.querySelectorAll('.streaming-option').forEach(option => {
+      option.addEventListener('change', function() {
+        if (this.checked) {
+          // Desmarcar otras opciones de streaming
+          document.querySelectorAll('.streaming-option').forEach(otherOption => {
+            if (otherOption !== this) {
+              otherOption.checked = false;
             }
-        });
-        
-        // Selección de adicionales (solo uno de Netflix)
-        document.querySelectorAll('.additional-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const additionalType = item.dataset.additional;
-                
-                // Si es un plan de Netflix, deseleccionar otros Netflix
-                if (additionalType.includes('Netflix')) {
-                    document.querySelectorAll('.additional-item').forEach(netflixItem => {
-                        if (netflixItem.dataset.additional.includes('Netflix')) {
-                            netflixItem.classList.remove('selected');
-                            // Eliminar de los adicionales seleccionados
-                            selectedAdditionals = selectedAdditionals.filter(a => !a.name.includes('Netflix'));
-                        }
-                    });
-                }
-                
-                // Toggle selección
-                item.classList.toggle('selected');
-                
-                // Agregar o eliminar de los adicionales seleccionados
-                if (item.classList.contains('selected')) {
-                    selectedAdditionals.push({
-                        name: item.dataset.additional,
-                        price: parseInt(item.dataset.price)
-                    });
-                } else {
-                    selectedAdditionals = selectedAdditionals.filter(a => a.name !== item.dataset.additional);
-                }
-            });
-        });
-        
-        // Continuar al resumen
-        document.getElementById('continue-summary').addEventListener('click', () => {
-            // Actualizar resumen
-            document.getElementById('summary-plan').textContent = `${selectedPlan} - $${selectedPlanPrice}/mes`;
-            
-            // Limpiar adicionales anteriores
-            const additionalsContainer = document.getElementById('summary-additionals');
-            additionalsContainer.innerHTML = '';
-            
-            // Agregar adicionales seleccionados
-            let totalPrice = selectedPlanPrice;
-            
-            selectedAdditionals.forEach(additional => {
-                const additionalElement = document.createElement('div');
-                additionalElement.className = 'summary-item';
-                additionalElement.innerHTML = `
-                    <span>${additional.name}:</span>
-                    <span>$${additional.price}/mes</span>
-                `;
-                additionalsContainer.appendChild(additionalElement);
-                totalPrice += additional.price;
-            });
-            
-            // Actualizar total
-            document.getElementById('summary-total').textContent = `$${totalPrice}/mes`;
-            
-            // Mostrar resumen
-            document.getElementById('summary-section').style.display = 'block';
-            
-            // Scroll al resumen
-            document.getElementById('summary-section').scrollIntoView({ behavior: 'smooth' });
-        });
-        
-        // Confirmar pedido
-        document.getElementById('confirm-order').addEventListener('click', () => {
-            // Calcular total
-            let totalPrice = selectedPlanPrice;
-            selectedAdditionals.forEach(additional => {
-                totalPrice += additional.price;
-            });
-            
-            // Crear mensaje para WhatsApp
-            let message = `Hola, me interesa contratar el siguiente plan:\n\n`;
-            message += `*Plan:* ${selectedPlan} - $${selectedPlanPrice}/mes\n\n`;
-            
-            if (selectedAdditionals.length > 0) {
-                message += `*Adicionales:*\n`;
-                selectedAdditionals.forEach(additional => {
-                    message += `- ${additional.name}: $${additional.price}/mes\n`;
-                });
-                message += `\n`;
+          });
+        }
+        updateSummary();
+        calculateTotalPrice();
+      });
+    });
+    
+    // Manejo de bundles (solo uno seleccionado)
+    document.querySelectorAll('.bundle-option-check').forEach(option => {
+      option.addEventListener('change', function() {
+        if (this.checked) {
+          // Desmarcar otros bundles
+          document.querySelectorAll('.bundle-option-check').forEach(otherOption => {
+            if (otherOption !== this) {
+              otherOption.checked = false;
+              // Ocultar apps de otros bundles
+              const bundleId = otherOption.id.replace('bundle-', '');
+              document.getElementById(`${bundleId}-apps`).style.display = 'none';
+              // Ocultar mensaje de límite
+              document.getElementById(`${bundleId}-limit`).style.display = 'none';
             }
+          });
+          // Mostrar apps del bundle seleccionado
+          const bundleId = this.id.replace('bundle-', '');
+          document.getElementById(`${bundleId}-apps`).style.display = 'block';
+        } else {
+          // Ocultar apps si se desmarca
+          const bundleId = this.id.replace('bundle-', '');
+          document.getElementById(`${bundleId}-apps`).style.display = 'none';
+          // Ocultar mensaje de límite
+          document.getElementById(`${bundleId}-limit`).style.display = 'none';
+        }
+        updateSummary();
+        calculateTotalPrice();
+      });
+    });
+    
+    // Manejo de aplicaciones dentro de bundles
+    document.querySelectorAll('.app-option input[type="checkbox"]').forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        const bundleId = this.dataset.bundle;
+        const bundleCheckbox = document.getElementById(`bundle-${bundleId}`);
+        
+        if (bundleCheckbox && bundleCheckbox.checked) {
+          const maxApps = parseInt(bundleCheckbox.dataset.maxApps);
+          const selectedApps = document.querySelectorAll(`.app-option input[type="checkbox"][data-bundle="${bundleId}"]:checked`);
+          
+          // Mostrar u ocultar mensaje de límite
+          const limitMessage = document.getElementById(`${bundleId}-limit`);
+          if (selectedApps.length >= maxApps) {
+            limitMessage.style.display = 'block';
             
-            message += `*Total mensual:* $${totalPrice}/mes`;
+            // Deshabilitar checkboxes no seleccionados
+            document.querySelectorAll(`.app-option input[type="checkbox"][data-bundle="${bundleId}"]:not(:checked)`).forEach(cb => {
+              cb.disabled = true;
+            });
+          } else {
+            limitMessage.style.display = 'none';
             
-            // Codificar mensaje para URL
-            const encodedMessage = encodeURIComponent(message);
+            // Habilitar todos los checkboxes
+            document.querySelectorAll(`.app-option input[type="checkbox"][data-bundle="${bundleId}"]`).forEach(cb => {
+              cb.disabled = false;
+            });
+          }
+          
+          // Si se supera el límite, desmarcar el último seleccionado
+          if (selectedApps.length > maxApps) {
+            this.checked = false;
             
-            // Redirigir a WhatsApp
-            window.location.href = `https://api.whatsapp.com/send?phone=528131191393&text=${encodedMessage}`;
+            // Volver a calcular
+            const newSelectedApps = document.querySelectorAll(`.app-option input[type="checkbox"][data-bundle="${bundleId}"]:checked`);
+            if (newSelectedApps.length >= maxApps) {
+              limitMessage.style.display = 'block';
+              document.querySelectorAll(`.app-option input[type="checkbox"][data-bundle="${bundleId}"]:not(:checked)`).forEach(cb => {
+                cb.disabled = true;
+              });
+            }
+          }
+        }
+        
+        updateSummary();
+        calculateTotalPrice();
+      });
+    });
+    
+    // Inicialmente ocultar todas las apps de bundles
+    document.querySelectorAll('.bundle-apps').forEach(apps => {
+      apps.style.display = 'none';
+    });
+    
+    // Manejo de cambios en adicionales
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      if (!checkbox.classList.contains('streaming-option') && 
+          !checkbox.classList.contains('bundle-option-check') &&
+          !checkbox.closest('.bundle-apps')) {
+        checkbox.addEventListener('change', function() {
+          updateSummary();
+          calculateTotalPrice();
         });
-    </script>
+      }
+    });
+    
+    // Función para actualizar el resumen
+    function updateSummary() {
+      const summaryContainer = document.getElementById('summary-items');
+      summaryContainer.innerHTML = '';
+      
+      // Agregar plan base
+      if (selectedPlan) {
+        const planItem = document.createElement('div');
+        planItem.className = 'summary-item';
+        planItem.innerHTML = `
+          <span class="name">${selectedPlan.name}</span>
+          <span class="price">$${selectedPlan.price}/mes</span>
+        `;
+        summaryContainer.appendChild(planItem);
+      }
+      
+      // Agregar adicionales seleccionados
+      selectedAddons = [];
+      
+      // Streaming options
+      document.querySelectorAll('.streaming-option:checked').forEach(checkbox => {
+        const price = parseInt(checkbox.dataset.monthly) || 0;
+        const labelText = checkbox.closest('.checkbox-option').querySelector('strong').textContent;
+        
+        selectedAddons.push({
+          name: labelText,
+          price: price
+        });
+        
+        const addonItem = document.createElement('div');
+        addonItem.className = 'summary-item';
+        addonItem.innerHTML = `
+          <span class="name">${labelText}</span>
+          <span class="price">+$${price}/mes</span>
+        `;
+        summaryContainer.appendChild(addonItem);
+      });
+      
+      // Bundles
+      document.querySelectorAll('.bundle-option-check:checked').forEach(bundleCheckbox => {
+        const price = parseInt(bundleCheckbox.dataset.monthly) || 0;
+        const bundleName = bundleCheckbox.dataset.bundleName;
+        
+        // Agregar el bundle al resumen
+        const bundleItem = document.createElement('div');
+        bundleItem.className = 'summary-item';
+        bundleItem.innerHTML = `
+          <span class="name">${bundleName}</span>
+          <span class="price">+$${price}/mes</span>
+        `;
+        summaryContainer.appendChild(bundleItem);
+        
+        // Agregar las aplicaciones seleccionadas dentro del bundle
+        const bundleId = bundleCheckbox.id.replace('bundle-', '');
+        const selectedApps = [];
+        
+        document.querySelectorAll(`.bundle-apps#${bundleId}-apps input[type="checkbox"]:checked`).forEach(appCheckbox => {
+          const appName = appCheckbox.dataset.appName;
+          selectedApps.push(appName);
+          
+          const appItem = document.createElement('div');
+          appItem.className = 'summary-subitem';
+          appItem.innerHTML = `
+            <span class="name">${appName}</span>
+            <span class="price">Incluido</span>
+          `;
+          summaryContainer.appendChild(appItem);
+        });
+        
+        selectedAddons.push({
+          name: bundleName,
+          price: price,
+          apps: selectedApps
+        });
+      });
+      
+      // Otros adicionales (dispositivos, TV adicional, etc.)
+      document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+        if (!checkbox.classList.contains('streaming-option') && 
+            !checkbox.classList.contains('bundle-option-check') &&
+            !checkbox.closest('.bundle-apps')) {
+          
+          const price = parseInt(checkbox.dataset.monthly) || 0;
+          let labelText = '';
+          
+          if (checkbox.closest('.checkbox-option')) {
+            labelText = checkbox.closest('.checkbox-option').querySelector('strong').textContent;
+          }
+          
+          selectedAddons.push({
+            name: labelText,
+            price: price
+          });
+          
+          const addonItem = document.createElement('div');
+          addonItem.className = 'summary-item';
+          addonItem.innerHTML = `
+            <span class="name">${labelText}</span>
+            <span class="price">+$${price}/mes</span>
+          `;
+          summaryContainer.appendChild(addonItem);
+        }
+      });
+    }
+    
+    // Función para calcular el precio total
+    function calculateTotalPrice() {
+      let total = selectedPlan ? selectedPlan.price : 0;
+      
+      // Calcular adicionales seleccionados
+      document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+        if (!checkbox.closest('.bundle-apps')) {
+          const price = parseInt(checkbox.dataset.monthly) || 0;
+          total += price;
+        }
+      });
+      
+      // Actualizar precio total
+      document.getElementById('final-price').textContent = total;
+    }
+    
+    // Confirmar selección y enviar por WhatsApp
+    document.getElementById('confirm-selection').addEventListener('click', function() {
+      if (!selectedPlan) {
+        alert('Por favor, selecciona un plan primero.');
+        return;
+      }
+      
+      // Validar selección de aplicaciones en bundles
+      let validSelection = true;
+      document.querySelectorAll('.bundle-option-check:checked').forEach(bundleCheckbox => {
+        const bundleId = bundleCheckbox.id.replace('bundle-', '');
+        const maxApps = parseInt(bundleCheckbox.dataset.maxApps);
+        const selectedApps = document.querySelectorAll(`.app-option input[type="checkbox"][data-bundle="${bundleId}"]:checked`);
+        
+        if (selectedApps.length > maxApps) {
+          validSelection = false;
+          alert(`En el ${bundleCheckbox.dataset.bundleName} solo puedes seleccionar ${maxApps} aplicaciones.`);
+        }
+      });
+      
+      if (!validSelection) return;
+      
+      // Crear mensaje para WhatsApp
+      let message = `¡Hola! Me interesa contratar el siguiente plan:\n\n`;
+      message += `*Plan:* ${selectedPlan.name}\n`;
+      message += `*Precio base:* $${selectedPlan.price}/mes\n\n`;
+      
+      if (selectedAddons.length > 0) {
+        message += `*Adicionales seleccionados:*\n`;
+        selectedAddons.forEach(addon => {
+          if (addon.apps) {
+            // Es un bundle con aplicaciones
+            message += `- ${addon.name}: +$${addon.price}/mes\n`;
+            addon.apps.forEach(app => {
+              message += `  • ${app}\n`;
+            });
+          } else {
+            message += `- ${addon.name}: +$${addon.price}/mes\n`;
+          }
+        });
+        message += `\n`;
+      }
+      
+      message += `*Precio total:* $${document.getElementById('final-price').textContent}/mes\n\n`;
+      message += `Me gustaría recibir más información.`;
+      
+      // Codificar mensaje para URL
+      const encodedMessage = encodeURIComponent(message);
+      
+      // Redirigir a WhatsApp
+      window.open(`https://api.whatsapp.com/send?phone=528131191393&text=${encodedMessage}`, '_blank');
+    });
+  </script>
 </body>
 </html>
