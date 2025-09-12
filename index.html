@@ -85,6 +85,15 @@
             align-items: center;
             border-radius: 0.5rem;
         }
+        .discount-badge {
+            background-color: #10b981;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-white">
@@ -212,6 +221,14 @@
                             <span>Total Mensual:</span>
                             <span id="summary-total" class="text-indigo-400">$0</span>
                         </div>
+                        <div class="flex justify-between items-center text-lg text-green-400 mt-2">
+                            <span>Bono de Bienvenida:</span>
+                            <span id="summary-discount">-$0</span>
+                        </div>
+                        <div class="flex justify-between items-center text-xl font-bold mt-2 pt-2 border-t border-slate-700">
+                            <span>Pago Inicial:</span>
+                            <span id="summary-install-price" class="text-indigo-400">$0</span>
+                        </div>
                     </div>
                     <button id="btn-continue" type="button" class="mt-6 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 disabled:bg-slate-600 disabled:cursor-not-allowed flex items-center justify-center gap-2" disabled>
                         <span id="continue-text">Enviar solicitud por WhatsApp</span>
@@ -234,7 +251,7 @@
                     <div class="font-bold text-right">- Carlos M.</div>
                 </div>
                 <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                    <p class="text-slate-400 mb-6">"Contratar fue muy sencillo y sin tanto rollo. Me gustaron las promociones que me ofreció y el servicio ha sido muy estable desde el primer día."</p>
+                    <p class="text-slate-400 mb-6">"Contratar fue muy sencillo y sin tanto rollo. Me gustaron las promociones que me offreció y el servicio ha sido muy estable desde el primer día."</p>
                     <div class="font-bold text-right">- Laura V.</div>
                 </div>
             </div>
@@ -265,6 +282,24 @@
             // --- CONFIGURATION ---
             const WHATSAPP_NUMBER = '5218131191393'; // Replace with your number
             const MAKE_WEBHOOK_URL = 'https://hook.eu2.make.com/jigm042t5atf3tci3j82n3cxysiva3f0'; // Webhook de Make.com
+            
+            // Descuentos por tipo de plan (2P = solo internet, 3P = internet + TV)
+            const discountData = {
+                '2P': {
+                    100: 150, // 100 Megas: $150 de descuento
+                    200: 200, // 200 Megas: $200 de descuento
+                    300: 200, // 300 Megas: $200 de descuento
+                    500: 200, // 500 Megas: $200 de descuento
+                    1200: 350  // 1200 Megas: $350 de descuento
+                },
+                '3P': {
+                    100: 250, // 100 Megas + TV: $250 de descuento
+                    200: 300, // 200 Megas + TV: $300 de descuento
+                    300: 300, // 300 Megas + TV: $300 de descuento
+                    500: 300, // 500 Megas + TV: $300 de descuento
+                    1200: 450  // 1200 Megas + TV: $450 de descuento
+                }
+            };
             
             // Eventos personalizados para Facebook Pixel
             function trackFacebookEvent(eventName, parameters) {
@@ -322,7 +357,9 @@
                 streaming: { service: null, tier: null, price: 0 },
                 appPackage: { data: null, selectedApps: [], price: 0 },
                 devices: [], 
-                total: 0
+                total: 0,
+                discount: 0,
+                installPrice: 0
             };
 
             // --- DOM ELEMENTS ---
@@ -337,6 +374,8 @@
                 formInputs: document.querySelectorAll('#contact-form input'),
                 summaryContent: document.getElementById('summary-content'),
                 summaryTotal: document.getElementById('summary-total'),
+                summaryDiscount: document.getElementById('summary-discount'),
+                summaryInstallPrice: document.getElementById('summary-install-price'),
                 continueText: document.getElementById('continue-text'),
                 continueLoader: document.getElementById('continue-loader'),
                 planTypeButtons: document.querySelectorAll('.plan-type-btn'),
@@ -379,6 +418,7 @@
                 selection.planType = type;
                 dom.planCardsContainer.innerHTML = '';
                 plansData[type].forEach(plan => {
+                    const discount = discountData[type === 'internet' ? '2P' : '3P'][plan.megas];
                     const card = `
                         <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 text-center flex flex-col relative">
                             ${plan.recommended ? '<div class="recommended-badge">Recomendado</div>' : ''}
@@ -388,9 +428,10 @@
                             <div class="my-6">
                                 <span class="text-4xl font-extrabold text-white ml-2">$${plan.price}</span>
                                 <span class="text-slate-400">/mes</span>
+                                ${discount > 0 ? `<div class="mt-2 text-green-400 font-semibold">Bono de Bienvenida: $${discount}</div>` : ''}
                             </div>
                             <button class="select-plan-btn mt-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full w-full transition-colors duration-300"
-                                data-megas="${plan.megas}" data-price="${plan.price}">
+                                data-megas="${plan.megas}" data-price="${plan.price}" data-discount="${discount}">
                                 Seleccionar Plan
                             </button>
                         </div>
@@ -555,16 +596,29 @@
                         </ul>`;
                 }
                 
+                // Calcular descuento según tipo de plan
+                const planTypeKey = selection.planType === 'internet' ? '2P' : '3P';
+                selection.discount = discountData[planTypeKey][selection.plan.megas] || 0;
+                
+                // CORRECCIÓN: Pago inicial es solo el total mensual menos el bono de bienvenida
                 selection.total = total;
+                selection.installPrice = selection.total - selection.discount;
+                
                 dom.summaryContent.innerHTML = summaryHTML;
-                dom.summaryTotal.textContent = `$${total}`;
+                dom.summaryTotal.textContent = `$${selection.total}`;
+                dom.summaryDiscount.textContent = `-$${selection.discount}`;
+                dom.summaryInstallPrice.textContent = `$${selection.installPrice}`;
             }
             
             function handlePlanSelection(e) {
                 if (!e.target.classList.contains('select-plan-btn')) return;
                 
-                const { megas, price } = e.target.dataset;
-                selection.plan = { megas: parseInt(megas), price: parseInt(price) };
+                const { megas, price, discount } = e.target.dataset;
+                selection.plan = { 
+                    megas: parseInt(megas), 
+                    price: parseInt(price),
+                    discount: parseInt(discount)
+                };
                 
                 // Track event for Facebook Pixel
                 trackFacebookEvent('AddToCart', {
@@ -752,13 +806,6 @@
                 return adicionalesText || 'Ninguno';
             }
 
-            // Función para calcular el pago inicial (ejemplo: primer mes + instalación)
-            function calcularPagoInicial() {
-                // Suponemos que el pago inicial es el primer mes + $500 de instalación (que normalmente es gratis en promoción)
-                // Puedes ajustar esta lógica según tus necesidades
-                return selection.total + 500;
-            }
-
             // Función para crear el resumen completo
             function crearResumenCompleto() {
                 let resumen = `SERVICIO: ${selection.planType === 'internet' ? 'Solo Internet' : 'Internet + TV'}\n`;
@@ -788,7 +835,8 @@
                     }
                 }
                 
-                resumen += `\nPAGO INICIAL: $${calcularPagoInicial()}\n`;
+                resumen += `\nBONO DE BIENVENIDA: $${selection.discount}\n`;
+                resumen += `PAGO INICIAL: $${selection.installPrice}\n`;
                 resumen += `FECHA: ${new Date().toLocaleString('es-MX')}`;
                 
                 return resumen;
@@ -806,7 +854,7 @@
                         adicionales: formatAdicionales(), // Columna F (formateado como texto)
                         opcion_regalo: "Por definir", // Columna G (puedes personalizar esto)
                         total_mensual: formData.total, // Columna H
-                        pago_inicial: calcularPagoInicial(), // Columna I
+                        pago_inicial: formData.installPrice, // Columna I
                         fecha: new Date().toLocaleString('es-MX'), // Columna J
                         resumen: crearResumenCompleto() // Columna K
                     };
@@ -863,7 +911,9 @@
                             precio: d.price
                         })) : []
                     },
-                    total: selection.total
+                    total: selection.total,
+                    discount: selection.discount,
+                    installPrice: selection.installPrice
                 };
 
                 // Track event for Facebook Pixel - Purchase
@@ -917,7 +967,10 @@
                     message += "\n";
                 }
                 
-                message += `*Total mensual estimado: $${formData.total}*\n\n*Mis datos de contacto son:*\nCorreo: ${formData.correo}\nTeléfono: ${formData.telefono}`;
+                message += `*Total mensual estimado: $${formData.total}*\n`;
+                message += `*Bono de bienvenida:* *$${formData.discount}*\n\n`;
+                message += `*Total a pagar al técnico ya instalado su servicio y activo:* *$${formData.installPrice}*\n\n`;
+                message += `*Mis datos de contacto son:*\nCorreo: ${formData.correo}\nTeléfono: ${formData.telefono}`;
                 
                 // Redirigir a WhatsApp
                 const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
