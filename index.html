@@ -9,24 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Facebook Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1766933083922039');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=1766933083922039&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Facebook Pixel Code -->
-    
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -93,6 +75,10 @@
             font-size: 0.75rem;
             font-weight: bold;
             margin-left: 0.5rem;
+        }
+        .disney-promo {
+            background: linear-gradient(135deg, #113ccf 0%, #3500b1 100%);
+            border-left: 4px solid #f5c211;
         }
     </style>
 </head>
@@ -243,7 +229,7 @@
             <h2 class="text-3xl font-bold text-center mb-12">Lo que dicen nuestros clientes</h2>
             <div class="grid lg:grid-cols-3 gap-8">
                 <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                    <p class="text-slate-400 mb-6">"La atención de Juan fue excelente. Me explicó todo con claridad y la instalación fue súper rápida. El internet vuela, ¡100% recomendado!"</p>
+                    <p class="text-slate-400 mb-6">"La atención de Juan fue excelente. Me explicó todo con claridad и установка была супер быстрой. Интернет летает, 100% рекомендую!"</p>
                     <div class="font-bold text-right">- Sofía G.</div>
                 </div>
                 <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
@@ -337,6 +323,28 @@
                         ]
                     }
                 },
+                disney: {
+                    id: 'disney', 
+                    name: 'Disney+', 
+                    tiers: [
+                        { 
+                            id: 'disney-estandar', 
+                            name: 'Disney+ Estándar', 
+                            price: 89, 
+                            promo: '4 meses', 
+                            regularPrice: 249, 
+                            description: 'Para 2 dispositivos a la vez sin publicidad' 
+                        },
+                        { 
+                            id: 'disney-premium', 
+                            name: 'Disney+ Premium', 
+                            price: 95, 
+                            promo: '4 meses', 
+                            regularPrice: 319, 
+                            description: 'Para 4 dispositivos a la vez sin publicidad' 
+                        }
+                    ]
+                },
                 app_packages: [
                     { id: 'paq-basico', name: 'Paquete 2 Apps Básicas', price: 199, limit: 2, apps: [ 'Amazon Prime', 'HBO con Anuncios', 'Paramount+' ] },
                     { id: 'paq-estandar-2', name: 'Paquete 2 Apps Estándar', price: 399, limit: 2, apps: [ 'Fox Sports Premium', 'NBA League Pass', 'HBO MAX', 'Disney+ Estándar' ] },
@@ -355,6 +363,7 @@
                 plan: null, 
                 planType: 'internet',
                 streaming: { service: null, tier: null, price: 0 },
+                disney: { service: null, tier: null, price: 0 },
                 appPackage: { data: null, selectedApps: [], price: 0 },
                 devices: [], 
                 total: 0,
@@ -441,7 +450,7 @@
             }
 
             function renderAddonsOptions() {
-                const { streaming, app_packages, devices } = addonsData;
+                const { streaming, disney, app_packages, devices } = addonsData;
                 const isTvPlan = selection.planType === 'combo';
                 
                 let streamingOptions = `
@@ -465,6 +474,23 @@
                             <input type="radio" name="netflix-tier" value="${tier.id}" class="custom-radio"> 
                             <span class="ml-3">${tier.name} (+$${tier.price})</span>
                         </label>`;
+                });
+                
+                let disneyOptions = `
+                    <label class="flex items-center p-3 bg-slate-700 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                        <input type="radio" name="disney" value="none" class="custom-radio" checked> 
+                        <span class="ml-3">Ninguno</span>
+                    </label>`;
+                
+                disney.tiers.forEach(tier => {
+                    disneyOptions += `
+                        <label class="flex items-center p-3 bg-slate-700 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                            <input type="radio" name="disney" value="${tier.id}" class="custom-radio"> 
+                            <span class="ml-3">${tier.name} (+$${tier.price} por ${tier.promo})</span>
+                        </label>
+                        <div class="disney-promo p-3 rounded-lg mb-3 ml-6">
+                            <p class="text-sm text-white">${tier.description}. A partir del 5to mes: $${tier.regularPrice}</p>
+                        </div>`;
                 });
                 
                 let appPackageOptions = '';
@@ -498,7 +524,13 @@
                         </div>
                     </div>
                     <div class="bg-slate-800 p-6 rounded-2xl">
-                        <h3 class="text-xl font-bold mb-4">2. Elige un paquete de Apps (opcional)</h3>
+                        <h3 class="text-xl font-bold mb-4">2. Elige Disney+ (opcional)</h3>
+                        <div class="space-y-3" id="disney-choice">
+                            ${disneyOptions}
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold mb-4">3. Elige un paquete de Apps (opcional)</h3>
                         <div class="space-y-3" id="package-choice">
                             <label class="flex items-center p-3 bg-slate-700 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
                                 <input type="radio" name="app-package" value="none" class="custom-radio" checked> 
@@ -509,7 +541,7 @@
                         <div id="package-apps-container" class="mt-4"></div>
                     </div>
                     <div class="bg-slate-800 p-6 rounded-2xl">
-                        <h3 class="text-xl font-bold mb-4">3. Agrega Dispositivos (opcional)</h3>
+                        <h3 class="text-xl font-bold mb-4">4. Agrega Dispositivos (opcional)</h3>
                         <div class="space-y-3" id="device-choice">
                             ${deviceOptions}
                         </div>
@@ -527,10 +559,11 @@
                 }
                 
                 const primeSelected = selection.streaming.service === addonsData.streaming.prime.name;
+                const disneySelected = selection.disney.service !== null;
                 
                 let appOptions = '';
                 pkg.apps.forEach(app => {
-                    const isPermanentlyDisabled = app === 'Amazon Prime' && primeSelected;
+                    const isPermanentlyDisabled = (app === 'Amazon Prime' && primeSelected) || (app === 'Disney+ Estándar' && disneySelected);
                     appOptions += `
                         <label class="flex items-center p-2 rounded-md transition-opacity ${isPermanentlyDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-slate-600'}">
                             <input type="checkbox" name="package-app" value="${app}" class="custom-checkbox" 
@@ -565,6 +598,11 @@
                 if (selection.streaming.price > 0) {
                     addonsSummary += `<li>${selection.streaming.tier ? `${selection.streaming.service} (${selection.streaming.tier})` : selection.streaming.service}: +$${selection.streaming.price}</li>`;
                     total += selection.streaming.price;
+                }
+                
+                if (selection.disney.price > 0) {
+                    addonsSummary += `<li>${selection.disney.tier ? `${selection.disney.service} (${selection.disney.tier})` : selection.disney.service}: +$${selection.disney.price}</li>`;
+                    total += selection.disney.price;
                 }
                 
                 if (selection.appPackage.price > 0) {
@@ -668,7 +706,7 @@
                             currency: 'MXN'
                         });
                     } else if (value === 'netflix') {
-                        netflixTiers.classList.remove('hidden');
+                        if (netflixTiers) netflixTiers.classList.remove('hidden');
                     } else {
                         if (netflixTiers) netflixTiers.classList.add('hidden');
                     }
@@ -695,6 +733,70 @@
                     });
                 }
                 
+                if (name === 'disney') {
+                    selection.disney = { service: null, tier: null, price: 0 };
+                    
+                    if (value !== 'none') {
+                        const tierData = addonsData.disney.tiers.find(t => t.id === value);
+                        selection.disney = { 
+                            service: addonsData.disney.name, 
+                            tier: tierData.name, 
+                            price: tierData.price 
+                        };
+                        // Track event for Facebook Pixel
+                        trackFacebookEvent('AddToCart', {
+                            content_name: `Disney+ - ${tierData.name}`,
+                            content_ids: [`disney_${tierData.id}`],
+                            content_type: 'product',
+                            value: tierData.price,
+                            currency: 'MXN'
+                        });
+                        
+                        // Si selecciona Disney+, verificar si hay Disney+ en paquete de apps y desmarcarlo
+                        if (selection.appPackage.data && selection.appPackage.selectedApps.includes('Disney+ Estándar')) {
+                            const index = selection.appPackage.selectedApps.indexOf('Disney+ Estándar');
+                            if (index > -1) {
+                                selection.appPackage.selectedApps.splice(index, 1);
+                                
+                                // Actualizar checkboxes en la UI
+                                const checkboxes = document.querySelectorAll('input[name="package-app"]');
+                                checkboxes.forEach(cb => {
+                                    if (cb.value === 'Disney+ Estándar') {
+                                        cb.checked = false;
+                                    }
+                                });
+                                
+                                // Actualizar contador
+                                const group = document.querySelector('.limited-checkbox-group');
+                                if (group) {
+                                    const limit = parseInt(group.dataset.limit);
+                                    const checkedCheckboxes = group.querySelectorAll('input[name="package-app"]:checked');
+                                    const counterElement = group.parentElement.querySelector('.package-selection-counter');
+                                    const messageElement = group.parentElement.querySelector('.package-limit-message');
+                                    
+                                    if (counterElement) {
+                                        counterElement.textContent = `Selecciona hasta ${limit} app${limit !== 1 ? 's' : ''}: (${checkedCheckboxes.length}/${limit})`;
+                                    }
+                                    
+                                    if (checkedCheckboxes.length < limit && messageElement) {
+                                        messageElement.classList.add('hidden');
+                                        group.querySelectorAll('input[name="package-app"]').forEach(cb => {
+                                            if (cb.dataset.permanentlyDisabled !== 'true') {
+                                                cb.disabled = false;
+                                                cb.parentElement.classList.remove('opacity-50', 'cursor-not-allowed');
+                                            }
+                                        });
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    if (selection.appPackage.data) {
+                        renderPackageApps(selection.appPackage.data.id);
+                    }
+                }
+                
                 if (name === 'app-package') {
                     selection.appPackage = { data: null, selectedApps: [], price: 0 };
                     
@@ -713,6 +815,21 @@
                             value: pkg.price,
                             currency: 'MXN'
                         });
+                        
+                        // Si selecciona un paquete que incluye Disney+ y ya tiene Disney+ seleccionado, desmarcar Disney+
+                        if (pkg.apps.includes('Disney+ Estándar') && selection.disney.service !== null) {
+                            selection.disney = { service: null, tier: null, price: 0 };
+                            
+                            // Actualizar radio buttons de Disney en la UI
+                            const disneyRadios = document.querySelectorAll('input[name="disney"]');
+                            disneyRadios.forEach(radio => {
+                                if (radio.value === 'none') {
+                                    radio.checked = true;
+                                } else {
+                                    radio.checked = false;
+                                }
+                            });
+                        }
                     } 
                     renderPackageApps(value);
                 }
@@ -731,6 +848,21 @@
                     
                     if (counterElement) {
                         counterElement.textContent = `Selecciona hasta ${limit} app${limit !== 1 ? 's' : ''}: (${checkedCheckboxes.length}/${limit})`;
+                    }
+                    
+                    // Si selecciona Disney+ en el paquete de apps, desmarcar Disney+ promocional
+                    if (e.target.checked && e.target.value === 'Disney+ Estándar' && selection.disney.service !== null) {
+                        selection.disney = { service: null, tier: null, price: 0 };
+                        
+                        // Actualizar radio buttons de Disney en la UI
+                        const disneyRadios = document.querySelectorAll('input[name="disney"]');
+                        disneyRadios.forEach(radio => {
+                            if (radio.value === 'none') {
+                                radio.checked = true;
+                            } else {
+                                radio.checked = false;
+                            }
+                        });
                     }
                     
                     if (checkedCheckboxes.length >= limit) {
@@ -790,6 +922,11 @@
                     adicionalesText += `Streaming: ${selection.streaming.tier ? `${selection.streaming.service} (${selection.streaming.tier})` : selection.streaming.service}`;
                 }
                 
+                if (selection.disney.price > 0) {
+                    if (adicionalesText) adicionalesText += ' | ';
+                    adicionalesText += `Disney+: ${selection.disney.tier}`;
+                }
+                
                 if (selection.appPackage.price > 0) {
                     if (adicionalesText) adicionalesText += ' | ';
                     adicionalesText += `Paquete Apps: ${selection.appPackage.data.name}`;
@@ -812,11 +949,15 @@
                 resumen += `PLAN: ${selection.plan.megas} Megas - $${selection.plan.price}/mes\n`;
                 resumen += `TOTAL MENSUAL: $${selection.total}\n`;
                 
-                if (selection.streaming.price > 0 || selection.appPackage.price > 0 || selection.devices.length > 0) {
+                if (selection.streaming.price > 0 || selection.disney.price > 0 || selection.appPackage.price > 0 || selection.devices.length > 0) {
                     resumen += `\nADICIONALES:\n`;
                     
                     if (selection.streaming.price > 0) {
                         resumen += `- ${selection.streaming.tier ? `${selection.streaming.service} (${selection.streaming.tier})` : selection.streaming.service}: $${selection.streaming.price}/mes\n`;
+                    }
+                    
+                    if (selection.disney.price > 0) {
+                        resumen += `- ${selection.disney.tier ? `${selection.disney.service} (${selection.disney.tier})` : selection.disney.service}: $${selection.disney.price}/mes\n`;
                     }
                     
                     if (selection.appPackage.price > 0) {
@@ -908,6 +1049,11 @@
                             plan: selection.streaming.tier,
                             precio: selection.streaming.price
                         } : null,
+                        disney: selection.disney.service ? {
+                            servicio: selection.disney.service,
+                            plan: selection.disney.tier,
+                            precio: selection.disney.price
+                        } : null,
                         paquete_apps: selection.appPackage.data ? {
                             nombre: selection.appPackage.data.name,
                             apps_seleccionadas: selection.appPackage.selectedApps,
@@ -949,11 +1095,15 @@
                 message += `*Servicio:* ${formData.servicio}\n`;
                 message += `*Plan:* ${formData.plan} ($${formData.precio_plan})\n\n`;
                 
-                if (formData.adicionales.streaming || formData.adicionales.paquete_apps || formData.adicionales.dispositivos.length > 0) {
+                if (formData.adicionales.streaming || formData.adicionales.disney || formData.adicionales.paquete_apps || formData.adicionales.dispositivos.length > 0) {
                     message += "Adicionales:\n";
                     
                     if (formData.adicionales.streaming) {
                         message += `- ${formData.adicionales.streaming.servicio}${formData.adicionales.streaming.plan ? ` (${formData.adicionales.streaming.plan})` : ''}: $${formData.adicionales.streaming.precio}\n`;
+                    }
+                    
+                    if (formData.adicionales.disney) {
+                        message += `- ${formData.adicionales.disney.servicio}${formData.adicionales.disney.plan ? ` (${formData.adicionales.disney.plan})` : ''}: $${formData.adicionales.disney.precio}\n`;
                     }
                     
                     if (formData.adicionales.paquete_apps) {
