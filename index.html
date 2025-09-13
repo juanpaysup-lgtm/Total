@@ -852,7 +852,7 @@
                         servicio: formData.servicio, // Columna D
                         plan: formData.plan, // Columna E
                         adicionales: formatAdicionales(), // Columna F (formateado como texto)
-                        opcion_regalo: "Por definir", // Columna G (puedes personalizar esto)
+                        opcion_regalo: `$${selection.discount}`, // Columna G - Bono de bienvenida
                         total_mensual: formData.total, // Columna H
                         pago_inicial: formData.installPrice, // Columna I
                         fecha: new Date().toLocaleString('es-MX'), // Columna J
@@ -881,6 +881,13 @@
             }
 
             async function submitAndRedirect() {
+                // Validar que el formulario esté completo antes de proceder
+                const isFormValid = Array.from(dom.formInputs).every(input => input.checkValidity());
+                if (!isFormValid) {
+                    alert('Por favor completa todos los campos requeridos antes de continuar.');
+                    return;
+                }
+                
                 dom.continueText.classList.add('hidden');
                 dom.continueLoader.classList.remove('hidden');
                 dom.btnContinue.disabled = true;
