@@ -98,6 +98,15 @@
             background: linear-gradient(135deg, #113ccf 0%, #3500b1 100%);
             border-left: 4px solid #f5c211;
         }
+        .promo-tag {
+            background-color: #f59e0b;
+            color: #111827;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-white">
@@ -153,8 +162,8 @@
                     <p class="text-slate-400">Accede a nuestra línea de atención técnica 24/7 con asesores listos para resolver cualquier inconveniente rápidamente.</p>
                 </div>
                 <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 transform hover:-translate-y-2 transition-transform duration-300">
-                    <h3 class="text-xl font-bold text-indigo-400 mb-3">Bono de Bienvenida</h3>
-                    <p class="text-slate-400">Recibe un descuento especial de hasta $450 MXN como agradecimiento por unirte a la red de fibra óptica más rápida.</p>
+                    <h3 class="text-xl font-bold text-indigo-400 mb-3">Instalación Sin Costo</h3>
+                    <p class="text-slate-400">Instalación profesional incluida con valor de $350 MXN. Paga hoy $0 por la instalación de tu servicio.</p>
                 </div>
             </div>
         </section>
@@ -174,6 +183,18 @@
 
                 <div id="plan-cards-container" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                     <!-- Las tarjetas de planes se insertarán aquí con JS -->
+                </div>
+                
+                <!-- Información adicional sobre promociones -->
+                <div class="mt-12 bg-slate-800 p-6 rounded-2xl max-w-4xl mx-auto">
+                    <h3 class="text-xl font-bold mb-4 text-indigo-400">¡Atención! Promociones vigentes</h3>
+                    <ul class="text-left text-slate-300 space-y-3">
+                        <li>✅ <strong>Instalación sin costo:</strong> Valor de $350 MXN, paga hoy $0</li>
+                        <li>✅ <strong>Megas extra:</strong> Válido hasta el 30 de septiembre de 2025</li>
+                        <li>✅ <strong>Descuento Mes Patrio:</strong> Aplicable del 3er al 5to mes</li>
+                        <li>✅ <strong>Descuento de por vida:</strong> Aplicable a partir del 6to mes con pago puntual</li>
+                        <li>✅ <strong>Portabilidad:</strong> ¡Trae tu número y obtén descuento en tu segunda mensualidad!</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -213,6 +234,12 @@
                             <label for="telefono" class="block mb-2 text-sm font-medium text-slate-300">Teléfono (WhatsApp)</label>
                             <input type="tel" id="telefono" name="telefono" class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="10 dígitos" required pattern="\d{10}">
                         </div>
+                        <div class="mb-6">
+                            <label class="flex items-center">
+                                <input type="checkbox" id="portabilidad" name="portabilidad" class="custom-checkbox rounded">
+                                <span class="ml-2 text-slate-300">¿Deseas portar tu número? (Obtén descuento en tu segunda mensualidad)</span>
+                            </label>
+                        </div>
                     </form>
                 </div>
                 <div class="bg-slate-900 p-6 rounded-2xl flex flex-col">
@@ -226,8 +253,8 @@
                             <span id="summary-total" class="text-indigo-400">$0</span>
                         </div>
                         <div class="flex justify-between items-center text-lg text-green-400 mt-2">
-                            <span>Bono de Bienvenida:</span>
-                            <span id="summary-discount">-$0</span>
+                            <span>Costo de Instalación Extra:</span>
+                            <span id="summary-install" class="text-green-400">$0 (Valor $350)</span>
                         </div>
                         <div class="flex justify-between items-center text-xl font-bold mt-2 pt-2 border-t border-slate-700">
                             <span>Pago Inicial:</span>
@@ -247,7 +274,7 @@
             <h2 class="text-3xl font-bold text-center mb-12">Lo que dicen nuestros clientes</h2>
             <div class="grid lg:grid-cols-3 gap-8">
                 <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                    <p class="text-slate-400 mb-6">"La atención de Juan fue excelente. Me explicó todo con claridad и установка была супер быстрой. Интернет летает, 100% рекомендую!"</p>
+                    <p class="text-slate-400 mb-6">"La atención de Juan fue excelente. Me explicó todo con claridad y la instalación fue súper rápida. Internet vuela, 100% recomendado!"</p>
                     <div class="font-bold text-right">- Sofía G.</div>
                 </div>
                 <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
@@ -255,7 +282,7 @@
                     <div class="font-bold text-right">- Carlos M.</div>
                 </div>
                 <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                    <p class="text-slate-400 mb-6">"Contratar fue muy sencillo y sin tanto rollo. Me gustaron las promociones que me offreció y el servicio ha sido muy estable desde el primer día."</p>
+                    <p class="text-slate-400 mb-6">"Contratar fue muy sencillo y sin tanto rollo. Me gustaron las promociones que me ofreció y el servicio ha sido muy estable desde el primer día."</p>
                     <div class="font-bold text-right">- Laura V.</div>
                 </div>
             </div>
@@ -287,22 +314,10 @@
             const WHATSAPP_NUMBER = '5218131191393'; // Replace with your number
             const MAKE_WEBHOOK_URL = 'https://hook.eu2.make.com/jigm042t5atf3tci3j82n3cxysiva3f0'; // Webhook de Make.com
             
-            // Descuentos por tipo de plan (2P = solo internet, 3P = internet + TV)
-            const discountData = {
-                '2P': {
-                    100: 150, // 100 Megas: $150 de descuento
-                    200: 200, // 200 Megas: $200 de descuento
-                    300: 200, // 300 Megas: $200 de descuento
-                    500: 200, // 500 Megas: $200 de descuento
-                    1200: 350  // 1200 Megas: $350 de descuento
-                },
-                '3P': {
-                    100: 250, // 100 Megas + TV: $250 de descuento
-                    200: 300, // 200 Megas + TV: $300 de descuento
-                    300: 300, // 300 Megas + TV: $300 de descuento
-                    500: 300, // 500 Megas + TV: $300 de descuento
-                    1200: 450  // 1200 Megas + TV: $450 de descuento
-                }
+            // Datos de portabilidad
+            const portabilityDiscount = {
+                'internet': 100, // $100 de descuento para planes de Solo Internet
+                'combo': 200     // $200 de descuento para planes de Internet + TV
             };
             
             // Eventos personalizados para Facebook Pixel
@@ -337,18 +352,108 @@
             // --- PLANS AND ADD-ONS DATA ---
             const plansData = {
                 internet: [
-                    { megas: 100, price: 460, desc: "Fibra óptica + Club WiFi Totalplay", recommended: false },
-                    { megas: 200, price: 570, desc: "Fibra óptica + Club WiFi + Apple TV+ 1 año", recommended: true },
-                    { megas: 300, price: 680, desc: "Fibra óptica + Club WiFi + Apple TV+ 1 año", recommended: false },
-                    { megas: 500, price: 830, desc: "Fibra óptica + WiFi 6 + Club WiFi + Apple TV+ 1 año", recommended: false },
-                    { megas: 1200, price: 1470, desc: "Fibra óptica + WiFi 6 + Club WiFi + Apple TV+ 1 año", recommended: false }
+                    { 
+                        megas: 100, 
+                        promoMegas: 200,
+                        regularPrice: 510,
+                        promoPrice: 460, 
+                        desc: "Fibra óptica + Club WiFi Totalplay", 
+                        recommended: false,
+                        discount3to5: 20,
+                        lifetimeDiscount: 20
+                    },
+                    { 
+                        megas: 200, 
+                        promoMegas: 300,
+                        regularPrice: 620,
+                        promoPrice: 570, 
+                        desc: "Fibra óptica + Club WiFi + Apple TV+ 1 año", 
+                        recommended: true,
+                        discount3to5: 20,
+                        lifetimeDiscount: 20
+                    },
+                    { 
+                        megas: 300, 
+                        promoMegas: 500,
+                        regularPrice: 730,
+                        promoPrice: 680, 
+                        desc: "Fibra óptica + Club WiFi + Apple TV+ 1 año", 
+                        recommended: false,
+                        discount3to5: 30,
+                        lifetimeDiscount: 30
+                    },
+                    { 
+                        megas: 500, 
+                        promoMegas: 1200,
+                        regularPrice: 880,
+                        promoPrice: 830, 
+                        desc: "Fibra óptica + WiFi 6 + Club WiFi + Apple TV+ 1 año", 
+                        recommended: false,
+                        discount3to5: 50,
+                        lifetimeDiscount: 60
+                    },
+                    { 
+                        megas: 1200, 
+                        promoMegas: 1200,
+                        regularPrice: 1550,
+                        promoPrice: 1470, 
+                        desc: "Fibra óptica + WiFi 6 + Club WiFi + Apple TV+ 1 año", 
+                        recommended: false,
+                        discount3to5: 80,
+                        lifetimeDiscount: 80
+                    }
                 ],
                 combo: [
-                    { megas: 100, price: 600, desc: "185 canales + Convertidor Smart TV", recommended: false },
-                    { megas: 200, price: 710, desc: "185 canales + Convertidor Smart TV + Alexa + Apple TV+ 1 año", recommended: true },
-                    { megas: 300, price: 820, desc: "185 canales + Convertidor Smart TV + Alexa + Apple TV+ 1 año", recommended: false },
-                    { megas: 500, price: 1000, desc: "185 canales + Convertidor Smart TV + Alexa + Bocinas B&O + Apple TV+ 1 año", recommended: false },
-                    { megas: 1200, price: 1640, desc: "185 canales + Convertidor Smart TV + Alexa + Bocinas B&O + Apple TV+ 1 año", recommended: false }
+                    { 
+                        megas: 100, 
+                        promoMegas: 200,
+                        regularPrice: 650,
+                        promoPrice: 600, 
+                        desc: "185 canales + Convertidor Smart TV", 
+                        recommended: false,
+                        discount3to5: 30,
+                        lifetimeDiscount: 30
+                    },
+                    { 
+                        megas: 200, 
+                        promoMegas: 300,
+                        regularPrice: 760,
+                        promoPrice: 710, 
+                        desc: "185 canales + Convertidor Smart TV + Alexa + Apple TV+ 1 año", 
+                        recommended: true,
+                        discount3to5: 30,
+                        lifetimeDiscount: 30
+                    },
+                    { 
+                        megas: 300, 
+                        promoMegas: 500,
+                        regularPrice: 870,
+                        promoPrice: 820, 
+                        desc: "185 canales + Convertidor Smart TV + Alexa + Apple TV+ 1 año", 
+                        recommended: false,
+                        discount3to5: 40,
+                        lifetimeDiscount: 40
+                    },
+                    { 
+                        megas: 500, 
+                        promoMegas: 1200,
+                        regularPrice: 1050,
+                        promoPrice: 1000, 
+                        desc: "185 canales + Convertidor Smart TV + Alexa + Bocinas B&O + Apple TV+ 1 año", 
+                        recommended: false,
+                        discount3to5: 50,
+                        lifetimeDiscount: 50
+                    },
+                    { 
+                        megas: 1200, 
+                        promoMegas: 1200,
+                        regularPrice: 1720,
+                        promoPrice: 1640, 
+                        desc: "185 canales + Convertidor Smart TV + Alexa + Bocinas B&O + Apple TV+ 1 año", 
+                        recommended: false,
+                        discount3to5: 100,
+                        lifetimeDiscount: 100
+                    }
                 ]
             };
 
@@ -407,8 +512,9 @@
                 appPackage: { data: null, selectedApps: [], price: 0 },
                 devices: [], 
                 total: 0,
-                discount: 0,
-                installPrice: 0
+                portability: false,
+                installPrice: 350,
+                portabilityDiscount: 0
             };
 
             // --- DOM ELEMENTS ---
@@ -423,7 +529,7 @@
                 formInputs: document.querySelectorAll('#contact-form input'),
                 summaryContent: document.getElementById('summary-content'),
                 summaryTotal: document.getElementById('summary-total'),
-                summaryDiscount: document.getElementById('summary-discount'),
+                summaryInstall: document.getElementById('summary-install'),
                 summaryInstallPrice: document.getElementById('summary-install-price'),
                 continueText: document.getElementById('continue-text'),
                 continueLoader: document.getElementById('continue-loader'),
@@ -432,7 +538,8 @@
                 testimoniosSection: document.getElementById('testimonios'),
                 soporteSection: document.getElementById('soporte'),
                 inicioSection: document.getElementById('inicio'),
-                verPlanesBtn: document.getElementById('ver-planes-btn')
+                verPlanesBtn: document.getElementById('ver-planes-btn'),
+                portabilityCheckbox: document.getElementById('portabilidad')
             };
 
             // --- FUNCTIONS ---
@@ -467,20 +574,35 @@
                 selection.planType = type;
                 dom.planCardsContainer.innerHTML = '';
                 plansData[type].forEach(plan => {
-                    const discount = discountData[type === 'internet' ? '2P' : '3P'][plan.megas];
+                    const isPromoActive = new Date() <= new Date('2025-09-30');
+                    const currentMegas = isPromoActive ? plan.promoMegas : plan.megas;
+                    const currentPrice = isPromoActive ? plan.promoPrice : plan.regularPrice;
+                    
+                    // Verificar si estamos en el período de mostrar Descuento Mes Patrio
+                    const today = new Date();
+                    const showPatrioDiscount = today >= new Date('2025-09-17') && today <= new Date('2025-09-30');
+                    
                     const card = `
                         <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 text-center flex flex-col relative">
                             ${plan.recommended ? '<div class="recommended-badge">Recomendado</div>' : ''}
-                            <h3 class="text-3xl font-bold text-indigo-400">${plan.megas} Megas</h3>
-                            <p class="text-sm font-semibold text-green-400 mt-1">Velocidad Simétrica</p>
+                            <h3 class="text-3xl font-bold text-indigo-400">${currentMegas} Megas ${isPromoActive && currentMegas > plan.megas ? 'x 4 meses' : ''}</h3>
+                            ${isPromoActive && currentMegas > plan.megas ? 
+                                `<p class="text-sm font-semibold text-green-400 mt-1">Después: ${plan.megas} Megas</p>` : 
+                                `<p class="text-sm font-semibold text-green-400 mt-1">Velocidad Simétrica</p>`
+                            }
                             <p class="text-slate-400 mt-4 flex-grow min-h-[6rem]">${plan.desc}</p>
                             <div class="my-6">
-                                <span class="text-4xl font-extrabold text-white ml-2">$${plan.price}</span>
+                                <span class="text-4xl font-extrabold text-white ml-2">$${currentPrice}</span>
                                 <span class="text-slate-400">/mes</span>
-                                ${discount > 0 ? `<div class="mt-2 text-green-400 font-semibold">Bono de Bienvenida: $${discount}</div>` : ''}
+                                ${isPromoActive ? `<div class="text-sm text-slate-400 line-through">Precio regular: $${plan.regularPrice}</div>` : ''}
+                            </div>
+                            <div class="text-xs text-slate-400 mb-4 space-y-1">
+                                ${showPatrioDiscount ? `<div>✅ <strong>Descuento Mes Patrio:</strong> $${plan.discount3to5} del 3ro al 5to mes</div>` : ''}
+                                <div>✅ <strong>Descuento de por vida:</strong> $${plan.lifetimeDiscount} a partir del 6to mes</div>
+                                <div>✅ <strong>Instalación:</strong> $350 (hoy $0)</div>
                             </div>
                             <button class="select-plan-btn mt-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full w-full transition-colors duration-300"
-                                data-megas="${plan.megas}" data-price="${plan.price}" data-discount="${discount}">
+                                data-megas="${plan.megas}" data-promo-megas="${currentMegas}" data-price="${currentPrice}" data-regular-price="${plan.regularPrice}" data-discount3to5="${plan.discount3to5}" data-lifetime-discount="${plan.lifetimeDiscount}">
                                 Seleccionar Plan
                             </button>
                         </div>
@@ -630,7 +752,7 @@
                 let total = selection.plan.price;
                 let summaryHTML = `
                     <p><strong>Servicio:</strong> ${selection.planType === 'internet' ? 'Solo Internet' : 'Internet + TV'}</p>
-                    <p><strong>Plan:</strong> ${selection.plan.megas} Megas</p>
+                    <p><strong>Plan:</strong> ${selection.plan.promoMegas} Megas x 4 meses</p>
                     <p class="font-semibold">Precio Plan: $${selection.plan.price}</p>`;
                 
                 let addonsSummary = '';
@@ -674,28 +796,31 @@
                         </ul>`;
                 }
                 
-                // Calcular descuento según tipo de plan
-                const planTypeKey = selection.planType === 'internet' ? '2P' : '3P';
-                selection.discount = discountData[planTypeKey][selection.plan.megas] || 0;
+                // Calcular descuento por portabilidad
+                selection.portabilityDiscount = selection.portability ? portabilityDiscount[selection.planType] : 0;
                 
-                // CORRECCIÓN: Pago inicial es solo el total mensual menos el bono de bienvenida
                 selection.total = total;
-                selection.installPrice = selection.total - selection.discount;
+                
+                // Pago inicial es el total mensual (la instalación es $0)
+                selection.installPrice = selection.total;
                 
                 dom.summaryContent.innerHTML = summaryHTML;
                 dom.summaryTotal.textContent = `$${selection.total}`;
-                dom.summaryDiscount.textContent = `-$${selection.discount}`;
+                dom.summaryInstall.textContent = `$0 (Valor $350)`;
                 dom.summaryInstallPrice.textContent = `$${selection.installPrice}`;
             }
             
             function handlePlanSelection(e) {
                 if (!e.target.classList.contains('select-plan-btn')) return;
                 
-                const { megas, price, discount } = e.target.dataset;
+                const { megas, promoMegas, price, regularPrice, discount3to5, lifetimeDiscount } = e.target.dataset;
                 selection.plan = { 
                     megas: parseInt(megas), 
+                    promoMegas: parseInt(promoMegas),
                     price: parseInt(price),
-                    discount: parseInt(discount)
+                    regularPrice: parseInt(regularPrice),
+                    discount3to5: parseInt(discount3to5),
+                    lifetimeDiscount: parseInt(lifetimeDiscount)
                 };
                 
                 // Track event for Facebook Pixel
@@ -986,7 +1111,7 @@
             // Función para crear el resumen completo
             function crearResumenCompleto() {
                 let resumen = `SERVICIO: ${selection.planType === 'internet' ? 'Solo Internet' : 'Internet + TV'}\n`;
-                resumen += `PLAN: ${selection.plan.megas} Megas - $${selection.plan.price}/mes\n`;
+                resumen += `PLAN: ${selection.plan.promoMegas} Megas x 4 meses - $${selection.plan.price}/mes\n`;
                 resumen += `TOTAL MENSUAL: $${selection.total}\n`;
                 
                 if (selection.streaming.price > 0 || selection.disney.price > 0 || selection.appPackage.price > 0 || selection.devices.length > 0) {
@@ -1016,7 +1141,13 @@
                     }
                 }
                 
-                resumen += `\nBONO DE BIENVENIDA: $${selection.discount}\n`;
+                resumen += `\nCOSTO DE INSTALACIÓN EXTRA: $0 (Valor $350)\n`;
+                
+                if (selection.portability) {
+                    const discountAmount = portabilityDiscount[selection.planType];
+                    resumen += `DESEO HACER PORTABILIDAD PARA EL DESCUENTO DE: $${discountAmount} EN MI SEGUNDA MENSUALIDAD\n`;
+                }
+                
                 resumen += `PAGO INICIAL: $${selection.installPrice}\n`;
                 resumen += `FECHA: ${new Date().toLocaleString('es-MX')}`;
                 
@@ -1033,7 +1164,7 @@
                         servicio: formData.servicio, // Columna D
                         plan: formData.plan, // Columna E
                         adicionales: formatAdicionales(), // Columna F (formateado como texto)
-                        opcion_regalo: `$${selection.discount}`, // Columna G - Bono de bienvenida
+                        opcion_regalo: `Instalación $0 (Valor $350)`, // Columna G - Instalación gratis
                         total_mensual: formData.total, // Columna H
                         pago_inicial: formData.installPrice, // Columna I
                         fecha: new Date().toLocaleString('es-MX'), // Columna J
@@ -1081,7 +1212,7 @@
                     correo: document.getElementById('correo').value,
                     telefono: document.getElementById('telefono').value,
                     servicio: selection.planType === 'internet' ? 'Solo Internet' : 'Internet + TV',
-                    plan: `${selection.plan.megas} Megas`,
+                    plan: `${selection.plan.promoMegas} Megas x 4 meses`,
                     precio_plan: selection.plan.price,
                     adicionales: {
                         streaming: selection.streaming.service ? {
@@ -1105,8 +1236,9 @@
                         })) : []
                     },
                     total: selection.total,
-                    discount: selection.discount,
-                    installPrice: selection.installPrice
+                    installPrice: selection.installPrice,
+                    portability: selection.portability,
+                    portabilityDiscount: selection.portabilityDiscount
                 };
 
                 // Track event for Facebook Pixel - Purchase
@@ -1165,8 +1297,13 @@
                 }
                 
                 message += `*Total mensual estimado: $${formData.total}*\n`;
-                message += `*Bono de bienvenida:* *$${formData.discount}*\n\n`;
-                message += `*Total a pagar al técnico ya instalado su servicio y activo:* *$${formData.installPrice}*\n\n`;
+                message += `*Costo de Instalación Extra:* *$0 (Valor $350)*\n`;
+                
+                if (formData.portability) {
+                    message += `*Deseo hacer portabilidad para el descuento de: $${formData.portabilityDiscount} en mi segunda mensualidad*\n`;
+                }
+                
+                message += `\n*Total a pagar al técnico ya instalado su servicio y activo:* *$${formData.installPrice}*\n\n`;
                 message += `*Mis datos de contacto son:*\nCorreo: ${formData.correo}\nTeléfono: ${formData.telefono}`;
                 
                 // Redirigir a WhatsApp
@@ -1212,6 +1349,12 @@
             dom.addonsOptionsContainer.addEventListener('change', handleAddonsEvents);
             dom.formInputs.forEach(input => input.addEventListener('input', validateForm));
             dom.btnContinue.addEventListener('click', submitAndRedirect);
+            
+            // Event listener para el checkbox de portabilidad
+            dom.portabilityCheckbox.addEventListener('change', function() {
+                selection.portability = this.checked;
+                updateSummaryAndTotal();
+            });
             
             // Event listener para el botón "Ver Planes"
             dom.verPlanesBtn.addEventListener('click', function(e) {
