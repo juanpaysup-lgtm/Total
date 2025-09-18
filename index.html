@@ -184,18 +184,6 @@
                 <div id="plan-cards-container" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                     <!-- Las tarjetas de planes se insertarán aquí con JS -->
                 </div>
-                
-                <!-- Información adicional sobre promociones -->
-                <div class="mt-12 bg-slate-800 p-6 rounded-2xl max-w-4xl mx-auto">
-                    <h3 class="text-xl font-bold mb-4 text-indigo-400">¡Atención! Promociones vigentes</h3>
-                    <ul class="text-left text-slate-300 space-y-3">
-                        <li>✅ <strong>Instalación sin costo:</strong> Valor de $350 MXN, paga hoy $0</li>
-                        <li>✅ <strong>Megas extra:</strong> Válido hasta el 30 de septiembre de 2025</li>
-                        <li>✅ <strong>Descuento Mes Patrio:</strong> Aplicable del 3er al 5to mes</li>
-                        <li>✅ <strong>Descuento de por vida:</strong> Aplicable a partir del 6to mes con pago puntual</li>
-                        <li>✅ <strong>Portabilidad:</strong> ¡Trae tu número y obtén descuento en tu segunda mensualidad!</li>
-                    </ul>
-                </div>
             </div>
         </section>
 
@@ -586,6 +574,7 @@
                         <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 text-center flex flex-col relative">
                             ${plan.recommended ? '<div class="recommended-badge">Recomendado</div>' : ''}
                             <h3 class="text-3xl font-bold text-indigo-400">${currentMegas} Megas ${isPromoActive && currentMegas > plan.megas ? 'x 4 meses' : ''}</h3>
+                            <p class="text-sm font-semibold text-green-400 mt-1">Internet Simétrico</p>
                             ${isPromoActive && currentMegas > plan.megas ? 
                                 `<p class="text-sm font-semibold text-green-400 mt-1">Después: ${plan.megas} Megas</p>` : 
                                 `<p class="text-sm font-semibold text-green-400 mt-1">Velocidad Simétrica</p>`
