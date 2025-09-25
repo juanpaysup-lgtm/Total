@@ -30,24 +30,13 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #000000;
         }
         .hero-gradient {
-            background: linear-gradient(90deg, rgba(30, 41, 59, 0.95) 0%, rgba(17, 24, 39, 0.9) 50%, rgba(0,0,0,0.7) 100%), url('https://images.unsplash.com/photo-1563014959-7aaa83350992?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') center center/cover no-repeat;
+            background: linear-gradient(90deg, rgba(30, 41, 59, 0.95) 0%, rgba(17, 24, 39, 0.9) 50%, rgba(0,0,0,0.7) 100%), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center center/cover no-repeat;
         }
         .promo-gradient {
             background: linear-gradient(45deg, #4f46e5, #7c3aed);
-        }
-        .recommended-badge {
-            position: absolute;
-            top: -1px;
-            right: 1.5rem;
-            background-color: #f59e0b;
-            color: #111827;
-            padding: 0.25rem 0.75rem;
-            border-radius: 0 0 0.5rem 0.5rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         }
         .custom-checkbox:checked, .custom-radio:checked {
             background-color: #4f46e5;
@@ -107,19 +96,124 @@
             font-weight: bold;
             margin-left: 0.5rem;
         }
+        
+        /* Colores degradados específicos para cada plan */
+        .plan-100 {
+            background: linear-gradient(135deg, #ff66b2, #ff99cc);
+            color: #000;
+        }
+        
+        .plan-200 {
+            background: linear-gradient(135deg, #33cc33, #66ff66);
+            color: #000;
+        }
+        
+        .plan-300 {
+            background: linear-gradient(135deg, #9933cc, #cc99ff);
+            color: #fff;
+        }
+        
+        .plan-500 {
+            background: linear-gradient(135deg, #9933cc, #ff6600);
+            color: #fff;
+        }
+        
+        .plan-1200 {
+            background: linear-gradient(135deg, #ff6600, #ff9933);
+            color: #000;
+        }
+        
+        .btn-me-interesa {
+            background: linear-gradient(135deg, #0066cc, #3399ff);
+            color: white;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-me-interesa:hover {
+            background: linear-gradient(135deg, #0052a3, #2675d9);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.4);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #111111;
+            border: 1px solid #333333;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: #e5e5e5;
+        }
+        
+        .benefit-item:before {
+            content: "✓";
+            color: #10b981;
+            margin-right: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .recommended-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #000000;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 900;
+            z-index: 10;
+            box-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
+            animation: neonPulse 2s infinite alternate;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        @keyframes neonPulse {
+            0% {
+                box-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700;
+                transform: scale(1);
+            }
+            100% {
+                box-shadow: 0 0 15px #ffd700, 0 0 25px #ffd700, 0 0 35px #ffd700;
+                transform: scale(1.05);
+            }
+        }
+        
+        input[type="checkbox"], input[type="radio"] {
+            accent-color: #4f46e5;
+        }
+        
+        .has-\[\:\checked\]\:bg-indigo-900\/50:has(:checked) {
+            background-color: rgba(49, 46, 129, 0.5);
+        }
+        
+        .has-\[\:\checked\]\:border-indigo-500:has(:checked) {
+            border-color: #6366f1;
+        }
     </style>
 </head>
-<body class="bg-slate-900 text-white">
+<body class="bg-black text-white">
 
     <!-- Header -->
-    <header class="bg-slate-800/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-xl md:text-2xl font-bold text-white">
                 <span class="text-indigo-400">Asesor Autorizado</span> Totalplay®
             </div>
             <div class="text-right">
                 <p class="font-semibold">Juan Meléndez</p>
-                <p class="text-sm text-slate-400">Tu experto en conectividad</p>
+                <p class="text-sm text-gray-400">Tu experto en conectividad</p>
             </div>
         </div>
     </header>
@@ -131,10 +225,10 @@
                 <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
                     La ultra velocidad simétrica de la Fibra Óptica, <span class="text-indigo-400">directo a tu hogar.</span>
                 </h1>
-                <p class="mt-6 text-lg text-slate-300">
+                <p class="mt-6 text-lg text-gray-300">
                     Instalación express sin costo, precio fijo por 12 meses y descuentos exclusivos al contratar hoy.
                 </p>
-                <div id="promo-banner" class="mt-8 bg-white/10 p-4 rounded-xl border border-slate-700">
+                <div id="promo-banner" class="mt-8 bg-white/10 p-4 rounded-xl border border-gray-700">
                     <p class="text-center font-bold text-yellow-300 text-lg">
                         🔥 ¡Ofertas por tiempo limitado! Válido hasta <span id="current-day"></span>.
                     </p>
@@ -149,21 +243,21 @@
         <section id="beneficios" class="py-20">
             <h2 class="text-3xl font-bold text-center mb-12">Beneficios Exclusivos al Contratar</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 transform hover:-translate-y-2 transition-transform duration-300">
                     <h3 class="text-xl font-bold text-indigo-400 mb-3">Velocidad Simétrica</h3>
-                    <p class="text-slate-400">Disfruta la misma velocidad para subir y descargar archivos. Ideal para home office, clases en línea y gaming.</p>
+                    <p class="text-gray-400">Disfruta la misma velocidad para subir y descargar archivos. Ideal para home office, clases en línea y gaming.</p>
                 </div>
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 transform hover:-translate-y-2 transition-transform duration-300">
                     <h3 class="text-xl font-bold text-indigo-400 mb-3">Precio Fijo Garantizado</h3>
-                    <p class="text-slate-400">Te mantenemos el mismo precio durante 12 meses al realizar tu pago puntual. Sin sorpresas en your factura.</p>
+                    <p class="text-gray-400">Te mantenemos el mismo precio durante 12 meses al realizar tu pago puntual. Sin sorpresas en tu factura.</p>
                 </div>
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 transform hover:-translate-y-2 transition-transform duration-300">
                     <h3 class="text-xl font-bold text-indigo-400 mb-3">Soporte Técnico Prioritario</h3>
-                    <p class="text-slate-400">Accede a nuestra línea de atención técnica 24/7 con asesores listos para resolver cualquier inconveniente rápidamente.</p>
+                    <p class="text-gray-400">Accede a nuestra línea de atención técnica 24/7 con asesores listos para resolver cualquier inconveniente rápidamente.</p>
                 </div>
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 transform hover:-translate-y-2 transition-transform duration-300">
                     <h3 class="text-xl font-bold text-indigo-400 mb-3">Instalación Sin Costo</h3>
-                    <p class="text-slate-400">Instalación profesional incluida con valor de $350 MXN. Paga hoy $0 por la instalación de tu servicio.</p>
+                    <p class="text-gray-400">Instalación profesional incluida con valor de $350 MXN. Paga hoy $0 por la instalación de tu servicio.</p>
                 </div>
             </div>
         </section>
@@ -171,14 +265,14 @@
         <!-- Plans Section -->
         <section id="planes" class="py-20">
             <div class="text-center">
-                 <div class="promo-gradient p-8 rounded-2xl mb-12 shadow-2xl">
+                <div class="promo-gradient p-8 rounded-2xl mb-12 shadow-2xl border border-gray-800">
                     <h2 class="text-4xl font-extrabold text-white">Elige el plan ideal para ti</h2>
                     <p class="text-indigo-200 mt-2 text-lg">Todos nuestros planes cuentan con velocidad simétrica e instalación sin costo.</p>
                 </div>
 
-                <div id="plan-type-buttons" class="flex justify-center gap-4 mb-10 bg-slate-800 p-2 rounded-full max-w-md mx-auto">
+                <div id="plan-type-buttons" class="flex justify-center gap-4 mb-10 bg-gray-900 p-2 rounded-full max-w-md mx-auto border border-gray-800">
                     <button id="btn-internet" class="plan-type-btn flex-1 bg-indigo-600 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">Solo Internet</button>
-                    <button id="btn-combo" class="plan-type-btn flex-1 bg-transparent hover:bg-slate-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">Internet + TV</button>
+                    <button id="btn-combo" class="plan-type-btn flex-1 bg-transparent hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">Internet + TV</button>
                 </div>
 
                 <div id="plan-cards-container" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
@@ -189,9 +283,9 @@
 
         <!-- Add-ons Section -->
         <section id="addons-section" class="hidden py-12">
-             <div id="addons-intro" class="max-w-3xl mx-auto text-center bg-slate-800 rounded-3xl p-8 md:p-12">
+             <div id="addons-intro" class="max-w-3xl mx-auto text-center bg-gray-900 rounded-3xl p-8 md:p-12">
                 <h2 class="text-3xl font-bold mb-4">¡Personaliza tu paquete!</h2>
-                <p class="text-slate-400 mb-8">¿Deseas agregar servicios de streaming, apps o dispositivos a tu plan?</p>
+                <p class="text-gray-400 mb-8">¿Deseas agregar servicios de streaming, apps o dispositivos a tu plan?</p>
                  <div class="flex justify-center gap-4">
                     <button id="btn-addons-yes" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-10 rounded-full transition-colors duration-300">¡Sí, agregar!</button>
                     <button id="btn-addons-no" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-10 rounded-full transition-colors duration-300">No, gracias</button>
@@ -205,37 +299,37 @@
 
         <!-- Contact Form & Summary Section -->
         <section id="contact-section" class="hidden py-20">
-            <div class="max-w-4xl mx-auto bg-slate-800 p-8 md:p-12 rounded-3xl border border-slate-700 grid md:grid-cols-2 gap-12">
+            <div class="max-w-4xl mx-auto bg-gray-900 p-8 md:p-12 rounded-3xl border border-gray-800 grid md:grid-cols-2 gap-12">
                 <div>
                     <h2 class="text-3xl font-bold mb-2 text-indigo-400">¡Casi listo!</h2>
-                    <p class="text-slate-400 mb-6">Completa tus datos para finalizar tu solicitud. Me pondré en contacto contigo a la brevedad para coordinar la instalación.</p>
+                    <p class="text-gray-400 mb-6">Completa tus datos para finalizar tu solicitud. Me pondré en contacto contigo a la brevedad para coordinar la instalación.</p>
                     <form id="contact-form">
                         <div class="mb-4">
-                            <label for="nombre" class="block mb-2 text-sm font-medium text-slate-300">Nombre Completo</label>
-                            <input type="text" id="nombre" name="nombre" class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="Tu nombre" required>
+                            <label for="nombre" class="block mb-2 text-sm font-medium text-gray-300">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" class="bg-gray-800 border border-gray-700 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="Tu nombre" required>
                         </div>
                         <div class="mb-4">
-                            <label for="correo" class="block mb-2 text-sm font-medium text-slate-300">Correo Electrónico</label>
-                            <input type="email" id="correo" name="correo" class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="tu@correo.com" required>
+                            <label for="correo" class="block mb-2 text-sm font-medium text-gray-300">Correo Electrónico</label>
+                            <input type="email" id="correo" name="correo" class="bg-gray-800 border border-gray-700 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="tu@correo.com" required>
                         </div>
                         <div class="mb-6">
-                            <label for="telefono" class="block mb-2 text-sm font-medium text-slate-300">Teléfono (WhatsApp)</label>
-                            <input type="tel" id="telefono" name="telefono" class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="10 dígitos" required pattern="\d{10}">
+                            <label for="telefono" class="block mb-2 text-sm font-medium text-gray-300">Teléfono (WhatsApp)</label>
+                            <input type="tel" id="telefono" name="telefono" class="bg-gray-800 border border-gray-700 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="10 dígitos" required pattern="\d{10}">
                         </div>
                         <div class="mb-6">
                             <label class="flex items-center">
                                 <input type="checkbox" id="portabilidad" name="portabilidad" class="custom-checkbox rounded">
-                                <span class="ml-2 text-slate-300">¿Deseas portar tu número? (Obtén descuento en tu segunda mensualidad)</span>
+                                <span class="ml-2 text-gray-300">¿Deseas portar tu número? (Obtén descuento en tu segunda mensualidad)</span>
                             </label>
                         </div>
                     </form>
                 </div>
-                <div class="bg-slate-900 p-6 rounded-2xl flex flex-col">
+                <div class="bg-black p-6 rounded-2xl flex flex-col">
                     <h3 class="text-xl font-bold mb-4">Resumen de tu pedido</h3>
-                    <div id="summary-content" class="space-y-3 text-slate-300 flex-grow">
+                    <div id="summary-content" class="space-y-3 text-gray-300 flex-grow">
                         <!-- El resumen se insertará aquí con JS -->
                     </div>
-                     <div class="border-t border-slate-700 mt-4 pt-4">
+                     <div class="border-t border-gray-800 mt-4 pt-4">
                         <div class="flex justify-between items-center text-xl font-bold">
                             <span>Total Mensual:</span>
                             <span id="summary-total" class="text-indigo-400">$0</span>
@@ -244,12 +338,12 @@
                             <span>Costo de Instalación Extra:</span>
                             <span id="summary-install" class="text-green-400">$0 (Valor $350)</span>
                         </div>
-                        <div class="flex justify-between items-center text-xl font-bold mt-2 pt-2 border-t border-slate-700">
+                        <div class="flex justify-between items-center text-xl font-bold mt-2 pt-2 border-t border-gray-800">
                             <span>Pago Inicial:</span>
                             <span id="summary-install-price" class="text-indigo-400">$0</span>
                         </div>
                     </div>
-                    <button id="btn-continue" type="button" class="mt-6 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 disabled:bg-slate-600 disabled:cursor-not-allowed flex items-center justify-center gap-2" disabled>
+                    <button id="btn-continue" type="button" class="mt-6 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 disabled:bg-gray-700 disabled:cursor-not-allowed flex items-center justify-center gap-2" disabled>
                         <span id="continue-text">Enviar solicitud por WhatsApp</span>
                         <div id="continue-loader" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                     </button>
@@ -261,16 +355,16 @@
         <section id="testimonios" class="py-20">
             <h2 class="text-3xl font-bold text-center mb-12">Lo que dicen nuestros clientes</h2>
             <div class="grid lg:grid-cols-3 gap-8">
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                    <p class="text-slate-400 mb-6">"La atención de Juan fue excelente. Me explicó todo con claridad y la instalación fue súper rápida. Internet vuela, 100% recomendado!"</p>
+                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
+                    <p class="text-gray-400 mb-6">"La atención de Juan fue excelente. Me explicó todo con claridad y la instalación fue súper rápida. Internet vuela, 100% recomendado!"</p>
                     <div class="font-bold text-right">- Sofía G.</div>
                 </div>
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                    <p class="text-slate-400 mb-6">"Tenía muchas dudas sobre qué plan me convenía para mis clases en línea y para jugar. El asesor me ayudó a elegir el paquete perfecto y ahora todo funciona de maravilla."</p>
+                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
+                    <p class="text-gray-400 mb-6">"Tenía muchas dudas sobre qué plan me convenía para mis clases en línea y para jugar. El asesor me ayudó a elegir el paquete perfecto y ahora todo funciona de maravilla."</p>
                     <div class="font-bold text-right">- Carlos M.</div>
                 </div>
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                    <p class="text-slate-400 mb-6">"Contratar fue muy sencillo y sin tanto rollo. Me gustaron las promociones que me ofreció y el servicio ha sido muy estable desde el primer día."</p>
+                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
+                    <p class="text-gray-400 mb-6">"Contratar fue muy sencillo y sin tanto rollo. Me gustaron las promociones que me ofreció y el servicio ha sido muy estable desde el primer día."</p>
                     <div class="font-bold text-right">- Laura V.</div>
                 </div>
             </div>
@@ -278,9 +372,9 @@
         
         <!-- Support Section -->
         <section id="soporte" class="py-20 text-center">
-            <div class="bg-slate-800 max-w-2xl mx-auto p-8 rounded-2xl border border-slate-700">
+            <div class="bg-gray-900 max-w-2xl mx-auto p-8 rounded-2xl border border-gray-800">
                 <h2 class="text-2xl font-bold mb-4">¿Necesitas Soporte Técnico?</h2>
-                <p class="text-slate-400 mb-4">Si ya eres cliente y presentas una falla, comunícate directamente a la línea de soporte técnico para una atención inmediata.</p>
+                <p class="text-gray-400 mb-4">Si ya eres cliente y presentas una falla, comunícate directamente a la línea de soporte técnico para una atención inmediata.</p>
                 <p class="text-3xl font-bold text-indigo-400 tracking-widest">800 510 0510</p>
             </div>
         </section>
@@ -288,8 +382,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-800 mt-20">
-        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+    <footer class="bg-gray-900 mt-20">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-400">
             <p>&copy; <span id="current-year"></span> Juan Meléndez - Asesor Autorizado Totalplay. Todos los derechos reservados.</p>
             <p class="text-sm mt-2">Este sitio es gestionado por un asesor de ventas autorizado. Totalplay® es una marca registrada.</p>
              <p class="text-xs mt-4">Página creada por Juan Meléndez</p>
@@ -299,13 +393,13 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // --- CONFIGURATION ---
-            const WHATSAPP_NUMBER = '5218131191393'; // Replace with your number
-            const MAKE_WEBHOOK_URL = 'https://hook.eu2.make.com/jigm042t5atf3tci3j82n3cxysiva3f0'; // Webhook de Make.com
+            const WHATSAPP_NUMBER = '5218131191393';
+            const MAKE_WEBHOOK_URL = 'https://hook.eu2.make.com/jigm042t5atf3tci3j82n3cxysiva3f0';
             
             // Datos de portabilidad
             const portabilityDiscount = {
-                'internet': 100, // $100 de descuento para planes de Solo Internet
-                'combo': 200     // $200 de descuento para planes de Internet + TV
+                'internet': 100,
+                'combo': 200
             };
             
             // Eventos personalizados para Facebook Pixel
@@ -345,9 +439,8 @@
                         promoMegas: 200,
                         regularPrice: 510,
                         promoPrice: 460, 
-                        desc: "Fibra óptica + Club WiFi Totalplay", 
+                        formattedDesc: ["Fibra óptica", "Club WiFi Totalplay"],
                         recommended: false,
-                        discount3to5: 20,
                         lifetimeDiscount: 20
                     },
                     { 
@@ -355,9 +448,8 @@
                         promoMegas: 300,
                         regularPrice: 620,
                         promoPrice: 570, 
-                        desc: "Fibra óptica + Club WiFi + Apple TV+ 1 año", 
+                        formattedDesc: ["Fibra óptica", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: true,
-                        discount3to5: 20,
                         lifetimeDiscount: 20
                     },
                     { 
@@ -365,9 +457,8 @@
                         promoMegas: 500,
                         regularPrice: 730,
                         promoPrice: 680, 
-                        desc: "Fibra óptica + Club WiFi + Apple TV+ 1 año", 
+                        formattedDesc: ["Fibra óptica", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: false,
-                        discount3to5: 30,
                         lifetimeDiscount: 30
                     },
                     { 
@@ -375,9 +466,8 @@
                         promoMegas: 1200,
                         regularPrice: 880,
                         promoPrice: 830, 
-                        desc: "Fibra óptica + WiFi 6 + Club WiFi + Apple TV+ 1 año", 
+                        formattedDesc: ["Fibra óptica", "WiFi 6", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: false,
-                        discount3to5: 50,
                         lifetimeDiscount: 60
                     },
                     { 
@@ -385,9 +475,8 @@
                         promoMegas: 1200,
                         regularPrice: 1550,
                         promoPrice: 1470, 
-                        desc: "Fibra óptica + WiFi 6 + Club WiFi + Apple TV+ 1 año", 
+                        formattedDesc: ["Fibra óptica", "WiFi 6", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: false,
-                        discount3to5: 80,
                         lifetimeDiscount: 80
                     }
                 ],
@@ -397,9 +486,8 @@
                         promoMegas: 200,
                         regularPrice: 650,
                         promoPrice: 600, 
-                        desc: "185 canales + Convertidor Smart TV", 
+                        formattedDesc: ["185 canales", "Convertidor Smart TV"],
                         recommended: false,
-                        discount3to5: 30,
                         lifetimeDiscount: 30
                     },
                     { 
@@ -407,9 +495,8 @@
                         promoMegas: 300,
                         regularPrice: 760,
                         promoPrice: 710, 
-                        desc: "185 canales + Convertidor Smart TV + Alexa + Apple TV+ 1 año", 
+                        formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Apple TV+ 1 año"],
                         recommended: true,
-                        discount3to5: 30,
                         lifetimeDiscount: 30
                     },
                     { 
@@ -417,9 +504,8 @@
                         promoMegas: 500,
                         regularPrice: 870,
                         promoPrice: 820, 
-                        desc: "185 canales + Convertidor Smart TV + Alexa + Apple TV+ 1 año", 
+                        formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Apple TV+ 1 año"],
                         recommended: false,
-                        discount3to5: 40,
                         lifetimeDiscount: 40
                     },
                     { 
@@ -427,9 +513,8 @@
                         promoMegas: 1200,
                         regularPrice: 1050,
                         promoPrice: 1000, 
-                        desc: "185 canales + Convertidor Smart TV + Alexa + Bocinas B&O + Apple TV+ 1 año", 
+                        formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Bocinas B&O", "Apple TV+ 1 año"],
                         recommended: false,
-                        discount3to5: 50,
                         lifetimeDiscount: 50
                     },
                     { 
@@ -437,9 +522,8 @@
                         promoMegas: 1200,
                         regularPrice: 1720,
                         promoPrice: 1640, 
-                        desc: "185 canales + Convertidor Smart TV + Alexa + Bocinas B&O + Apple TV+ 1 año", 
+                        formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Bocinas B&O", "Apple TV+ 1 año"],
                         recommended: false,
-                        discount3to5: 100,
                         lifetimeDiscount: 100
                     }
                 ]
@@ -558,6 +642,18 @@
                 });
             }
 
+            // Función para determinar la clase de color según los megas
+            function getColorClass(megas) {
+                switch(megas) {
+                    case 100: return "plan-100";
+                    case 200: return "plan-200";
+                    case 300: return "plan-300";
+                    case 500: return "plan-500";
+                    case 1200: return "plan-1200";
+                    default: return "plan-100";
+                }
+            }
+
             function renderPlanCards(type) {
                 selection.planType = type;
                 dom.planCardsContainer.innerHTML = '';
@@ -565,34 +661,55 @@
                     const isPromoActive = new Date() <= new Date('2025-09-30');
                     const currentMegas = isPromoActive ? plan.promoMegas : plan.megas;
                     const currentPrice = isPromoActive ? plan.promoPrice : plan.regularPrice;
+                    const colorClass = getColorClass(plan.megas);
                     
-                    // Verificar si estamos en el período de mostrar Descuento Mes Patrio
-                    const today = new Date();
-                    const showPatrioDiscount = today >= new Date('2025-09-17') && today <= new Date('2025-09-30');
+                    // Generar los beneficios formateados
+                    const benefitsHTML = plan.formattedDesc.map(benefit => 
+                        `<div class="benefit-item">${benefit}</div>`
+                    ).join('');
                     
                     const card = `
-                        <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 text-center flex flex-col relative">
+                        <div class="card-hover p-6 rounded-2xl text-center flex flex-col relative h-full">
                             ${plan.recommended ? '<div class="recommended-badge">Recomendado</div>' : ''}
-                            <h3 class="text-3xl font-bold text-indigo-400">${currentMegas} Megas ${isPromoActive && currentMegas > plan.megas ? 'x 4 meses' : ''}</h3>
-                            <p class="text-sm font-semibold text-green-400 mt-1">Internet Simétrico</p>
-                            ${isPromoActive && currentMegas > plan.megas ? 
-                                `<p class="text-sm font-semibold text-green-400 mt-1">Después: ${plan.megas} Megas</p>` : 
-                                `<p class="text-sm font-semibold text-green-400 mt-1">Velocidad Simétrica</p>`
-                            }
-                            <p class="text-slate-400 mt-4 flex-grow min-h-[6rem]">${plan.desc}</p>
+                            
+                            <!-- Encabezado de promoción -->
+                            <div class="bg-orange-500 text-white text-center py-2 rounded-t-lg -mx-6 -mt-6 mb-4 font-bold">
+                                + Megas por 4 meses
+                            </div>
+                            
+                            <!-- Título del plan con color degradado -->
+                            <div class="${colorClass} p-4 rounded-xl text-center mb-4">
+                                <h3 class="text-2xl font-bold">${currentMegas} Megas ${isPromoActive && currentMegas > plan.megas ? 'x 4 meses' : ''}</h3>
+                                <p class="font-semibold">${type === 'combo' ? 'Internet + TV' : 'Internet Simétrico*'}</p>
+                                ${isPromoActive && currentMegas > plan.megas ? 
+                                    `<p class="text-sm mt-1">Después: ${plan.megas} Megas</p>` : 
+                                    `<p class="text-sm mt-1">Velocidad Simétrica</p>`
+                                }
+                            </div>
+                            
+                            <!-- Descripción del plan formateada -->
+                            <div class="text-left mb-4 flex-grow">
+                                ${benefitsHTML}
+                            </div>
+                            
+                            <!-- Detalles de descuentos -->
+                            <div class="text-xs text-gray-400 mb-4">
+                                <div class="flex items-center justify-center">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                    <span>Descuento de por vida: $${plan.lifetimeDiscount} a partir del 6to mes</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Precio -->
                             <div class="my-6">
-                                <span class="text-4xl font-extrabold text-white ml-2">$${currentPrice}</span>
-                                <span class="text-slate-400">/mes</span>
-                                ${isPromoActive ? `<div class="text-sm text-slate-400 line-through">Precio regular: $${plan.regularPrice}</div>` : ''}
+                                <span class="text-4xl font-extrabold text-white">$${currentPrice}</span>
+                                <span class="text-gray-400">/mes</span>
+                                ${isPromoActive ? `<div class="text-sm text-gray-500 line-through mt-1">Precio regular: $${plan.regularPrice}</div>` : ''}
                             </div>
-                            <div class="text-xs text-slate-400 mb-4 space-y-1">
-                                ${showPatrioDiscount ? `<div>✅ <strong>Descuento Mes Patrio:</strong> $${plan.discount3to5} del 3ro al 5to mes</div>` : ''}
-                                <div>✅ <strong>Descuento de por vida:</strong> $${plan.lifetimeDiscount} a partir del 6to mes</div>
-                                <div>✅ <strong>Instalación:</strong> $350 (hoy $0)</div>
-                            </div>
-                            <button class="select-plan-btn mt-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full w-full transition-colors duration-300"
-                                data-megas="${plan.megas}" data-promo-megas="${currentMegas}" data-price="${currentPrice}" data-regular-price="${plan.regularPrice}" data-discount3to5="${plan.discount3to5}" data-lifetime-discount="${plan.lifetimeDiscount}">
-                                Seleccionar Plan
+                            
+                            <button class="select-plan-btn mt-auto btn-me-interesa py-3 px-6 rounded-full w-full"
+                                data-megas="${plan.megas}" data-promo-megas="${currentMegas}" data-price="${currentPrice}" data-regular-price="${plan.regularPrice}" data-lifetime-discount="${plan.lifetimeDiscount}">
+                                Me interesa
                             </button>
                         </div>
                     `;
@@ -605,15 +722,15 @@
                 const isTvPlan = selection.planType === 'combo';
                 
                 let streamingOptions = `
-                    <label class="flex items-center p-3 bg-slate-700 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                    <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
                         <input type="radio" name="streaming" value="none" class="custom-radio" checked> 
                         <span class="ml-3">Ninguno</span>
                     </label>
-                    <label class="flex items-center p-3 bg-slate-700 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                    <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
                         <input type="radio" name="streaming" value="prime" class="custom-radio"> 
                         <span class="ml-3">${streaming.prime.name} (+$${streaming.prime.price})</span>
                     </label>
-                    <label class="flex items-center p-3 bg-slate-700 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                    <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
                         <input type="radio" name="streaming" value="netflix" class="custom-radio"> 
                         <span class="ml-3">${streaming.netflix.name}</span>
                     </label>`;
@@ -621,21 +738,21 @@
                 let netflixTiers = '';
                 streaming.netflix.tiers.forEach(tier => {
                     netflixTiers += `
-                        <label class="flex items-center">
+                        <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
                             <input type="radio" name="netflix-tier" value="${tier.id}" class="custom-radio"> 
                             <span class="ml-3">${tier.name} (+$${tier.price})</span>
                         </label>`;
                 });
                 
                 let disneyOptions = `
-                    <label class="flex items-center p-3 bg-slate-700 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                    <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
                         <input type="radio" name="disney" value="none" class="custom-radio" checked> 
                         <span class="ml-3">Ninguno</span>
                     </label>`;
                 
                 disney.tiers.forEach(tier => {
                     disneyOptions += `
-                        <label class="flex items-center p-3 bg-slate-700 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                        <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
                             <input type="radio" name="disney" value="${tier.id}" class="custom-radio"> 
                             <span class="ml-3">${tier.name} (+$${tier.price} por ${tier.promo})</span>
                         </label>
@@ -647,7 +764,7 @@
                 let appPackageOptions = '';
                 app_packages.forEach(pkg => {
                     appPackageOptions += `
-                        <label class="flex items-center p-3 bg-slate-700 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                        <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
                             <input type="radio" name="app-package" value="${pkg.id}" class="custom-radio">
                             <span class="ml-3">${pkg.name} (+$${pkg.price})</span>
                         </label>`;
@@ -657,7 +774,7 @@
                 Object.values(devices).forEach(device => {
                     if (!device.tvOnly || isTvPlan) {
                         deviceOptions += `
-                            <label class="flex items-center p-3 bg-slate-700 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                            <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
                                 <input type="checkbox" name="device" value="${device.id}" class="custom-checkbox"> 
                                 <span class="ml-3">${device.name} (+$${device.price})</span>
                             </label>`;
@@ -665,25 +782,25 @@
                 });
                 
                 dom.addonsOptionsContainer.innerHTML = `
-                    <div class="bg-slate-800 p-6 rounded-2xl">
+                    <div class="bg-gray-900 p-6 rounded-2xl">
                         <h3 class="text-xl font-bold mb-4">1. Elige una plataforma de Streaming (opcional)</h3>
                         <div class="space-y-3" id="streaming-choice">
                             ${streamingOptions}
                         </div>
-                        <div id="netflix-tiers" class="hidden mt-4 ml-6 space-y-3 border-l-2 border-slate-600 pl-6">
+                        <div id="netflix-tiers" class="hidden mt-4 ml-6 space-y-3 border-l-2 border-gray-700 pl-6">
                             ${netflixTiers}
                         </div>
                     </div>
-                    <div class="bg-slate-800 p-6 rounded-2xl">
+                    <div class="bg-gray-900 p-6 rounded-2xl">
                         <h3 class="text-xl font-bold mb-4">2. Elige Disney+ (opcional)</h3>
                         <div class="space-y-3" id="disney-choice">
                             ${disneyOptions}
                         </div>
                     </div>
-                    <div class="bg-slate-800 p-6 rounded-2xl">
+                    <div class="bg-gray-900 p-6 rounded-2xl">
                         <h3 class="text-xl font-bold mb-4">3. Elige un paquete de Apps (opcional)</h3>
                         <div class="space-y-3" id="package-choice">
-                            <label class="flex items-center p-3 bg-slate-700 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                            <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
                                 <input type="radio" name="app-package" value="none" class="custom-radio" checked> 
                                 <span class="ml-3">Ninguno</span>
                             </label>
@@ -691,7 +808,7 @@
                         </div>
                         <div id="package-apps-container" class="mt-4"></div>
                     </div>
-                    <div class="bg-slate-800 p-6 rounded-2xl">
+                    <div class="bg-gray-900 p-6 rounded-2xl">
                         <h3 class="text-xl font-bold mb-4">4. Agrega Dispositivos (opcional)</h3>
                         <div class="space-y-3" id="device-choice">
                             ${deviceOptions}
@@ -716,7 +833,7 @@
                 pkg.apps.forEach(app => {
                     const isPermanentlyDisabled = (app === 'Amazon Prime' && primeSelected) || (app === 'Disney+ Estándar' && disneySelected);
                     appOptions += `
-                        <label class="flex items-center p-2 rounded-md transition-opacity ${isPermanentlyDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-slate-600'}">
+                        <label class="flex items-center p-2 rounded-md transition-opacity ${isPermanentlyDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-700'}">
                             <input type="checkbox" name="package-app" value="${app}" class="custom-checkbox" 
                                 ${isPermanentlyDisabled ? 'disabled data-permanently-disabled="true"' : ''}> 
                             <span class="ml-3">${app}</span>
@@ -724,9 +841,9 @@
                 });
                 
                 container.innerHTML = `
-                    <div class="ml-6 border-l-2 border-slate-600 pl-6 space-y-3">
+                    <div class="ml-6 border-l-2 border-gray-700 pl-6 space-y-3">
                         <div class="flex justify-between items-center">
-                            <p class="package-selection-counter font-semibold text-slate-300">Selecciona hasta ${pkg.limit} app${pkg.limit !== 1 ? 's' : ''}: (0/${pkg.limit})</p>
+                            <p class="package-selection-counter font-semibold text-gray-300">Selecciona hasta ${pkg.limit} app${pkg.limit !== 1 ? 's' : ''}: (0/${pkg.limit})</p>
                             <p class="package-limit-message text-amber-400 text-sm font-semibold hidden">¡Límite alcanzado!</p>
                         </div>
                         <div class="limited-checkbox-group grid sm:grid-cols-2 gap-2" data-limit="${pkg.limit}">
@@ -761,7 +878,7 @@
                     total += selection.appPackage.price;
                     
                     if (selection.appPackage.selectedApps.length > 0) {
-                        addonsSummary += `<ul class="list-disc list-inside ml-4 text-slate-400">`;
+                        addonsSummary += `<ul class="list-disc list-inside ml-4 text-gray-400">`;
                         selection.appPackage.selectedApps.forEach(app => {
                             addonsSummary += `<li>${app}</li>`;
                         });
@@ -778,7 +895,7 @@
                 
                 if (addonsSummary) {
                     summaryHTML += `
-                        <div class="border-t border-slate-700 my-2"></div>
+                        <div class="border-t border-gray-800 my-2"></div>
                         <p><strong>Adicionales:</strong></p>
                         <ul class="list-none space-y-1">
                             ${addonsSummary}
@@ -802,13 +919,12 @@
             function handlePlanSelection(e) {
                 if (!e.target.classList.contains('select-plan-btn')) return;
                 
-                const { megas, promoMegas, price, regularPrice, discount3to5, lifetimeDiscount } = e.target.dataset;
+                const { megas, promoMegas, price, regularPrice, lifetimeDiscount } = e.target.dataset;
                 selection.plan = { 
                     megas: parseInt(megas), 
                     promoMegas: parseInt(promoMegas),
                     price: parseInt(price),
                     regularPrice: parseInt(regularPrice),
-                    discount3to5: parseInt(discount3to5),
                     lifetimeDiscount: parseInt(lifetimeDiscount)
                 };
                 
@@ -1147,17 +1263,17 @@
                 try {
                     // Preparar datos para Google Sheets según las columnas especificadas
                     const sheetsData = {
-                        nombre: formData.nombre, // Columna A
-                        correo: formData.correo, // Columna B
-                        telefono: formData.telefono, // Columna C
-                        servicio: formData.servicio, // Columna D
-                        plan: formData.plan, // Columna E
-                        adicionales: formatAdicionales(), // Columna F (formateado como texto)
-                        opcion_regalo: `Instalación $0 (Valor $350)`, // Columna G - Instalación gratis
-                        total_mensual: formData.total, // Columna H
-                        pago_inicial: formData.installPrice, // Columna I
-                        fecha: new Date().toLocaleString('es-MX'), // Columna J
-                        resumen: crearResumenCompleto() // Columna K
+                        nombre: formData.nombre,
+                        correo: formData.correo,
+                        telefono: formData.telefono,
+                        servicio: formData.servicio,
+                        plan: formData.plan,
+                        adicionales: formatAdicionales(),
+                        opcion_regalo: `Instalación $0 (Valor $350)`,
+                        total_mensual: formData.total,
+                        pago_inicial: formData.installPrice,
+                        fecha: new Date().toLocaleString('es-MX'),
+                        resumen: crearResumenCompleto()
                     };
                     
                     // Enviar datos a Make.com
@@ -1176,7 +1292,6 @@
                     return await response.json();
                 } catch (error) {
                     console.error('Error enviando datos a Make.com:', error);
-                    // Aunque falle el envío a Make.com, no impedimos que el usuario continúe a WhatsApp
                     return null;
                 }
             }
@@ -1306,10 +1421,10 @@
                 button.addEventListener('click', () => {
                     dom.planTypeButtons.forEach(btn => {
                         btn.classList.remove('bg-indigo-600');
-                        btn.classList.add('bg-transparent', 'hover:bg-slate-700');
+                        btn.classList.add('bg-transparent', 'hover:bg-gray-800');
                     });
                     button.classList.add('bg-indigo-600');
-                    button.classList.remove('bg-transparent', 'hover:bg-slate-700');
+                    button.classList.remove('bg-transparent', 'hover:bg-gray-800');
                     renderPlanCards(button.id.replace('btn-', ''));
                 });
             });
