@@ -32,15 +32,36 @@
             font-family: 'Inter', sans-serif;
             background-color: #000000;
         }
-        .hero-gradient {
-            background: linear-gradient(90deg, rgba(30, 41, 59, 0.95) 0%, rgba(17, 24, 39, 0.9) 50%, rgba(0,0,0,0.7) 100%), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center center/cover no-repeat;
+        .halloween-gradient {
+            background: linear-gradient(135deg, #1a0b0b 0%, #2d1a1a 50%, #1a0b0b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .halloween-gradient::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 140, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 69, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(139, 0, 0, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+        .halloween-text {
+            background: linear-gradient(45deg, #ff8c00, #ff4500, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .promo-gradient {
-            background: linear-gradient(45deg, #4f46e5, #7c3aed);
+            background: linear-gradient(45deg, #ff8c00, #ff4500);
         }
         .custom-checkbox:checked, .custom-radio:checked {
-            background-color: #4f46e5;
-            border-color: #6d28d9;
+            background-color: #ff8c00;
+            border-color: #ff4500;
         }
         .fade-out {
             opacity: 0;
@@ -75,8 +96,8 @@
             border-radius: 0.5rem;
         }
         .discount-badge {
-            background-color: #10b981;
-            color: white;
+            background-color: #ff8c00;
+            color: black;
             padding: 0.25rem 0.5rem;
             border-radius: 0.25rem;
             font-size: 0.75rem;
@@ -84,11 +105,11 @@
             margin-left: 0.5rem;
         }
         .disney-promo {
-            background: linear-gradient(135deg, #113ccf 0%, #3500b1 100%);
-            border-left: 4px solid #f5c211;
+            background: linear-gradient(135deg, #8b0000 0%, #ff4500 100%);
+            border-left: 4px solid #ff8c00;
         }
         .promo-tag {
-            background-color: #f59e0b;
+            background-color: #ff8c00;
             color: #111827;
             padding: 0.25rem 0.5rem;
             border-radius: 0.25rem;
@@ -97,54 +118,54 @@
             margin-left: 0.5rem;
         }
         
-        /* Colores degradados específicos para cada plan */
+        /* Colores degradados específicos para cada plan con temática Halloween */
         .plan-100 {
-            background: linear-gradient(135deg, #ff66b2, #ff99cc);
-            color: #000;
+            background: linear-gradient(135deg, #8b4513, #daa520);
+            color: #fff;
         }
         
         .plan-200 {
-            background: linear-gradient(135deg, #33cc33, #66ff66);
+            background: linear-gradient(135deg, #228b22, #32cd32);
             color: #000;
         }
         
         .plan-300 {
-            background: linear-gradient(135deg, #9933cc, #cc99ff);
+            background: linear-gradient(135deg, #4b0082, #8a2be2);
             color: #fff;
         }
         
         .plan-500 {
-            background: linear-gradient(135deg, #9933cc, #ff6600);
-            color: #fff;
-        }
-        
-        .plan-1200 {
-            background: linear-gradient(135deg, #ff6600, #ff9933);
+            background: linear-gradient(135deg, #ff4500, #ff8c00);
             color: #000;
         }
         
+        .plan-1200 {
+            background: linear-gradient(135deg, #8b0000, #dc143c);
+            color: #fff;
+        }
+        
         .btn-me-interesa {
-            background: linear-gradient(135deg, #0066cc, #3399ff);
+            background: linear-gradient(135deg, #ff8c00, #ff4500);
             color: white;
             font-weight: 700;
             transition: all 0.3s ease;
         }
         
         .btn-me-interesa:hover {
-            background: linear-gradient(135deg, #0052a3, #2675d9);
+            background: linear-gradient(135deg, #ff4500, #8b0000);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.4);
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
         }
         
         .card-hover {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background-color: #111111;
-            border: 1px solid #333333;
+            background-color: #1a0b0b;
+            border: 1px solid #ff8c00;
         }
         
         .card-hover:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 30px rgba(255, 140, 0, 0.3);
         }
         
         .benefit-item {
@@ -155,8 +176,7 @@
         }
         
         .benefit-item:before {
-            content: "✓";
-            color: #10b981;
+            content: "🕷️";
             margin-right: 8px;
             font-weight: bold;
             font-size: 1.1rem;
@@ -166,113 +186,169 @@
             position: absolute;
             top: -10px;
             right: 20px;
-            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            background: linear-gradient(135deg, #ff8c00, #ff4500);
             color: #000000;
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 900;
             z-index: 10;
-            box-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
-            animation: neonPulse 2s infinite alternate;
+            box-shadow: 0 0 10px #ff8c00, 0 0 20px #ff8c00, 0 0 30px #ff8c00;
+            animation: halloweenPulse 2s infinite alternate;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         
-        @keyframes neonPulse {
+        @keyframes halloweenPulse {
             0% {
-                box-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700;
+                box-shadow: 0 0 5px #ff8c00, 0 0 10px #ff8c00, 0 0 15px #ff8c00;
                 transform: scale(1);
             }
             100% {
-                box-shadow: 0 0 15px #ffd700, 0 0 25px #ffd700, 0 0 35px #ffd700;
+                box-shadow: 0 0 15px #ff8c00, 0 0 25px #ff8c00, 0 0 35px #ff8c00;
                 transform: scale(1.05);
             }
         }
         
         input[type="checkbox"], input[type="radio"] {
-            accent-color: #4f46e5;
+            accent-color: #ff8c00;
         }
         
         .has-\[\:\checked\]\:bg-indigo-900\/50:has(:checked) {
-            background-color: rgba(49, 46, 129, 0.5);
+            background-color: rgba(139, 0, 0, 0.5);
         }
         
         .has-\[\:\checked\]\:border-indigo-500:has(:checked) {
-            border-color: #6366f1;
+            border-color: #ff4500;
+        }
+        
+        .ghost-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .pumpkin {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: #ff8c00;
+            border-radius: 50%;
+            z-index: 2;
+        }
+        
+        .pumpkin::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 15px;
+            background: #8b4513;
+            border-radius: 50%;
+        }
+        
+        .pumpkin::after {
+            content: "^_^";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .bat {
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            background: #000;
+            border-radius: 50%;
+            z-index: 2;
+        }
+        
+        .bat::before, .bat::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            background: #000;
+            border-radius: 50%;
+            top: -5px;
+        }
+        
+        .bat::before {
+            left: -10px;
+            transform: rotate(-30deg);
+        }
+        
+        .bat::after {
+            right: -10px;
+            transform: rotate(30deg);
         }
     </style>
 </head>
 <body class="bg-black text-white">
 
     <!-- Header -->
-    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg border-b border-orange-600">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-xl md:text-2xl font-bold text-white">
-                <span class="text-indigo-400">Asesor Autorizado</span> Totalplay®
+                <span class="halloween-text">Asesor Autorizado</span> Totalplay®
             </div>
             <div class="text-right">
                 <p class="font-semibold">Juan Meléndez</p>
-                <p class="text-sm text-gray-400">Tu experto en conectividad</p>
+                <p class="text-sm text-orange-400">Tu experto en conectividad</p>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <main class="container mx-auto px-6">
-        <section id="inicio" class="min-h-[80vh] flex items-center hero-gradient rounded-3xl mt-8 p-8 md:p-16">
-            <div class="max-w-3xl">
+        <section id="inicio" class="min-h-[80vh] flex items-center halloween-gradient rounded-3xl mt-8 p-8 md:p-16 relative">
+            <!-- Elementos decorativos Halloween -->
+            <div class="pumpkin" style="top: 20%; left: 10%;"></div>
+            <div class="bat ghost-animation" style="top: 30%; right: 15%;"></div>
+            <div class="pumpkin" style="bottom: 20%; right: 10%;"></div>
+            
+            <div class="max-w-3xl relative z-10">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-                    La ultra velocidad simétrica de la Fibra Óptica, <span class="text-indigo-400">directo a tu hogar.</span>
+                    <span class="halloween-text">¡El LAG tiene MIEDO de estos MEGAS!</span>
                 </h1>
-                <p class="mt-6 text-lg text-gray-300">
-                    Instalación express sin costo, precio fijo por 12 meses y descuentos exclusivos al contratar hoy.
+                <p class="mt-6 text-lg text-orange-200">
+                    🎃 Instalación EXPRESS sin costo - Precio FIJO por 12 meses - Descuentos ESPELUZNANTES 🎃
                 </p>
-                <div id="promo-banner" class="mt-8 bg-white/10 p-4 rounded-xl border border-gray-700">
+                <div id="promo-banner" class="mt-8 bg-orange-900/30 p-4 rounded-xl border border-orange-600">
                     <p class="text-center font-bold text-yellow-300 text-lg">
-                        🔥 ¡Ofertas por tiempo limitado! Válido hasta <span id="current-day"></span>.
+                        👻 ¡OFERTAS DE TERROR por tiempo limitado! Válido hasta <span id="current-day"></span>.
                     </p>
                 </div>
-                <a href="#planes" id="ver-planes-btn" class="mt-10 inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300">
-                    Ver Planes
+                <a href="#planes" id="ver-planes-btn" class="mt-10 inline-block bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-bold text-lg py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    👻 Ver Planes ATERRADORES
                 </a>
             </div>
         </section>
 
-        <!-- Benefits Section -->
-        <section id="beneficios" class="py-20">
-            <h2 class="text-3xl font-bold text-center mb-12">Beneficios Exclusivos al Contratar</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 transform hover:-translate-y-2 transition-transform duration-300">
-                    <h3 class="text-xl font-bold text-indigo-400 mb-3">Velocidad Simétrica</h3>
-                    <p class="text-gray-400">Disfruta la misma velocidad para subir y descargar archivos. Ideal para home office, clases en línea y gaming.</p>
-                </div>
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 transform hover:-translate-y-2 transition-transform duration-300">
-                    <h3 class="text-xl font-bold text-indigo-400 mb-3">Precio Fijo Garantizado</h3>
-                    <p class="text-gray-400">Te mantenemos el mismo precio durante 12 meses al realizar tu pago puntual. Sin sorpresas en tu factura.</p>
-                </div>
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 transform hover:-translate-y-2 transition-transform duration-300">
-                    <h3 class="text-xl font-bold text-indigo-400 mb-3">Soporte Técnico Prioritario</h3>
-                    <p class="text-gray-400">Accede a nuestra línea de atención técnica 24/7 con asesores listos para resolver cualquier inconveniente rápidamente.</p>
-                </div>
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 transform hover:-translate-y-2 transition-transform duration-300">
-                    <h3 class="text-xl font-bold text-indigo-400 mb-3">Instalación Sin Costo</h3>
-                    <p class="text-gray-400">Instalación profesional incluida con valor de $350 MXN. Paga hoy $0 por la instalación de tu servicio.</p>
-                </div>
-            </div>
-        </section>
-        
         <!-- Plans Section -->
         <section id="planes" class="py-20">
             <div class="text-center">
-                <div class="promo-gradient p-8 rounded-2xl mb-12 shadow-2xl border border-gray-800">
-                    <h2 class="text-4xl font-extrabold text-white">Elige el plan ideal para ti</h2>
-                    <p class="text-indigo-200 mt-2 text-lg">Todos nuestros planes cuentan con velocidad simétrica e instalación sin costo.</p>
+                <div class="promo-gradient p-8 rounded-2xl mb-12 shadow-2xl border border-orange-600">
+                    <h2 class="text-4xl font-extrabold text-white">Elige el plan que hará TEMBLAR al LAG</h2>
+                    <p class="text-orange-200 mt-2 text-lg">Velocidades tan rápidas que asustan 👻</p>
                 </div>
 
-                <div id="plan-type-buttons" class="flex justify-center gap-4 mb-10 bg-gray-900 p-2 rounded-full max-w-md mx-auto border border-gray-800">
-                    <button id="btn-internet" class="plan-type-btn flex-1 bg-indigo-600 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">Solo Internet</button>
-                    <button id="btn-combo" class="plan-type-btn flex-1 bg-transparent hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">Internet + TV</button>
+                <div id="plan-type-buttons" class="flex justify-center gap-4 mb-10 bg-gray-900 p-2 rounded-full max-w-md mx-auto border border-orange-600">
+                    <button id="btn-internet" class="plan-type-btn flex-1 bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">Solo Internet</button>
+                    <button id="btn-combo" class="plan-type-btn flex-1 bg-transparent hover:bg-orange-900 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">Internet + TV</button>
                 </div>
 
                 <div id="plan-cards-container" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
@@ -281,11 +357,34 @@
             </div>
         </section>
 
+        <!-- Benefits Section -->
+        <section id="beneficios" class="py-20">
+            <h2 class="text-3xl font-bold text-center mb-12 halloween-text">Beneficios que dan MIEDO de buenos</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-900 p-8 rounded-2xl border border-orange-600 transform hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-xl font-bold text-orange-400 mb-3">👻 Velocidad de ESPANTO</h3>
+                    <p class="text-gray-400">Disfruta la misma velocidad para subir y descargar archivos. Tan rápido que da miedo.</p>
+                </div>
+                <div class="bg-gray-900 p-8 rounded-2xl border border-orange-600 transform hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-xl font-bold text-orange-400 mb-3">🎃 Precio Fijo EMBRUJADO</h3>
+                    <p class="text-gray-400">Te mantenemos el mismo precio durante 12 meses. Sin fantasmas en tu factura.</p>
+                </div>
+                <div class="bg-gray-900 p-8 rounded-2xl border border-orange-600 transform hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-xl font-bold text-orange-400 mb-3">🦇 Soporte Técnico NOCTURNO</h3>
+                    <p class="text-gray-400">Accede a nuestra línea de atención técnica 24/7 con asesores que no duermen.</p>
+                </div>
+                <div class="bg-gray-900 p-8 rounded-2xl border border-orange-600 transform hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-xl font-bold text-orange-400 mb-3">💀 Instalación SIN COSTO</h3>
+                    <p class="text-gray-400">Instalación profesional incluida con valor de $350 MXN. Paga hoy $0 por la instalación.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Add-ons Section -->
         <section id="addons-section" class="hidden py-12">
-             <div id="addons-intro" class="max-w-3xl mx-auto text-center bg-gray-900 rounded-3xl p-8 md:p-12">
-                <h2 class="text-3xl font-bold mb-4">¡Personaliza tu paquete!</h2>
-                <p class="text-gray-400 mb-8">¿Deseas agregar servicios de streaming, apps o dispositivos a tu plan?</p>
+             <div id="addons-intro" class="max-w-3xl mx-auto text-center bg-gray-900 rounded-3xl p-8 md:p-12 border border-orange-600">
+                <h2 class="text-3xl font-bold mb-4 halloween-text">¡Personaliza tu paquete de TERROR!</h2>
+                <p class="text-orange-300 mb-8">¿Deseas agregar servicios de streaming, apps o dispositivos a tu plan?</p>
                  <div class="flex justify-center gap-4">
                     <button id="btn-addons-yes" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-10 rounded-full transition-colors duration-300">¡Sí, agregar!</button>
                     <button id="btn-addons-no" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-10 rounded-full transition-colors duration-300">No, gracias</button>
@@ -299,52 +398,52 @@
 
         <!-- Contact Form & Summary Section -->
         <section id="contact-section" class="hidden py-20">
-            <div class="max-w-4xl mx-auto bg-gray-900 p-8 md:p-12 rounded-3xl border border-gray-800 grid md:grid-cols-2 gap-12">
+            <div class="max-w-4xl mx-auto bg-gray-900 p-8 md:p-12 rounded-3xl border border-orange-800 grid md:grid-cols-2 gap-12">
                 <div>
-                    <h2 class="text-3xl font-bold mb-2 text-indigo-400">¡Casi listo!</h2>
-                    <p class="text-gray-400 mb-6">Completa tus datos para finalizar tu solicitud. Me pondré en contacto contigo a la brevedad para coordinar la instalación.</p>
+                    <h2 class="text-3xl font-bold mb-2 halloween-text">¡Casi listo para el TERROR!</h2>
+                    <p class="text-orange-300 mb-6">Completa tus datos para finalizar tu solicitud. Me pondré en contacto contigo a la brevedad para coordinar la instalación.</p>
                     <form id="contact-form">
                         <div class="mb-4">
-                            <label for="nombre" class="block mb-2 text-sm font-medium text-gray-300">Nombre Completo</label>
-                            <input type="text" id="nombre" name="nombre" class="bg-gray-800 border border-gray-700 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="Tu nombre" required>
+                            <label for="nombre" class="block mb-2 text-sm font-medium text-orange-300">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" class="bg-gray-800 border border-orange-700 text-white text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5" placeholder="Tu nombre" required>
                         </div>
                         <div class="mb-4">
-                            <label for="correo" class="block mb-2 text-sm font-medium text-gray-300">Correo Electrónico</label>
-                            <input type="email" id="correo" name="correo" class="bg-gray-800 border border-gray-700 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="tu@correo.com" required>
+                            <label for="correo" class="block mb-2 text-sm font-medium text-orange-300">Correo Electrónico</label>
+                            <input type="email" id="correo" name="correo" class="bg-gray-800 border border-orange-700 text-white text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5" placeholder="tu@correo.com" required>
                         </div>
                         <div class="mb-6">
-                            <label for="telefono" class="block mb-2 text-sm font-medium text-gray-300">Teléfono (WhatsApp)</label>
-                            <input type="tel" id="telefono" name="telefono" class="bg-gray-800 border border-gray-700 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="10 dígitos" required pattern="\d{10}">
+                            <label for="telefono" class="block mb-2 text-sm font-medium text-orange-300">Teléfono (WhatsApp)</label>
+                            <input type="tel" id="telefono" name="telefono" class="bg-gray-800 border border-orange-700 text-white text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5" placeholder="10 dígitos" required pattern="\d{10}">
                         </div>
                         <div class="mb-6">
                             <label class="flex items-center">
                                 <input type="checkbox" id="portabilidad" name="portabilidad" class="custom-checkbox rounded">
-                                <span class="ml-2 text-gray-300">¿Deseas portar tu número? (Obtén descuento en tu segunda mensualidad)</span>
+                                <span class="ml-2 text-orange-300">¿Deseas portar tu número? (Obtén descuento en tu segunda mensualidad)</span>
                             </label>
                         </div>
                     </form>
                 </div>
-                <div class="bg-black p-6 rounded-2xl flex flex-col">
-                    <h3 class="text-xl font-bold mb-4">Resumen de tu pedido</h3>
-                    <div id="summary-content" class="space-y-3 text-gray-300 flex-grow">
+                <div class="bg-black p-6 rounded-2xl flex flex-col border border-orange-700">
+                    <h3 class="text-xl font-bold mb-4 halloween-text">Resumen de tu pedido de TERROR</h3>
+                    <div id="summary-content" class="space-y-3 text-orange-300 flex-grow">
                         <!-- El resumen se insertará aquí con JS -->
                     </div>
-                     <div class="border-t border-gray-800 mt-4 pt-4">
+                     <div class="border-t border-orange-800 mt-4 pt-4">
                         <div class="flex justify-between items-center text-xl font-bold">
-                            <span>Total Mensual:</span>
-                            <span id="summary-total" class="text-indigo-400">$0</span>
+                            <span class="text-orange-300">Total Mensual:</span>
+                            <span id="summary-total" class="halloween-text">$0</span>
                         </div>
                         <div class="flex justify-between items-center text-lg text-green-400 mt-2">
                             <span>Costo de Instalación Extra:</span>
                             <span id="summary-install" class="text-green-400">$0 (Valor $350)</span>
                         </div>
-                        <div class="flex justify-between items-center text-xl font-bold mt-2 pt-2 border-t border-gray-800">
-                            <span>Pago Inicial:</span>
-                            <span id="summary-install-price" class="text-indigo-400">$0</span>
+                        <div class="flex justify-between items-center text-xl font-bold mt-2 pt-2 border-t border-orange-800">
+                            <span class="text-orange-300">Pago Inicial:</span>
+                            <span id="summary-install-price" class="halloween-text">$0</span>
                         </div>
                     </div>
                     <button id="btn-continue" type="button" class="mt-6 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 disabled:bg-gray-700 disabled:cursor-not-allowed flex items-center justify-center gap-2" disabled>
-                        <span id="continue-text">Enviar solicitud por WhatsApp</span>
+                        <span id="continue-text">👻 Enviar solicitud por WhatsApp</span>
                         <div id="continue-loader" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                     </button>
                 </div>
@@ -353,37 +452,37 @@
 
         <!-- Testimonials Section -->
         <section id="testimonios" class="py-20">
-            <h2 class="text-3xl font-bold text-center mb-12">Lo que dicen nuestros clientes</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 halloween-text">Lo que dicen nuestros clientes ASUSTADOS</h2>
             <div class="grid lg:grid-cols-3 gap-8">
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
+                <div class="bg-gray-900 p-8 rounded-2xl border border-orange-600">
                     <p class="text-gray-400 mb-6">"La atención de Juan fue excelente. Me explicó todo con claridad y la instalación fue súper rápida. Internet vuela, 100% recomendado!"</p>
-                    <div class="font-bold text-right">- Sofía G.</div>
+                    <div class="font-bold text-right text-orange-400">- Sofía G.</div>
                 </div>
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
+                <div class="bg-gray-900 p-8 rounded-2xl border border-orange-600">
                     <p class="text-gray-400 mb-6">"Tenía muchas dudas sobre qué plan me convenía para mis clases en línea y para jugar. El asesor me ayudó a elegir el paquete perfecto y ahora todo funciona de maravilla."</p>
-                    <div class="font-bold text-right">- Carlos M.</div>
+                    <div class="font-bold text-right text-orange-400">- Carlos M.</div>
                 </div>
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
+                <div class="bg-gray-900 p-8 rounded-2xl border border-orange-600">
                     <p class="text-gray-400 mb-6">"Contratar fue muy sencillo y sin tanto rollo. Me gustaron las promociones que me ofreció y el servicio ha sido muy estable desde el primer día."</p>
-                    <div class="font-bold text-right">- Laura V.</div>
+                    <div class="font-bold text-right text-orange-400">- Laura V.</div>
                 </div>
             </div>
         </section>
         
         <!-- Support Section -->
         <section id="soporte" class="py-20 text-center">
-            <div class="bg-gray-900 max-w-2xl mx-auto p-8 rounded-2xl border border-gray-800">
-                <h2 class="text-2xl font-bold mb-4">¿Necesitas Soporte Técnico?</h2>
-                <p class="text-gray-400 mb-4">Si ya eres cliente y presentas una falla, comunícate directamente a la línea de soporte técnico para una atención inmediata.</p>
-                <p class="text-3xl font-bold text-indigo-400 tracking-widest">800 510 0510</p>
+            <div class="bg-gray-900 max-w-2xl mx-auto p-8 rounded-2xl border border-orange-600">
+                <h2 class="text-2xl font-bold mb-4 halloween-text">¿Necesitas Soporte Técnico?</h2>
+                <p class="text-orange-300 mb-4">Si ya eres cliente y presentas una falla, comunícate directamente a la línea de soporte técnico para una atención inmediata.</p>
+                <p class="text-3xl font-bold halloween-text tracking-widest">800 510 0510</p>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 mt-20">
-        <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+    <footer class="bg-gray-900 mt-20 border-t border-orange-600">
+        <div class="container mx-auto px-6 py-8 text-center text-orange-400">
             <p>&copy; <span id="current-year"></span> Juan Meléndez - Asesor Autorizado Totalplay. Todos los derechos reservados.</p>
             <p class="text-sm mt-2">Este sitio es gestionado por un asesor de ventas autorizado. Totalplay® es una marca registrada.</p>
              <p class="text-xs mt-4">Página creada por Juan Meléndez</p>
@@ -396,10 +495,23 @@
             const WHATSAPP_NUMBER = '5218131191393';
             const MAKE_WEBHOOK_URL = 'https://hook.eu2.make.com/jigm042t5atf3tci3j82n3cxysiva3f0';
             
-            // Datos de portabilidad
-            const portabilityDiscount = {
+            // Verificar si estamos en periodo promocional (1 al 15 de octubre)
+            function isPromoPeriod() {
+                const today = new Date();
+                const currentMonth = today.getMonth() + 1; // Enero es 0
+                const currentDay = today.getDate();
+                
+                // Promoción activa del 1 al 15 de octubre
+                return currentMonth === 10 && currentDay >= 1 && currentDay <= 15;
+            }
+            
+            // Datos de portabilidad (solo disponible durante promoción)
+            const portabilityDiscount = isPromoPeriod() ? {
                 'internet': 100,
                 'combo': 200
+            } : {
+                'internet': 0,
+                'combo': 0
             };
             
             // Eventos personalizados para Facebook Pixel
@@ -441,7 +553,9 @@
                         promoPrice: 460, 
                         formattedDesc: ["Fibra óptica", "Club WiFi Totalplay"],
                         recommended: false,
-                        lifetimeDiscount: 20
+                        lifetimeDiscount: isPromoPeriod() ? 20 : 0,
+                        discountFromMonth: isPromoPeriod() ? 3 : 6,
+                        showExtraMegas: true
                     },
                     { 
                         megas: 200, 
@@ -450,7 +564,9 @@
                         promoPrice: 570, 
                         formattedDesc: ["Fibra óptica", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: true,
-                        lifetimeDiscount: 20
+                        lifetimeDiscount: isPromoPeriod() ? 20 : 0,
+                        discountFromMonth: isPromoPeriod() ? 3 : 6,
+                        showExtraMegas: true
                     },
                     { 
                         megas: 300, 
@@ -459,7 +575,9 @@
                         promoPrice: 680, 
                         formattedDesc: ["Fibra óptica", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: false,
-                        lifetimeDiscount: 30
+                        lifetimeDiscount: isPromoPeriod() ? 30 : 0,
+                        discountFromMonth: isPromoPeriod() ? 3 : 6,
+                        showExtraMegas: true
                     },
                     { 
                         megas: 500, 
@@ -468,7 +586,9 @@
                         promoPrice: 830, 
                         formattedDesc: ["Fibra óptica", "WiFi 6", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: false,
-                        lifetimeDiscount: 60
+                        lifetimeDiscount: isPromoPeriod() ? 60 : 0,
+                        discountFromMonth: isPromoPeriod() ? 3 : 6,
+                        showExtraMegas: true
                     },
                     { 
                         megas: 1200, 
@@ -477,7 +597,9 @@
                         promoPrice: 1470, 
                         formattedDesc: ["Fibra óptica", "WiFi 6", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: false,
-                        lifetimeDiscount: 80
+                        lifetimeDiscount: isPromoPeriod() ? 80 : 0,
+                        discountFromMonth: isPromoPeriod() ? 3 : 6,
+                        showExtraMegas: false // NO mostrar "Megas extra" para 1200
                     }
                 ],
                 combo: [
@@ -488,7 +610,9 @@
                         promoPrice: 600, 
                         formattedDesc: ["185 canales", "Convertidor Smart TV"],
                         recommended: false,
-                        lifetimeDiscount: 30
+                        lifetimeDiscount: isPromoPeriod() ? 30 : 0,
+                        discountFromMonth: isPromoPeriod() ? 3 : 6,
+                        showExtraMegas: true
                     },
                     { 
                         megas: 200, 
@@ -497,7 +621,9 @@
                         promoPrice: 710, 
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Apple TV+ 1 año"],
                         recommended: true,
-                        lifetimeDiscount: 30
+                        lifetimeDiscount: isPromoPeriod() ? 30 : 0,
+                        discountFromMonth: isPromoPeriod() ? 3 : 6,
+                        showExtraMegas: true
                     },
                     { 
                         megas: 300, 
@@ -506,7 +632,9 @@
                         promoPrice: 820, 
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Apple TV+ 1 año"],
                         recommended: false,
-                        lifetimeDiscount: 40
+                        lifetimeDiscount: isPromoPeriod() ? 40 : 0,
+                        discountFromMonth: isPromoPeriod() ? 3 : 6,
+                        showExtraMegas: true
                     },
                     { 
                         megas: 500, 
@@ -515,7 +643,9 @@
                         promoPrice: 1000, 
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Bocinas B&O", "Apple TV+ 1 año"],
                         recommended: false,
-                        lifetimeDiscount: 50
+                        lifetimeDiscount: isPromoPeriod() ? 50 : 0,
+                        discountFromMonth: isPromoPeriod() ? 3 : 6,
+                        showExtraMegas: true
                     },
                     { 
                         megas: 1200, 
@@ -524,7 +654,9 @@
                         promoPrice: 1640, 
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Bocinas B&O", "Apple TV+ 1 año"],
                         recommended: false,
-                        lifetimeDiscount: 100
+                        lifetimeDiscount: isPromoPeriod() ? 100 : 0,
+                        discountFromMonth: isPromoPeriod() ? 3 : 6,
+                        showExtraMegas: false // NO mostrar "Megas extra" para 1200
                     }
                 ]
             };
@@ -622,6 +754,12 @@
                 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
                 dayElement.textContent = today.toLocaleDateString('es-ES', options);
                 document.getElementById('current-year').textContent = today.getFullYear();
+                
+                // Actualizar banner de promoción según periodo
+                const promoBanner = document.getElementById('promo-banner');
+                if (isPromoPeriod()) {
+                    promoBanner.innerHTML = '<p class="text-center font-bold text-yellow-300 text-lg">👻 ¡OFERTAS DE TERROR hasta el 15 de Octubre! Megas extra + Descuento desde 3er mes</p>';
+                }
             }
 
             function hideNonPlanSections() {
@@ -657,8 +795,9 @@
             function renderPlanCards(type) {
                 selection.planType = type;
                 dom.planCardsContainer.innerHTML = '';
+                const isPromoActive = isPromoPeriod();
+                
                 plansData[type].forEach(plan => {
-                    const isPromoActive = new Date() <= new Date('2025-09-30');
                     const currentMegas = isPromoActive ? plan.promoMegas : plan.megas;
                     const currentPrice = isPromoActive ? plan.promoPrice : plan.regularPrice;
                     const colorClass = getColorClass(plan.megas);
@@ -672,16 +811,18 @@
                         <div class="card-hover p-6 rounded-2xl text-center flex flex-col relative h-full">
                             ${plan.recommended ? '<div class="recommended-badge">Recomendado</div>' : ''}
                             
-                            <!-- Encabezado de promoción -->
-                            <div class="bg-orange-500 text-white text-center py-2 rounded-t-lg -mx-6 -mt-6 mb-4 font-bold">
-                                + Megas por 4 meses
-                            </div>
+                            ${isPromoActive && plan.showExtraMegas ? `
+                                <!-- Encabezado de promoción - SOLO para planes que no son 1200 megas -->
+                                <div class="bg-orange-500 text-white text-center py-2 rounded-t-lg -mx-6 -mt-6 mb-4 font-bold">
+                                    + Megas por 4 meses
+                                </div>
+                            ` : ''}
                             
                             <!-- Título del plan con color degradado -->
                             <div class="${colorClass} p-4 rounded-xl text-center mb-4">
-                                <h3 class="text-2xl font-bold">${currentMegas} Megas ${isPromoActive && currentMegas > plan.megas ? 'x 4 meses' : ''}</h3>
+                                <h3 class="text-2xl font-bold">${currentMegas} Megas ${isPromoActive && currentMegas > plan.megas && plan.showExtraMegas ? 'x 4 meses' : ''}</h3>
                                 <p class="font-semibold">${type === 'combo' ? 'Internet + TV' : 'Internet Simétrico*'}</p>
-                                ${isPromoActive && currentMegas > plan.megas ? 
+                                ${isPromoActive && currentMegas > plan.megas && plan.showExtraMegas ? 
                                     `<p class="text-sm mt-1">Después: ${plan.megas} Megas</p>` : 
                                     `<p class="text-sm mt-1">Velocidad Simétrica</p>`
                                 }
@@ -693,23 +834,30 @@
                             </div>
                             
                             <!-- Detalles de descuentos -->
-                            <div class="text-xs text-gray-400 mb-4">
-                                <div class="flex items-center justify-center">
-                                    <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                                    <span>Descuento de por vida: $${plan.lifetimeDiscount} a partir del 6to mes</span>
+                            ${plan.lifetimeDiscount > 0 ? `
+                                <div class="text-xs text-gray-400 mb-4">
+                                    <div class="flex items-center justify-center">
+                                        <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                        <span>Descuento de por vida: $${plan.lifetimeDiscount} a partir del ${plan.discountFromMonth}${plan.discountFromMonth === 3 ? 'er' : 'to'} mes</span>
+                                    </div>
                                 </div>
-                            </div>
+                            ` : ''}
                             
-                            <!-- Precio -->
+                            <!-- Precio - MOSTRAR PRECIO PROMOCIONAL EN GRANDE Y REGULAR TACHADO -->
                             <div class="my-6">
                                 <span class="text-4xl font-extrabold text-white">$${currentPrice}</span>
                                 <span class="text-gray-400">/mes</span>
-                                ${isPromoActive ? `<div class="text-sm text-gray-500 line-through mt-1">Precio regular: $${plan.regularPrice}</div>` : ''}
+                                ${isPromoActive ? `
+                                    <div class="flex items-center justify-center mt-2">
+                                        <span class="text-lg text-gray-500 line-through mr-2">$${plan.regularPrice}</span>
+                                        <span class="text-sm text-green-400 font-bold">Ahorras $${plan.regularPrice - currentPrice}</span>
+                                    </div>
+                                ` : ''}
                             </div>
                             
                             <button class="select-plan-btn mt-auto btn-me-interesa py-3 px-6 rounded-full w-full"
                                 data-megas="${plan.megas}" data-promo-megas="${currentMegas}" data-price="${currentPrice}" data-regular-price="${plan.regularPrice}" data-lifetime-discount="${plan.lifetimeDiscount}">
-                                Me interesa
+                                👻 Me interesa
                             </button>
                         </div>
                     `;
@@ -722,15 +870,15 @@
                 const isTvPlan = selection.planType === 'combo';
                 
                 let streamingOptions = `
-                    <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                    <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-orange-900/50 border-2 border-transparent has-[:checked]:border-orange-500">
                         <input type="radio" name="streaming" value="none" class="custom-radio" checked> 
                         <span class="ml-3">Ninguno</span>
                     </label>
-                    <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                    <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-orange-900/50 border-2 border-transparent has-[:checked]:border-orange-500">
                         <input type="radio" name="streaming" value="prime" class="custom-radio"> 
                         <span class="ml-3">${streaming.prime.name} (+$${streaming.prime.price})</span>
                     </label>
-                    <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                    <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-orange-900/50 border-2 border-transparent has-[:checked]:border-orange-500">
                         <input type="radio" name="streaming" value="netflix" class="custom-radio"> 
                         <span class="ml-3">${streaming.netflix.name}</span>
                     </label>`;
@@ -738,21 +886,21 @@
                 let netflixTiers = '';
                 streaming.netflix.tiers.forEach(tier => {
                     netflixTiers += `
-                        <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                        <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-orange-900/50 border-2 border-transparent has-[:checked]:border-orange-500">
                             <input type="radio" name="netflix-tier" value="${tier.id}" class="custom-radio"> 
                             <span class="ml-3">${tier.name} (+$${tier.price})</span>
                         </label>`;
                 });
                 
                 let disneyOptions = `
-                    <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                    <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-orange-900/50 border-2 border-transparent has-[:checked]:border-orange-500">
                         <input type="radio" name="disney" value="none" class="custom-radio" checked> 
                         <span class="ml-3">Ninguno</span>
                     </label>`;
                 
                 disney.tiers.forEach(tier => {
                     disneyOptions += `
-                        <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                        <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-orange-900/50 border-2 border-transparent has-[:checked]:border-orange-500">
                             <input type="radio" name="disney" value="${tier.id}" class="custom-radio"> 
                             <span class="ml-3">${tier.name} (+$${tier.price} por ${tier.promo})</span>
                         </label>
@@ -764,7 +912,7 @@
                 let appPackageOptions = '';
                 app_packages.forEach(pkg => {
                     appPackageOptions += `
-                        <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                        <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-orange-900/50 border-2 border-transparent has-[:checked]:border-orange-500">
                             <input type="radio" name="app-package" value="${pkg.id}" class="custom-radio">
                             <span class="ml-3">${pkg.name} (+$${pkg.price})</span>
                         </label>`;
@@ -774,7 +922,7 @@
                 Object.values(devices).forEach(device => {
                     if (!device.tvOnly || isTvPlan) {
                         deviceOptions += `
-                            <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                            <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-orange-900/50 border-2 border-transparent has-[:checked]:border-orange-500">
                                 <input type="checkbox" name="device" value="${device.id}" class="custom-checkbox"> 
                                 <span class="ml-3">${device.name} (+$${device.price})</span>
                             </label>`;
@@ -782,25 +930,25 @@
                 });
                 
                 dom.addonsOptionsContainer.innerHTML = `
-                    <div class="bg-gray-900 p-6 rounded-2xl">
-                        <h3 class="text-xl font-bold mb-4">1. Elige una plataforma de Streaming (opcional)</h3>
+                    <div class="bg-gray-900 p-6 rounded-2xl border border-orange-600">
+                        <h3 class="text-xl font-bold mb-4 halloween-text">1. Elige una plataforma de Streaming (opcional)</h3>
                         <div class="space-y-3" id="streaming-choice">
                             ${streamingOptions}
                         </div>
-                        <div id="netflix-tiers" class="hidden mt-4 ml-6 space-y-3 border-l-2 border-gray-700 pl-6">
+                        <div id="netflix-tiers" class="hidden mt-4 ml-6 space-y-3 border-l-2 border-orange-700 pl-6">
                             ${netflixTiers}
                         </div>
                     </div>
-                    <div class="bg-gray-900 p-6 rounded-2xl">
-                        <h3 class="text-xl font-bold mb-4">2. Elige Disney+ (opcional)</h3>
+                    <div class="bg-gray-900 p-6 rounded-2xl border border-orange-600">
+                        <h3 class="text-xl font-bold mb-4 halloween-text">2. Elige Disney+ (opcional)</h3>
                         <div class="space-y-3" id="disney-choice">
                             ${disneyOptions}
                         </div>
                     </div>
-                    <div class="bg-gray-900 p-6 rounded-2xl">
-                        <h3 class="text-xl font-bold mb-4">3. Elige un paquete de Apps (opcional)</h3>
+                    <div class="bg-gray-900 p-6 rounded-2xl border border-orange-600">
+                        <h3 class="text-xl font-bold mb-4 halloween-text">3. Elige un paquete de Apps (opcional)</h3>
                         <div class="space-y-3" id="package-choice">
-                            <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-indigo-900/50 border-2 border-transparent has-[:checked]:border-indigo-500">
+                            <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-orange-900/50 border-2 border-transparent has-[:checked]:border-orange-500">
                                 <input type="radio" name="app-package" value="none" class="custom-radio" checked> 
                                 <span class="ml-3">Ninguno</span>
                             </label>
@@ -808,14 +956,26 @@
                         </div>
                         <div id="package-apps-container" class="mt-4"></div>
                     </div>
-                    <div class="bg-gray-900 p-6 rounded-2xl">
-                        <h3 class="text-xl font-bold mb-4">4. Agrega Dispositivos (opcional)</h3>
+                    <div class="bg-gray-900 p-6 rounded-2xl border border-orange-600">
+                        <h3 class="text-xl font-bold mb-4 halloween-text">4. Agrega Dispositivos (opcional)</h3>
                         <div class="space-y-3" id="device-choice">
                             ${deviceOptions}
                         </div>
                     </div>`;
                 
                 dom.addonsOptionsContainer.classList.remove('hidden');
+                
+                // Ocultar opción de portabilidad si no está en periodo promocional
+                if (!isPromoPeriod()) {
+                    const portabilityLabel = document.querySelector('label[for="portabilidad"]');
+                    if (portabilityLabel) {
+                        portabilityLabel.style.display = 'none';
+                    }
+                    const portabilityCheckbox = document.getElementById('portabilidad');
+                    if (portabilityCheckbox) {
+                        portabilityCheckbox.style.display = 'none';
+                    }
+                }
             }
 
             function renderPackageApps(packageId) {
@@ -841,9 +1001,9 @@
                 });
                 
                 container.innerHTML = `
-                    <div class="ml-6 border-l-2 border-gray-700 pl-6 space-y-3">
+                    <div class="ml-6 border-l-2 border-orange-700 pl-6 space-y-3">
                         <div class="flex justify-between items-center">
-                            <p class="package-selection-counter font-semibold text-gray-300">Selecciona hasta ${pkg.limit} app${pkg.limit !== 1 ? 's' : ''}: (0/${pkg.limit})</p>
+                            <p class="package-selection-counter font-semibold text-orange-300">Selecciona hasta ${pkg.limit} app${pkg.limit !== 1 ? 's' : ''}: (0/${pkg.limit})</p>
                             <p class="package-limit-message text-amber-400 text-sm font-semibold hidden">¡Límite alcanzado!</p>
                         </div>
                         <div class="limited-checkbox-group grid sm:grid-cols-2 gap-2" data-limit="${pkg.limit}">
@@ -878,7 +1038,7 @@
                     total += selection.appPackage.price;
                     
                     if (selection.appPackage.selectedApps.length > 0) {
-                        addonsSummary += `<ul class="list-disc list-inside ml-4 text-gray-400">`;
+                        addonsSummary += `<ul class="list-disc list-inside ml-4 text-orange-400">`;
                         selection.appPackage.selectedApps.forEach(app => {
                             addonsSummary += `<li>${app}</li>`;
                         });
@@ -895,15 +1055,15 @@
                 
                 if (addonsSummary) {
                     summaryHTML += `
-                        <div class="border-t border-gray-800 my-2"></div>
+                        <div class="border-t border-orange-800 my-2"></div>
                         <p><strong>Adicionales:</strong></p>
                         <ul class="list-none space-y-1">
                             ${addonsSummary}
                         </ul>`;
                 }
                 
-                // Calcular descuento por portabilidad
-                selection.portabilityDiscount = selection.portability ? portabilityDiscount[selection.planType] : 0;
+                // Calcular descuento por portabilidad (solo en periodo promocional)
+                selection.portabilityDiscount = selection.portability && isPromoPeriod() ? portabilityDiscount[selection.planType] : 0;
                 
                 selection.total = total;
                 
@@ -1248,7 +1408,7 @@
                 
                 resumen += `\nCOSTO DE INSTALACIÓN EXTRA: $0 (Valor $350)\n`;
                 
-                if (selection.portability) {
+                if (selection.portability && isPromoPeriod()) {
                     const discountAmount = portabilityDiscount[selection.planType];
                     resumen += `DESEO HACER PORTABILIDAD PARA EL DESCUENTO DE: $${discountAmount} EN MI SEGUNDA MENSUALIDAD\n`;
                 }
@@ -1403,7 +1563,7 @@
                 message += `*Total mensual estimado: $${formData.total}*\n`;
                 message += `*Costo de Instalación Extra:* *$0 (Valor $350)*\n`;
                 
-                if (formData.portability) {
+                if (formData.portability && isPromoPeriod()) {
                     message += `*Deseo hacer portabilidad para el descuento de: $${formData.portabilityDiscount} en mi segunda mensualidad*\n`;
                 }
                 
@@ -1420,11 +1580,11 @@
             dom.planTypeButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     dom.planTypeButtons.forEach(btn => {
-                        btn.classList.remove('bg-indigo-600');
-                        btn.classList.add('bg-transparent', 'hover:bg-gray-800');
+                        btn.classList.remove('bg-orange-600');
+                        btn.classList.add('bg-transparent', 'hover:bg-orange-900');
                     });
-                    button.classList.add('bg-indigo-600');
-                    button.classList.remove('bg-transparent', 'hover:bg-gray-800');
+                    button.classList.add('bg-orange-600');
+                    button.classList.remove('bg-transparent', 'hover:bg-orange-900');
                     renderPlanCards(button.id.replace('btn-', ''));
                 });
             });
