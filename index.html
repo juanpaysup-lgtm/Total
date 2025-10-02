@@ -31,6 +31,7 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #000000;
+            overflow-x: hidden;
         }
         .halloween-gradient {
             background: linear-gradient(135deg, #1a0b0b 0%, #2d1a1a 50%, #1a0b0b 100%);
@@ -149,6 +150,8 @@
             color: white;
             font-weight: 700;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
         .btn-me-interesa:hover {
@@ -222,11 +225,39 @@
             border-color: #ff4500;
         }
         
-        .ghost-animation {
-            animation: float 3s ease-in-out infinite;
+        /* Animaciones para emojis flotantes */
+        .floating-emoji {
+            position: fixed;
+            z-index: 9999;
+            pointer-events: none;
+            font-size: 1.5rem;
+            animation: floatAround 20s infinite linear;
+            opacity: 0.7;
         }
         
-        @keyframes float {
+        @keyframes floatAround {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(100px, 100px) rotate(90deg);
+            }
+            50% {
+                transform: translate(200px, 0) rotate(180deg);
+            }
+            75% {
+                transform: translate(100px, -100px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+        
+        .ghost-float {
+            animation: ghostFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes ghostFloat {
             0%, 100% {
                 transform: translateY(0px);
             }
@@ -235,69 +266,110 @@
             }
         }
         
-        .pumpkin {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: #ff8c00;
-            border-radius: 50%;
-            z-index: 2;
+        .bat-fly {
+            animation: batFly 4s ease-in-out infinite;
         }
         
-        .pumpkin::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 15px;
-            background: #8b4513;
-            border-radius: 50%;
+        @keyframes batFly {
+            0%, 100% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateX(20px) translateY(-15px) rotate(5deg);
+            }
+            50% {
+                transform: translateX(0) translateY(-25px) rotate(0deg);
+            }
+            75% {
+                transform: translateX(-20px) translateY(-15px) rotate(-5deg);
+            }
         }
         
-        .pumpkin::after {
-            content: "^_^";
+        .pumpkin-bounce {
+            animation: pumpkinBounce 5s ease-in-out infinite;
+        }
+        
+        @keyframes pumpkinBounce {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-15px) rotate(5deg);
+            }
+            50% {
+                transform: translateY(0) rotate(0deg);
+            }
+            75% {
+                transform: translateY(-10px) rotate(-5deg);
+            }
+        }
+        
+        .skeleton-dance {
+            animation: skeletonDance 6s ease-in-out infinite;
+        }
+        
+        @keyframes skeletonDance {
+            0%, 100% {
+                transform: translateX(0) rotate(0deg);
+            }
+            25% {
+                transform: translateX(15px) rotate(10deg);
+            }
+            50% {
+                transform: translateX(0) rotate(0deg);
+            }
+            75% {
+                transform: translateX(-15px) rotate(-10deg);
+            }
+        }
+        
+        .spider-crawl {
+            animation: spiderCrawl 8s linear infinite;
+        }
+        
+        @keyframes spiderCrawl {
+            0% {
+                transform: translateX(-100px) translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateX(100px) translateY(50px) rotate(180deg);
+            }
+            100% {
+                transform: translateX(-100px) translateY(0) rotate(360deg);
+            }
+        }
+        
+        .ghost-blink {
+            animation: ghostBlink 2s infinite;
+        }
+        
+        @keyframes ghostBlink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+        
+        .btn-ghost {
+            position: relative;
+        }
+        
+        .btn-ghost::before {
+            content: "👻";
             position: absolute;
             top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #000;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        
-        .bat {
-            position: absolute;
-            width: 40px;
-            height: 20px;
-            background: #000;
-            border-radius: 50%;
-            z-index: 2;
-        }
-        
-        .bat::before, .bat::after {
-            content: "";
-            position: absolute;
-            width: 20px;
-            height: 30px;
-            background: #000;
-            border-radius: 50%;
-            top: -5px;
-        }
-        
-        .bat::before {
-            left: -10px;
-            transform: rotate(-30deg);
-        }
-        
-        .bat::after {
-            right: -10px;
-            transform: rotate(30deg);
+            left: 20px;
+            transform: translateY(-50%);
+            animation: ghostBlink 2s infinite;
         }
     </style>
 </head>
 <body class="bg-black text-white">
+
+    <!-- Emojis flotantes -->
+    <div id="floating-emojis"></div>
 
     <!-- Header -->
     <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg border-b border-orange-600">
@@ -315,11 +387,6 @@
     <!-- Hero Section -->
     <main class="container mx-auto px-6">
         <section id="inicio" class="min-h-[80vh] flex items-center halloween-gradient rounded-3xl mt-8 p-8 md:p-16 relative">
-            <!-- Elementos decorativos Halloween -->
-            <div class="pumpkin" style="top: 20%; left: 10%;"></div>
-            <div class="bat ghost-animation" style="top: 30%; right: 15%;"></div>
-            <div class="pumpkin" style="bottom: 20%; right: 10%;"></div>
-            
             <div class="max-w-3xl relative z-10">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
                     <span class="halloween-text">¡El LAG tiene MIEDO de estos MEGAS!</span>
@@ -442,8 +509,8 @@
                             <span id="summary-install-price" class="halloween-text">$0</span>
                         </div>
                     </div>
-                    <button id="btn-continue" type="button" class="mt-6 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 disabled:bg-gray-700 disabled:cursor-not-allowed flex items-center justify-center gap-2" disabled>
-                        <span id="continue-text">👻 Enviar solicitud por WhatsApp</span>
+                    <button id="btn-continue" type="button" class="mt-6 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 disabled:bg-gray-700 disabled:cursor-not-allowed flex items-center justify-center gap-2 btn-ghost" disabled>
+                        <span id="continue-text">Enviar solicitud por WhatsApp</span>
                         <div id="continue-loader" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                     </button>
                 </div>
@@ -513,6 +580,47 @@
                 'internet': 0,
                 'combo': 0
             };
+            
+            // --- ANIMACIONES DE EMOJIS ---
+            function createFloatingEmojis() {
+                const emojis = ['👻', '🎃', '🦇', '💀', '🕷️', '🕸️', '🧛', '🧟', '☠️'];
+                const container = document.getElementById('floating-emojis');
+                const numEmojis = 15;
+                
+                for (let i = 0; i < numEmojis; i++) {
+                    const emoji = document.createElement('div');
+                    emoji.className = 'floating-emoji';
+                    emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                    
+                    // Posición aleatoria
+                    const left = Math.random() * 100;
+                    const top = Math.random() * 100;
+                    const delay = Math.random() * 20;
+                    const duration = 15 + Math.random() * 15;
+                    
+                    // Aplicar diferentes animaciones según el emoji
+                    if (emoji.textContent === '👻') {
+                        emoji.style.animation = `ghostFloat 3s ease-in-out infinite, floatAround ${duration}s infinite linear ${delay}s`;
+                    } else if (emoji.textContent === '🦇') {
+                        emoji.style.animation = `batFly 4s ease-in-out infinite, floatAround ${duration}s infinite linear ${delay}s`;
+                    } else if (emoji.textContent === '🎃') {
+                        emoji.style.animation = `pumpkinBounce 5s ease-in-out infinite, floatAround ${duration}s infinite linear ${delay}s`;
+                    } else if (emoji.textContent === '💀' || emoji.textContent === '🧟') {
+                        emoji.style.animation = `skeletonDance 6s ease-in-out infinite, floatAround ${duration}s infinite linear ${delay}s`;
+                    } else if (emoji.textContent === '🕷️') {
+                        emoji.style.animation = `spiderCrawl 8s linear infinite, floatAround ${duration}s infinite linear ${delay}s`;
+                    } else {
+                        emoji.style.animation = `floatAround ${duration}s infinite linear ${delay}s`;
+                    }
+                    
+                    emoji.style.left = `${left}%`;
+                    emoji.style.top = `${top}%`;
+                    emoji.style.fontSize = `${1 + Math.random() * 1.5}rem`;
+                    emoji.style.opacity = `${0.3 + Math.random() * 0.5}`;
+                    
+                    container.appendChild(emoji);
+                }
+            }
             
             // Eventos personalizados para Facebook Pixel
             function trackFacebookEvent(eventName, parameters) {
@@ -855,9 +963,9 @@
                                 ` : ''}
                             </div>
                             
-                            <button class="select-plan-btn mt-auto btn-me-interesa py-3 px-6 rounded-full w-full"
+                            <button class="select-plan-btn mt-auto btn-me-interesa py-3 px-6 rounded-full w-full btn-ghost"
                                 data-megas="${plan.megas}" data-promo-megas="${currentMegas}" data-price="${currentPrice}" data-regular-price="${plan.regularPrice}" data-lifetime-discount="${plan.lifetimeDiscount}">
-                                👻 Me interesa
+                                Me interesa
                             </button>
                         </div>
                     `;
@@ -1630,6 +1738,7 @@
             // --- INICIALIZACIÓN ---
             setPromoDate();
             renderPlanCards('internet');
+            createFloatingEmojis();
         });
     </script>
 </body>
