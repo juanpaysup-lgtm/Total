@@ -507,8 +507,8 @@
                     </div>
                      <div class="border-t border-orange-800 mt-4 pt-4">
                         <div class="flex justify-between items-center text-xl font-bold">
-                            <span class="text-orange-300">Total Mensual:</span>
-                            <span id="summary-total" class="halloween-text">$0</span>
+                            <span class="text-orange-300">Total Mensual por 5 meses:</span>
+                            <span id="summary-total" class="halloween-text">$0 por 5 meses</span>
                         </div>
                         <div class="flex justify-between items-center text-lg text-green-400 mt-2">
                             <span>Costo de Instalación Extra:</span>
@@ -1214,7 +1214,7 @@
                 let summaryHTML = `
                     <p><strong>Servicio:</strong> ${selection.planType === 'internet' ? 'Solo Internet' : 'Internet + TV'}</p>
                     <p><strong>Plan:</strong> ${selection.plan.promoMegas} Megas x 4 meses</p>
-                    <p class="font-semibold">Precio Plan: $${selection.plan.price}</p>`;
+                    <p class="font-semibold">Precio Plan: $${selection.plan.price} por 5 meses</p>`;
                 
                 let addonsSummary = '';
                 
@@ -1266,7 +1266,7 @@
                 selection.installPrice = selection.total;
                 
                 dom.summaryContent.innerHTML = summaryHTML;
-                dom.summaryTotal.textContent = `$${selection.total}`;
+                dom.summaryTotal.textContent = `$${selection.total} por 5 meses`;
                 dom.summaryInstall.textContent = `$0 (Valor $350)`;
                 dom.summaryInstallPrice.textContent = `$${selection.installPrice}`;
             }
@@ -1572,8 +1572,8 @@
             // Función para crear el resumen completo
             function crearResumenCompleto() {
                 let resumen = `SERVICIO: ${selection.planType === 'internet' ? 'Solo Internet' : 'Internet + TV'}\n`;
-                resumen += `PLAN: ${selection.plan.promoMegas} Megas x 4 meses - $${selection.plan.price}/mes\n`;
-                resumen += `TOTAL MENSUAL: $${selection.total}\n`;
+                resumen += `PLAN: ${selection.plan.promoMegas} Megas x 4 meses - $${selection.plan.price}/mes por 5 meses\n`;
+                resumen += `TOTAL MENSUAL: $${selection.total} por 5 meses\n`;
                 
                 if (selection.streaming.price > 0 || selection.disney.price > 0 || selection.appPackage.price > 0 || selection.devices.length > 0) {
                     resumen += `\nADICIONALES:\n`;
@@ -1725,7 +1725,7 @@
                 // Construir mensaje para WhatsApp
                 let message = `Hola, mi nombre es ${formData.nombre}.\n\nQuiero contratar el siguiente paquete:\n`;
                 message += `*Servicio:* ${formData.servicio}\n`;
-                message += `*Plan:* ${formData.plan} ($${formData.precio_plan})\n\n`;
+                message += `*Plan:* ${formData.plan} ($${formData.precio_plan} por 5 meses)\n\n`;
                 
                 if (formData.adicionales.streaming || formData.adicionales.disney || formData.adicionales.paquete_apps || formData.adicionales.dispositivos.length > 0) {
                     message += "Adicionales:\n";
@@ -1756,7 +1756,7 @@
                     message += "\n";
                 }
                 
-                message += `*Total mensual estimado: $${formData.total}*\n`;
+                message += `*Total mensual estimado: $${formData.total} por 5 meses*\n`;
                 message += `*Costo de Instalación Extra:* *$0 (Valor $350)*\n`;
                 
                 if (formData.portability && isPromoPeriod()) {
