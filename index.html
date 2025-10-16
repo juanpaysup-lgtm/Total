@@ -852,17 +852,13 @@
                         { 
                             id: 'disney-estandar', 
                             name: 'Disney+ Estándar', 
-                            price: 89, 
-                            promo: '4 meses', 
-                            regularPrice: 249, 
+                            price: 249, 
                             description: 'Para 2 dispositivos a la vez sin publicidad' 
                         },
                         { 
                             id: 'disney-premium', 
                             name: 'Disney+ Premium', 
-                            price: 95, 
-                            promo: '4 meses', 
-                            regularPrice: 319, 
+                            price: 319, 
                             description: 'Para 4 dispositivos a la vez sin publicidad' 
                         }
                     ]
@@ -1097,10 +1093,10 @@
                     disneyOptions += `
                         <label class="flex items-center p-3 bg-gray-800 rounded-lg has-[:checked]:bg-orange-900/50 border-2 border-transparent has-[:checked]:border-orange-500">
                             <input type="radio" name="disney" value="${tier.id}" class="custom-radio"> 
-                            <span class="ml-3">${tier.name} (+$${tier.price} por ${tier.promo})</span>
+                            <span class="ml-3">${tier.name} (+$${tier.price})</span>
                         </label>
                         <div class="disney-promo p-3 rounded-lg mb-3 ml-6">
-                            <p class="text-sm text-white">${tier.description}. A partir del 5to mes: $${tier.regularPrice}</p>
+                            <p class="text-sm text-white">${tier.description}</p>
                         </div>`;
                 });
                 
