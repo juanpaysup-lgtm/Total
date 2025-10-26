@@ -202,9 +202,10 @@
             color: #2962FF;
         }
         
+        /* BADGE RECOMENDADO CORREGIDO - Sin superposición */
         .recommended-badge {
             position: absolute;
-            top: -10px;
+            top: -18px; /* Aumentado para subirlo más y evitar superposición */
             right: 20px;
             background: linear-gradient(135deg, #00FFFF, #2962FF);
             color: #000000;
@@ -212,7 +213,7 @@
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 900;
-            z-index: 10;
+            z-index: 25; /* Aumentado para mayor prioridad sobre otros elementos */
             box-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF;
             animation: professionalPulse 2s infinite alternate;
             text-transform: uppercase;
@@ -285,6 +286,12 @@
         .ghost-button span {
             position: relative;
             z-index: 2;
+        }
+        
+        /* Encabezados de promoción con z-index ajustado */
+        .promo-header {
+            position: relative;
+            z-index: 15;
         }
     </style>
 </head>
@@ -860,14 +867,14 @@
                             
                             ${isPromoActive && plan.showExtraMegas ? `
                                 <!-- Encabezado de promoción - SOLO para planes que no son 1200, 5000 o 10000 megas -->
-                                <div class="bg-[#2962FF] text-white text-center py-2 rounded-t-lg -mx-6 -mt-6 mb-4 font-bold">
+                                <div class="bg-[#2962FF] text-white text-center py-2 rounded-t-lg -mx-6 -mt-6 mb-4 font-bold promo-header">
                                     + Megas por 4 meses
                                 </div>
                             ` : ''}
                             
                             ${isPromoActive && plan.megas >= 5000 ? `
                                 <!-- Encabezado especial para nuevos planes -->
-                                <div class="bg-[#FF00FF] text-white text-center py-2 rounded-t-lg -mx-6 -mt-6 mb-4 font-bold">
+                                <div class="bg-[#FF00FF] text-white text-center py-2 rounded-t-lg -mx-6 -mt-6 mb-4 font-bold promo-header">
                                     ¡NUEVO PLAN!
                                 </div>
                             ` : ''}
