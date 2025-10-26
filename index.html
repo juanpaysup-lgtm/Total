@@ -242,16 +242,49 @@
             border-color: #2962FF;
         }
         
-        .btn-ghost {
+        /* Animación para el fantasma en el botón "Me interesa" */
+        .ghost-button {
             position: relative;
+            overflow: hidden;
         }
         
-        .btn-ghost::before {
+        .ghost-button::before {
             content: "👻";
             position: absolute;
             top: 50%;
             left: 20px;
             transform: translateY(-50%);
+            animation: ghostMove 3s infinite ease-in-out, ghostBlink 2s infinite;
+            z-index: 1;
+        }
+        
+        @keyframes ghostMove {
+            0%, 100% {
+                transform: translateY(-50%) translateX(0);
+            }
+            25% {
+                transform: translateY(-60%) translateX(5px);
+            }
+            50% {
+                transform: translateY(-50%) translateX(10px);
+            }
+            75% {
+                transform: translateY(-40%) translateX(5px);
+            }
+        }
+        
+        @keyframes ghostBlink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+        
+        .ghost-button span {
+            position: relative;
+            z-index: 2;
         }
     </style>
 </head>
@@ -889,9 +922,9 @@
                                 `}
                             </div>
                             
-                            <button class="select-plan-btn mt-auto btn-halloween py-3 px-6 rounded-full w-full"
+                            <button class="select-plan-btn mt-auto btn-halloween ghost-button py-3 px-6 rounded-full w-full"
                                 data-megas="${plan.megas}" data-promo-megas="${currentMegas}" data-price="${currentPrice}" data-regular-price="${plan.regularPrice}" data-promo-price="${plan.promoPrice}" data-lifetime-discount="${plan.lifetimeDiscount}">
-                                Me interesa
+                                <span>Me interesa</span>
                             </button>
                         </div>
                     `;
