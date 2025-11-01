@@ -118,6 +118,16 @@
             margin-left: 0.5rem;
         }
         
+        /* Estilo para Netflix similar al original */
+        .netflix-text {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 900;
+            color: #E50914;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+        
         /* Colores específicos para cada plan respetando los originales */
         .plan-100 {
             background: linear-gradient(135deg, #8b4513, #daa520);
@@ -161,9 +171,9 @@
             border: 1px solid #9400d3;
         }
         
-        /* Botones con temática de Halloween */
-        .btn-halloween {
-            background: linear-gradient(135deg, #ff8c00, #ff4500);
+        /* Botones con temática de Día de Muertos */
+        .btn-dia-muertos {
+            background: linear-gradient(135deg, #ff8c00, #8b0000);
             color: white;
             font-weight: 700;
             transition: all 0.3s ease;
@@ -171,10 +181,10 @@
             overflow: hidden;
         }
         
-        .btn-halloween:hover {
-            background: linear-gradient(135deg, #ff4500, #8b0000);
+        .btn-dia-muertos:hover {
+            background: linear-gradient(135deg, #8b0000, #ff8c00);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
+            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.4);
         }
         
         .card-hover {
@@ -243,23 +253,23 @@
             border-color: #2962FF;
         }
         
-        /* Animación para el fantasma en el botón "Me interesa" */
-        .ghost-button {
+        /* Animación para la calavera y pan de muerto en el botón "Me interesa" */
+        .dia-muertos-button {
             position: relative;
             overflow: hidden;
         }
         
-        .ghost-button::before {
-            content: "👻";
+        .dia-muertos-button::before {
+            content: "💀🍞";
             position: absolute;
             top: 50%;
             left: 20px;
             transform: translateY(-50%);
-            animation: ghostMove 3s infinite ease-in-out, ghostBlink 2s infinite;
+            animation: diaMuertosMove 3s infinite ease-in-out, diaMuertosBlink 2s infinite;
             z-index: 1;
         }
         
-        @keyframes ghostMove {
+        @keyframes diaMuertosMove {
             0%, 100% {
                 transform: translateY(-50%) translateX(0);
             }
@@ -274,7 +284,7 @@
             }
         }
         
-        @keyframes ghostBlink {
+        @keyframes diaMuertosBlink {
             0%, 100% {
                 opacity: 1;
             }
@@ -283,7 +293,7 @@
             }
         }
         
-        .ghost-button span {
+        .dia-muertos-button span {
             position: relative;
             z-index: 2;
         }
@@ -322,11 +332,11 @@
                 </p>
                 <div id="promo-banner" class="mt-8 bg-[#1a1a1a] p-4 rounded-xl border border-[#424242]">
                     <p class="text-center font-bold text-[#00FFFF] text-lg">
-                        🎃 ¡OFERTAS ESPECIALES por tiempo limitado! Válido hasta <span id="current-day"></span>.
+                        💀 ¡OFERTAS ESPECIALES por tiempo limitado! Válido desde el 31 de octubre hasta el 12 de noviembre 2025.
                     </p>
                 </div>
-                <a href="#planes" id="ver-planes-btn" class="mt-10 inline-block btn-halloween text-white font-bold text-lg py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300">
-                    👻 Ver Planes INCREÍBLES
+                <a href="#planes" id="ver-planes-btn" class="mt-10 inline-block btn-dia-muertos text-white font-bold text-lg py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    💀🍞 Ver Planes INCREÍBLES
                 </a>
             </div>
         </section>
@@ -340,8 +350,8 @@
                 </div>
 
                 <div id="plan-type-buttons" class="flex justify-center gap-4 mb-10 bg-[#1a1a1a] p-2 rounded-full max-w-md mx-auto border border-[#424242]">
-                    <button id="btn-internet" class="plan-type-btn flex-1 bg-[#2962FF] text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">Solo Internet</button>
-                    <button id="btn-combo" class="plan-type-btn flex-1 bg-transparent hover:bg-[#424242] text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">Internet + TV</button>
+                    <button id="btn-internet" class="plan-type-btn flex-1 bg-transparent hover:bg-[#424242] text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">Solo Internet</button>
+                    <button id="btn-combo" class="plan-type-btn flex-1 bg-[#2962FF] text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">Internet + TV</button>
                 </div>
 
                 <div id="plan-cards-container" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
@@ -423,8 +433,8 @@
                     </div>
                      <div class="border-t border-[#424242] mt-4 pt-4">
                         <div class="flex justify-between items-center text-xl font-bold">
-                            <span class="text-[#BDBDBD]">Total Mensual por 5 meses:</span>
-                            <span id="summary-total" class="accent-text">$0 por 5 meses</span>
+                            <span class="text-[#BDBDBD]">Total Mensual por 3 meses:</span>
+                            <span id="summary-total" class="accent-text">$0 por 3 meses</span>
                         </div>
                         <div class="flex justify-between items-center text-lg text-[#00FFFF] mt-2">
                             <span>Costo de Instalación Extra:</span>
@@ -496,11 +506,12 @@
             const WHATSAPP_NUMBER = '5218131191393';
             const MAKE_WEBHOOK_URL = 'https://hook.eu2.make.com/jigm042t5atf3tci3j82n3cxysiva3f0';
             
-            // Verificar si estamos en periodo promocional (hasta el 31 de octubre de 2025)
+            // Verificar si estamos en periodo promocional (hasta el 12 de noviembre de 2025)
             function isPromoPeriod() {
                 const today = new Date();
-                const promoEnd = new Date('2025-10-31');
-                return today <= promoEnd;
+                const promoStart = new Date('2025-10-31');
+                const promoEnd = new Date('2025-11-12');
+                return today >= promoStart && today <= promoEnd;
             }
             
             // Datos de portabilidad (solo disponible durante promoción)
@@ -549,11 +560,11 @@
                         promoMegas: 200,
                         regularPrice: 510,
                         promoPrice: 460, // Precio promoción al pagar puntual
-                        finalPrice: 400, // Precio con descuento de $60 por 5 meses
+                        finalPrice: 400, // Precio con descuento por 3 meses
                         formattedDesc: ["Fibra óptica", "Club WiFi Totalplay"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 20 : 0,
-                        discountFromMonth: 6, // Cambiado de 3er mes a 6to mes
+                        discountFromMonth: 6, // Aplica al 6to mes
                         showExtraMegas: true
                     },
                     { 
@@ -561,11 +572,11 @@
                         promoMegas: 300,
                         regularPrice: 620,
                         promoPrice: 570, // Precio promoción al pagar puntual
-                        finalPrice: 510, // Precio con descuento de $60 por 5 meses
+                        finalPrice: 510, // Precio con descuento por 3 meses
                         formattedDesc: ["Fibra óptica", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: true,
                         lifetimeDiscount: isPromoPeriod() ? 20 : 0,
-                        discountFromMonth: 6, // Cambiado de 3er mes a 6to mes
+                        discountFromMonth: 6, // Aplica al 6to mes
                         showExtraMegas: true
                     },
                     { 
@@ -573,11 +584,11 @@
                         promoMegas: 500,
                         regularPrice: 730,
                         promoPrice: 680, // Precio promoción al pagar puntual
-                        finalPrice: 620, // Precio con descuento de $60 por 5 meses
+                        finalPrice: 620, // Precio con descuento por 3 meses
                         formattedDesc: ["Fibra óptica", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 30 : 0,
-                        discountFromMonth: 6, // Cambiado de 3er mes a 6to mes
+                        discountFromMonth: 6, // Aplica al 6to mes
                         showExtraMegas: true
                     },
                     { 
@@ -585,11 +596,11 @@
                         promoMegas: 1200,
                         regularPrice: 880,
                         promoPrice: 830, // Precio promoción al pagar puntual
-                        finalPrice: 770, // Precio con descuento de $60 por 5 meses
+                        finalPrice: 770, // Precio con descuento por 3 meses
                         formattedDesc: ["Fibra óptica", "WiFi 6", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 60 : 0,
-                        discountFromMonth: 6, // Cambiado de 3er mes a 6to mes
+                        discountFromMonth: 6, // Aplica al 6to mes
                         showExtraMegas: true
                     },
                     { 
@@ -597,11 +608,11 @@
                         promoMegas: 1200,
                         regularPrice: 1550,
                         promoPrice: 1470, // Precio promoción al pagar puntual
-                        finalPrice: 1410, // Precio con descuento de $60 por 5 meses
+                        finalPrice: 1410, // Precio con descuento por 3 meses
                         formattedDesc: ["Fibra óptica", "WiFi 6", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 80 : 0,
-                        discountFromMonth: 6, // Cambiado de 3er mes a 6to mes
+                        discountFromMonth: 6, // Aplica al 6to mes
                         showExtraMegas: false // NO mostrar "Megas extra" para 1200
                     },
                     { 
@@ -609,11 +620,11 @@
                         promoMegas: 5000,
                         regularPrice: 2380,
                         promoPrice: 1999, // Precio promocional por lanzamiento
-                        finalPrice: 1939, // Precio con descuento de $60 por 5 meses
+                        finalPrice: 1939, // Precio con descuento por 3 meses
                         formattedDesc: ["Fibra óptica", "WiFi 7", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 80 : 0,
-                        discountFromMonth: 6, // A partir del 6to mes
+                        discountFromMonth: 6, // Aplica al 6to mes
                         showExtraMegas: false
                     },
                     { 
@@ -621,11 +632,11 @@
                         promoMegas: 10000,
                         regularPrice: 3080,
                         promoPrice: 2499, // Precio promocional por lanzamiento
-                        finalPrice: 2439, // Precio con descuento de $60 por 5 meses
+                        finalPrice: 2439, // Precio con descuento por 3 meses
                         formattedDesc: ["Fibra óptica", "WiFi 7", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 80 : 0,
-                        discountFromMonth: 6, // A partir del 6to mes
+                        discountFromMonth: 6, // Aplica al 6to mes
                         showExtraMegas: false
                     }
                 ],
@@ -635,11 +646,11 @@
                         promoMegas: 200,
                         regularPrice: 650,
                         promoPrice: 600, // Precio promoción al pagar puntual
-                        finalPrice: 540, // Precio con descuento de $60 por 5 meses
+                        finalPrice: 540, // Precio con descuento por 3 meses
                         formattedDesc: ["185 canales", "Convertidor Smart TV"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 30 : 0,
-                        discountFromMonth: 6, // Cambiado de 3er mes a 6to mes
+                        discountFromMonth: 6, // Aplica al 6to mes
                         showExtraMegas: true
                     },
                     { 
@@ -647,11 +658,11 @@
                         promoMegas: 300,
                         regularPrice: 760,
                         promoPrice: 710, // Precio promoción al pagar puntual
-                        finalPrice: 650, // Precio con descuento de $60 por 5 meses
+                        finalPrice: 650, // Precio con descuento por 3 meses
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Apple TV+ 1 año"],
                         recommended: true,
                         lifetimeDiscount: isPromoPeriod() ? 30 : 0,
-                        discountFromMonth: 6, // Cambiado de 3er mes a 6to mes
+                        discountFromMonth: 6, // Aplica al 6to mes
                         showExtraMegas: true
                     },
                     { 
@@ -659,11 +670,11 @@
                         promoMegas: 500,
                         regularPrice: 870,
                         promoPrice: 820, // Precio promoción al pagar puntual
-                        finalPrice: 760, // Precio con descuento de $60 por 5 meses
+                        finalPrice: 760, // Precio con descuento por 3 meses
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 40 : 0,
-                        discountFromMonth: 6, // Cambiado de 3er mes a 6to mes
+                        discountFromMonth: 6, // Aplica al 6to mes
                         showExtraMegas: true
                     },
                     { 
@@ -671,11 +682,11 @@
                         promoMegas: 1200,
                         regularPrice: 1050,
                         promoPrice: 1000, // Precio promoción al pagar puntual
-                        finalPrice: 940, // Precio con descuento de $60 por 5 meses
+                        finalPrice: 940, // Precio con descuento por 3 meses
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Bocinas B&O", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 50 : 0,
-                        discountFromMonth: 6, // Cambiado de 3er mes a 6to mes
+                        discountFromMonth: 6, // Aplica al 6to mes
                         showExtraMegas: true
                     },
                     { 
@@ -683,11 +694,11 @@
                         promoMegas: 1200,
                         regularPrice: 1720,
                         promoPrice: 1640, // Precio promoción al pagar puntual
-                        finalPrice: 1580, // Precio con descuento de $60 por 5 meses
+                        finalPrice: 1580, // Precio con descuento por 3 meses
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Bocinas B&O", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 100 : 0,
-                        discountFromMonth: 6, // Cambiado de 3er mes a 6to mes
+                        discountFromMonth: 6, // Aplica al 6to mes
                         showExtraMegas: false // NO mostrar "Megas extra" para 1200
                     },
                     { 
@@ -695,11 +706,11 @@
                         promoMegas: 5000,
                         regularPrice: 2880,
                         promoPrice: 2499, // Precio promocional por lanzamiento
-                        finalPrice: 2439, // Precio con descuento de $60 por 5 meses
+                        finalPrice: 2439, // Precio con descuento por 3 meses
                         formattedDesc: ["185 canales", "WiFi 7", "Servicio para 1 TV con Alexa y Totalplay Surround", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 100 : 0,
-                        discountFromMonth: 6, // A partir del 6to mes
+                        discountFromMonth: 6, // Aplica al 6to mes
                         showExtraMegas: false
                     },
                     { 
@@ -707,11 +718,11 @@
                         promoMegas: 10000,
                         regularPrice: 3580,
                         promoPrice: 2999, // Precio promocional por lanzamiento
-                        finalPrice: 2939, // Precio con descuento de $60 por 5 meses
+                        finalPrice: 2939, // Precio con descuento por 3 meses
                         formattedDesc: ["185 canales", "WiFi 7", "Servicio para 1 TV con Alexa y Totalplay Surround", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 100 : 0,
-                        discountFromMonth: 6, // A partir del 6to mes
+                        discountFromMonth: 6, // Aplica al 6to mes
                         showExtraMegas: false
                     }
                 ]
@@ -762,7 +773,7 @@
             // --- APPLICATION STATE ---
             let selection = {
                 plan: null, 
-                planType: 'internet',
+                planType: 'combo', // Por defecto muestra Internet + TV
                 streaming: { service: null, tier: null, price: 0 },
                 disney: { service: null, tier: null, price: 0 },
                 appPackage: { data: null, selectedApps: [], price: 0 },
@@ -810,7 +821,7 @@
                 // Actualizar banner de promoción según periodo
                 const promoBanner = document.getElementById('promo-banner');
                 if (isPromoPeriod()) {
-                    promoBanner.innerHTML = '<p class="text-center font-bold text-[#00FFFF] text-lg">🎃 ¡OFERTAS ESPECIALES hasta el 31 de Octubre 2025! Descuento de $60 por 5 meses + Descuento desde 6to mes</p>';
+                    promoBanner.innerHTML = '<p class="text-center font-bold text-[#00FFFF] text-lg">💀 ¡OFERTAS ESPECIALES desde el 31 de octubre hasta el 12 de noviembre 2025! Descuento por 3 meses + Netflix x 3 meses GRATIS</p>';
                 }
             }
 
@@ -865,28 +876,16 @@
                         <div class="card-hover p-6 rounded-2xl text-center flex flex-col relative h-full">
                             ${plan.recommended ? '<div class="recommended-badge">Recomendado</div>' : ''}
                             
-                            ${isPromoActive && plan.showExtraMegas ? `
-                                <!-- Encabezado de promoción - SOLO para planes que no son 1200, 5000 o 10000 megas -->
-                                <div class="bg-[#2962FF] text-white text-center py-2 rounded-t-lg -mx-6 -mt-6 mb-4 font-bold promo-header">
-                                    + Megas por 4 meses
-                                </div>
-                            ` : ''}
-                            
-                            ${isPromoActive && plan.megas >= 5000 ? `
-                                <!-- Encabezado especial para nuevos planes -->
-                                <div class="bg-[#FF00FF] text-white text-center py-2 rounded-t-lg -mx-6 -mt-6 mb-4 font-bold promo-header">
-                                    ¡NUEVO PLAN!
-                                </div>
-                            ` : ''}
-                            
                             <!-- Título del plan con color específico -->
                             <div class="${colorClass} p-4 rounded-xl text-center mb-4">
-                                <h3 class="text-2xl font-bold">${currentMegas} Megas ${isPromoActive && currentMegas > plan.megas && plan.showExtraMegas ? 'x 4 meses' : ''}</h3>
-                                <p class="font-semibold">${type === 'combo' ? 'Internet + TV' : 'Internet Simétrico*'}</p>
-                                ${isPromoActive && currentMegas > plan.megas && plan.showExtraMegas ? 
-                                    `<p class="text-sm mt-1">Después: ${plan.megas} Megas</p>` : 
-                                    `<p class="text-sm mt-1">Velocidad Simétrica</p>`
-                                }
+                                <h3 class="text-2xl font-bold">${plan.megas} MEGAS</h3>
+                                <p class="font-semibold">${type === 'combo' ? 'Internet + TV' : 'Internet Simétrico'}</p>
+                                <div class="mt-2">
+                                    <span class="text-white text-sm">Incluye </span>
+                                    <span class="netflix-text">Netflix</span>
+                                    <span class="text-white text-sm"> x 3 meses</span>
+                                    <div class="text-white text-xs mt-1">Estandar con anuncios</div>
+                                </div>
                             </div>
                             
                             <!-- Descripción del plan formateada -->
@@ -899,18 +898,18 @@
                                 <div class="text-xs text-[#BDBDBD] mb-4">
                                     <div class="flex items-center justify-center">
                                         <span class="w-2 h-2 bg-[#00FFFF] rounded-full mr-2"></span>
-                                        <span>Descuento de por vida: $${plan.lifetimeDiscount} a partir del ${plan.discountFromMonth}${plan.discountFromMonth === 6 ? 'to' : 'er'} mes</span>
+                                        <span>Descuento de por vida: $${plan.lifetimeDiscount} (aplica al 6to mes)</span>
                                     </div>
                                 </div>
                             ` : ''}
                             
-                            <!-- Precio - MOSTRAR PRECIO POR 5 MESES CLARAMENTE -->
+                            <!-- Precio - MOSTRAR PRECIO POR 3 MESES CLARAMENTE -->
                             <div class="my-6">
                                 ${isPromoActive ? `
                                     <div class="space-y-2">
                                         <div class="text-center">
                                             <span class="text-4xl font-extrabold text-white">$${plan.finalPrice}</span>
-                                            <span class="text-[#BDBDBD]">/mes por 5 meses</span>
+                                            <span class="text-[#BDBDBD]">/mes por 3 meses</span>
                                         </div>
                                         <div class="flex flex-col items-center justify-center space-y-1 text-sm">
                                             <div class="flex items-center">
@@ -918,7 +917,7 @@
                                                 <span class="text-[#00FFFF]">Precio de lista</span>
                                             </div>
                                             <div class="flex items-center">
-                                                <span class="text-[#BDBDBD]">$${plan.promoPrice} a partir del 6to mes</span>
+                                                <span class="text-[#BDBDBD]">$${plan.promoPrice} a partir del 4to mes</span>
                                                 <span class="text-[#00FFFF] ml-2">Precio promoción</span>
                                             </div>
                                         </div>
@@ -929,7 +928,7 @@
                                 `}
                             </div>
                             
-                            <button class="select-plan-btn mt-auto btn-halloween ghost-button py-3 px-6 rounded-full w-full"
+                            <button class="select-plan-btn mt-auto btn-dia-muertos dia-muertos-button py-3 px-6 rounded-full w-full"
                                 data-megas="${plan.megas}" data-promo-megas="${currentMegas}" data-price="${currentPrice}" data-regular-price="${plan.regularPrice}" data-promo-price="${plan.promoPrice}" data-lifetime-discount="${plan.lifetimeDiscount}">
                                 <span>Me interesa</span>
                             </button>
@@ -1092,8 +1091,8 @@
                 let total = selection.plan.price;
                 let summaryHTML = `
                     <p class="text-[#BDBDBD]"><strong>Servicio:</strong> ${selection.planType === 'internet' ? 'Solo Internet' : 'Internet + TV'}</p>
-                    <p class="text-[#BDBDBD]"><strong>Plan:</strong> ${selection.plan.promoMegas} Megas x 4 meses</p>
-                    <p class="font-semibold text-[#BDBDBD]">Precio Plan: $${selection.plan.price} por 5 meses</p>`;
+                    <p class="text-[#BDBDBD]"><strong>Plan:</strong> ${selection.plan.megas} MEGAS</p>
+                    <p class="font-semibold text-[#BDBDBD]">Precio Plan: $${selection.plan.price} por 3 meses</p>`;
                 
                 let addonsSummary = '';
                 
@@ -1145,7 +1144,7 @@
                 selection.installPrice = selection.total;
                 
                 dom.summaryContent.innerHTML = summaryHTML;
-                dom.summaryTotal.textContent = `$${selection.total} por 5 meses`;
+                dom.summaryTotal.textContent = `$${selection.total} por 3 meses`;
                 dom.summaryInstall.textContent = `$0 (Valor $350)`;
                 dom.summaryInstallPrice.textContent = `$${selection.installPrice}`;
             }
@@ -1451,8 +1450,8 @@
             // Función para crear el resumen completo
             function crearResumenCompleto() {
                 let resumen = `SERVICIO: ${selection.planType === 'internet' ? 'Solo Internet' : 'Internet + TV'}\n`;
-                resumen += `PLAN: ${selection.plan.promoMegas} Megas x 4 meses - $${selection.plan.price}/mes por 5 meses\n`;
-                resumen += `TOTAL MENSUAL: $${selection.total} por 5 meses\n`;
+                resumen += `PLAN: ${selection.plan.megas} MEGAS - $${selection.plan.price}/mes por 3 meses\n`;
+                resumen += `TOTAL MENSUAL: $${selection.total} por 3 meses\n`;
                 
                 if (selection.streaming.price > 0 || selection.disney.price > 0 || selection.appPackage.price > 0 || selection.devices.length > 0) {
                     resumen += `\nADICIONALES:\n`;
@@ -1551,7 +1550,7 @@
                     correo: document.getElementById('correo').value,
                     telefono: document.getElementById('telefono').value,
                     servicio: selection.planType === 'internet' ? 'Solo Internet' : 'Internet + TV',
-                    plan: `${selection.plan.promoMegas} Megas x 4 meses`,
+                    plan: `${selection.plan.megas} MEGAS`,
                     precio_plan: selection.plan.price,
                     adicionales: {
                         streaming: selection.streaming.service ? {
@@ -1604,7 +1603,7 @@
                 // Construir mensaje para WhatsApp
                 let message = `Hola, mi nombre es ${formData.nombre}.\n\nQuiero contratar el siguiente paquete:\n`;
                 message += `*Servicio:* ${formData.servicio}\n`;
-                message += `*Plan:* ${formData.plan} ($${formData.precio_plan} por 5 meses)\n\n`;
+                message += `*Plan:* ${formData.plan} ($${formData.precio_plan} por 3 meses)\n\n`;
                 
                 if (formData.adicionales.streaming || formData.adicionales.disney || formData.adicionales.paquete_apps || formData.adicionales.dispositivos.length > 0) {
                     message += "Adicionales:\n";
@@ -1635,7 +1634,7 @@
                     message += "\n";
                 }
                 
-                message += `*Total mensual estimado: $${formData.total} por 5 meses*\n`;
+                message += `*Total mensual estimado: $${formData.total} por 3 meses*\n`;
                 message += `*Costo de Instalación Extra:* *$0 (Valor $350)*\n`;
                 
                 if (formData.portability && isPromoPeriod()) {
@@ -1704,7 +1703,8 @@
 
             // --- INICIALIZACIÓN ---
             setPromoDate();
-            renderPlanCards('internet');
+            // Por defecto muestra los planes de Internet + TV
+            renderPlanCards('combo');
         });
     </script>
 </body>
