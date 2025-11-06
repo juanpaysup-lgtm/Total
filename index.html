@@ -303,6 +303,170 @@
             position: relative;
             z-index: 15;
         }
+        
+        /* Estilos para la sección de regalos */
+        .gift-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2962FF 100%);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid #00FFFF;
+        }
+        
+        .gift-option {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .gift-option:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+        }
+        
+        .gift-option.selected {
+            border-color: #00FFFF;
+            background: rgba(0, 255, 255, 0.1);
+        }
+        
+        .gift-emoji {
+            animation: giftPulse 2s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes giftPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+        
+        .gift-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00FFFF;
+        }
+        
+        /* Estilos para las nuevas promociones directas - MEJORADO */
+        .direct-promo-banner {
+            background: linear-gradient(135deg, #87CEEB, #B0E0E6); /* Celeste claro por fuera */
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 3px solid #1E90FF;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .direct-promo-banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 144, 255, 0.9), rgba(0, 105, 255, 0.9)); /* Azul fuerte por dentro */
+            z-index: 1;
+        }
+        
+        .direct-promo-banner > * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .direct-promo-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .direct-promo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border-color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .direct-promo-price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            margin: 1rem 0;
+        }
+        
+        .direct-promo-btn {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000000;
+            font-weight: 800;
+            padding: 1rem 2rem;
+            border-radius: 3rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 1.5rem;
+            border: 2px solid #FFFFFF;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.1rem;
+        }
+        
+        .direct-promo-btn:hover {
+            background: linear-gradient(135deg, #FFA500, #FF8C00);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 165, 0, 0.6);
+            color: #000000;
+        }
+        
+        /* Mejoras de contraste para el texto */
+        .direct-promo-title {
+            color: #FFFFFF;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 900;
+            font-size: 2.5rem;
+        }
+        
+        .direct-promo-subtitle {
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .direct-promo-card-title {
+            color: #FFFFFF;
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .direct-promo-card-text {
+            color: #E6F7FF;
+            font-weight: 500;
+        }
+        
+        .direct-promo-card-highlight {
+            color: #FFD700;
+            font-weight: 700;
+        }
+        
+        .direct-promo-benefit {
+            color: #E6F7FF;
+            font-weight: 500;
+            margin: 0.5rem 0;
+        }
     </style>
 </head>
 <body class="bg-[#0f0f0f] text-white">
@@ -322,6 +486,66 @@
 
     <!-- Hero Section -->
     <main class="container mx-auto px-6">
+        <!-- NUEVAS PROMOCIONES DIRECTAS - MEJORADAS VISUALMENTE -->
+        <section id="promociones-directas" class="py-8">
+            <div class="direct-promo-banner">
+                <h2 class="direct-promo-title text-center mb-4">🔥 NUEVAS PROMOCIONES DIRECTAS 🔥</h2>
+                <p class="direct-promo-subtitle text-center">Contrata directamente sin complicaciones y disfruta de estos increíbles precios</p>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Promoción Solo Internet 80 Megas -->
+                    <div class="direct-promo-card">
+                        <div class="text-center">
+                            <h3 class="direct-promo-card-title">Solo Internet</h3>
+                            <div class="direct-promo-price">$390<span class="text-2xl">/mes</span></div>
+                            <p class="direct-promo-card-text mb-2">En pago puntual</p>
+                            <p class="direct-promo-card-highlight mb-6">80 Megas navega ahora con 100 Megas</p>
+                            
+                            <div class="text-left space-y-2">
+                                <div class="direct-promo-benefit">✓ Fibra óptica simétrica</div>
+                                <div class="direct-promo-benefit">✓ Instalación sin costo</div>
+                                <div class="direct-promo-benefit">✓ Precio fijo por 12 meses</div>
+                                <div class="direct-promo-benefit">✓ Soporte técnico 24/7</div>
+                            </div>
+                            
+                            <button class="direct-promo-btn contratar-directo-btn" 
+                                    data-plan="Solo Internet 80 Megas" 
+                                    data-price="390"
+                                    data-megas="80"
+                                    data-promo-megas="100">
+                                Contratar Directamente
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Promoción Internet + TV -->
+                    <div class="direct-promo-card">
+                        <div class="text-center">
+                            <h3 class="direct-promo-card-title">Internet + TV</h3>
+                            <div class="direct-promo-price">$490<span class="text-2xl">/mes</span></div>
+                            <p class="direct-promo-card-text mb-2">En pago puntual</p>
+                            <p class="direct-promo-card-highlight mb-6">80 Megas + Canales incluidos</p>
+                            
+                            <div class="text-left space-y-2">
+                                <div class="direct-promo-benefit">✓ 80 Megas navega ahora con 100 Megas</div>
+                                <div class="direct-promo-benefit">✓ Más de 150 canales</div>
+                                <div class="direct-promo-benefit">✓ Instalación sin costo</div>
+                                <div class="direct-promo-benefit">✓ Precio fijo por 12 meses</div>
+                            </div>
+                            
+                            <button class="direct-promo-btn contratar-directo-btn" 
+                                    data-plan="Internet + TV 80 Megas + Canales" 
+                                    data-price="490"
+                                    data-megas="80"
+                                    data-promo-megas="100">
+                                Contratar Directamente
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="inicio" class="min-h-[80vh] flex items-center professional-gradient rounded-3xl mt-8 p-8 md:p-16 relative">
             <div class="max-w-3xl relative z-10">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
@@ -356,6 +580,26 @@
 
                 <div id="plan-cards-container" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                     <!-- Las tarjetas de planes se insertarán aquí con JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Gift Selection Section -->
+        <section id="gift-section" class="hidden py-12">
+            <div class="max-w-4xl mx-auto gift-section">
+                <h2 class="text-3xl font-bold text-center mb-6 text-white">
+                    <span class="gift-emoji">🎁</span> ¡Elige tu regalo de bienvenida!
+                </h2>
+                <p class="text-center text-[#BDBDBD] mb-8">Contrata hoy y recibe un regalo de bienvenida. Selecciona una de las siguientes opciones:</p>
+                
+                <div id="gift-options-container" class="space-y-4">
+                    <!-- Las opciones de regalo se insertarán aquí con JS -->
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <button id="btn-continue-gift" class="bg-[#00FFFF] hover:bg-[#00CCCC] text-black font-bold py-3 px-10 rounded-full transition-colors duration-300">
+                        Continuar con mi selección
+                    </button>
                 </div>
             </div>
         </section>
@@ -433,8 +677,11 @@
                     </div>
                      <div class="border-t border-[#424242] mt-4 pt-4">
                         <div class="flex justify-between items-center text-xl font-bold">
-                            <span class="text-[#BDBDBD]">Total Mensual por 3 meses:</span>
-                            <span id="summary-total" class="accent-text">$0 por 3 meses</span>
+                            <span class="text-[#BDBDBD]">Total Mensual:</span>
+                            <span id="summary-total" class="accent-text">$0</span>
+                        </div>
+                        <div class="text-sm text-[#BDBDBD] mt-1" id="summary-total-description">
+                            <!-- Descripción del total se insertará aquí -->
                         </div>
                         <div class="flex justify-between items-center text-lg text-[#00FFFF] mt-2">
                             <span>Costo de Instalación Extra:</span>
@@ -523,6 +770,143 @@
                 'combo': 0
             };
             
+            // Gift options configuration
+            const giftOptions = {
+                '100': [
+                    {
+                        id: 'gift-100-1',
+                        title: 'Opción 1',
+                        description: '$60 de descuento por 5 meses',
+                        discount: 60,
+                        months: 5,
+                        netflix: false
+                    },
+                    {
+                        id: 'gift-100-2',
+                        title: 'Opción 2',
+                        description: '$60 de descuento por 3 meses + Netflix Gratis por 3 meses',
+                        discount: 60,
+                        months: 3,
+                        netflix: true,
+                        netflixPrice: 110
+                    }
+                ],
+                '200': [
+                    {
+                        id: 'gift-200-1',
+                        title: 'Opción 1',
+                        description: '$60 de descuento por 5 meses',
+                        discount: 60,
+                        months: 5,
+                        netflix: false
+                    },
+                    {
+                        id: 'gift-200-2',
+                        title: 'Opción 2',
+                        description: '$60 de descuento por 3 meses + Netflix Gratis por 3 meses',
+                        discount: 60,
+                        months: 3,
+                        netflix: true,
+                        netflixPrice: 110
+                    }
+                ],
+                '300': [
+                    {
+                        id: 'gift-300-1',
+                        title: 'Opción 1',
+                        description: '$70 de descuento por 5 meses',
+                        discount: 70,
+                        months: 5,
+                        netflix: false
+                    },
+                    {
+                        id: 'gift-300-2',
+                        title: 'Opción 2',
+                        description: '$70 de descuento por 3 meses + Netflix Gratis por 3 meses',
+                        discount: 70,
+                        months: 3,
+                        netflix: true,
+                        netflixPrice: 110
+                    }
+                ],
+                '500': [
+                    {
+                        id: 'gift-500-1',
+                        title: 'Opción 1',
+                        description: '$70 de descuento por 5 meses',
+                        discount: 70,
+                        months: 5,
+                        netflix: false
+                    },
+                    {
+                        id: 'gift-500-2',
+                        title: 'Opción 2',
+                        description: '$70 de descuento por 3 meses + Netflix Gratis por 3 meses',
+                        discount: 70,
+                        months: 3,
+                        netflix: true,
+                        netflixPrice: 110
+                    }
+                ],
+                '1200': [
+                    {
+                        id: 'gift-1200-1',
+                        title: 'Opción 1',
+                        description: '$150 de descuento por 5 meses',
+                        discount: 150,
+                        months: 5,
+                        netflix: false
+                    },
+                    {
+                        id: 'gift-1200-2',
+                        title: 'Opción 2',
+                        description: '$150 de descuento por 3 meses + Netflix Gratis por 3 meses',
+                        discount: 150,
+                        months: 3,
+                        netflix: true,
+                        netflixPrice: 110
+                    }
+                ],
+                '5000': [
+                    {
+                        id: 'gift-5000-1',
+                        title: 'Opción 1',
+                        description: '$150 de descuento por 5 meses',
+                        discount: 150,
+                        months: 5,
+                        netflix: false
+                    },
+                    {
+                        id: 'gift-5000-2',
+                        title: 'Opción 2',
+                        description: '$150 de descuento por 3 meses + Netflix Gratis por 3 meses',
+                        discount: 150,
+                        months: 3,
+                        netflix: true,
+                        netflixPrice: 110
+                    }
+                ],
+                '10000': [
+                    {
+                        id: 'gift-10000-1',
+                        title: 'Opción 1',
+                        description: '$150 de descuento por 5 meses',
+                        discount: 150,
+                        months: 5,
+                        netflix: false
+                    },
+                    {
+                        id: 'gift-10000-2',
+                        title: 'Opción 2',
+                        description: '$150 de descuento por 3 meses + Netflix Gratis por 3 meses',
+                        discount: 150,
+                        months: 3,
+                        netflix: true,
+                        netflixPrice: 110
+                    }
+                ]
+            };
+            
             // Eventos personalizados para Facebook Pixel
             function trackFacebookEvent(eventName, parameters) {
                 if (typeof fbq !== 'undefined') {
@@ -560,7 +944,6 @@
                         promoMegas: 200,
                         regularPrice: 510,
                         promoPrice: 460, // Precio promoción al pagar puntual
-                        finalPrice: 400, // Precio con descuento por 3 meses
                         formattedDesc: ["Fibra óptica", "Club WiFi Totalplay"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 20 : 0,
@@ -572,7 +955,6 @@
                         promoMegas: 300,
                         regularPrice: 620,
                         promoPrice: 570, // Precio promoción al pagar puntual
-                        finalPrice: 510, // Precio con descuento por 3 meses
                         formattedDesc: ["Fibra óptica", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: true,
                         lifetimeDiscount: isPromoPeriod() ? 20 : 0,
@@ -584,7 +966,6 @@
                         promoMegas: 500,
                         regularPrice: 730,
                         promoPrice: 680, // Precio promoción al pagar puntual
-                        finalPrice: 620, // Precio con descuento por 3 meses
                         formattedDesc: ["Fibra óptica", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 30 : 0,
@@ -596,7 +977,6 @@
                         promoMegas: 1200,
                         regularPrice: 880,
                         promoPrice: 830, // Precio promoción al pagar puntual
-                        finalPrice: 770, // Precio con descuento por 3 meses
                         formattedDesc: ["Fibra óptica", "WiFi 6", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 60 : 0,
@@ -608,7 +988,6 @@
                         promoMegas: 1200,
                         regularPrice: 1550,
                         promoPrice: 1470, // Precio promoción al pagar puntual
-                        finalPrice: 1410, // Precio con descuento por 3 meses
                         formattedDesc: ["Fibra óptica", "WiFi 6", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 80 : 0,
@@ -620,7 +999,6 @@
                         promoMegas: 5000,
                         regularPrice: 2380,
                         promoPrice: 1999, // Precio promocional por lanzamiento
-                        finalPrice: 1939, // Precio con descuento por 3 meses
                         formattedDesc: ["Fibra óptica", "WiFi 7", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 80 : 0,
@@ -632,7 +1010,6 @@
                         promoMegas: 10000,
                         regularPrice: 3080,
                         promoPrice: 2499, // Precio promocional por lanzamiento
-                        finalPrice: 2439, // Precio con descuento por 3 meses
                         formattedDesc: ["Fibra óptica", "WiFi 7", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 80 : 0,
@@ -646,7 +1023,6 @@
                         promoMegas: 200,
                         regularPrice: 650,
                         promoPrice: 600, // Precio promoción al pagar puntual
-                        finalPrice: 540, // Precio con descuento por 3 meses
                         formattedDesc: ["185 canales", "Convertidor Smart TV"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 30 : 0,
@@ -658,7 +1034,6 @@
                         promoMegas: 300,
                         regularPrice: 760,
                         promoPrice: 710, // Precio promoción al pagar puntual
-                        finalPrice: 650, // Precio con descuento por 3 meses
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Apple TV+ 1 año"],
                         recommended: true,
                         lifetimeDiscount: isPromoPeriod() ? 30 : 0,
@@ -670,7 +1045,6 @@
                         promoMegas: 500,
                         regularPrice: 870,
                         promoPrice: 820, // Precio promoción al pagar puntual
-                        finalPrice: 760, // Precio con descuento por 3 meses
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 40 : 0,
@@ -682,7 +1056,6 @@
                         promoMegas: 1200,
                         regularPrice: 1050,
                         promoPrice: 1000, // Precio promoción al pagar puntual
-                        finalPrice: 940, // Precio con descuento por 3 meses
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Bocinas B&O", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 50 : 0,
@@ -694,7 +1067,6 @@
                         promoMegas: 1200,
                         regularPrice: 1720,
                         promoPrice: 1640, // Precio promoción al pagar puntual
-                        finalPrice: 1580, // Precio con descuento por 3 meses
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Bocinas B&O", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 100 : 0,
@@ -706,7 +1078,6 @@
                         promoMegas: 5000,
                         regularPrice: 2880,
                         promoPrice: 2499, // Precio promocional por lanzamiento
-                        finalPrice: 2439, // Precio con descuento por 3 meses
                         formattedDesc: ["185 canales", "WiFi 7", "Servicio para 1 TV con Alexa y Totalplay Surround", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 100 : 0,
@@ -718,7 +1089,6 @@
                         promoMegas: 10000,
                         regularPrice: 3580,
                         promoPrice: 2999, // Precio promocional por lanzamiento
-                        finalPrice: 2939, // Precio con descuento por 3 meses
                         formattedDesc: ["185 canales", "WiFi 7", "Servicio para 1 TV con Alexa y Totalplay Surround", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 100 : 0,
@@ -774,6 +1144,7 @@
             let selection = {
                 plan: null, 
                 planType: 'combo', // Por defecto muestra Internet + TV
+                giftOption: null,
                 streaming: { service: null, tier: null, price: 0 },
                 disney: { service: null, tier: null, price: 0 },
                 appPackage: { data: null, selectedApps: [], price: 0 },
@@ -787,6 +1158,9 @@
             // --- DOM ELEMENTS ---
             const dom = {
                 planCardsContainer: document.getElementById('plan-cards-container'),
+                giftSection: document.getElementById('gift-section'),
+                giftOptionsContainer: document.getElementById('gift-options-container'),
+                btnContinueGift: document.getElementById('btn-continue-gift'),
                 addonsSection: document.getElementById('addons-section'),
                 addonsIntro: document.getElementById('addons-intro'),
                 addonsOptionsContainer: document.getElementById('addons-options'),
@@ -796,6 +1170,7 @@
                 formInputs: document.querySelectorAll('#contact-form input'),
                 summaryContent: document.getElementById('summary-content'),
                 summaryTotal: document.getElementById('summary-total'),
+                summaryTotalDescription: document.getElementById('summary-total-description'),
                 summaryInstall: document.getElementById('summary-install'),
                 summaryInstallPrice: document.getElementById('summary-install-price'),
                 continueText: document.getElementById('continue-text'),
@@ -806,16 +1181,14 @@
                 soporteSection: document.getElementById('soporte'),
                 inicioSection: document.getElementById('inicio'),
                 verPlanesBtn: document.getElementById('ver-planes-btn'),
-                portabilityCheckbox: document.getElementById('portabilidad')
+                portabilityCheckbox: document.getElementById('portabilidad'),
+                promocionesDirectasSection: document.getElementById('promociones-directas')
             };
 
             // --- FUNCTIONS ---
 
             function setPromoDate() {
-                const dayElement = document.getElementById('current-day');
                 const today = new Date();
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                dayElement.textContent = today.toLocaleDateString('es-ES', options);
                 document.getElementById('current-year').textContent = today.getFullYear();
                 
                 // Actualizar banner de promoción según periodo
@@ -864,7 +1237,6 @@
                 
                 plansData[type].forEach(plan => {
                     const currentMegas = isPromoActive ? plan.promoMegas : plan.megas;
-                    const currentPrice = isPromoActive ? plan.finalPrice : plan.regularPrice;
                     const colorClass = getColorClass(plan.megas);
                     
                     // Generar los beneficios formateados
@@ -880,11 +1252,9 @@
                             <div class="${colorClass} p-4 rounded-xl text-center mb-4">
                                 <h3 class="text-2xl font-bold">${plan.megas} MEGAS</h3>
                                 <p class="font-semibold">${type === 'combo' ? 'Internet + TV' : 'Internet Simétrico'}</p>
-                                <div class="mt-2">
-                                    <span class="text-white text-sm">Incluye </span>
-                                    <span class="netflix-text">Netflix</span>
-                                    <span class="text-white text-sm"> x 3 meses</span>
-                                    <div class="text-white text-xs mt-1">Estandar con anuncios</div>
+                                <div class="mt-2 flex items-center justify-center">
+                                    <span class="gift-emoji">🎁</span>
+                                    <span class="text-white text-sm ml-2">Contrata hoy y recibe un regalo de bienvenida</span>
                                 </div>
                             </div>
                             
@@ -903,39 +1273,75 @@
                                 </div>
                             ` : ''}
                             
-                            <!-- Precio - MOSTRAR PRECIO POR 3 MESES CLARAMENTE -->
+                            <!-- Precio - SOLO DOS PRECIOS: PROMOCIÓN GRANDE Y LISTA MEDIANO -->
                             <div class="my-6">
-                                ${isPromoActive ? `
-                                    <div class="space-y-2">
-                                        <div class="text-center">
-                                            <span class="text-4xl font-extrabold text-white">$${plan.finalPrice}</span>
-                                            <span class="text-[#BDBDBD]">/mes por 3 meses</span>
-                                        </div>
-                                        <div class="flex flex-col items-center justify-center space-y-1 text-sm">
-                                            <div class="flex items-center">
-                                                <span class="text-[#BDBDBD] line-through mr-2">$${plan.regularPrice}</span>
-                                                <span class="text-[#00FFFF]">Precio de lista</span>
-                                            </div>
-                                            <div class="flex items-center">
-                                                <span class="text-[#BDBDBD]">$${plan.promoPrice} a partir del 4to mes</span>
-                                                <span class="text-[#00FFFF] ml-2">Precio promoción</span>
-                                            </div>
-                                        </div>
+                                <div class="space-y-2">
+                                    <div class="text-center">
+                                        <span class="text-4xl font-extrabold text-white">$${plan.promoPrice}</span>
+                                        <span class="text-[#BDBDBD]">/mes</span>
                                     </div>
-                                ` : `
-                                    <span class="text-4xl font-extrabold text-white">$${plan.regularPrice}</span>
-                                    <span class="text-[#BDBDBD]">/mes</span>
-                                `}
+                                    <div class="text-center">
+                                        <span class="text-sm text-[#00FFFF]">Precio promoción al pagar puntual</span>
+                                    </div>
+                                    <div class="flex items-center justify-center mt-2">
+                                        <span class="text-lg text-[#BDBDBD] line-through mr-2">$${plan.regularPrice}</span>
+                                        <span class="text-sm text-[#BDBDBD]">Precio de lista</span>
+                                    </div>
+                                </div>
                             </div>
                             
                             <button class="select-plan-btn mt-auto btn-dia-muertos dia-muertos-button py-3 px-6 rounded-full w-full"
-                                data-megas="${plan.megas}" data-promo-megas="${currentMegas}" data-price="${currentPrice}" data-regular-price="${plan.regularPrice}" data-promo-price="${plan.promoPrice}" data-lifetime-discount="${plan.lifetimeDiscount}">
+                                data-megas="${plan.megas}" data-promo-megas="${currentMegas}" data-regular-price="${plan.regularPrice}" data-promo-price="${plan.promoPrice}" data-lifetime-discount="${plan.lifetimeDiscount}">
                                 <span>Me interesa</span>
                             </button>
                         </div>
                     `;
                     dom.planCardsContainer.innerHTML += card;
                 });
+            }
+
+            function renderGiftOptions(planMegas) {
+                const options = giftOptions[planMegas] || giftOptions['100'];
+                dom.giftOptionsContainer.innerHTML = '';
+                
+                options.forEach((option, index) => {
+                    const optionElement = document.createElement('div');
+                    optionElement.className = 'gift-option';
+                    optionElement.dataset.optionId = option.id;
+                    
+                    // Calcular precio final según la opción seleccionada
+                    let finalPrice = selection.plan.promoPrice - option.discount;
+                    
+                    optionElement.innerHTML = `
+                        <div class="flex items-center">
+                            <input type="radio" name="gift-option" id="${option.id}" class="custom-radio mr-4">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-white">${option.title}</h3>
+                                <p class="text-[#BDBDBD] mt-2">${option.description}</p>
+                                <div class="mt-4">
+                                    <p class="text-[#BDBDBD]">Precio mensual por ${option.months} meses:</p>
+                                    <p class="gift-price">$${finalPrice}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    dom.giftOptionsContainer.appendChild(optionElement);
+                    
+                    // Añadir evento de selección
+                    optionElement.addEventListener('click', () => {
+                        document.querySelectorAll('.gift-option').forEach(opt => {
+                            opt.classList.remove('selected');
+                        });
+                        optionElement.classList.add('selected');
+                        document.getElementById(option.id).checked = true;
+                        selection.giftOption = option;
+                    });
+                });
+                
+                // Mostrar sección de regalos
+                dom.giftSection.classList.remove('hidden');
+                dom.giftSection.scrollIntoView({ behavior: 'smooth' });
             }
 
             function renderAddonsOptions() {
@@ -1088,11 +1494,23 @@
             function updateSummaryAndTotal() {
                 if (!selection.plan) return;
                 
-                let total = selection.plan.price;
+                // Calcular precio con descuento del regalo
+                let planPrice = selection.plan.promoPrice;
+                if (selection.giftOption) {
+                    planPrice = selection.plan.promoPrice - selection.giftOption.discount;
+                }
+                
+                let total = planPrice;
                 let summaryHTML = `
-                    <p class="text-[#BDBDBD]"><strong>Servicio:</strong> ${selection.planType === 'internet' ? 'Solo Internet' : 'Internet + TV'}</p>
-                    <p class="text-[#BDBDBD]"><strong>Plan:</strong> ${selection.plan.megas} MEGAS</p>
-                    <p class="font-semibold text-[#BDBDBD]">Precio Plan: $${selection.plan.price} por 3 meses</p>`;
+                    <div class="space-y-3">
+                        <p class="text-[#BDBDBD]"><strong>Servicio:</strong> ${selection.planType === 'internet' ? 'Solo Internet' : 'Internet + TV'}</p>
+                        <p class="text-[#BDBDBD]"><strong>Plan:</strong> ${selection.plan.megas} MEGAS</p>
+                        <p class="text-[#BDBDBD]"><strong>Precio Plan:</strong> $${selection.plan.promoPrice}</p>`;
+                
+                // Añadir información del regalo seleccionado - SIEMPRE que exista
+                if (selection.giftOption) {
+                    summaryHTML += `<p class="text-[#00FFFF]"><strong>Opción de Regalo:</strong> ${selection.giftOption.description}</p>`;
+                }
                 
                 let addonsSummary = '';
                 
@@ -1128,12 +1546,15 @@
                 
                 if (addonsSummary) {
                     summaryHTML += `
-                        <div class="border-t border-[#424242] my-2"></div>
-                        <p class="text-[#BDBDBD]"><strong>Adicionales:</strong></p>
-                        <ul class="list-none space-y-1">
-                            ${addonsSummary}
-                        </ul>`;
+                        <div class="border-t border-[#424242] my-2 pt-2">
+                            <p class="text-[#BDBDBD]"><strong>Adicionales:</strong></p>
+                            <ul class="list-none space-y-1">
+                                ${addonsSummary}
+                            </ul>
+                        </div>`;
                 }
+                
+                summaryHTML += `</div>`;
                 
                 // Calcular descuento por portabilidad (solo en periodo promocional)
                 selection.portabilityDiscount = selection.portability && isPromoPeriod() ? portabilityDiscount[selection.planType] : 0;
@@ -1144,7 +1565,17 @@
                 selection.installPrice = selection.total;
                 
                 dom.summaryContent.innerHTML = summaryHTML;
-                dom.summaryTotal.textContent = `$${selection.total} por 3 meses`;
+                dom.summaryTotal.textContent = `$${selection.total}`;
+                
+                // Actualizar descripción del total según la opción de regalo
+                let totalDescription = '';
+                if (selection.giftOption) {
+                    totalDescription = `$${selection.total} mensual por ${selection.giftOption.months} meses`;
+                } else {
+                    totalDescription = `$${selection.total} mensual`;
+                }
+                dom.summaryTotalDescription.textContent = totalDescription;
+                
                 dom.summaryInstall.textContent = `$0 (Valor $350)`;
                 dom.summaryInstallPrice.textContent = `$${selection.installPrice}`;
             }
@@ -1152,11 +1583,10 @@
             function handlePlanSelection(e) {
                 if (!e.target.classList.contains('select-plan-btn')) return;
                 
-                const { megas, promoMegas, price, regularPrice, promoPrice, lifetimeDiscount } = e.target.dataset;
+                const { megas, promoMegas, regularPrice, promoPrice, lifetimeDiscount } = e.target.dataset;
                 selection.plan = { 
                     megas: parseInt(megas), 
                     promoMegas: parseInt(promoMegas),
-                    price: parseInt(price),
                     regularPrice: parseInt(regularPrice),
                     promoPrice: parseInt(promoPrice),
                     lifetimeDiscount: parseInt(lifetimeDiscount)
@@ -1167,7 +1597,7 @@
                     content_name: `Plan ${selection.plan.megas} Megas - ${selection.planType}`,
                     content_ids: [`plan_${selection.planType}_${selection.plan.megas}`],
                     content_type: 'product',
-                    value: selection.plan.price,
+                    value: selection.plan.promoPrice,
                     currency: 'MXN'
                 });
                 
@@ -1178,8 +1608,8 @@
                 dom.planCardsContainer.classList.add('hidden');
                 document.getElementById('plan-type-buttons').classList.add('hidden');
                 
-                dom.addonsSection.classList.remove('hidden');
-                dom.addonsSection.scrollIntoView({ behavior: 'smooth' });
+                // Mostrar opciones de regalo
+                renderGiftOptions(selection.plan.megas);
                 
                 updateSummaryAndTotal();
             }
@@ -1449,9 +1879,22 @@
 
             // Función para crear el resumen completo
             function crearResumenCompleto() {
+                // Calcular precio con descuento del regalo
+                let planPrice = selection.plan.promoPrice;
+                if (selection.giftOption) {
+                    planPrice = selection.plan.promoPrice - selection.giftOption.discount;
+                }
+                
                 let resumen = `SERVICIO: ${selection.planType === 'internet' ? 'Solo Internet' : 'Internet + TV'}\n`;
-                resumen += `PLAN: ${selection.plan.megas} MEGAS - $${selection.plan.price}/mes por 3 meses\n`;
-                resumen += `TOTAL MENSUAL: $${selection.total} por 3 meses\n`;
+                resumen += `PLAN: ${selection.plan.megas} MEGAS\n`;
+                resumen += `PRECIO PLAN: $${selection.plan.promoPrice}\n`;
+                
+                // Añadir información del regalo seleccionado - SIEMPRE que exista
+                if (selection.giftOption) {
+                    resumen += `OPCIÓN DE REGALO: ${selection.giftOption.description}\n`;
+                }
+                
+                resumen += `\nTOTAL MENSUAL: $${selection.total}\n`;
                 
                 if (selection.streaming.price > 0 || selection.disney.price > 0 || selection.appPackage.price > 0 || selection.devices.length > 0) {
                     resumen += `\nADICIONALES:\n`;
@@ -1503,7 +1946,7 @@
                         servicio: formData.servicio,
                         plan: formData.plan,
                         adicionales: formatAdicionales(),
-                        opcion_regalo: `Instalación $0 (Valor $350)`,
+                        opcion_regalo: selection.giftOption ? selection.giftOption.description : 'Ninguna',
                         total_mensual: formData.total,
                         pago_inicial: formData.installPrice,
                         fecha: new Date().toLocaleString('es-MX'),
@@ -1545,13 +1988,19 @@
                 // Añadir clase de loading al formulario
                 dom.contactForm.classList.add('form-loading');
 
+                // Calcular precio con descuento del regalo
+                let planPrice = selection.plan.promoPrice;
+                if (selection.giftOption) {
+                    planPrice = selection.plan.promoPrice - selection.giftOption.discount;
+                }
+
                 const formData = {
                     nombre: document.getElementById('nombre').value,
                     correo: document.getElementById('correo').value,
                     telefono: document.getElementById('telefono').value,
                     servicio: selection.planType === 'internet' ? 'Solo Internet' : 'Internet + TV',
                     plan: `${selection.plan.megas} MEGAS`,
-                    precio_plan: selection.plan.price,
+                    precio_plan: planPrice,
                     adicionales: {
                         streaming: selection.streaming.service ? {
                             servicio: selection.streaming.service,
@@ -1603,10 +2052,19 @@
                 // Construir mensaje para WhatsApp
                 let message = `Hola, mi nombre es ${formData.nombre}.\n\nQuiero contratar el siguiente paquete:\n`;
                 message += `*Servicio:* ${formData.servicio}\n`;
-                message += `*Plan:* ${formData.plan} ($${formData.precio_plan} por 3 meses)\n\n`;
+                message += `*Plan:* ${formData.plan}\n`;
+                message += `*Precio Plan:* $${formData.precio_plan}\n`;
+                
+                // Añadir información del regalo seleccionado
+                if (selection.giftOption) {
+                    message += `*Opción de Regalo:* ${selection.giftOption.description}\n`;
+                }
+                
+                message += `\n*Total Mensual:*\n`;
+                message += `*$${formData.total} mensual por ${selection.giftOption ? selection.giftOption.months : '1'} ${selection.giftOption && selection.giftOption.months > 1 ? 'meses' : 'mes'}*\n\n`;
                 
                 if (formData.adicionales.streaming || formData.adicionales.disney || formData.adicionales.paquete_apps || formData.adicionales.dispositivos.length > 0) {
-                    message += "Adicionales:\n";
+                    message += "*Adicionales:*\n";
                     
                     if (formData.adicionales.streaming) {
                         message += `- ${formData.adicionales.streaming.servicio}${formData.adicionales.streaming.plan ? ` (${formData.adicionales.streaming.plan})` : ''}: $${formData.adicionales.streaming.precio}\n`;
@@ -1634,19 +2092,57 @@
                     message += "\n";
                 }
                 
-                message += `*Total mensual estimado: $${formData.total} por 3 meses*\n`;
                 message += `*Costo de Instalación Extra:* *$0 (Valor $350)*\n`;
                 
                 if (formData.portability && isPromoPeriod()) {
                     message += `*Deseo hacer portabilidad para el descuento de: $${formData.portabilityDiscount} en mi segunda mensualidad*\n`;
                 }
                 
-                message += `\n*Total a pagar al técnico ya instalado su servicio y activo:* *$${formData.installPrice}*\n\n`;
+                message += `\n*Pago Inicial:* *$${formData.installPrice}*\n\n`;
                 message += `*Mis datos de contacto son:*\nCorreo: ${formData.correo}\nTeléfono: ${formData.telefono}`;
                 
                 // Redirigir a WhatsApp
                 const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
                 window.location.href = whatsappURL;
+            }
+
+            // Función para manejar la contratación directa desde las nuevas promociones
+            function handleDirectPromoContract(e) {
+                if (!e.target.classList.contains('contratar-directo-btn')) return;
+                
+                const { plan, price, megas, promoMegas } = e.target.dataset;
+                
+                // Configurar la selección para la promoción directa
+                selection.plan = {
+                    megas: parseInt(megas),
+                    promoMegas: parseInt(promoMegas),
+                    regularPrice: parseInt(price),
+                    promoPrice: parseInt(price),
+                    lifetimeDiscount: 0
+                };
+                
+                selection.planType = plan.includes('Solo Internet') ? 'internet' : 'combo';
+                selection.giftOption = null; // No hay regalos en estas promociones
+                
+                // Track event for Facebook Pixel
+                trackFacebookEvent('AddToCart', {
+                    content_name: `Promoción Directa - ${plan}`,
+                    content_ids: [`direct_promo_${selection.planType}_${megas}`],
+                    content_type: 'product',
+                    value: parseInt(price),
+                    currency: 'MXN'
+                });
+                
+                // Ocultar secciones no relevantes
+                hideNonPlanSections();
+                dom.promocionesDirectasSection.classList.add('hidden');
+                
+                // Ir directamente al formulario de contacto
+                dom.contactSection.classList.remove('hidden');
+                dom.contactSection.scrollIntoView({ behavior: 'smooth' });
+                
+                // Actualizar el resumen
+                updateSummaryAndTotal();
             }
 
             // --- EVENT LISTENERS ---
@@ -1665,6 +2161,21 @@
             
             dom.planCardsContainer.addEventListener('click', handlePlanSelection);
             
+            // Event listener para los botones de contratación directa
+            document.addEventListener('click', handleDirectPromoContract);
+            
+            // Event listener para continuar después de seleccionar regalo
+            dom.btnContinueGift.addEventListener('click', () => {
+                if (!selection.giftOption) {
+                    alert('Por favor selecciona una opción de regalo antes de continuar.');
+                    return;
+                }
+                
+                dom.giftSection.classList.add('hidden');
+                dom.addonsSection.classList.remove('hidden');
+                dom.addonsSection.scrollIntoView({ behavior: 'smooth' });
+            });
+            
             document.getElementById('btn-addons-yes').addEventListener('click', () => {
                 // Track Personalizar producto event
                 trackFacebookEvent('Personalizar producto', {
@@ -1679,9 +2190,18 @@
             });
             
             document.getElementById('btn-addons-no').addEventListener('click', () => {
+                // Track event for Facebook Pixel
+                trackFacebookEvent('SkipAddons', {
+                    content_name: 'No Additional Services',
+                    content_category: 'Customization'
+                });
+                
                 dom.addonsSection.classList.add('hidden');
                 dom.contactSection.classList.remove('hidden');
                 dom.contactSection.scrollIntoView({ behavior: 'smooth' });
+                
+                // Asegurarse de que el resumen se actualice para mostrar el regalo
+                updateSummaryAndTotal();
             });
 
             dom.addonsOptionsContainer.addEventListener('change', handleAddonsEvents);
@@ -1703,8 +2223,16 @@
 
             // --- INICIALIZACIÓN ---
             setPromoDate();
+            
+            // Inicializar los planes al cargar la página
             // Por defecto muestra los planes de Internet + TV
             renderPlanCards('combo');
+            
+            // Asegurarse de que el botón de Internet + TV esté activo
+            document.getElementById('btn-combo').classList.add('bg-[#2962FF]');
+            document.getElementById('btn-combo').classList.remove('bg-transparent', 'hover:bg-[#424242]');
+            document.getElementById('btn-internet').classList.remove('bg-[#2962FF]');
+            document.getElementById('btn-internet').classList.add('bg-transparent', 'hover:bg-[#424242]');
         });
     </script>
 </body>
