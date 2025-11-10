@@ -353,6 +353,12 @@
             color: #00FFFF;
         }
         
+        .gift-price-small {
+            font-size: 0.9rem;
+            color: #BDBDBD;
+            margin-top: 0.25rem;
+        }
+        
         /* Estilos para las nuevas promociones directas - MEJORADO */
         .direct-promo-banner {
             background: linear-gradient(135deg, #87CEEB, #B0E0E6); /* Celeste claro por fuera */
@@ -770,7 +776,7 @@
                 'combo': 0
             };
             
-            // Gift options configuration
+            // Gift options configuration - ACTUALIZADO: Opción 2 ahora por 5 meses
             const giftOptions = {
                 '100': [
                     {
@@ -784,9 +790,9 @@
                     {
                         id: 'gift-100-2',
                         title: 'Opción 2',
-                        description: '$60 de descuento por 3 meses + Netflix Gratis por 3 meses',
+                        description: '$60 de descuento por 5 meses + Netflix Gratis por 5 meses',
                         discount: 60,
-                        months: 3,
+                        months: 5,
                         netflix: true,
                         netflixPrice: 110
                     }
@@ -803,9 +809,9 @@
                     {
                         id: 'gift-200-2',
                         title: 'Opción 2',
-                        description: '$60 de descuento por 3 meses + Netflix Gratis por 3 meses',
+                        description: '$60 de descuento por 5 meses + Netflix Gratis por 5 meses',
                         discount: 60,
-                        months: 3,
+                        months: 5,
                         netflix: true,
                         netflixPrice: 110
                     }
@@ -822,9 +828,9 @@
                     {
                         id: 'gift-300-2',
                         title: 'Opción 2',
-                        description: '$70 de descuento por 3 meses + Netflix Gratis por 3 meses',
+                        description: '$70 de descuento por 5 meses + Netflix Gratis por 5 meses',
                         discount: 70,
-                        months: 3,
+                        months: 5,
                         netflix: true,
                         netflixPrice: 110
                     }
@@ -841,9 +847,9 @@
                     {
                         id: 'gift-500-2',
                         title: 'Opción 2',
-                        description: '$70 de descuento por 3 meses + Netflix Gratis por 3 meses',
+                        description: '$70 de descuento por 5 meses + Netflix Gratis por 5 meses',
                         discount: 70,
-                        months: 3,
+                        months: 5,
                         netflix: true,
                         netflixPrice: 110
                     }
@@ -860,9 +866,9 @@
                     {
                         id: 'gift-1200-2',
                         title: 'Opción 2',
-                        description: '$150 de descuento por 3 meses + Netflix Gratis por 3 meses',
+                        description: '$150 de descuento por 5 meses + Netflix Gratis por 5 meses',
                         discount: 150,
-                        months: 3,
+                        months: 5,
                         netflix: true,
                         netflixPrice: 110
                     }
@@ -879,9 +885,9 @@
                     {
                         id: 'gift-5000-2',
                         title: 'Opción 2',
-                        description: '$150 de descuento por 3 meses + Netflix Gratis por 3 meses',
+                        description: '$150 de descuento por 5 meses + Netflix Gratis por 5 meses',
                         discount: 150,
-                        months: 3,
+                        months: 5,
                         netflix: true,
                         netflixPrice: 110
                     }
@@ -898,9 +904,9 @@
                     {
                         id: 'gift-10000-2',
                         title: 'Opción 2',
-                        description: '$150 de descuento por 3 meses + Netflix Gratis por 3 meses',
+                        description: '$150 de descuento por 5 meses + Netflix Gratis por 5 meses',
                         discount: 150,
-                        months: 3,
+                        months: 5,
                         netflix: true,
                         netflixPrice: 110
                     }
@@ -937,11 +943,12 @@
             }, 120000);
             
             // --- PLANS AND ADD-ONS DATA ---
+            // ACTUALIZADO: Megas promocionales actualizados
             const plansData = {
                 internet: [
                     { 
                         megas: 100, 
-                        promoMegas: 200,
+                        promoMegas: 200, // ACTUALIZADO: 100→200
                         regularPrice: 510,
                         promoPrice: 460, // Precio promoción al pagar puntual
                         formattedDesc: ["Fibra óptica", "Club WiFi Totalplay"],
@@ -952,7 +959,7 @@
                     },
                     { 
                         megas: 200, 
-                        promoMegas: 300,
+                        promoMegas: 300, // ACTUALIZADO: 200→300
                         regularPrice: 620,
                         promoPrice: 570, // Precio promoción al pagar puntual
                         formattedDesc: ["Fibra óptica", "Club WiFi", "Apple TV+ 1 año"],
@@ -963,7 +970,7 @@
                     },
                     { 
                         megas: 300, 
-                        promoMegas: 500,
+                        promoMegas: 500, // ACTUALIZADO: 300→500
                         regularPrice: 730,
                         promoPrice: 680, // Precio promoción al pagar puntual
                         formattedDesc: ["Fibra óptica", "Club WiFi", "Apple TV+ 1 año"],
@@ -974,7 +981,7 @@
                     },
                     { 
                         megas: 500, 
-                        promoMegas: 1200,
+                        promoMegas: 1200, // ACTUALIZADO: 500→1200
                         regularPrice: 880,
                         promoPrice: 830, // Precio promoción al pagar puntual
                         formattedDesc: ["Fibra óptica", "WiFi 6", "Club WiFi", "Apple TV+ 1 año"],
@@ -1020,7 +1027,7 @@
                 combo: [
                     { 
                         megas: 100, 
-                        promoMegas: 200,
+                        promoMegas: 200, // ACTUALIZADO: 100→200
                         regularPrice: 650,
                         promoPrice: 600, // Precio promoción al pagar puntual
                         formattedDesc: ["185 canales", "Convertidor Smart TV"],
@@ -1031,7 +1038,7 @@
                     },
                     { 
                         megas: 200, 
-                        promoMegas: 300,
+                        promoMegas: 300, // ACTUALIZADO: 200→300
                         regularPrice: 760,
                         promoPrice: 710, // Precio promoción al pagar puntual
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Apple TV+ 1 año"],
@@ -1042,7 +1049,7 @@
                     },
                     { 
                         megas: 300, 
-                        promoMegas: 500,
+                        promoMegas: 500, // ACTUALIZADO: 300→500
                         regularPrice: 870,
                         promoPrice: 820, // Precio promoción al pagar puntual
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Apple TV+ 1 año"],
@@ -1053,7 +1060,7 @@
                     },
                     { 
                         megas: 500, 
-                        promoMegas: 1200,
+                        promoMegas: 1200, // ACTUALIZADO: 500→1200
                         regularPrice: 1050,
                         promoPrice: 1000, // Precio promoción al pagar puntual
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Bocinas B&O", "Apple TV+ 1 año"],
@@ -1194,7 +1201,7 @@
                 // Actualizar banner de promoción según periodo
                 const promoBanner = document.getElementById('promo-banner');
                 if (isPromoPeriod()) {
-                    promoBanner.innerHTML = '<p class="text-center font-bold text-[#00FFFF] text-lg">💀 ¡OFERTAS ESPECIALES desde el 31 de octubre hasta el 12 de noviembre 2025! Descuento por 3 meses + Netflix x 3 meses GRATIS</p>';
+                    promoBanner.innerHTML = '<p class="text-center font-bold text-[#00FFFF] text-lg">💀 ¡OFERTAS ESPECIALES desde el 31 de octubre hasta el 12 de noviembre 2025! Descuento por 5 meses + Netflix x 5 meses GRATIS</p>';
                 }
             }
 
@@ -1311,6 +1318,12 @@
                     
                     // Calcular precio final según la opción seleccionada
                     let finalPrice = selection.plan.promoPrice - option.discount;
+                    let priceAfterDiscount = selection.plan.promoPrice - selection.plan.lifetimeDiscount;
+                    
+                    // Para la opción 2 con Netflix, el precio después del 6to mes es mayor
+                    if (option.netflix) {
+                        priceAfterDiscount = selection.plan.promoPrice - selection.plan.lifetimeDiscount + option.netflixPrice;
+                    }
                     
                     optionElement.innerHTML = `
                         <div class="flex items-center">
@@ -1321,6 +1334,7 @@
                                 <div class="mt-4">
                                     <p class="text-[#BDBDBD]">Precio mensual por ${option.months} meses:</p>
                                     <p class="gift-price">$${finalPrice}</p>
+                                    <p class="gift-price-small">después del 6to mes $${priceAfterDiscount} (Descuento de por vida aplicado)</p>
                                 </div>
                             </div>
                         </div>
