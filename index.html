@@ -171,9 +171,9 @@
             border: 1px solid #9400d3;
         }
         
-        /* Botones con temática de Día de Muertos */
-        .btn-dia-muertos {
-            background: linear-gradient(135deg, #ff8c00, #8b0000);
+        /* Botones con temática del Buen Mes */
+        .btn-buen-mes {
+            background: linear-gradient(135deg, #2962FF, #00FFFF);
             color: white;
             font-weight: 700;
             transition: all 0.3s ease;
@@ -181,10 +181,10 @@
             overflow: hidden;
         }
         
-        .btn-dia-muertos:hover {
-            background: linear-gradient(135deg, #8b0000, #ff8c00);
+        .btn-buen-mes:hover {
+            background: linear-gradient(135deg, #00FFFF, #2962FF);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.4);
+            box-shadow: 0 5px 15px rgba(41, 98, 255, 0.4);
         }
         
         .card-hover {
@@ -253,23 +253,23 @@
             border-color: #2962FF;
         }
         
-        /* Animación para la calavera y pan de muerto en el botón "Me interesa" */
-        .dia-muertos-button {
+        /* Animación para el Buen Mes */
+        .buen-mes-button {
             position: relative;
             overflow: hidden;
         }
         
-        .dia-muertos-button::before {
-            content: "💀🍞";
+        .buen-mes-button::before {
+            content: "🎁✨";
             position: absolute;
             top: 50%;
             left: 20px;
             transform: translateY(-50%);
-            animation: diaMuertosMove 3s infinite ease-in-out, diaMuertosBlink 2s infinite;
+            animation: buenMesMove 3s infinite ease-in-out, buenMesBlink 2s infinite;
             z-index: 1;
         }
         
-        @keyframes diaMuertosMove {
+        @keyframes buenMesMove {
             0%, 100% {
                 transform: translateY(-50%) translateX(0);
             }
@@ -284,7 +284,7 @@
             }
         }
         
-        @keyframes diaMuertosBlink {
+        @keyframes buenMesBlink {
             0%, 100% {
                 opacity: 1;
             }
@@ -293,7 +293,7 @@
             }
         }
         
-        .dia-muertos-button span {
+        .buen-mes-button span {
             position: relative;
             z-index: 2;
         }
@@ -473,6 +473,55 @@
             font-weight: 500;
             margin: 0.5rem 0;
         }
+        
+        /* Estilos para precios con descuento */
+        .price-display {
+            margin: 1rem 0;
+        }
+        
+        .promo-price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #FFFFFF;
+        }
+        
+        .regular-price {
+            font-size: 1.2rem;
+            color: #BDBDBD;
+            text-decoration: line-through;
+            margin-left: 0.5rem;
+        }
+        
+        .price-description {
+            font-size: 0.9rem;
+            color: #00FFFF;
+            margin-top: 0.5rem;
+        }
+        
+        .price-after-discount {
+            font-size: 1rem;
+            color: #BDBDBD;
+            margin-top: 0.25rem;
+        }
+        
+        /* NUEVO: Estilo para el logo del Buen Mes en las tarjetas de plan */
+        .buen-mes-logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 80px;
+            height: auto;
+            z-index: 20;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+        }
+        
+        @media (max-width: 768px) {
+            .buen-mes-logo {
+                width: 60px;
+                top: 8px;
+                left: 8px;
+            }
+        }
     </style>
 </head>
 <body class="bg-[#0f0f0f] text-white">
@@ -562,11 +611,11 @@
                 </p>
                 <div id="promo-banner" class="mt-8 bg-[#1a1a1a] p-4 rounded-xl border border-[#424242]">
                     <p class="text-center font-bold text-[#00FFFF] text-lg">
-                        💀 ¡OFERTAS ESPECIALES por tiempo limitado! Válido desde el 31 de octubre hasta el 12 de noviembre 2025.
+                        🎁 ¡OFERTAS ESPECIALES por tiempo limitado! Válido desde el 1 de noviembre hasta el 17 de noviembre 2025.
                     </p>
                 </div>
-                <a href="#planes" id="ver-planes-btn" class="mt-10 inline-block btn-dia-muertos text-white font-bold text-lg py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300">
-                    💀🍞 Ver Planes INCREÍBLES
+                <a href="#planes" id="ver-planes-btn" class="mt-10 inline-block btn-buen-mes buen-mes-button text-white font-bold text-lg py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <span>Ver Planes INCREÍBLES</span>
                 </a>
             </div>
         </section>
@@ -759,11 +808,14 @@
             const WHATSAPP_NUMBER = '5218131191393';
             const MAKE_WEBHOOK_URL = 'https://hook.eu2.make.com/jigm042t5atf3tci3j82n3cxysiva3f0';
             
-            // Verificar si estamos en periodo promocional (hasta el 12 de noviembre de 2025)
+            // URL del logo del Buen Mes
+            const BUEN_MES_LOGO_URL = 'https://www.totalplay.com.mx/assetsv2/img/buenfin/logo-bf.svg';
+            
+            // Verificar si estamos en periodo promocional (hasta el 17 de noviembre de 2025)
             function isPromoPeriod() {
                 const today = new Date();
-                const promoStart = new Date('2025-10-31');
-                const promoEnd = new Date('2025-11-12');
+                const promoStart = new Date('2025-11-01');
+                const promoEnd = new Date('2025-11-17');
                 return today >= promoStart && today <= promoEnd;
             }
             
@@ -839,16 +891,16 @@
                     {
                         id: 'gift-500-1',
                         title: 'Opción 1',
-                        description: '$70 de descuento por 5 meses',
-                        discount: 70,
+                        description: '$150 de descuento por 5 meses',
+                        discount: 150,
                         months: 5,
                         netflix: false
                     },
                     {
                         id: 'gift-500-2',
                         title: 'Opción 2',
-                        description: '$70 de descuento por 5 meses + Netflix Gratis por 5 meses',
-                        discount: 70,
+                        description: '$150 de descuento por 5 meses + Netflix Gratis por 5 meses',
+                        discount: 150,
                         months: 5,
                         netflix: true,
                         netflixPrice: 110
@@ -943,163 +995,163 @@
             }, 120000);
             
             // --- PLANS AND ADD-ONS DATA ---
-            // ACTUALIZADO: Megas promocionales actualizados
+            // PRECIOS ACTUALIZADOS según la tabla proporcionada
             const plansData = {
                 internet: [
                     { 
                         megas: 100, 
-                        promoMegas: 200, // ACTUALIZADO: 100→200
+                        promoMegas: 200,
                         regularPrice: 510,
-                        promoPrice: 460, // Precio promoción al pagar puntual
+                        promoPrice: 460,
                         formattedDesc: ["Fibra óptica", "Club WiFi Totalplay"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 20 : 0,
-                        discountFromMonth: 6, // Aplica al 6to mes
+                        discountFromMonth: 6,
                         showExtraMegas: true
                     },
                     { 
                         megas: 200, 
-                        promoMegas: 300, // ACTUALIZADO: 200→300
+                        promoMegas: 300,
                         regularPrice: 620,
-                        promoPrice: 570, // Precio promoción al pagar puntual
+                        promoPrice: 570,
                         formattedDesc: ["Fibra óptica", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: true,
                         lifetimeDiscount: isPromoPeriod() ? 20 : 0,
-                        discountFromMonth: 6, // Aplica al 6to mes
+                        discountFromMonth: 6,
                         showExtraMegas: true
                     },
                     { 
                         megas: 300, 
-                        promoMegas: 500, // ACTUALIZADO: 300→500
+                        promoMegas: 500,
                         regularPrice: 730,
-                        promoPrice: 680, // Precio promoción al pagar puntual
+                        promoPrice: 680,
                         formattedDesc: ["Fibra óptica", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 30 : 0,
-                        discountFromMonth: 6, // Aplica al 6to mes
+                        discountFromMonth: 6,
                         showExtraMegas: true
                     },
                     { 
                         megas: 500, 
-                        promoMegas: 1200, // ACTUALIZADO: 500→1200
+                        promoMegas: 1200,
                         regularPrice: 880,
-                        promoPrice: 830, // Precio promoción al pagar puntual
+                        promoPrice: 830,
                         formattedDesc: ["Fibra óptica", "WiFi 6", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 60 : 0,
-                        discountFromMonth: 6, // Aplica al 6to mes
+                        discountFromMonth: 6,
                         showExtraMegas: true
                     },
                     { 
                         megas: 1200, 
                         promoMegas: 1200,
                         regularPrice: 1550,
-                        promoPrice: 1470, // Precio promoción al pagar puntual
+                        promoPrice: 1470,
                         formattedDesc: ["Fibra óptica", "WiFi 6", "Club WiFi", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 80 : 0,
-                        discountFromMonth: 6, // Aplica al 6to mes
-                        showExtraMegas: false // NO mostrar "Megas extra" para 1200
+                        discountFromMonth: 6,
+                        showExtraMegas: false
                     },
                     { 
                         megas: 5000, 
                         promoMegas: 5000,
                         regularPrice: 2380,
-                        promoPrice: 1999, // Precio promocional por lanzamiento
+                        promoPrice: 1999,
                         formattedDesc: ["Fibra óptica", "WiFi 7", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 80 : 0,
-                        discountFromMonth: 6, // Aplica al 6to mes
+                        discountFromMonth: 6,
                         showExtraMegas: false
                     },
                     { 
                         megas: 10000, 
                         promoMegas: 10000,
                         regularPrice: 3080,
-                        promoPrice: 2499, // Precio promocional por lanzamiento
+                        promoPrice: 2499,
                         formattedDesc: ["Fibra óptica", "WiFi 7", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 80 : 0,
-                        discountFromMonth: 6, // Aplica al 6to mes
+                        discountFromMonth: 6,
                         showExtraMegas: false
                     }
                 ],
                 combo: [
                     { 
                         megas: 100, 
-                        promoMegas: 200, // ACTUALIZADO: 100→200
+                        promoMegas: 200,
                         regularPrice: 650,
-                        promoPrice: 600, // Precio promoción al pagar puntual
+                        promoPrice: 600,
                         formattedDesc: ["185 canales", "Convertidor Smart TV"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 30 : 0,
-                        discountFromMonth: 6, // Aplica al 6to mes
+                        discountFromMonth: 6,
                         showExtraMegas: true
                     },
                     { 
                         megas: 200, 
-                        promoMegas: 300, // ACTUALIZADO: 200→300
+                        promoMegas: 300,
                         regularPrice: 760,
-                        promoPrice: 710, // Precio promoción al pagar puntual
+                        promoPrice: 710,
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Apple TV+ 1 año"],
                         recommended: true,
                         lifetimeDiscount: isPromoPeriod() ? 30 : 0,
-                        discountFromMonth: 6, // Aplica al 6to mes
+                        discountFromMonth: 6,
                         showExtraMegas: true
                     },
                     { 
                         megas: 300, 
-                        promoMegas: 500, // ACTUALIZADO: 300→500
+                        promoMegas: 500,
                         regularPrice: 870,
-                        promoPrice: 820, // Precio promoción al pagar puntual
+                        promoPrice: 820,
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 40 : 0,
-                        discountFromMonth: 6, // Aplica al 6to mes
+                        discountFromMonth: 6,
                         showExtraMegas: true
                     },
                     { 
                         megas: 500, 
-                        promoMegas: 1200, // ACTUALIZADO: 500→1200
+                        promoMegas: 1200,
                         regularPrice: 1050,
-                        promoPrice: 1000, // Precio promoción al pagar puntual
+                        promoPrice: 1000,
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Bocinas B&O", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 50 : 0,
-                        discountFromMonth: 6, // Aplica al 6to mes
+                        discountFromMonth: 6,
                         showExtraMegas: true
                     },
                     { 
                         megas: 1200, 
                         promoMegas: 1200,
                         regularPrice: 1720,
-                        promoPrice: 1640, // Precio promoción al pagar puntual
+                        promoPrice: 1640,
                         formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Bocinas B&O", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 100 : 0,
-                        discountFromMonth: 6, // Aplica al 6to mes
-                        showExtraMegas: false // NO mostrar "Megas extra" para 1200
+                        discountFromMonth: 6,
+                        showExtraMegas: false
                     },
                     { 
                         megas: 5000, 
                         promoMegas: 5000,
                         regularPrice: 2880,
-                        promoPrice: 2499, // Precio promocional por lanzamiento
+                        promoPrice: 2499,
                         formattedDesc: ["185 canales", "WiFi 7", "Servicio para 1 TV con Alexa y Totalplay Surround", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 100 : 0,
-                        discountFromMonth: 6, // Aplica al 6to mes
+                        discountFromMonth: 6,
                         showExtraMegas: false
                     },
                     { 
                         megas: 10000, 
                         promoMegas: 10000,
                         regularPrice: 3580,
-                        promoPrice: 2999, // Precio promocional por lanzamiento
+                        promoPrice: 2999,
                         formattedDesc: ["185 canales", "WiFi 7", "Servicio para 1 TV con Alexa y Totalplay Surround", "Apple TV+ 1 año"],
                         recommended: false,
                         lifetimeDiscount: isPromoPeriod() ? 100 : 0,
-                        discountFromMonth: 6, // Aplica al 6to mes
+                        discountFromMonth: 6,
                         showExtraMegas: false
                     }
                 ]
@@ -1201,7 +1253,7 @@
                 // Actualizar banner de promoción según periodo
                 const promoBanner = document.getElementById('promo-banner');
                 if (isPromoPeriod()) {
-                    promoBanner.innerHTML = '<p class="text-center font-bold text-[#00FFFF] text-lg">💀 ¡OFERTAS ESPECIALES desde el 31 de octubre hasta el 12 de noviembre 2025! Descuento por 5 meses + Netflix x 5 meses GRATIS</p>';
+                    promoBanner.innerHTML = '<p class="text-center font-bold text-[#00FFFF] text-lg">🎁 ¡OFERTAS ESPECIALES desde el 1 de noviembre hasta el 17 de noviembre 2025! Descuento por 5 meses + Netflix x 5 meses GRATIS</p>';
                 }
             }
 
@@ -1251,14 +1303,21 @@
                         `<div class="benefit-item">${benefit}</div>`
                     ).join('');
                     
+                    // Calcular precio después del 6to mes con descuento aplicado
+                    const priceAfterDiscount = plan.promoPrice - plan.lifetimeDiscount;
+                    
                     const card = `
                         <div class="card-hover p-6 rounded-2xl text-center flex flex-col relative h-full">
                             ${plan.recommended ? '<div class="recommended-badge">Recomendado</div>' : ''}
+                            
+                            <!-- Logo del Buen Mes en esquina superior izquierda -->
+                            <img src="${BUEN_MES_LOGO_URL}" alt="Buen Mes" class="buen-mes-logo">
                             
                             <!-- Título del plan con color específico -->
                             <div class="${colorClass} p-4 rounded-xl text-center mb-4">
                                 <h3 class="text-2xl font-bold">${plan.megas} MEGAS</h3>
                                 <p class="font-semibold">${type === 'combo' ? 'Internet + TV' : 'Internet Simétrico'}</p>
+                                ${plan.showExtraMegas ? `<div class="mt-2 text-sm font-bold">¡NAVEGA CON ${currentMegas} MEGAS!</div>` : ''}
                                 <div class="mt-2 flex items-center justify-center">
                                     <span class="gift-emoji">🎁</span>
                                     <span class="text-white text-sm ml-2">Contrata hoy y recibe un regalo de bienvenida</span>
@@ -1280,24 +1339,28 @@
                                 </div>
                             ` : ''}
                             
-                            <!-- Precio - SOLO DOS PRECIOS: PROMOCIÓN GRANDE Y LISTA MEDIANO -->
+                            <!-- Precio - MEJORADO: Muestra precio durante 5 meses y después del 6to mes -->
                             <div class="my-6">
                                 <div class="space-y-2">
-                                    <div class="text-center">
-                                        <span class="text-4xl font-extrabold text-white">$${plan.promoPrice}</span>
-                                        <span class="text-[#BDBDBD]">/mes</span>
+                                    <div class="price-display">
+                                        <div class="text-center">
+                                            <span class="promo-price">$${plan.promoPrice}</span>
+                                            <span class="regular-price">$${plan.regularPrice}</span>
+                                        </div>
+                                        <div class="price-description">Precio promoción al pagar puntual</div>
+                                        <div class="price-after-discount">Durante los primeros 5 meses</div>
                                     </div>
-                                    <div class="text-center">
-                                        <span class="text-sm text-[#00FFFF]">Precio promoción al pagar puntual</span>
-                                    </div>
-                                    <div class="flex items-center justify-center mt-2">
-                                        <span class="text-lg text-[#BDBDBD] line-through mr-2">$${plan.regularPrice}</span>
-                                        <span class="text-sm text-[#BDBDBD]">Precio de lista</span>
-                                    </div>
+                                    ${plan.lifetimeDiscount > 0 ? `
+                                        <div class="text-center mt-4">
+                                            <div class="text-sm text-[#BDBDBD]">Después del 6to mes:</div>
+                                            <div class="text-lg font-bold text-[#00FFFF]">$${priceAfterDiscount}</div>
+                                            <div class="text-xs text-[#BDBDBD]">(Descuento de por vida aplicado)</div>
+                                        </div>
+                                    ` : ''}
                                 </div>
                             </div>
                             
-                            <button class="select-plan-btn mt-auto btn-dia-muertos dia-muertos-button py-3 px-6 rounded-full w-full"
+                            <button class="select-plan-btn mt-auto btn-buen-mes buen-mes-button py-3 px-6 rounded-full w-full"
                                 data-megas="${plan.megas}" data-promo-megas="${currentMegas}" data-regular-price="${plan.regularPrice}" data-promo-price="${plan.promoPrice}" data-lifetime-discount="${plan.lifetimeDiscount}">
                                 <span>Me interesa</span>
                             </button>
