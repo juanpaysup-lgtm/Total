@@ -19,11 +19,11 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1766933083922039');
+    fbq('init', '763739910017100');
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1766933083922039&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=763739910017100&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
     
@@ -677,7 +677,7 @@
                 </div>
                 <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-[#424242] transform hover:-translate-y-2 transition-transform duration-300">
                     <h3 class="text-xl font-bold text-[#00FFFF] mb-3">🔧 Instalación SIN COSTO</h3>
-                    <p class="text-[#BDBDBD]">Instalación profesional incluida con valor de $350 MXN. Paga hoy $0 por la instalación.</p>
+                    <p class="text-[#BDBDBD]">Instalación profesional incluida con valor of $350 MXN. Paga hoy $0 por la instalación.</p>
                 </div>
             </div>
         </section>
@@ -972,28 +972,6 @@
                 }
             }
             
-            // Track time on page events
-            setTimeout(() => {
-                trackFacebookEvent('TimeOnPage30', {
-                    content_name: document.title,
-                    content_category: 'Page Engagement'
-                });
-            }, 30000);
-
-            setTimeout(() => {
-                trackFacebookEvent('TimeOnPage60', {
-                    content_name: document.title,
-                    content_category: 'Page Engagement'
-                });
-            }, 60000);
-
-            setTimeout(() => {
-                trackFacebookEvent('TimeOnPage120', {
-                    content_name: document.title,
-                    content_category: 'Page Engagement'
-                });
-            }, 120000);
-            
             // --- PLANS AND ADD-ONS DATA ---
             // PRECIOS ACTUALIZADOS según la tabla proporcionada
             const plansData = {
@@ -1267,12 +1245,6 @@
                 // Asegurarse de que las secciones de planes sean visibles
                 document.getElementById('planes').classList.remove('section-hidden');
                 document.getElementById('planes').scrollIntoView({ behavior: 'smooth' });
-                
-                // Track event for Facebook Pixel
-                trackFacebookEvent('ViewContent', {
-                    content_name: 'Planes de Internet',
-                    content_category: 'Internet Plans'
-                });
             }
 
             // Función para determinar la clase de color según los megas
@@ -1669,7 +1641,7 @@
                     lifetimeDiscount: parseInt(lifetimeDiscount)
                 };
                 
-                // Track event for Facebook Pixel
+                // Track event for Facebook Pixel - AddToCart
                 trackFacebookEvent('AddToCart', {
                     content_name: `Plan ${selection.plan.megas} Megas - ${selection.planType}`,
                     content_ids: [`plan_${selection.planType}_${selection.plan.megas}`],
@@ -1708,14 +1680,6 @@
                             tier: null, 
                             price: addonsData.streaming.prime.price 
                         };
-                        // Track event for Facebook Pixel
-                        trackFacebookEvent('AddToCart', {
-                            content_name: 'Amazon Prime',
-                            content_ids: ['addon_prime'],
-                            content_type: 'product',
-                            value: addonsData.streaming.prime.price,
-                            currency: 'MXN'
-                        });
                     } else if (value === 'netflix') {
                         if (netflixTiers) netflixTiers.classList.remove('hidden');
                     } else {
@@ -1734,14 +1698,6 @@
                         tier: tierData.name, 
                         price: tierData.price 
                     };
-                    // Track event for Facebook Pixel
-                    trackFacebookEvent('AddToCart', {
-                        content_name: `Netflix - ${tierData.name}`,
-                        content_ids: [`netflix_${tierData.id}`],
-                        content_type: 'product',
-                        value: tierData.price,
-                        currency: 'MXN'
-                    });
                 }
                 
                 if (name === 'disney') {
@@ -1754,14 +1710,6 @@
                             tier: tierData.name, 
                             price: tierData.price 
                         };
-                        // Track event for Facebook Pixel
-                        trackFacebookEvent('AddToCart', {
-                            content_name: `Disney+ - ${tierData.name}`,
-                            content_ids: [`disney_${tierData.id}`],
-                            content_type: 'product',
-                            value: tierData.price,
-                            currency: 'MXN'
-                        });
                         
                         // Si selecciona Disney+, verificar si hay Disney+ en paquete de apps y desmarcarlo
                         if (selection.appPackage.data && selection.appPackage.selectedApps.includes('Disney+ Estándar')) {
@@ -1818,14 +1766,6 @@
                             selectedApps: [], 
                             price: pkg.price 
                         };
-                        // Track event for Facebook Pixel
-                        trackFacebookEvent('AddToCart', {
-                            content_name: pkg.name,
-                            content_ids: [`package_${pkg.id}`],
-                            content_type: 'product',
-                            value: pkg.price,
-                            currency: 'MXN'
-                        });
                         
                         // Si selecciona un paquete que incluye Disney+ y ya tiene Disney+ seleccionado, desmarcar Disney+
                         if (pkg.apps.includes('Disney+ Estándar') && selection.disney.service !== null) {
@@ -1901,20 +1841,6 @@
                     selection.devices = Array.from(document.querySelectorAll('input[name="device"]:checked'))
                         .map(cb => Object.values(addonsData.devices).find(d => d.id === cb.value))
                         .filter(Boolean);
-                    
-                    // Track event for Facebook Pixel for each device
-                    if (e.target.checked) {
-                        const device = Object.values(addonsData.devices).find(d => d.id === e.target.value);
-                        if (device) {
-                            trackFacebookEvent('AddToCart', {
-                                content_name: device.name,
-                                content_ids: [`device_${device.id}`],
-                                content_type: 'product',
-                                value: device.price,
-                                currency: 'MXN'
-                            });
-                        }
-                    }
                 }
                 
                 updateSummaryAndTotal();
@@ -2105,14 +2031,6 @@
                     portabilityDiscount: selection.portabilityDiscount
                 };
 
-                // Track event for Facebook Pixel - Purchase
-                trackFacebookEvent('Purchase', {
-                    value: selection.total,
-                    currency: 'MXN',
-                    content_ids: [`plan_${selection.planType}_${selection.plan.megas}`],
-                    content_type: 'product'
-                });
-
                 // Track event for Facebook Pixel - Lead
                 trackFacebookEvent('Lead', {
                     value: selection.total,
@@ -2201,7 +2119,7 @@
                 selection.planType = plan.includes('Solo Internet') ? 'internet' : 'combo';
                 selection.giftOption = null; // No hay regalos en estas promociones
                 
-                // Track event for Facebook Pixel
+                // Track event for Facebook Pixel - AddToCart
                 trackFacebookEvent('AddToCart', {
                     content_name: `Promoción Directa - ${plan}`,
                     content_ids: [`direct_promo_${selection.planType}_${megas}`],
@@ -2267,7 +2185,7 @@
             });
             
             document.getElementById('btn-addons-no').addEventListener('click', () => {
-                // Track event for Facebook Pixel
+                // Track event for Facebook Pixel - SkipAddons
                 trackFacebookEvent('SkipAddons', {
                     content_name: 'No Additional Services',
                     content_category: 'Customization'
