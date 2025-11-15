@@ -253,45 +253,13 @@
             border-color: #2962FF;
         }
         
-        /* Animación para el Buen Mes */
+        /* Animación para el Buen Mes - MODIFICADO: Sin emojis */
         .buen-mes-button {
             position: relative;
             overflow: hidden;
         }
         
-        .buen-mes-button::before {
-            content: "🎁✨";
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
-            animation: buenMesMove 3s infinite ease-in-out, buenMesBlink 2s infinite;
-            z-index: 1;
-        }
-        
-        @keyframes buenMesMove {
-            0%, 100% {
-                transform: translateY(-50%) translateX(0);
-            }
-            25% {
-                transform: translateY(-60%) translateX(5px);
-            }
-            50% {
-                transform: translateY(-50%) translateX(10px);
-            }
-            75% {
-                transform: translateY(-40%) translateX(5px);
-            }
-        }
-        
-        @keyframes buenMesBlink {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.3;
-            }
-        }
+        /* ELIMINADO: Animación de emojis en botones */
         
         .buen-mes-button span {
             position: relative;
@@ -1304,9 +1272,10 @@
                                 </div>
                             </div>
                             
-                            <button class="select-plan-btn mt-auto btn-buen-mes buen-mes-button py-3 px-6 rounded-full w-full"
+                            <!-- BOTÓN MODIFICADO: Sin emojis para facilitar el clic -->
+                            <button class="select-plan-btn mt-auto btn-buen-mes py-3 px-6 rounded-full w-full"
                                 data-megas="${plan.megas}" data-promo-megas="${currentMegas}" data-regular-price="${plan.regularPrice}" data-promo-price="${plan.promoPrice}" data-lifetime-discount="${plan.lifetimeDiscount}">
-                                <span>Me interesa</span>
+                                Me interesa
                             </button>
                         </div>
                     `;
