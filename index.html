@@ -541,10 +541,10 @@
 
     <!-- Hero Section -->
     <main class="container mx-auto px-6">
-        <!-- NUEVAS PROMOCIONES DIRECTAS - MEJORADAS VISUALMENTE -->
+        <!-- NUEVAS PROMOCIONES - MEJORADAS VISUALMENTE -->
         <section id="promociones-directas" class="py-8">
             <div class="direct-promo-banner">
-                <h2 class="direct-promo-title text-center mb-4">🔥 NUEVAS PROMOCIONES DIRECTAS 🔥</h2>
+                <h2 class="direct-promo-title text-center mb-4">🔥 NUEVAS PROMOCIONES🔥</h2>
                 <p class="direct-promo-subtitle text-center">Contrata directamente sin complicaciones y disfruta de estos increíbles precios</p>
                 
                 <div class="grid md:grid-cols-2 gap-8">
@@ -559,7 +559,7 @@
                             <div class="text-left space-y-2">
                                 <div class="direct-promo-benefit">✓ Fibra óptica simétrica</div>
                                 <div class="direct-promo-benefit">✓ Instalación sin costo</div>
-                                <div class="direct-promo-benefit">✓ Precio fijo por 12 meses</div>
+                                <div class="direct-promo-benefit">✓ Precio fijo</div>
                                 <div class="direct-promo-benefit">✓ Soporte técnico 24/7</div>
                             </div>
                             
@@ -585,7 +585,7 @@
                                 <div class="direct-promo-benefit">✓ 80 Megas navega ahora con 100 Megas</div>
                                 <div class="direct-promo-benefit">✓ Más de 150 canales</div>
                                 <div class="direct-promo-benefit">✓ Instalación sin costo</div>
-                                <div class="direct-promo-benefit">✓ Precio fijo por 12 meses</div>
+                                <div class="direct-promo-benefit">✓ Precio fijo</div>
                             </div>
                             
                             <button class="direct-promo-btn contratar-directo-btn" 
@@ -598,25 +598,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="inicio" class="min-h-[80vh] flex items-center professional-gradient rounded-3xl mt-8 p-8 md:p-16 relative">
-            <div class="max-w-3xl relative z-10">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-                    <span class="accent-text">¡Experimenta la potencia de estos MEGAS!</span>
-                </h1>
-                <p class="mt-6 text-lg text-[#BDBDBD]">
-                    ⚡ Instalación EXPRESS sin costo - Precio FIJO por 12 meses - Descuentos EXCLUSIVOS ⚡
-                </p>
-                <div id="promo-banner" class="mt-8 bg-[#1a1a1a] p-4 rounded-xl border border-[#424242]">
-                    <p class="text-center font-bold text-[#00FFFF] text-lg">
-                        🎁 ¡OFERTAS ESPECIALES por tiempo limitado! Válido desde el 1 de noviembre hasta el 17 de noviembre 2025.
-                    </p>
-                </div>
-                <a href="#planes" id="ver-planes-btn" class="mt-10 inline-block btn-buen-mes buen-mes-button text-white font-bold text-lg py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300">
-                    <span>Ver Planes INCREÍBLES</span>
-                </a>
             </div>
         </section>
 
@@ -1216,8 +1197,6 @@
                 beneficiosSection: document.getElementById('beneficios'),
                 testimoniosSection: document.getElementById('testimonios'),
                 soporteSection: document.getElementById('soporte'),
-                inicioSection: document.getElementById('inicio'),
-                verPlanesBtn: document.getElementById('ver-planes-btn'),
                 portabilityCheckbox: document.getElementById('portabilidad'),
                 promocionesDirectasSection: document.getElementById('promociones-directas')
             };
@@ -1227,12 +1206,6 @@
             function setPromoDate() {
                 const today = new Date();
                 document.getElementById('current-year').textContent = today.getFullYear();
-                
-                // Actualizar banner de promoción según periodo
-                const promoBanner = document.getElementById('promo-banner');
-                if (isPromoPeriod()) {
-                    promoBanner.innerHTML = '<p class="text-center font-bold text-[#00FFFF] text-lg">🎁 ¡OFERTAS ESPECIALES desde el 1 de noviembre hasta el 17 de noviembre 2025! Descuento por 5 meses + Netflix x 5 meses GRATIS</p>';
-                }
             }
 
             function hideNonPlanSections() {
@@ -1240,7 +1213,6 @@
                 dom.beneficiosSection.classList.add('section-hidden');
                 dom.testimoniosSection.classList.add('section-hidden');
                 dom.soporteSection.classList.add('section-hidden');
-                dom.inicioSection.classList.add('fade-out');
                 
                 // Asegurarse de que las secciones de planes sean visibles
                 document.getElementById('planes').classList.remove('section-hidden');
@@ -2207,13 +2179,6 @@
             dom.portabilityCheckbox.addEventListener('change', function() {
                 selection.portability = this.checked;
                 updateSummaryAndTotal();
-            });
-            
-            // Event listener para el botón "Ver Planes"
-            dom.verPlanesBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                hideNonPlanSections();
-                document.getElementById('planes').scrollIntoView({ behavior: 'smooth' });
             });
 
             // --- INICIALIZACIÓN ---
