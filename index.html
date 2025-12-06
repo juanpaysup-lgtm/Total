@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asesor Juan Meléndez - Contrata Totalplay Fibra Óptica</title>
+    <title>Totalplay Fibra Óptica - Contrata en 1 Minuto</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,2138 +30,1163 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f0f0f;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
             overflow-x: hidden;
             color: #FFFFFF;
+            position: relative;
+            min-height: 100vh;
         }
-        .professional-gradient {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+        
+        /* Efectos minimalistas */
+        .pulse-simple {
+            animation: pulse-simple 2s infinite;
+        }
+        
+        @keyframes pulse-simple {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .btn-1click {
+            background: linear-gradient(135deg, #00D4AA 0%, #00B894 100%);
+            color: white;
+            font-weight: 800;
+            transition: all 0.2s;
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
-        .professional-gradient::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(41, 98, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(255, 0, 255, 0.05) 0%, transparent 50%);
-            z-index: 1;
+        
+        .btn-1click:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 212, 170, 0.4);
         }
-        .accent-text {
-            color: #2962FF;
-            font-weight: 700;
+        
+        .btn-1click:active {
+            transform: scale(0.98);
         }
-        .promo-gradient {
-            background: linear-gradient(45deg, #2962FF, #00FFFF);
+        
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #00D4AA;
+            border-radius: 16px;
+            transition: all 0.3s;
+            height: 100%;
         }
-        .custom-checkbox:checked, .custom-radio:checked {
-            background-color: #2962FF;
-            border-color: #00FFFF;
+        
+        .highlight-card:hover {
+            border-color: #00FFCC;
+            box-shadow: 0 10px 30px rgba(0, 212, 170, 0.2);
         }
-        .fade-out {
-            opacity: 0;
-            height: 0;
-            overflow: hidden;
-            transition: opacity 0.5s ease, height 0.5s ease;
+        
+        .super-badge {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+            color: white;
+            font-weight: 900;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            animation: bounce 2s infinite;
         }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
         .fade-in {
-            opacity: 1;
-            height: auto;
-            overflow: visible;
-            transition: opacity 0.5s ease, height 0.5s ease;
+            animation: fadeIn 0.5s ease-out;
         }
-        .section-hidden {
-            display: none;
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .form-loading {
-            position: relative;
-            pointer-events: none;
+        
+        .loading-dots:after {
+            content: '.';
+            animation: dots 1.5s steps(5, end) infinite;
         }
-        .form-loading::after {
-            content: "";
+        
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60% { content: '...'; }
+            80%, 100% { content: ''; }
+        }
+        
+        .plan-badge {
             position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 900;
+            z-index: 20;
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+        }
+        
+        .category-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            padding: 12px 20px;
+            font-weight: 600;
+            transition: all 0.3s;
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .category-btn.active {
+            background: rgba(0, 212, 170, 0.1);
+            border-color: #00D4AA;
+            color: #00D4AA;
+        }
+        
+        .category-btn:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .redirect-modal {
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.9);
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 0.5rem;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            padding: 20px;
         }
-        .discount-badge {
-            background-color: #2962FF;
+        
+        .redirect-modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .lifetime-netflix {
+            background: linear-gradient(135deg, #E50914, #B81D24);
             color: white;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
+            padding: 4px 8px;
+            border-radius: 8px;
             font-size: 0.75rem;
             font-weight: bold;
-            margin-left: 0.5rem;
-        }
-        .disney-promo {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2962FF 100%);
-            border-left: 4px solid #00FFFF;
-        }
-        .promo-tag {
-            background-color: #2962FF;
-            color: #FFFFFF;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
-            font-size: 0.75rem;
-            font-weight: bold;
-            margin-left: 0.5rem;
-        }
-        
-        /* Estilo para Netflix similar al original */
-        .netflix-text {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-weight: 900;
-            color: #E50914;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-        }
-        
-        /* Colores específicos para cada plan respetando los originales */
-        .plan-100 {
-            background: linear-gradient(135deg, #8b4513, #daa520);
-            color: #fff;
-            border: 1px solid #daa520;
-        }
-        
-        .plan-200 {
-            background: linear-gradient(135deg, #228b22, #32cd32);
-            color: #000;
-            border: 1px solid #32cd32;
-        }
-        
-        .plan-300 {
-            background: linear-gradient(135deg, #4b0082, #8a2be2);
-            color: #fff;
-            border: 1px solid #8a2be2;
-        }
-        
-        .plan-500 {
-            background: linear-gradient(135deg, #ff4500, #ff8c00);
-            color: #000;
-            border: 1px solid #ff8c00;
-        }
-        
-        .plan-1200 {
-            background: linear-gradient(135deg, #8b0000, #dc143c);
-            color: #fff;
-            border: 1px solid #dc143c;
-        }
-        
-        .plan-5000 {
-            background: linear-gradient(135deg, #00008b, #4169e1);
-            color: #fff;
-            border: 1px solid #4169e1;
-        }
-        
-        .plan-10000 {
-            background: linear-gradient(135deg, #4b0082, #9400d3);
-            color: #fff;
-            border: 1px solid #9400d3;
-        }
-        
-        /* Botones con temática del Buen Mes */
-        .btn-buen-mes {
-            background: linear-gradient(135deg, #2962FF, #00FFFF);
-            color: white;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-buen-mes:hover {
-            background: linear-gradient(135deg, #00FFFF, #2962FF);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(41, 98, 255, 0.4);
-        }
-        
-        .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background-color: #1a1a1a;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(41, 98, 255, 0.2);
-        }
-        
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-            color: #BDBDBD;
-        }
-        
-        .benefit-item:before {
-            content: "✓";
-            margin-right: 8px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #2962FF;
-        }
-        
-        /* BADGE RECOMENDADO CORREGIDO - Sin superposición */
-        .recommended-badge {
-            position: absolute;
-            top: -18px; /* Aumentado para subirlo más y evitar superposición */
-            right: 20px;
-            background: linear-gradient(135deg, #00FFFF, #2962FF);
-            color: #000000;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 900;
-            z-index: 25; /* Aumentado para mayor prioridad sobre otros elementos */
-            box-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF;
-            animation: professionalPulse 2s infinite alternate;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        @keyframes professionalPulse {
-            0% {
-                box-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;
-                transform: scale(1);
-            }
-            100% {
-                box-shadow: 0 0 15px #00FFFF, 0 0 25px #00FFFF, 0 0 35px #00FFFF;
-                transform: scale(1.05);
-            }
-        }
-        
-        input[type="checkbox"], input[type="radio"] {
-            accent-color: #2962FF;
-        }
-        
-        .has-\[\:\checked\]\:bg-indigo-900\/50:has(:checked) {
-            background-color: rgba(41, 98, 255, 0.2);
-        }
-        
-        .has-\[\:\checked\]\:border-indigo-500:has(:checked) {
-            border-color: #2962FF;
-        }
-        
-        /* Animación para el Buen Mes - MODIFICADO: Sin emojis */
-        .buen-mes-button {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        /* ELIMINADO: Animación de emojis en botones */
-        
-        .buen-mes-button span {
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Encabezados de promoción con z-index ajustado */
-        .promo-header {
-            position: relative;
-            z-index: 15;
-        }
-        
-        /* Estilos para la sección de regalos */
-        .gift-section {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2962FF 100%);
-            border-radius: 1rem;
-            padding: 2rem;
-            margin: 2rem 0;
-            border: 2px solid #00FFFF;
-        }
-        
-        .gift-option {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .gift-option:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-3px);
-        }
-        
-        .gift-option.selected {
-            border-color: #00FFFF;
-            background: rgba(0, 255, 255, 0.1);
-        }
-        
-        .gift-emoji {
-            animation: giftPulse 2s infinite;
             display: inline-block;
+            margin-left: 8px;
         }
         
-        @keyframes giftPulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-            }
-        }
-        
-        .gift-price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #00FFFF;
-        }
-        
-        .gift-price-small {
-            font-size: 0.9rem;
-            color: #BDBDBD;
-            margin-top: 0.25rem;
-        }
-        
-        /* Estilos para las nuevas promociones directas - MEJORADO */
-        .direct-promo-banner {
-            background: linear-gradient(135deg, #87CEEB, #B0E0E6); /* Celeste claro por fuera */
-            border-radius: 1.5rem;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            border: 3px solid #1E90FF;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .direct-promo-banner::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(30, 144, 255, 0.9), rgba(0, 105, 255, 0.9)); /* Azul fuerte por dentro */
-            z-index: 1;
-        }
-        
-        .direct-promo-banner > * {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .direct-promo-card {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 1rem;
-            padding: 2rem;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-        
-        .direct-promo-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            border-color: #FFFFFF;
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        .direct-promo-price {
+        .countdown {
             font-size: 3rem;
             font-weight: 900;
-            color: #FFFFFF;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            margin: 1rem 0;
+            color: #00D4AA;
+            margin: 20px 0;
         }
         
-        .direct-promo-btn {
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: #000000;
-            font-weight: 800;
-            padding: 1rem 2rem;
-            border-radius: 3rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-            margin-top: 1.5rem;
-            border: 2px solid #FFFFFF;
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 1.1rem;
-        }
-        
-        .direct-promo-btn:hover {
-            background: linear-gradient(135deg, #FFA500, #FF8C00);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 165, 0, 0.6);
-            color: #000000;
-        }
-        
-        /* Mejoras de contraste para el texto */
-        .direct-promo-title {
-            color: #FFFFFF;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            font-weight: 900;
-            font-size: 2.5rem;
-        }
-        
-        .direct-promo-subtitle {
-            color: #FFFFFF;
-            font-weight: 600;
+        .countdown-text {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .direct-promo-card-title {
             color: #FFFFFF;
-            font-weight: 800;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 10px;
         }
         
-        .direct-promo-card-text {
-            color: #E6F7FF;
-            font-weight: 500;
-        }
-        
-        .direct-promo-card-highlight {
-            color: #FFD700;
-            font-weight: 700;
-        }
-        
-        .direct-promo-benefit {
-            color: #E6F7FF;
-            font-weight: 500;
-            margin: 0.5rem 0;
-        }
-        
-        /* Estilos para precios con descuento */
-        .price-display {
-            margin: 1rem 0;
-        }
-        
-        .promo-price {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #FFFFFF;
-        }
-        
-        .regular-price {
-            font-size: 1.2rem;
-            color: #BDBDBD;
-            text-decoration: line-through;
-            margin-left: 0.5rem;
-        }
-        
-        .price-description {
-            font-size: 0.9rem;
-            color: #00FFFF;
-            margin-top: 0.5rem;
-        }
-        
-        .price-after-discount {
-            font-size: 1rem;
-            color: #BDBDBD;
-            margin-top: 0.25rem;
-        }
-        
-        /* NUEVO: Estilo para el logo del Buen Mes en las tarjetas de plan */
-        .buen-mes-logo {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 80px;
-            height: auto;
-            z-index: 20;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+        /* Responsive fixes */
+        @media (max-width: 640px) {
+            .super-badge {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+            
+            .category-btn {
+                padding: 10px 12px;
+                font-size: 0.9rem;
+                min-width: 100px;
+            }
+            
+            .plan-badge {
+                top: -10px;
+                right: 15px;
+                font-size: 0.65rem;
+                padding: 4px 8px;
+            }
+            
+            .countdown {
+                font-size: 2.5rem;
+            }
+            
+            .countdown-text {
+                font-size: 1rem;
+            }
         }
         
         @media (max-width: 768px) {
-            .buen-mes-logo {
-                width: 60px;
-                top: 8px;
-                left: 8px;
+            .highlight-card, .plan-card {
+                padding: 1rem !important;
             }
+            
+            .text-4xl, .text-5xl {
+                font-size: 2rem !important;
+            }
+            
+            .text-3xl, .text-4xl {
+                font-size: 1.75rem !important;
+            }
+            
+            .text-2xl {
+                font-size: 1.5rem !important;
+            }
+            
+            .text-xl {
+                font-size: 1.25rem !important;
+            }
+        }
+        
+        /* Mobile-specific styles */
+        .mobile-optimized {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .mobile-optimized input,
+        .mobile-optimized button {
+            font-size: 16px; /* Prevents zoom on iOS */
+        }
+        
+        /* Touch-friendly buttons */
+        .touch-button {
+            min-height: 44px;
+            min-width: 44px;
+        }
+        
+        /* Prevent horizontal scrolling */
+        .no-horizontal-scroll {
+            overflow-x: hidden;
+            width: 100%;
         }
     </style>
 </head>
-<body class="bg-[#0f0f0f] text-white">
+<body class="min-h-screen mobile-optimized no-horizontal-scroll">
 
-    <!-- Header -->
-    <header class="bg-[#1a1a1a]/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg border-b border-[#424242]">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-xl md:text-2xl font-bold text-white">
-                <span class="accent-text">Asesor Autorizado</span> Totalplay®
+    <!-- Header Minimalista -->
+    <header class="bg-black/50 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800 w-full">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg"></div>
+                <span class="text-xl font-bold hidden sm:block">Totalplay</span>
+                <span class="text-xl font-bold sm:hidden">TP</span>
             </div>
-            <div class="text-right">
-                <p class="font-semibold">Juan Meléndez</p>
-                <p class="text-sm text-[#BDBDBD]">Tu experto en conectividad</p>
+            <div class="text-sm text-right">
+                <span class="text-cyan-400 font-semibold">Asesor Juan</span>
+                <div class="text-xs text-gray-400">Contrata en 1 minuto</div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <main class="container mx-auto px-6">
-        <!-- NUEVAS PROMOCIONES - MEJORADAS VISUALMENTE -->
-        <section id="promociones-directas" class="py-8">
-            <div class="direct-promo-banner">
-                <h2 class="direct-promo-title text-center mb-4">🔥 NUEVAS PROMOCIONES🔥</h2>
-                <p class="direct-promo-subtitle text-center">Contrata directamente sin complicaciones y disfruta de estos increíbles precios</p>
+    <!-- Hero - COMPRAR AHORA en 2 pasos -->
+    <main class="container mx-auto px-4 py-8 max-w-6xl w-full">
+        <!-- Banner Urgente -->
+        <div class="mb-8 text-center w-full">
+            <div class="super-badge inline-block mb-2">
+                ⚡ OFERTA ESPECIAL DICIEMBRE ⚡
+            </div>
+            <div class="text-sm text-gray-300 px-2">
+                Válido solo hasta el 15 de diciembre - Instalación GRATIS
+            </div>
+        </div>
+
+        <!-- Título que vende -->
+        <div class="text-center mb-12 w-full">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 px-2">
+                <span class="bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent block md:inline">
+                    Internet Más Rápido
+                </span>
+                <br>
+                <span class="text-2xl md:text-3xl lg:text-4xl">Contrata en 1 Minuto</span>
+            </h1>
+            <p class="text-gray-300 text-base md:text-lg max-w-2xl mx-auto px-4">
+                Sin complicaciones. Sin formularios largos. Solo el mejor internet al mejor precio.
+            </p>
+        </div>
+
+        <!-- Botones de Categorías - Responsive -->
+        <div class="mb-8 w-full">
+            <div class="flex flex-wrap justify-center gap-2 md:gap-3 px-2">
+                <button onclick="showCategory('basico')" class="category-btn touch-button">
+                    <span class="hidden sm:inline">🟢</span> Básico
+                </button>
+                <button onclick="showCategory('esencial')" class="category-btn active touch-button">
+                    <span class="hidden sm:inline">🟡</span> Esencial
+                </button>
+                <button onclick="showCategory('premium')" class="category-btn touch-button">
+                    <span class="hidden sm:inline">🔵</span> Premium
+                </button>
+                <button onclick="showCategory('elite')" class="category-btn touch-button">
+                    <span class="hidden sm:inline">🟣</span> Ultra Elite
+                </button>
+            </div>
+        </div>
+
+        <!-- Contenedor de Planes Responsive -->
+        <div id="plans-container" class="mb-12 w-full">
+            <!-- Los planes se cargarán dinámicamente aquí -->
+        </div>
+
+        <!-- PASO 2: Formulario Rápido Responsive -->
+        <section id="step2" class="hidden fade-in w-full">
+            <div class="bg-gradient-to-br from-gray-900 to-black border-2 border-cyan-500/30 rounded-2xl p-4 md:p-6 lg:p-8 w-full">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold mb-2">✅ Plan seleccionado</h2>
+                    <div class="text-lg text-gray-300 px-2" id="selectedPlanText"></div>
+                    <div class="text-3xl font-bold text-green-400 mt-2" id="selectedPriceText"></div>
+                </div>
                 
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Promoción Solo Internet 80 Megas -->
-                    <div class="direct-promo-card">
-                        <div class="text-center">
-                            <h3 class="direct-promo-card-title">Solo Internet</h3>
-                            <div class="direct-promo-price">$390<span class="text-2xl">/mes</span></div>
-                            <p class="direct-promo-card-text mb-2">En pago puntual</p>
-                            <p class="direct-promo-card-highlight mb-6">80 Megas navega ahora con 100 Megas</p>
-                            
-                            <div class="text-left space-y-2">
-                                <div class="direct-promo-benefit">✓ Fibra óptica simétrica</div>
-                                <div class="direct-promo-benefit">✓ Instalación sin costo</div>
-                                <div class="direct-promo-benefit">✓ Precio fijo</div>
-                                <div class="direct-promo-benefit">✓ Soporte técnico 24/7</div>
-                            </div>
-                            
-                            <button class="direct-promo-btn contratar-directo-btn" 
-                                    data-plan="Solo Internet 80 Megas" 
-                                    data-price="390"
-                                    data-megas="80"
-                                    data-promo-megas="100">
-                                Contratar Directamente
-                            </button>
+                <!-- Formulario Rápido -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold mb-4">Completa tus datos:</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Nombre Completo *</label>
+                            <input type="text" id="nombre" 
+                                   class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-cyan-500 focus:outline-none touch-button"
+                                   placeholder="Tu nombre completo"
+                                   required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Correo Electrónico *</label>
+                            <input type="email" id="correo" 
+                                   class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-cyan-500 focus:outline-none touch-button"
+                                   placeholder="tu@correo.com"
+                                   required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Teléfono (10 dígitos) *</label>
+                            <input type="tel" id="telefono" 
+                                   class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-cyan-500 focus:outline-none touch-button"
+                                   placeholder="8123456789"
+                                   pattern="\d{10}"
+                                   required>
                         </div>
                     </div>
-                    
-                    <!-- Promoción Internet + TV -->
-                    <div class="direct-promo-card">
-                        <div class="text-center">
-                            <h3 class="direct-promo-card-title">Internet + TV</h3>
-                            <div class="direct-promo-price">$490<span class="text-2xl">/mes</span></div>
-                            <p class="direct-promo-card-text mb-2">En pago puntual</p>
-                            <p class="direct-promo-card-highlight mb-6">80 Megas + Canales incluidos</p>
-                            
-                            <div class="text-left space-y-2">
-                                <div class="direct-promo-benefit">✓ 80 Megas navega ahora con 100 Megas</div>
-                                <div class="direct-promo-benefit">✓ Más de 150 canales</div>
-                                <div class="direct-promo-benefit">✓ Instalación sin costo</div>
-                                <div class="direct-promo-benefit">✓ Precio fijo</div>
+                </div>
+                
+                <!-- Resumen instantáneo -->
+                <div class="bg-black/50 rounded-xl p-4 mb-6">
+                    <h3 class="font-bold mb-2">Resumen de tu pedido:</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span>Plan seleccionado:</span>
+                            <span id="summaryPlan"></span>
+                        </div>
+                        <div id="netflixIncluded" class="text-green-400 font-medium text-sm"></div>
+                        <div class="border-t border-gray-700 pt-2 mt-2">
+                            <div class="flex justify-between font-bold text-lg">
+                                <span>Total mensual:</span>
+                                <span id="summaryTotal">$0</span>
                             </div>
-                            
-                            <button class="direct-promo-btn contratar-directo-btn" 
-                                    data-plan="Internet + TV 80 Megas + Canales" 
-                                    data-price="490"
-                                    data-megas="80"
-                                    data-promo-megas="100">
-                                Contratar Directamente
-                            </button>
+                            <div class="text-xs text-gray-400 mt-1" id="summaryDescription"></div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Plans Section -->
-        <section id="planes" class="py-20">
-            <div class="text-center">
-                <div class="promo-gradient p-8 rounded-2xl mb-12 shadow-2xl border border-[#424242]">
-                    <h2 class="text-4xl font-extrabold text-white">Elige el plan que transformará tu conectividad</h2>
-                    <p class="text-[#BDBDBD] mt-2 text-lg">Velocidades ultrarrápidas que impresionan ⚡</p>
-                </div>
-
-                <div id="plan-type-buttons" class="flex justify-center gap-4 mb-10 bg-[#1a1a1a] p-2 rounded-full max-w-md mx-auto border border-[#424242]">
-                    <button id="btn-internet" class="plan-type-btn flex-1 bg-transparent hover:bg-[#424242] text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">Solo Internet</button>
-                    <button id="btn-combo" class="plan-type-btn flex-1 bg-[#2962FF] text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">Internet + TV</button>
-                </div>
-
-                <div id="plan-cards-container" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-                    <!-- Las tarjetas de planes se insertarán aquí con JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Gift Selection Section -->
-        <section id="gift-section" class="hidden py-12">
-            <div class="max-w-4xl mx-auto gift-section">
-                <h2 class="text-3xl font-bold text-center mb-6 text-white">
-                    <span class="gift-emoji">🎁</span> ¡Elige tu regalo de bienvenida!
-                </h2>
-                <p class="text-center text-[#BDBDBD] mb-8">Contrata hoy y recibe un regalo de bienvenida. Selecciona una de las siguientes opciones:</p>
                 
-                <div id="gift-options-container" class="space-y-4">
-                    <!-- Las opciones de regalo se insertarán aquí con JS -->
+                <!-- Información importante -->
+                <div class="bg-blue-900/20 border border-blue-700 rounded-lg p-4 mb-6">
+                    <h4 class="font-bold text-blue-300 mb-2">📋 Lo que necesitas para la instalación:</h4>
+                    <ul class="text-sm space-y-1 text-blue-200">
+                        <li class="flex items-start">
+                            <span class="mr-2">•</span>
+                            <span>Identificación oficial (INE)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2">•</span>
+                            <span>Comprobante de domicilio (no mayor a 3 meses)</span>
+                        </li>
+                    </ul>
                 </div>
                 
-                <div class="mt-8 text-center">
-                    <button id="btn-continue-gift" class="bg-[#00FFFF] hover:bg-[#00CCCC] text-black font-bold py-3 px-10 rounded-full transition-colors duration-300">
-                        Continuar con mi selección
+                <!-- Botón WhatsApp 1-CLICK Responsive -->
+                <div class="text-center">
+                    <button onclick="validateAndSend()" 
+                            class="btn-1click max-w-md mx-auto py-4 rounded-xl text-lg md:text-xl font-bold flex items-center justify-center gap-3 touch-button">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                        </svg>
+                        <span class="truncate">ENVIAR POR WHATSAPP</span>
                     </button>
+                    
+                    <p class="text-gray-400 text-sm mt-3 px-2">
+                        Serás redirigido a WhatsApp para terminar tu contratación
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Benefits Section -->
-        <section id="beneficios" class="py-20">
-            <h2 class="text-3xl font-bold text-center mb-12 accent-text">Beneficios excepcionales</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-[#424242] transform hover:-translate-y-2 transition-transform duration-300">
-                    <h3 class="text-xl font-bold text-[#00FFFF] mb-3">⚡ Velocidad de ÉLITE</h3>
-                    <p class="text-[#BDBDBD]">Disfruta la misma velocidad para subir y descargar archivos. Rendimiento optimizado para todas tus necesidades.</p>
+        <!-- Beneficios Social Proof Responsive -->
+        <section class="mt-16 w-full">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold">Miles ya disfrutan de Totalplay</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <div class="bg-gray-900/30 rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mr-3">
+                            ⚡
+                        </div>
+                        <div>
+                            <div class="font-bold text-lg">Instalación en 24h</div>
+                            <div class="text-sm text-gray-400">Trabajamos rápido</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-[#424242] transform hover:-translate-y-2 transition-transform duration-300">
-                    <h3 class="text-xl font-bold text-[#00FFFF] mb-3">💰 Precio Fijo GARANTIZADO</h3>
-                    <p class="text-[#BDBDBD]">Te mantenemos el mismo precio durante 12 meses. Sin sorpresas en tu factura.</p>
+                
+                <div class="bg-gray-900/30 rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mr-3">
+                            💰
+                        </div>
+                        <div>
+                            <div class="font-bold text-lg">Precio fijo 12 meses</div>
+                            <div class="text-sm text-gray-400">Sin sorpresas</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-[#424242] transform hover:-translate-y-2 transition-transform duration-300">
-                    <h3 class="text-xl font-bold text-[#00FFFF] mb-3">🛠️ Soporte Técnico 24/7</h3>
-                    <p class="text-[#BDBDBD]">Accede a nuestra línea de atención técnica 24/7 con especialistas siempre disponibles.</p>
-                </div>
-                <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-[#424242] transform hover:-translate-y-2 transition-transform duration-300">
-                    <h3 class="text-xl font-bold text-[#00FFFF] mb-3">🔧 Instalación SIN COSTO</h3>
-                    <p class="text-[#BDBDBD]">Instalación profesional incluida con valor of $350 MXN. Paga hoy $0 por la instalación.</p>
+                
+                <div class="bg-gray-900/30 rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mr-3">
+                            📞
+                        </div>
+                        <div>
+                            <div class="font-bold text-lg">Soporte 24/7</div>
+                            <div class="text-sm text-gray-400">Siempre disponibles</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Add-ons Section -->
-        <section id="addons-section" class="hidden py-12">
-             <div id="addons-intro" class="max-w-3xl mx-auto text-center bg-[#1a1a1a] rounded-3xl p-8 md:p-12 border border-[#424242]">
-                <h2 class="text-3xl font-bold mb-4 accent-text">¡Personaliza tu paquete a tu medida!</h2>
-                <p class="text-[#BDBDBD] mb-8">¿Deseas agregar servicios de streaming, apps o dispositivos a tu plan?</p>
-                 <div class="flex justify-center gap-4">
-                    <button id="btn-addons-yes" class="bg-[#00FFFF] hover:bg-[#00CCCC] text-black font-bold py-3 px-10 rounded-full transition-colors duration-300">¡Sí, agregar!</button>
-                    <button id="btn-addons-no" class="bg-[#424242] hover:bg-[#666666] text-white font-bold py-3 px-10 rounded-full transition-colors duration-300">No, gracias</button>
+        <!-- ✅ PREGUNTAS FRECUENTES ACTUALIZADAS Responsive -->
+        <section class="mt-16 w-full max-w-2xl mx-auto">
+            <h2 class="text-2xl font-bold mb-6 text-center">¿Dudas? Aquí las respuestas</h2>
+            
+            <div class="space-y-4">
+                <div class="bg-gray-900/30 rounded-lg p-4">
+                    <div class="font-bold mb-1 flex items-center">
+                        <span class="mr-2">⏱️</span>
+                        ¿Cuánto tarda la instalación?
+                    </div>
+                    <div class="text-gray-300 text-sm">
+                        <span class="text-green-400">Entre 5 a 24 horas</span> después de confirmar y enviar los requisitos vía WhatsApp.
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900/30 rounded-lg p-4">
+                    <div class="font-bold mb-1 flex items-center">
+                        <span class="mr-2">🛠️</span>
+                        ¿Necesito equipo especial?
+                    </div>
+                    <div class="text-gray-300 text-sm">
+                        <span class="text-green-400">Todo el equipo viene incluido sin costo.</span> Te instalamos el módem, cables y decodificador si eliges TV.
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900/30 rounded-lg p-4">
+                    <div class="font-bold mb-1 flex items-center">
+                        <span class="mr-2">🔄</span>
+                        ¿Puedo cambiar después?
+                    </div>
+                    <div class="text-gray-300 text-sm">
+                        <span class="text-green-400">Sí, puedes cambiar de plan cuando quieras.</span> Sin penalizaciones ni contratos forzosos.
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900/30 rounded-lg p-4">
+                    <div class="font-bold mb-1 flex items-center">
+                        <span class="mr-2">💳</span>
+                        ¿Pago algo al instalar?
+                    </div>
+                    <div class="text-gray-300 text-sm">
+                        <span class="text-green-400">No hay costo por instalación extra,</span> solo pagarás tu primera mensualidad al momento de la instalación.
+                    </div>
                 </div>
             </div>
             
-            <div id="addons-options" class="hidden max-w-4xl mx-auto mt-12 space-y-10">
-                <!-- Las opciones de adicionales se insertarán aquí -->
-            </div>
-        </section>
-
-        <!-- Contact Form & Summary Section -->
-        <section id="contact-section" class="hidden py-20">
-            <div class="max-w-4xl mx-auto bg-[#1a1a1a] p-8 md:p-12 rounded-3xl border border-[#424242] grid md:grid-cols-2 gap-12">
-                <div>
-                    <h2 class="text-3xl font-bold mb-2 accent-text">¡Casi listo para disfrutar!</h2>
-                    <p class="text-[#BDBDBD] mb-6">Completa tus datos para finalizar tu solicitud. Me pondré en contacto contigo a la brevedad para coordinar la instalación.</p>
-                    <form id="contact-form">
-                        <div class="mb-4">
-                            <label for="nombre" class="block mb-2 text-sm font-medium text-[#BDBDBD]">Nombre Completo</label>
-                            <input type="text" id="nombre" name="nombre" class="bg-[#0f0f0f] border border-[#424242] text-white text-sm rounded-lg focus:ring-[#2962FF] focus:border-[#2962FF] block w-full p-2.5" placeholder="Tu nombre" required>
-                        </div>
-                        <div class="mb-4">
-                            <label for="correo" class="block mb-2 text-sm font-medium text-[#BDBDBD]">Correo Electrónico</label>
-                            <input type="email" id="correo" name="correo" class="bg-[#0f0f0f] border border-[#424242] text-white text-sm rounded-lg focus:ring-[#2962FF] focus:border-[#2962FF] block w-full p-2.5" placeholder="tu@correo.com" required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="telefono" class="block mb-2 text-sm font-medium text-[#BDBDBD]">Teléfono (WhatsApp)</label>
-                            <input type="tel" id="telefono" name="telefono" class="bg-[#0f0f0f] border border-[#424242] text-white text-sm rounded-lg focus:ring-[#2962FF] focus:border-[#2962FF] block w-full p-2.5" placeholder="10 dígitos" required pattern="\d{10}">
-                        </div>
-                        <div class="mb-6">
-                            <label class="flex items-center">
-                                <input type="checkbox" id="portabilidad" name="portabilidad" class="custom-checkbox rounded">
-                                <span class="ml-2 text-[#BDBDBD]">¿Deseas portar tu número? (Obtén descuento en tu segunda mensualidad)</span>
-                            </label>
-                        </div>
-                    </form>
-                </div>
-                <div class="bg-[#0f0f0f] p-6 rounded-2xl flex flex-col border border-[#424242]">
-                    <h3 class="text-xl font-bold mb-4 accent-text">Resumen de tu pedido</h3>
-                    <div id="summary-content" class="space-y-3 text-[#BDBDBD] flex-grow">
-                        <!-- El resumen se insertará aquí con JS -->
-                    </div>
-                     <div class="border-t border-[#424242] mt-4 pt-4">
-                        <div class="flex justify-between items-center text-xl font-bold">
-                            <span class="text-[#BDBDBD]">Total Mensual:</span>
-                            <span id="summary-total" class="accent-text">$0</span>
-                        </div>
-                        <div class="text-sm text-[#BDBDBD] mt-1" id="summary-total-description">
-                            <!-- Descripción del total se insertará aquí -->
-                        </div>
-                        <div class="flex justify-between items-center text-lg text-[#00FFFF] mt-2">
-                            <span>Costo de Instalación Extra:</span>
-                            <span id="summary-install" class="text-[#00FFFF]">$0 (Valor $350)</span>
-                        </div>
-                        <div class="flex justify-between items-center text-xl font-bold mt-2 pt-2 border-t border-[#424242]">
-                            <span class="text-[#BDBDBD]">Pago Inicial:</span>
-                            <span id="summary-install-price" class="accent-text">$0</span>
-                        </div>
-                    </div>
-                    <button id="btn-continue" type="button" class="mt-6 w-full bg-[#00FFFF] hover:bg-[#00CCCC] text-black font-bold py-3 px-6 rounded-full transition-colors duration-300 disabled:bg-[#424242] disabled:cursor-not-allowed flex items-center justify-center gap-2" disabled>
-                        <span id="continue-text">Enviar solicitud por WhatsApp</span>
-                        <div id="continue-loader" class="hidden w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
-                    </button>
-                    
-                    <!-- Texto informativo agregado -->
-                    <div class="mt-4 text-center">
-                        <p class="text-xs text-[#BDBDBD]">
-                            ⚠️ <strong>Importante:</strong> Por favor completa todos los campos del formulario antes de enviar tu solicitud. 
-                            Tu información nos permitirá contactarte para coordinar la instalación de tu servicio.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section id="testimonios" class="py-20">
-            <h2 class="text-3xl font-bold text-center mb-12 accent-text">Lo que dicen nuestros clientes satisfechos</h2>
-            <div class="grid lg:grid-cols-3 gap-8">
-                <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-[#424242]">
-                    <p class="text-[#BDBDBD] mb-6">"La atención de Juan fue excelente. Me explicó todo con claridad y la instalación fue súper rápida. Internet vuela, 100% recomendado!"</p>
-                    <div class="font-bold text-right text-[#00FFFF]">- Sofía G.</div>
-                </div>
-                <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-[#424242]">
-                    <p class="text-[#BDBDBD] mb-6">"Tenía muchas dudas sobre qué plan me convenía para mis clases en línea y para jugar. El asesor me ayudó a elegir el paquete perfecto y ahora todo funciona de maravilla."</p>
-                    <div class="font-bold text-right text-[#00FFFF]">- Carlos M.</div>
-                </div>
-                <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-[#424242]">
-                    <p class="text-[#BDBDBD] mb-6">"Contratar fue muy sencillo y sin tanto rollo. Me gustaron las promociones que me ofreció y el servicio ha sido muy estable desde el primer día."</p>
-                    <div class="font-bold text-right text-[#00FFFF]">- Laura V.</div>
-                </div>
+            <!-- Información adicional -->
+            <div class="mt-8 text-center text-gray-400 text-sm px-4">
+                <p>¿Otra pregunta? Escríbeme por WhatsApp y te respondo al instante.</p>
             </div>
         </section>
         
-        <!-- Support Section -->
-        <section id="soporte" class="py-20 text-center">
-            <div class="bg-[#1a1a1a] max-w-2xl mx-auto p-8 rounded-2xl border border-[#424242]">
-                <h2 class="text-2xl font-bold mb-4 accent-text">¿Necesitas Soporte Técnico?</h2>
-                <p class="text-[#BDBDBD] mb-4">Si ya eres cliente y presentas una falla, comunícate directamente a la línea de soporte técnico para una atención inmediata.</p>
-                <p class="text-3xl font-bold accent-text tracking-widest">800 510 0510</p>
+        <!-- Llamada a la acción final Responsive -->
+        <section class="mt-12 text-center w-full">
+            <div class="bg-gradient-to-r from-gray-900 to-black border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl font-bold mb-3">¿Listo para tener el mejor internet?</h3>
+                <p class="text-gray-300 mb-4 text-sm md:text-base">Elige tu plan y contáctanos en menos de 1 minuto</p>
+                <button onclick="scrollToTop()" 
+                        class="btn-1click px-8 py-3 rounded-xl font-bold max-w-xs mx-auto touch-button">
+                    🚀 Ver Planes Disponibles
+                </button>
             </div>
         </section>
-
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-[#1a1a1a] mt-20 border-t border-[#424242]">
-        <div class="container mx-auto px-6 py-8 text-center text-[#BDBDBD]">
-            <p>&copy; <span id="current-year"></span> Juan Meléndez - Asesor Autorizado Totalplay. Todos los derechos reservados.</p>
-            <p class="text-sm mt-2">Este sitio es gestionado por un asesor de ventas autorizado. Totalplay® es una marca registrada.</p>
-             <p class="text-xs mt-4">Página creada por Juan Meléndez</p>
+    <!-- Modal de Redirección a WhatsApp con Cuenta Regresiva Responsive -->
+    <div id="redirectModal" class="redirect-modal">
+        <div class="bg-gray-900 rounded-2xl p-6 md:p-8 max-w-md w-full mx-4 border-2 border-green-500">
+            <div class="text-center">
+                <div class="text-5xl md:text-6xl mb-4">📱</div>
+                <h3 class="text-xl md:text-2xl font-bold mb-2">¡Perfecto!</h3>
+                <p class="text-gray-300 mb-4 text-sm md:text-base px-2">
+                    Serás redirigido a WhatsApp para completar tu contratación.
+                </p>
+                <p class="text-green-400 font-bold mb-4 text-sm md:text-base px-2">
+                    Por favor, comparte tu nombre y teléfono cuando te contacte el asesor.
+                </p>
+                
+                <!-- Cuenta regresiva -->
+                <div class="countdown-text">Redirigiendo en:</div>
+                <div class="countdown" id="countdown">3</div>
+                
+                <div class="text-sm text-gray-400 mt-4 px-2">
+                    Si no eres redirigido automáticamente, haz clic aquí:
+                    <button onclick="forceOpenWhatsApp()" class="text-green-400 underline ml-1">
+                        Abrir WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Minimalista Responsive -->
+    <footer class="mt-16 border-t border-gray-800 py-8 w-full">
+        <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
+            <p>Asesor autorizado Juan Meléndez - Totalplay®</p>
+            <p class="mt-1 text-xs md:text-sm">Este sitio es solo para contratación. Totalplay es una marca registrada.</p>
+            <p class="mt-4 text-xs">Contrata en 1 minuto - Sin complicaciones</p>
+            <p class="mt-2 text-xs text-gray-500">WhatsApp: 81 3119 1393</p>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // --- CONFIGURATION ---
-            const WHATSAPP_NUMBER = '5218131191393';
-            const MAKE_WEBHOOK_URL = 'https://hook.eu2.make.com/jigm042t5atf3tci3j82n3cxysiva3f0';
-            
-            // URL del logo del Buen Mes
-            const BUEN_MES_LOGO_URL = 'https://www.totalplay.com.mx/assetsv2/img/buenfin/logo-bf.svg';
-            
-            // Verificar si estamos en periodo promocional (hasta el 17 de noviembre de 2025)
-            function isPromoPeriod() {
-                const today = new Date();
-                const promoStart = new Date('2025-11-01');
-                const promoEnd = new Date('2025-11-17');
-                return today >= promoStart && today <= promoEnd;
-            }
-            
-            // Datos de portabilidad (solo disponible durante promoción)
-            const portabilityDiscount = isPromoPeriod() ? {
-                'internet': 100,
-                'combo': 200
-            } : {
-                'internet': 0,
-                'combo': 0
-            };
-            
-            // Gift options configuration - ACTUALIZADO: Opción 2 ahora por 5 meses
-            const giftOptions = {
-                '100': [
+        // DATOS DE PLANES FINALES CORREGIDOS
+        const plansData = {
+            basico: {
+                name: "🟢 Básico",
+                plans: [
                     {
-                        id: 'gift-100-1',
-                        title: 'Opción 1',
-                        description: '$60 de descuento por 5 meses',
-                        discount: 60,
-                        months: 5,
-                        netflix: false
+                        type: "tv",
+                        megas: 150,
+                        price: 599,
+                        promoPrice: 599,
+                        name: "150 Mbps TV + Internet",
+                        description: "Perfecto para familias pequeñas",
+                        benefits: ["Totalplay TV 4K", "185 canales", "Fibra simétrica"],
+                        recommended: true,
+                        netflixMonths: 5,
+                        netflixLifetime: false,
+                        is100Mbps: false,
+                        tipoServicio: "Internet + TV"
                     },
                     {
-                        id: 'gift-100-2',
-                        title: 'Opción 2',
-                        description: '$60 de descuento por 5 meses + Netflix Gratis por 5 meses',
-                        discount: 60,
-                        months: 5,
-                        netflix: true,
-                        netflixPrice: 110
-                    }
-                ],
-                '200': [
-                    {
-                        id: 'gift-200-1',
-                        title: 'Opción 1',
-                        description: '$60 de descuento por 5 meses',
-                        discount: 60,
-                        months: 5,
-                        netflix: false
+                        type: "tv",
+                        megas: 100,
+                        price: 490,
+                        promoPrice: 490,
+                        name: "100 Mbps TV + Internet",
+                        description: "Para uso personal básico",
+                        benefits: ["Totalplay TV 4K", "TV básica", "Fibra óptica"],
+                        recommended: false,
+                        netflixMonths: 0,
+                        netflixLifetime: false,
+                        is100Mbps: true,
+                        tipoServicio: "Internet + TV"
                     },
                     {
-                        id: 'gift-200-2',
-                        title: 'Opción 2',
-                        description: '$60 de descuento por 5 meses + Netflix Gratis por 5 meses',
-                        discount: 60,
-                        months: 5,
-                        netflix: true,
-                        netflixPrice: 110
-                    }
-                ],
-                '300': [
-                    {
-                        id: 'gift-300-1',
-                        title: 'Opción 1',
-                        description: '$70 de descuento por 5 meses',
-                        discount: 70,
-                        months: 5,
-                        netflix: false
-                    },
-                    {
-                        id: 'gift-300-2',
-                        title: 'Opción 2',
-                        description: '$70 de descuento por 5 meses + Netflix Gratis por 5 meses',
-                        discount: 70,
-                        months: 5,
-                        netflix: true,
-                        netflixPrice: 110
-                    }
-                ],
-                '500': [
-                    {
-                        id: 'gift-500-1',
-                        title: 'Opción 1',
-                        description: '$150 de descuento por 5 meses',
-                        discount: 150,
-                        months: 5,
-                        netflix: false
-                    },
-                    {
-                        id: 'gift-500-2',
-                        title: 'Opción 2',
-                        description: '$150 de descuento por 5 meses + Netflix Gratis por 5 meses',
-                        discount: 150,
-                        months: 5,
-                        netflix: true,
-                        netflixPrice: 110
-                    }
-                ],
-                '1200': [
-                    {
-                        id: 'gift-1200-1',
-                        title: 'Opción 1',
-                        description: '$150 de descuento por 5 meses',
-                        discount: 150,
-                        months: 5,
-                        netflix: false
-                    },
-                    {
-                        id: 'gift-1200-2',
-                        title: 'Opción 2',
-                        description: '$150 de descuento por 5 meses + Netflix Gratis por 5 meses',
-                        discount: 150,
-                        months: 5,
-                        netflix: true,
-                        netflixPrice: 110
-                    }
-                ],
-                '5000': [
-                    {
-                        id: 'gift-5000-1',
-                        title: 'Opción 1',
-                        description: '$150 de descuento por 5 meses',
-                        discount: 150,
-                        months: 5,
-                        netflix: false
-                    },
-                    {
-                        id: 'gift-5000-2',
-                        title: 'Opción 2',
-                        description: '$150 de descuento por 5 meses + Netflix Gratis por 5 meses',
-                        discount: 150,
-                        months: 5,
-                        netflix: true,
-                        netflixPrice: 110
-                    }
-                ],
-                '10000': [
-                    {
-                        id: 'gift-10000-1',
-                        title: 'Opción 1',
-                        description: '$150 de descuento por 5 meses',
-                        discount: 150,
-                        months: 5,
-                        netflix: false
-                    },
-                    {
-                        id: 'gift-10000-2',
-                        title: 'Opción 2',
-                        description: '$150 de descuento por 5 meses + Netflix Gratis por 5 meses',
-                        discount: 150,
-                        months: 5,
-                        netflix: true,
-                        netflixPrice: 110
-                    }
-                ]
-            };
-            
-            // Eventos personalizados para Facebook Pixel
-            function trackFacebookEvent(eventName, parameters) {
-                if (typeof fbq !== 'undefined') {
-                    fbq('track', eventName, parameters);
-                }
-            }
-            
-            // --- PLANS AND ADD-ONS DATA ---
-            // PRECIOS ACTUALIZADOS según la tabla proporcionada
-            const plansData = {
-                internet: [
-                    { 
-                        megas: 100, 
-                        promoMegas: 200,
-                        regularPrice: 510,
+                        type: "internet",
+                        megas: 150,
+                        price: 460,
                         promoPrice: 460,
-                        formattedDesc: ["Fibra óptica", "Club WiFi Totalplay"],
+                        name: "150 Mbps Solo Internet",
+                        description: "Internet rápido sin TV",
+                        benefits: ["Fibra simétrica", "Conexión estable"],
                         recommended: false,
-                        lifetimeDiscount: isPromoPeriod() ? 20 : 0,
-                        discountFromMonth: 6,
-                        showExtraMegas: true
+                        netflixMonths: 3,
+                        netflixLifetime: false,
+                        is100Mbps: false,
+                        tipoServicio: "Solo Internet"
                     },
-                    { 
-                        megas: 200, 
-                        promoMegas: 300,
-                        regularPrice: 620,
-                        promoPrice: 570,
-                        formattedDesc: ["Fibra óptica", "Club WiFi", "Apple TV+ 1 año"],
-                        recommended: true,
-                        lifetimeDiscount: isPromoPeriod() ? 20 : 0,
-                        discountFromMonth: 6,
-                        showExtraMegas: true
-                    },
-                    { 
-                        megas: 300, 
-                        promoMegas: 500,
-                        regularPrice: 730,
-                        promoPrice: 680,
-                        formattedDesc: ["Fibra óptica", "Club WiFi", "Apple TV+ 1 año"],
+                    {
+                        type: "internet",
+                        megas: 100,
+                        price: 390,
+                        promoPrice: 390,
+                        name: "100 Mbps Solo Internet",
+                        description: "Internet básico sin TV",
+                        benefits: ["Fibra óptica", "Conexión básica"],
                         recommended: false,
-                        lifetimeDiscount: isPromoPeriod() ? 30 : 0,
-                        discountFromMonth: 6,
-                        showExtraMegas: true
-                    },
-                    { 
-                        megas: 500, 
-                        promoMegas: 1200,
-                        regularPrice: 880,
-                        promoPrice: 830,
-                        formattedDesc: ["Fibra óptica", "WiFi 6", "Club WiFi", "Apple TV+ 1 año"],
-                        recommended: false,
-                        lifetimeDiscount: isPromoPeriod() ? 60 : 0,
-                        discountFromMonth: 6,
-                        showExtraMegas: true
-                    },
-                    { 
-                        megas: 1200, 
-                        promoMegas: 1200,
-                        regularPrice: 1550,
-                        promoPrice: 1470,
-                        formattedDesc: ["Fibra óptica", "WiFi 6", "Club WiFi", "Apple TV+ 1 año"],
-                        recommended: false,
-                        lifetimeDiscount: isPromoPeriod() ? 80 : 0,
-                        discountFromMonth: 6,
-                        showExtraMegas: false
-                    },
-                    { 
-                        megas: 5000, 
-                        promoMegas: 5000,
-                        regularPrice: 2380,
-                        promoPrice: 1999,
-                        formattedDesc: ["Fibra óptica", "WiFi 7", "Apple TV+ 1 año"],
-                        recommended: false,
-                        lifetimeDiscount: isPromoPeriod() ? 80 : 0,
-                        discountFromMonth: 6,
-                        showExtraMegas: false
-                    },
-                    { 
-                        megas: 10000, 
-                        promoMegas: 10000,
-                        regularPrice: 3080,
-                        promoPrice: 2499,
-                        formattedDesc: ["Fibra óptica", "WiFi 7", "Apple TV+ 1 año"],
-                        recommended: false,
-                        lifetimeDiscount: isPromoPeriod() ? 80 : 0,
-                        discountFromMonth: 6,
-                        showExtraMegas: false
-                    }
-                ],
-                combo: [
-                    { 
-                        megas: 100, 
-                        promoMegas: 200,
-                        regularPrice: 650,
-                        promoPrice: 600,
-                        formattedDesc: ["185 canales", "Convertidor Smart TV"],
-                        recommended: false,
-                        lifetimeDiscount: isPromoPeriod() ? 30 : 0,
-                        discountFromMonth: 6,
-                        showExtraMegas: true
-                    },
-                    { 
-                        megas: 200, 
-                        promoMegas: 300,
-                        regularPrice: 760,
-                        promoPrice: 710,
-                        formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Apple TV+ 1 año"],
-                        recommended: true,
-                        lifetimeDiscount: isPromoPeriod() ? 30 : 0,
-                        discountFromMonth: 6,
-                        showExtraMegas: true
-                    },
-                    { 
-                        megas: 300, 
-                        promoMegas: 500,
-                        regularPrice: 870,
-                        promoPrice: 820,
-                        formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Apple TV+ 1 año"],
-                        recommended: false,
-                        lifetimeDiscount: isPromoPeriod() ? 40 : 0,
-                        discountFromMonth: 6,
-                        showExtraMegas: true
-                    },
-                    { 
-                        megas: 500, 
-                        promoMegas: 1200,
-                        regularPrice: 1050,
-                        promoPrice: 1000,
-                        formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Bocinas B&O", "Apple TV+ 1 año"],
-                        recommended: false,
-                        lifetimeDiscount: isPromoPeriod() ? 50 : 0,
-                        discountFromMonth: 6,
-                        showExtraMegas: true
-                    },
-                    { 
-                        megas: 1200, 
-                        promoMegas: 1200,
-                        regularPrice: 1720,
-                        promoPrice: 1640,
-                        formattedDesc: ["185 canales", "Convertidor Smart TV", "Alexa", "Bocinas B&O", "Apple TV+ 1 año"],
-                        recommended: false,
-                        lifetimeDiscount: isPromoPeriod() ? 100 : 0,
-                        discountFromMonth: 6,
-                        showExtraMegas: false
-                    },
-                    { 
-                        megas: 5000, 
-                        promoMegas: 5000,
-                        regularPrice: 2880,
-                        promoPrice: 2499,
-                        formattedDesc: ["185 canales", "WiFi 7", "Servicio para 1 TV con Alexa y Totalplay Surround", "Apple TV+ 1 año"],
-                        recommended: false,
-                        lifetimeDiscount: isPromoPeriod() ? 100 : 0,
-                        discountFromMonth: 6,
-                        showExtraMegas: false
-                    },
-                    { 
-                        megas: 10000, 
-                        promoMegas: 10000,
-                        regularPrice: 3580,
-                        promoPrice: 2999,
-                        formattedDesc: ["185 canales", "WiFi 7", "Servicio para 1 TV con Alexa y Totalplay Surround", "Apple TV+ 1 año"],
-                        recommended: false,
-                        lifetimeDiscount: isPromoPeriod() ? 100 : 0,
-                        discountFromMonth: 6,
-                        showExtraMegas: false
+                        netflixMonths: 0,
+                        netflixLifetime: false,
+                        is100Mbps: true,
+                        tipoServicio: "Solo Internet"
                     }
                 ]
-            };
-
-            const addonsData = {
-                streaming: {
-                    prime: { id: 'prime', name: 'Amazon Prime', price: 90 },
-                    netflix: {
-                        id: 'netflix', name: 'Netflix', tiers: [
-                            { id: 'netflix-anuncios', name: 'Netflix con Anuncios', price: 110 },
-                            { id: 'netflix-estandar', name: 'Netflix Estándar (2 pantallas)', price: 229 },
-                            { id: 'netflix-premium', name: 'Netflix Premium (4 pantallas)', price: 299 },
-                        ]
+            },
+            esencial: {
+                name: "🟡 Esencial",
+                plans: [
+                    {
+                        type: "tv",
+                        megas: 350,
+                        price: 799,
+                        promoPrice: 799,
+                        name: "350 Mbps TV + Internet",
+                        description: "Ideal para familias grandes",
+                        benefits: ["Totalplay TV 4K", "185 canales", "Fibra simétrica"],
+                        recommended: true,
+                        netflixMonths: 5,
+                        netflixLifetime: false,
+                        is100Mbps: false,
+                        tipoServicio: "Internet + TV"
+                    },
+                    {
+                        type: "tv",
+                        megas: 250,
+                        price: 699,
+                        promoPrice: 699,
+                        name: "250 Mbps TV + Internet",
+                        description: "Para múltiples dispositivos",
+                        benefits: ["Totalplay TV 4K", "185 canales", "Fibra simétrica"],
+                        recommended: false,
+                        netflixMonths: 5,
+                        netflixLifetime: false,
+                        is100Mbps: false,
+                        tipoServicio: "Internet + TV"
+                    },
+                    {
+                        type: "internet",
+                        megas: 350,
+                        price: 669,
+                        promoPrice: 669,
+                        name: "350 Mbps Solo Internet",
+                        description: "Internet ultra rápido",
+                        benefits: ["Fibra simétrica", "Alta velocidad"],
+                        recommended: false,
+                        netflixMonths: 5,
+                        netflixLifetime: false,
+                        is100Mbps: false,
+                        tipoServicio: "Solo Internet"
+                    },
+                    {
+                        type: "internet",
+                        megas: 250,
+                        price: 559,
+                        promoPrice: 559,
+                        name: "250 Mbps Solo Internet",
+                        description: "Internet para trabajo/estudio",
+                        benefits: ["Fibra simétrica", "Estable y confiable"],
+                        recommended: false,
+                        netflixMonths: 5,
+                        netflixLifetime: false,
+                        is100Mbps: false,
+                        tipoServicio: "Solo Internet"
                     }
-                },
-                disney: {
-                    id: 'disney', 
-                    name: 'Disney+', 
-                    tiers: [
-                        { 
-                            id: 'disney-estandar', 
-                            name: 'Disney+ Estándar', 
-                            price: 249, 
-                            description: 'Para 2 dispositivos a la vez sin publicidad' 
-                        },
-                        { 
-                            id: 'disney-premium', 
-                            name: 'Disney+ Premium', 
-                            price: 319, 
-                            description: 'Para 4 dispositivos a la vez sin publicidad' 
-                        }
-                    ]
-                },
-                app_packages: [
-                    { id: 'paq-basico', name: 'Paquete 2 Apps Básicas', price: 199, limit: 2, apps: [ 'Amazon Prime', 'HBO con Anuncios', 'Paramount+' ] },
-                    { id: 'paq-estandar-2', name: 'Paquete 2 Apps Estándar', price: 399, limit: 2, apps: [ 'Fox Sports Premium', 'NBA League Pass', 'HBO MAX', 'Disney+ Estándar' ] },
-                    { id: 'paq-estandar-3', name: 'Paquete 3 Apps Estándar', price: 599, limit: 3, apps: [ 'Fox Sports Premium', 'NBA League Pass', 'HBO MAX', 'Disney+ Estándar' ] },
-                ],
-                devices: {
-                    wifiPro: { id: 'wifi-pro', name: 'WifiPro', price: 69, tvOnly: false },
-                    tvAdicional: { id: 'tv-adicional', name: 'TV Adicional', price: 129, tvOnly: true },
-                    tvAdicionalAlexa: { id: 'tv-adicional-alexa', name: 'TV Adicional con Alexa', price: 280, tvOnly: true },
-                    sonidoSurround: { id: 'sonido-surround', name: 'Sonido Surround', price: 199, tvOnly: true }
-                }
-            };
+                ]
+            },
+            premium: {
+                name: "🔵 Premium",
+                plans: [
+                    {
+                        type: "tv",
+                        megas: 1200,
+                        price: 1640,
+                        promoPrice: 1640,
+                        name: "1200 Mbps TV + Internet",
+                        description: "Para gamers y streamers",
+                        benefits: ["Nuevo Totalplay TV", "Totalplay Surround", "Soporte Prioritario"],
+                        recommended: true,
+                        netflixMonths: 5,
+                        netflixLifetime: true,
+                        is100Mbps: false,
+                        tipoServicio: "Internet + TV"
+                    },
+                    {
+                        type: "tv",
+                        megas: 500,
+                        price: 999,
+                        promoPrice: 999,
+                        name: "500 Mbps TV + Internet",
+                        description: "Experiencia premium completa",
+                        benefits: ["Nuevo Totalplay TV", "4K Ultra HD", "Soporte Prioritario"],
+                        recommended: false,
+                        netflixMonths: 5,
+                        netflixLifetime: false,
+                        is100Mbps: false,
+                        tipoServicio: "Internet + TV"
+                    },
+                    {
+                        type: "internet",
+                        megas: 1200,
+                        price: 1470,
+                        promoPrice: 1470,
+                        name: "1200 Mbps Solo Internet",
+                        description: "Internet empresarial",
+                        benefits: ["Fibra simétrica", "Alta velocidad", "Soporte Prioritario"],
+                        recommended: false,
+                        netflixMonths: 5,
+                        netflixLifetime: true,
+                        is100Mbps: false,
+                        tipoServicio: "Solo Internet"
+                    },
+                    {
+                        type: "internet",
+                        megas: 500,
+                        price: 830,
+                        promoPrice: 830,
+                        name: "500 Mbps Solo Internet",
+                        description: "Internet para trabajo remoto",
+                        benefits: ["Fibra simétrica", "Conexión premium", "Soporte Prioritario"],
+                        recommended: false,
+                        netflixMonths: 5,
+                        netflixLifetime: false,
+                        is100Mbps: false,
+                        tipoServicio: "Solo Internet"
+                    }
+                ]
+            },
+            elite: {
+                name: "🟣 Ultra Elite",
+                plans: [
+                    {
+                        type: "tv",
+                        megas: 10000,
+                        price: 2999,
+                        promoPrice: 2999,
+                        name: "10000 Mbps TV + Internet",
+                        description: "Velocidad extrema",
+                        benefits: ["Nuevo Totalplay TV", "Totalplay Surround Pro", "Soporte VIP 24/7"],
+                        recommended: true,
+                        netflixMonths: 5,
+                        netflixLifetime: true,
+                        is100Mbps: false,
+                        tipoServicio: "Internet + TV"
+                    },
+                    {
+                        type: "tv",
+                        megas: 5000,
+                        price: 2499,
+                        promoPrice: 2499,
+                        name: "5000 Mbps TV + Internet",
+                        description: "Para negocios y hogares premium",
+                        benefits: ["Nuevo Totalplay TV", "Totalplay Surround", "Soporte VIP 24/7"],
+                        recommended: false,
+                        netflixMonths: 5,
+                        netflixLifetime: true,
+                        is100Mbps: false,
+                        tipoServicio: "Internet + TV"
+                    },
+                    {
+                        type: "internet",
+                        megas: 10000,
+                        price: 2499,
+                        promoPrice: 2499,
+                        name: "10000 Mbps Solo Internet",
+                        description: "Internet de nivel empresarial",
+                        benefits: ["Fibra simétrica", "Velocidad extrema", "Soporte VIP 24/7"],
+                        recommended: false,
+                        netflixMonths: 5,
+                        netflixLifetime: true,
+                        is100Mbps: false,
+                        tipoServicio: "Solo Internet"
+                    },
+                    {
+                        type: "internet",
+                        megas: 5000,
+                        price: 1999,
+                        promoPrice: 1999,
+                        name: "5000 Mbps Solo Internet",
+                        description: "Internet para empresas",
+                        benefits: ["Fibra simétrica", "Alto rendimiento", "Soporte VIP 24/7"],
+                        recommended: false,
+                        netflixMonths: 5,
+                        netflixLifetime: true,
+                        is100Mbps: false,
+                        tipoServicio: "Solo Internet"
+                    }
+                ]
+            }
+        };
+
+        // ESTADO GLOBAL
+        let currentCategory = 'esencial';
+        let selection = {
+            plan: null,
+            planName: '',
+            price: 0,
+            netflixMonths: 0,
+            netflixLifetime: false,
+            is100MbpsPlan: false,
+            tipoServicio: ''
+        };
+
+        // **********************************************************************
+        // WEBHOOK DE MAKE.COM - TU WEBHOOK ACTUAL
+        // **********************************************************************
+        const MAKE_WEBHOOK_URL = 'https://hook.eu2.make.com/jigm042t5atf3tci3j82n3cxysiva3f0';
+
+        // INICIALIZAR
+        document.addEventListener('DOMContentLoaded', function() {
+            renderPlans(currentCategory);
+        });
+
+        // MOSTRAR CATEGORÍA
+        function showCategory(category) {
+            currentCategory = category;
             
-            // --- APPLICATION STATE ---
-            let selection = {
-                plan: null, 
-                planType: 'combo', // Por defecto muestra Internet + TV
-                giftOption: null,
-                streaming: { service: null, tier: null, price: 0 },
-                disney: { service: null, tier: null, price: 0 },
-                appPackage: { data: null, selectedApps: [], price: 0 },
-                devices: [], 
-                total: 0,
-                portability: false,
-                installPrice: 350,
-                portabilityDiscount: 0
-            };
+            // Actualizar botones activos
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Renderizar planes
+            renderPlans(category);
+        }
 
-            // --- DOM ELEMENTS ---
-            const dom = {
-                planCardsContainer: document.getElementById('plan-cards-container'),
-                giftSection: document.getElementById('gift-section'),
-                giftOptionsContainer: document.getElementById('gift-options-container'),
-                btnContinueGift: document.getElementById('btn-continue-gift'),
-                addonsSection: document.getElementById('addons-section'),
-                addonsIntro: document.getElementById('addons-intro'),
-                addonsOptionsContainer: document.getElementById('addons-options'),
-                contactSection: document.getElementById('contact-section'),
-                contactForm: document.getElementById('contact-form'),
-                btnContinue: document.getElementById('btn-continue'),
-                formInputs: document.querySelectorAll('#contact-form input'),
-                summaryContent: document.getElementById('summary-content'),
-                summaryTotal: document.getElementById('summary-total'),
-                summaryTotalDescription: document.getElementById('summary-total-description'),
-                summaryInstall: document.getElementById('summary-install'),
-                summaryInstallPrice: document.getElementById('summary-install-price'),
-                continueText: document.getElementById('continue-text'),
-                continueLoader: document.getElementById('continue-loader'),
-                planTypeButtons: document.querySelectorAll('.plan-type-btn'),
-                beneficiosSection: document.getElementById('beneficios'),
-                testimoniosSection: document.getElementById('testimonios'),
-                soporteSection: document.getElementById('soporte'),
-                portabilityCheckbox: document.getElementById('portabilidad'),
-                promocionesDirectasSection: document.getElementById('promociones-directas')
-            };
-
-            // --- FUNCTIONS ---
-
-            function setPromoDate() {
-                const today = new Date();
-                document.getElementById('current-year').textContent = today.getFullYear();
-            }
-
-            function hideNonPlanSections() {
-                // Ocultar secciones que no son relevantes para el proceso de contratación
-                dom.beneficiosSection.classList.add('section-hidden');
-                dom.testimoniosSection.classList.add('section-hidden');
-                dom.soporteSection.classList.add('section-hidden');
+        // RENDERIZAR PLANES RESPONSIVE
+        function renderPlans(category) {
+            const container = document.getElementById('plans-container');
+            const categoryData = plansData[category];
+            const isMobile = window.innerWidth < 768;
+            
+            let html = `
+                <h2 class="text-2xl font-bold mb-6 text-center px-2">${categoryData.name}</h2>
+                <div class="grid grid-cols-1 ${isMobile ? '' : 'md:grid-cols-2'} gap-4 md:gap-6">
+            `;
+            
+            categoryData.plans.forEach(plan => {
+                const hasNetflix = plan.netflixMonths > 0;
+                const isRecommended = plan.recommended;
+                const isLifetimeNetflix = plan.netflixLifetime;
                 
-                // Asegurarse de que las secciones de planes sean visibles
-                document.getElementById('planes').classList.remove('section-hidden');
-                document.getElementById('planes').scrollIntoView({ behavior: 'smooth' });
-            }
-
-            // Función para determinar la clase de color según los megas
-            function getColorClass(megas) {
-                switch(megas) {
-                    case 100: return "plan-100";
-                    case 200: return "plan-200";
-                    case 300: return "plan-300";
-                    case 500: return "plan-500";
-                    case 1200: return "plan-1200";
-                    case 5000: return "plan-5000";
-                    case 10000: return "plan-10000";
-                    default: return "plan-100";
-                }
-            }
-
-            function renderPlanCards(type) {
-                selection.planType = type;
-                dom.planCardsContainer.innerHTML = '';
-                const isPromoActive = isPromoPeriod();
-                
-                plansData[type].forEach(plan => {
-                    const currentMegas = isPromoActive ? plan.promoMegas : plan.megas;
-                    const colorClass = getColorClass(plan.megas);
-                    
-                    // Generar los beneficios formateados
-                    const benefitsHTML = plan.formattedDesc.map(benefit => 
-                        `<div class="benefit-item">${benefit}</div>`
-                    ).join('');
-                    
-                    // Calcular precio después del 6to mes con descuento aplicado
-                    const priceAfterDiscount = plan.promoPrice - plan.lifetimeDiscount;
-                    
-                    const card = `
-                        <div class="card-hover p-6 rounded-2xl text-center flex flex-col relative h-full">
-                            ${plan.recommended ? '<div class="recommended-badge">Recomendado</div>' : ''}
-                            
-                            <!-- Logo del Buen Mes en esquina superior izquierda -->
-                            <img src="${BUEN_MES_LOGO_URL}" alt="Buen Mes" class="buen-mes-logo">
-                            
-                            <!-- Título del plan con color específico -->
-                            <div class="${colorClass} p-4 rounded-xl text-center mb-4">
-                                <h3 class="text-2xl font-bold">${plan.megas} MEGAS</h3>
-                                <p class="font-semibold">${type === 'combo' ? 'Internet + TV' : 'Internet Simétrico'}</p>
-                                ${plan.showExtraMegas ? `<div class="mt-2 text-sm font-bold">¡NAVEGA CON ${currentMegas} MEGAS!</div>` : ''}
-                                <div class="mt-2 flex items-center justify-center">
-                                    <span class="gift-emoji">🎁</span>
-                                    <span class="text-white text-sm ml-2">Contrata hoy y recibe un regalo de bienvenida</span>
+                html += `
+                    <div class="bg-gray-900/50 border ${isRecommended ? 'border-cyan-500' : 'border-gray-800'} rounded-xl p-4 md:p-6 relative ${isRecommended ? 'highlight-card' : ''}">
+                        ${isRecommended ? '<div class="plan-badge">RECOMENDADO</div>' : ''}
+                        
+                        <div class="flex justify-between items-start mb-3 md:mb-4">
+                            <div>
+                                <div class="text-xl md:text-2xl font-bold">${plan.megas} Mbps</div>
+                                <div class="text-xs md:text-sm ${plan.type === 'tv' ? 'text-cyan-400' : 'text-green-400'} font-medium">
+                                    ${plan.type === 'tv' ? '📺 TV + Internet' : '🌐 Solo Internet'}
                                 </div>
                             </div>
-                            
-                            <!-- Descripción del plan formateada -->
-                            <div class="text-left mb-4 flex-grow">
-                                ${benefitsHTML}
+                            <div class="text-right">
+                                <div class="text-2xl md:text-3xl font-bold">$${plan.price}</div>
+                                <div class="text-xs md:text-sm text-gray-400">/mes</div>
                             </div>
-                            
-                            <!-- Detalles de descuentos -->
-                            ${plan.lifetimeDiscount > 0 ? `
-                                <div class="text-xs text-[#BDBDBD] mb-4">
-                                    <div class="flex items-center justify-center">
-                                        <span class="w-2 h-2 bg-[#00FFFF] rounded-full mr-2"></span>
-                                        <span>Descuento de por vida: $${plan.lifetimeDiscount} (aplica al 6to mes)</span>
-                                    </div>
+                        </div>
+                        
+                        <div class="text-gray-300 text-xs md:text-sm mb-3 md:mb-4">
+                            ${plan.description}
+                        </div>
+                        
+                        <div class="space-y-1 md:space-y-2 mb-4 md:mb-6">
+                            ${plan.benefits.map(benefit => `
+                                <div class="flex items-center text-xs md:text-sm">
+                                    <div class="w-2 h-2 ${isRecommended ? 'bg-cyan-500' : 'bg-green-500'} rounded-full mr-2 flex-shrink-0"></div>
+                                    <span class="break-words">${benefit}</span>
+                                </div>
+                            `).join('')}
+                            ${hasNetflix ? `
+                                <div class="flex items-center text-xs md:text-sm">
+                                    <div class="w-2 h-2 bg-red-500 rounded-full mr-2 flex-shrink-0"></div>
+                                    <span class="text-red-400 font-medium break-words">
+                                        Netflix Estándar con anuncios 
+                                        ${isLifetimeNetflix ? 
+                                            '<span class="lifetime-netflix">GRATIS para siempre</span>' : 
+                                            `${plan.netflixMonths} meses GRATIS`
+                                        }
+                                    </span>
                                 </div>
                             ` : ''}
-                            
-                            <!-- Precio - MEJORADO: Muestra precio durante 5 meses y después del 6to mes -->
-                            <div class="my-6">
-                                <div class="space-y-2">
-                                    <div class="price-display">
-                                        <div class="text-center">
-                                            <span class="promo-price">$${plan.promoPrice}</span>
-                                            <span class="regular-price">$${plan.regularPrice}</span>
-                                        </div>
-                                        <div class="price-description">Precio promoción al pagar puntual</div>
-                                        <div class="price-after-discount">Durante los primeros 5 meses</div>
-                                    </div>
-                                    ${plan.lifetimeDiscount > 0 ? `
-                                        <div class="text-center mt-4">
-                                            <div class="text-sm text-[#BDBDBD]">Después del 6to mes:</div>
-                                            <div class="text-lg font-bold text-[#00FFFF]">$${priceAfterDiscount}</div>
-                                            <div class="text-xs text-[#BDBDBD]">(Descuento de por vida aplicado)</div>
-                                        </div>
-                                    ` : ''}
-                                </div>
-                            </div>
-                            
-                            <!-- BOTÓN MODIFICADO: Sin emojis para facilitar el clic -->
-                            <button class="select-plan-btn mt-auto btn-buen-mes py-3 px-6 rounded-full w-full"
-                                data-megas="${plan.megas}" data-promo-megas="${currentMegas}" data-regular-price="${plan.regularPrice}" data-promo-price="${plan.promoPrice}" data-lifetime-discount="${plan.lifetimeDiscount}">
-                                Me interesa
-                            </button>
                         </div>
-                    `;
-                    dom.planCardsContainer.innerHTML += card;
-                });
-            }
-
-            function renderGiftOptions(planMegas) {
-                const options = giftOptions[planMegas] || giftOptions['100'];
-                dom.giftOptionsContainer.innerHTML = '';
-                
-                options.forEach((option, index) => {
-                    const optionElement = document.createElement('div');
-                    optionElement.className = 'gift-option';
-                    optionElement.dataset.optionId = option.id;
-                    
-                    // Calcular precio final según la opción seleccionada
-                    let finalPrice = selection.plan.promoPrice - option.discount;
-                    let priceAfterDiscount = selection.plan.promoPrice - selection.plan.lifetimeDiscount;
-                    
-                    // Para la opción 2 con Netflix, el precio después del 6to mes es mayor
-                    if (option.netflix) {
-                        priceAfterDiscount = selection.plan.promoPrice - selection.plan.lifetimeDiscount + option.netflixPrice;
-                    }
-                    
-                    optionElement.innerHTML = `
-                        <div class="flex items-center">
-                            <input type="radio" name="gift-option" id="${option.id}" class="custom-radio mr-4">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-bold text-white">${option.title}</h3>
-                                <p class="text-[#BDBDBD] mt-2">${option.description}</p>
-                                <div class="mt-4">
-                                    <p class="text-[#BDBDBD]">Precio mensual por ${option.months} meses:</p>
-                                    <p class="gift-price">$${finalPrice}</p>
-                                    <p class="gift-price-small">después del 6to mes $${priceAfterDiscount} (Descuento de por vida aplicado)</p>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                    
-                    dom.giftOptionsContainer.appendChild(optionElement);
-                    
-                    // Añadir evento de selección
-                    optionElement.addEventListener('click', () => {
-                        document.querySelectorAll('.gift-option').forEach(opt => {
-                            opt.classList.remove('selected');
-                        });
-                        optionElement.classList.add('selected');
-                        document.getElementById(option.id).checked = true;
-                        selection.giftOption = option;
-                    });
-                });
-                
-                // Mostrar sección de regalos
-                dom.giftSection.classList.remove('hidden');
-                dom.giftSection.scrollIntoView({ behavior: 'smooth' });
-            }
-
-            function renderAddonsOptions() {
-                const { streaming, disney, app_packages, devices } = addonsData;
-                const isTvPlan = selection.planType === 'combo';
-                
-                let streamingOptions = `
-                    <label class="flex items-center p-3 bg-[#0f0f0f] rounded-lg has-[:checked]:bg-[#2962FF]/20 border-2 border-transparent has-[:checked]:border-[#2962FF]">
-                        <input type="radio" name="streaming" value="none" class="custom-radio" checked> 
-                        <span class="ml-3 text-[#BDBDBD]">Ninguno</span>
-                    </label>
-                    <label class="flex items-center p-3 bg-[#0f0f0f] rounded-lg has-[:checked]:bg-[#2962FF]/20 border-2 border-transparent has-[:checked]:border-[#2962FF]">
-                        <input type="radio" name="streaming" value="prime" class="custom-radio"> 
-                        <span class="ml-3 text-[#BDBDBD]">${streaming.prime.name} (+$${streaming.prime.price})</span>
-                    </label>
-                    <label class="flex items-center p-3 bg-[#0f0f0f] rounded-lg has-[:checked]:bg-[#2962FF]/20 border-2 border-transparent has-[:checked]:border-[#2962FF]">
-                        <input type="radio" name="streaming" value="netflix" class="custom-radio"> 
-                        <span class="ml-3 text-[#BDBDBD]">${streaming.netflix.name}</span>
-                    </label>`;
-                
-                let netflixTiers = '';
-                streaming.netflix.tiers.forEach(tier => {
-                    netflixTiers += `
-                        <label class="flex items-center p-3 bg-[#0f0f0f] rounded-lg has-[:checked]:bg-[#2962FF]/20 border-2 border-transparent has-[:checked]:border-[#2962FF]">
-                            <input type="radio" name="netflix-tier" value="${tier.id}" class="custom-radio"> 
-                            <span class="ml-3 text-[#BDBDBD]">${tier.name} (+$${tier.price})</span>
-                        </label>`;
-                });
-                
-                let disneyOptions = `
-                    <label class="flex items-center p-3 bg-[#0f0f0f] rounded-lg has-[:checked]:bg-[#2962FF]/20 border-2 border-transparent has-[:checked]:border-[#2962FF]">
-                        <input type="radio" name="disney" value="none" class="custom-radio" checked> 
-                        <span class="ml-3 text-[#BDBDBD]">Ninguno</span>
-                    </label>`;
-                
-                disney.tiers.forEach(tier => {
-                    disneyOptions += `
-                        <label class="flex items-center p-3 bg-[#0f0f0f] rounded-lg has-[:checked]:bg-[#2962FF]/20 border-2 border-transparent has-[:checked]:border-[#2962FF]">
-                            <input type="radio" name="disney" value="${tier.id}" class="custom-radio"> 
-                            <span class="ml-3 text-[#BDBDBD]">${tier.name} (+$${tier.price})</span>
-                        </label>
-                        <div class="disney-promo p-3 rounded-lg mb-3 ml-6">
-                            <p class="text-sm text-white">${tier.description}</p>
-                        </div>`;
-                });
-                
-                let appPackageOptions = '';
-                app_packages.forEach(pkg => {
-                    appPackageOptions += `
-                        <label class="flex items-center p-3 bg-[#0f0f0f] rounded-lg has-[:checked]:bg-[#2962FF]/20 border-2 border-transparent has-[:checked]:border-[#2962FF]">
-                            <input type="radio" name="app-package" value="${pkg.id}" class="custom-radio">
-                            <span class="ml-3 text-[#BDBDBD]">${pkg.name} (+$${pkg.price})</span>
-                        </label>`;
-                });
-                
-                let deviceOptions = '';
-                Object.values(devices).forEach(device => {
-                    if (!device.tvOnly || isTvPlan) {
-                        deviceOptions += `
-                            <label class="flex items-center p-3 bg-[#0f0f0f] rounded-lg has-[:checked]:bg-[#2962FF]/20 border-2 border-transparent has-[:checked]:border-[#2962FF]">
-                                <input type="checkbox" name="device" value="${device.id}" class="custom-checkbox"> 
-                                <span class="ml-3 text-[#BDBDBD]">${device.name} (+$${device.price})</span>
-                            </label>`;
-                    }
-                });
-                
-                dom.addonsOptionsContainer.innerHTML = `
-                    <div class="bg-[#1a1a1a] p-6 rounded-2xl border border-[#424242]">
-                        <h3 class="text-xl font-bold mb-4 accent-text">1. Elige una plataforma de Streaming (opcional)</h3>
-                        <div class="space-y-3" id="streaming-choice">
-                            ${streamingOptions}
-                        </div>
-                        <div id="netflix-tiers" class="hidden mt-4 ml-6 space-y-3 border-l-2 border-[#424242] pl-6">
-                            ${netflixTiers}
-                        </div>
+                        
+                        <button onclick="selectPlan(${plan.megas}, ${plan.price}, '${plan.name}', ${plan.netflixMonths}, ${plan.netflixLifetime}, ${plan.is100Mbps}, '${plan.tipoServicio}')" 
+                                class="w-full ${isRecommended ? 'btn-1click' : 'bg-gray-800 hover:bg-gray-700'} text-white py-3 rounded-xl font-bold text-sm md:text-base transition touch-button">
+                            ${isRecommended ? '✅ Elegir este' : 'Seleccionar'}
+                        </button>
                     </div>
-                    <div class="bg-[#1a1a1a] p-6 rounded-2xl border border-[#424242]">
-                        <h3 class="text-xl font-bold mb-4 accent-text">2. Elige Disney+ (opcional)</h3>
-                        <div class="space-y-3" id="disney-choice">
-                            ${disneyOptions}
-                        </div>
-                    </div>
-                    <div class="bg-[#1a1a1a] p-6 rounded-2xl border border-[#424242]">
-                        <h3 class="text-xl font-bold mb-4 accent-text">3. Elige un paquete de Apps (opcional)</h3>
-                        <div class="space-y-3" id="package-choice">
-                            <label class="flex items-center p-3 bg-[#0f0f0f] rounded-lg has-[:checked]:bg-[#2962FF]/20 border-2 border-transparent has-[:checked]:border-[#2962FF]">
-                                <input type="radio" name="app-package" value="none" class="custom-radio" checked> 
-                                <span class="ml-3 text-[#BDBDBD]">Ninguno</span>
-                            </label>
-                            ${appPackageOptions}
-                        </div>
-                        <div id="package-apps-container" class="mt-4"></div>
-                    </div>
-                    <div class="bg-[#1a1a1a] p-6 rounded-2xl border border-[#424242]">
-                        <h3 class="text-xl font-bold mb-4 accent-text">4. Agrega Dispositivos (opcional)</h3>
-                        <div class="space-y-3" id="device-choice">
-                            ${deviceOptions}
-                        </div>
-                    </div>`;
-                
-                dom.addonsOptionsContainer.classList.remove('hidden');
-                
-                // Ocultar opción de portabilidad si no está en periodo promocional
-                if (!isPromoPeriod()) {
-                    const portabilityLabel = document.querySelector('label[for="portabilidad"]');
-                    if (portabilityLabel) {
-                        portabilityLabel.style.display = 'none';
-                    }
-                    const portabilityCheckbox = document.getElementById('portabilidad');
-                    if (portabilityCheckbox) {
-                        portabilityCheckbox.style.display = 'none';
-                    }
-                }
-            }
+                `;
+            });
+            
+            html += `</div>`;
+            container.innerHTML = html;
+        }
 
-            function renderPackageApps(packageId) {
-                const container = document.getElementById('package-apps-container');
-                const pkg = addonsData.app_packages.find(p => p.id === packageId);
-                if (!pkg) { 
-                    container.innerHTML = ''; 
-                    return; 
-                }
-                
-                const primeSelected = selection.streaming.service === addonsData.streaming.prime.name;
-                const disneySelected = selection.disney.service !== null;
-                
-                let appOptions = '';
-                pkg.apps.forEach(app => {
-                    const isPermanentlyDisabled = (app === 'Amazon Prime' && primeSelected) || (app === 'Disney+ Estándar' && disneySelected);
-                    appOptions += `
-                        <label class="flex items-center p-2 rounded-md transition-opacity ${isPermanentlyDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#0f0f0f]'}">
-                            <input type="checkbox" name="package-app" value="${app}" class="custom-checkbox" 
-                                ${isPermanentlyDisabled ? 'disabled data-permanently-disabled="true"' : ''}> 
-                            <span class="ml-3 text-[#BDBDBD]">${app}</span>
-                        </label>`;
+        // SELECCIONAR PLAN
+        function selectPlan(megas, price, name, netflixMonths, netflixLifetime, is100Mbps, tipoServicio) {
+            selection.plan = megas;
+            selection.planName = name;
+            selection.price = price;
+            selection.netflixMonths = netflixMonths;
+            selection.netflixLifetime = netflixLifetime;
+            selection.is100MbpsPlan = is100Mbps;
+            selection.tipoServicio = tipoServicio;
+            
+            updateSummary();
+            
+            // Mostrar paso 2
+            document.getElementById('step2').classList.remove('hidden');
+            document.getElementById('step2').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // Actualizar textos
+            document.getElementById('selectedPlanText').textContent = name;
+            document.getElementById('selectedPriceText').textContent = `$${price}/mes`;
+            
+            // Track Facebook
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'AddToCart', {
+                    content_name: name,
+                    value: price,
+                    currency: 'MXN'
                 });
-                
-                container.innerHTML = `
-                    <div class="ml-6 border-l-2 border-[#424242] pl-6 space-y-3">
-                        <div class="flex justify-between items-center">
-                            <p class="package-selection-counter font-semibold text-[#BDBDBD]">Selecciona hasta ${pkg.limit} app${pkg.limit !== 1 ? 's' : ''}: (0/${pkg.limit})</p>
-                            <p class="package-limit-message text-[#00FFFF] text-sm font-semibold hidden">¡Límite alcanzado!</p>
-                        </div>
-                        <div class="limited-checkbox-group grid sm:grid-cols-2 gap-2" data-limit="${pkg.limit}">
-                            ${appOptions}
-                        </div>
-                    </div>`;
             }
+        }
 
-            function updateSummaryAndTotal() {
-                if (!selection.plan) return;
-                
-                // Calcular precio con descuento del regalo
-                let planPrice = selection.plan.promoPrice;
-                if (selection.giftOption) {
-                    planPrice = selection.plan.promoPrice - selection.giftOption.discount;
-                }
-                
-                let total = planPrice;
-                let summaryHTML = `
-                    <div class="space-y-3">
-                        <p class="text-[#BDBDBD]"><strong>Servicio:</strong> ${selection.planType === 'internet' ? 'Solo Internet' : 'Internet + TV'}</p>
-                        <p class="text-[#BDBDBD]"><strong>Plan:</strong> ${selection.plan.megas} MEGAS</p>
-                        <p class="text-[#BDBDBD]"><strong>Precio Plan:</strong> $${selection.plan.promoPrice}</p>`;
-                
-                // Añadir información del regalo seleccionado - SIEMPRE que exista
-                if (selection.giftOption) {
-                    summaryHTML += `<p class="text-[#00FFFF]"><strong>Opción de Regalo:</strong> ${selection.giftOption.description}</p>`;
-                }
-                
-                let addonsSummary = '';
-                
-                if (selection.streaming.price > 0) {
-                    addonsSummary += `<li class="text-[#BDBDBD]">${selection.streaming.tier ? `${selection.streaming.service} (${selection.streaming.tier})` : selection.streaming.service}: +$${selection.streaming.price}</li>`;
-                    total += selection.streaming.price;
-                }
-                
-                if (selection.disney.price > 0) {
-                    addonsSummary += `<li class="text-[#BDBDBD]">${selection.disney.tier ? `${selection.disney.service} (${selection.disney.tier})` : selection.disney.service}: +$${selection.disney.price}</li>`;
-                    total += selection.disney.price;
-                }
-                
-                if (selection.appPackage.price > 0) {
-                    addonsSummary += `<li class="text-[#BDBDBD]">${selection.appPackage.data.name}: +$${selection.appPackage.price}</li>`;
-                    total += selection.appPackage.price;
-                    
-                    if (selection.appPackage.selectedApps.length > 0) {
-                        addonsSummary += `<ul class="list-disc list-inside ml-4 text-[#00FFFF]">`;
-                        selection.appPackage.selectedApps.forEach(app => {
-                            addonsSummary += `<li class="text-[#00FFFF]">${app}</li>`;
-                        });
-                        addonsSummary += `</ul>`;
-                    }
-                }
-                
-                if (selection.devices.length > 0) {
-                    selection.devices.forEach(device => {
-                        addonsSummary += `<li class="text-[#BDBDBD]">${device.name}: +$${device.price}</li>`;
-                        total += device.price;
-                    });
-                }
-                
-                if (addonsSummary) {
-                    summaryHTML += `
-                        <div class="border-t border-[#424242] my-2 pt-2">
-                            <p class="text-[#BDBDBD]"><strong>Adicionales:</strong></p>
-                            <ul class="list-none space-y-1">
-                                ${addonsSummary}
-                            </ul>
-                        </div>`;
-                }
-                
-                summaryHTML += `</div>`;
-                
-                // Calcular descuento por portabilidad (solo en periodo promocional)
-                selection.portabilityDiscount = selection.portability && isPromoPeriod() ? portabilityDiscount[selection.planType] : 0;
-                
-                selection.total = total;
-                
-                // Pago inicial es el total mensual (la instalación es $0)
-                selection.installPrice = selection.total;
-                
-                dom.summaryContent.innerHTML = summaryHTML;
-                dom.summaryTotal.textContent = `$${selection.total}`;
-                
-                // Actualizar descripción del total según la opción de regalo
-                let totalDescription = '';
-                if (selection.giftOption) {
-                    totalDescription = `$${selection.total} mensual por ${selection.giftOption.months} meses`;
+        // ACTUALIZAR RESUMEN
+        function updateSummary() {
+            document.getElementById('summaryPlan').textContent = selection.planName;
+            document.getElementById('summaryTotal').textContent = `$${selection.price}`;
+            
+            // Netflix info
+            const netflixElement = document.getElementById('netflixIncluded');
+            if (selection.netflixMonths > 0 && !selection.is100MbpsPlan) {
+                if (selection.netflixLifetime) {
+                    netflixElement.innerHTML = `🎬 Netflix incluido: <span class="text-green-400">Netflix Estándar con anuncios GRATIS para siempre</span>`;
                 } else {
-                    totalDescription = `$${selection.total} mensual`;
+                    netflixElement.innerHTML = `🎬 Netflix incluido: <span class="text-green-400">Netflix Estándar con anuncios ${selection.netflixMonths} meses GRATIS</span>`;
                 }
-                dom.summaryTotalDescription.textContent = totalDescription;
-                
-                dom.summaryInstall.textContent = `$0 (Valor $350)`;
-                dom.summaryInstallPrice.textContent = `$${selection.installPrice}`;
+                netflixElement.classList.remove('hidden');
+            } else {
+                netflixElement.innerHTML = '';
+                netflixElement.classList.add('hidden');
             }
-            
-            function handlePlanSelection(e) {
-                if (!e.target.classList.contains('select-plan-btn')) return;
-                
-                const { megas, promoMegas, regularPrice, promoPrice, lifetimeDiscount } = e.target.dataset;
-                selection.plan = { 
-                    megas: parseInt(megas), 
-                    promoMegas: parseInt(promoMegas),
-                    regularPrice: parseInt(regularPrice),
-                    promoPrice: parseInt(promoPrice),
-                    lifetimeDiscount: parseInt(lifetimeDiscount)
-                };
-                
-                // Track event for Facebook Pixel - AddToCart
-                trackFacebookEvent('AddToCart', {
-                    content_name: `Plan ${selection.plan.megas} Megas - ${selection.planType}`,
-                    content_ids: [`plan_${selection.planType}_${selection.plan.megas}`],
-                    content_type: 'product',
-                    value: selection.plan.promoPrice,
-                    currency: 'MXN'
-                });
-                
-                // Ocultar secciones no relevantes
-                hideNonPlanSections();
-                
-                document.querySelector('#planes .text-center > .promo-gradient').classList.add('hidden');
-                dom.planCardsContainer.classList.add('hidden');
-                document.getElementById('plan-type-buttons').classList.add('hidden');
-                
-                // Mostrar opciones de regalo
-                renderGiftOptions(selection.plan.megas);
-                
-                updateSummaryAndTotal();
-            }
+        }
 
-            function handleAddonsEvents(e) {
-                const { name, value, type } = e.target;
-                
-                if (name === 'streaming') {
-                    const netflixTiers = document.getElementById('netflix-tiers');
-                    selection.streaming = { service: null, tier: null, price: 0 };
-                    
-                    if (netflixTiers) {
-                        Array.from(netflixTiers.querySelectorAll('input')).forEach(i => i.checked = false);
-                    }
-                    
-                    if (value === 'prime') {
-                        selection.streaming = { 
-                            service: addonsData.streaming.prime.name, 
-                            tier: null, 
-                            price: addonsData.streaming.prime.price 
-                        };
-                    } else if (value === 'netflix') {
-                        if (netflixTiers) netflixTiers.classList.remove('hidden');
-                    } else {
-                        if (netflixTiers) netflixTiers.classList.add('hidden');
-                    }
-                    
-                    if (selection.appPackage.data) {
-                        renderPackageApps(selection.appPackage.data.id);
-                    }
-                }
-                
-                if (name === 'netflix-tier') {
-                    const tierData = addonsData.streaming.netflix.tiers.find(t => t.id === value);
-                    selection.streaming = { 
-                        service: addonsData.streaming.netflix.name, 
-                        tier: tierData.name, 
-                        price: tierData.price 
-                    };
-                }
-                
-                if (name === 'disney') {
-                    selection.disney = { service: null, tier: null, price: 0 };
-                    
-                    if (value !== 'none') {
-                        const tierData = addonsData.disney.tiers.find(t => t.id === value);
-                        selection.disney = { 
-                            service: addonsData.disney.name, 
-                            tier: tierData.name, 
-                            price: tierData.price 
-                        };
-                        
-                        // Si selecciona Disney+, verificar si hay Disney+ en paquete de apps y desmarcarlo
-                        if (selection.appPackage.data && selection.appPackage.selectedApps.includes('Disney+ Estándar')) {
-                            const index = selection.appPackage.selectedApps.indexOf('Disney+ Estándar');
-                            if (index > -1) {
-                                selection.appPackage.selectedApps.splice(index, 1);
-                                
-                                // Actualizar checkboxes en la UI
-                                const checkboxes = document.querySelectorAll('input[name="package-app"]');
-                                checkboxes.forEach(cb => {
-                                    if (cb.value === 'Disney+ Estándar') {
-                                        cb.checked = false;
-                                    }
-                                });
-                                
-                                // Actualizar contador
-                                const group = document.querySelector('.limited-checkbox-group');
-                                if (group) {
-                                    const limit = parseInt(group.dataset.limit);
-                                    const checkedCheckboxes = group.querySelectorAll('input[name="package-app"]:checked');
-                                    const counterElement = group.parentElement.querySelector('.package-selection-counter');
-                                    const messageElement = group.parentElement.querySelector('.package-limit-message');
-                                    
-                                    if (counterElement) {
-                                        counterElement.textContent = `Selecciona hasta ${limit} app${limit !== 1 ? 's' : ''}: (${checkedCheckboxes.length}/${limit})`;
-                                    }
-                                    
-                                    if (checkedCheckboxes.length < limit && messageElement) {
-                                        messageElement.classList.add('hidden');
-                                        group.querySelectorAll('input[name="package-app"]').forEach(cb => {
-                                            if (cb.dataset.permanentlyDisabled !== 'true') {
-                                                cb.disabled = false;
-                                                cb.parentElement.classList.remove('opacity-50', 'cursor-not-allowed');
-                                            }
-                                        });
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    
-                    if (selection.appPackage.data) {
-                        renderPackageApps(selection.appPackage.data.id);
-                    }
-                }
-                
-                if (name === 'app-package') {
-                    selection.appPackage = { data: null, selectedApps: [], price: 0 };
-                    
-                    if (value !== 'none') {
-                        const pkg = addonsData.app_packages.find(p => p.id === value);
-                        selection.appPackage = { 
-                            data: pkg, 
-                            selectedApps: [], 
-                            price: pkg.price 
-                        };
-                        
-                        // Si selecciona un paquete que incluye Disney+ y ya tiene Disney+ seleccionado, desmarcar Disney+
-                        if (pkg.apps.includes('Disney+ Estándar') && selection.disney.service !== null) {
-                            selection.disney = { service: null, tier: null, price: 0 };
-                            
-                            // Actualizar radio buttons de Disney en la UI
-                            const disneyRadios = document.querySelectorAll('input[name="disney"]');
-                            disneyRadios.forEach(radio => {
-                                if (radio.value === 'none') {
-                                    radio.checked = true;
-                                } else {
-                                    radio.checked = false;
-                                }
-                            });
-                        }
-                    } 
-                    renderPackageApps(value);
-                }
-                
-                if (name === 'package-app') {
-                    const group = e.target.closest('.limited-checkbox-group');
-                    if (!group) return;
-                    
-                    const limit = parseInt(group.dataset.limit);
-                    const allCheckboxes = group.querySelectorAll('input[name="package-app"]');
-                    const messageElement = group.parentElement.querySelector('.package-limit-message');
-                    const counterElement = group.parentElement.querySelector('.package-selection-counter');
-                    
-                    const checkedCheckboxes = group.querySelectorAll('input[name="package-app"]:checked');
-                    selection.appPackage.selectedApps = Array.from(checkedCheckboxes).map(cb => cb.value);
-                    
-                    if (counterElement) {
-                        counterElement.textContent = `Selecciona hasta ${limit} app${limit !== 1 ? 's' : ''}: (${checkedCheckboxes.length}/${limit})`;
-                    }
-                    
-                    // Si selecciona Disney+ en el paquete de apps, desmarcar Disney+ promocional
-                    if (e.target.checked && e.target.value === 'Disney+ Estándar' && selection.disney.service !== null) {
-                        selection.disney = { service: null, tier: null, price: 0 };
-                        
-                        // Actualizar radio buttons de Disney en la UI
-                        const disneyRadios = document.querySelectorAll('input[name="disney"]');
-                        disneyRadios.forEach(radio => {
-                            if (radio.value === 'none') {
-                                radio.checked = true;
-                            } else {
-                                radio.checked = false;
-                            }
-                        });
-                    }
-                    
-                    if (checkedCheckboxes.length >= limit) {
-                        if (messageElement) messageElement.classList.remove('hidden');
-                        
-                        allCheckboxes.forEach(cb => {
-                            if (!cb.checked) {
-                                cb.disabled = true;
-                                cb.parentElement.classList.add('opacity-50', 'cursor-not-allowed');
-                            }
-                        });
-                    } else {
-                        if (messageElement) messageElement.classList.add('hidden');
-                        
-                        allCheckboxes.forEach(cb => {
-                            if (cb.dataset.permanentlyDisabled !== 'true') {
-                                cb.disabled = false;
-                                cb.parentElement.classList.remove('opacity-50', 'cursor-not-allowed');
-                            }
-                        });
-                    }
-                }
-                
-                if (name === 'device') {
-                    selection.devices = Array.from(document.querySelectorAll('input[name="device"]:checked'))
-                        .map(cb => Object.values(addonsData.devices).find(d => d.id === cb.value))
-                        .filter(Boolean);
-                }
-                
-                updateSummaryAndTotal();
-            }
-
-            function validateForm() {
-                const isValid = Array.from(dom.formInputs).every(input => input.checkValidity());
-                dom.btnContinue.disabled = !isValid;
-            }
-
-            // Función para formatear los adicionales como texto
-            function formatAdicionales() {
-                let adicionalesText = '';
-                
-                if (selection.streaming.price > 0) {
-                    adicionalesText += `Streaming: ${selection.streaming.tier ? `${selection.streaming.service} (${selection.streaming.tier})` : selection.streaming.service}`;
-                }
-                
-                if (selection.disney.price > 0) {
-                    if (adicionalesText) adicionalesText += ' | ';
-                    adicionalesText += `Disney+: ${selection.disney.tier}`;
-                }
-                
-                if (selection.appPackage.price > 0) {
-                    if (adicionalesText) adicionalesText += ' | ';
-                    adicionalesText += `Paquete Apps: ${selection.appPackage.data.name}`;
-                    if (selection.appPackage.selectedApps.length > 0) {
-                        adicionalesText += ` (${selection.appPackage.selectedApps.join(', ')})`;
-                    }
-                }
-                
-                if (selection.devices.length > 0) {
-                    if (adicionalesText) adicionalesText += ' | ';
-                    adicionalesText += `Dispositivos: ${selection.devices.map(d => d.name).join(', ')}`;
-                }
-                
-                return adicionalesText || 'Ninguno';
-            }
-
-            // Función para crear el resumen completo
-            function crearResumenCompleto() {
-                // Calcular precio con descuento del regalo
-                let planPrice = selection.plan.promoPrice;
-                if (selection.giftOption) {
-                    planPrice = selection.plan.promoPrice - selection.giftOption.discount;
-                }
-                
-                let resumen = `SERVICIO: ${selection.planType === 'internet' ? 'Solo Internet' : 'Internet + TV'}\n`;
-                resumen += `PLAN: ${selection.plan.megas} MEGAS\n`;
-                resumen += `PRECIO PLAN: $${selection.plan.promoPrice}\n`;
-                
-                // Añadir información del regalo seleccionado - SIEMPRE que exista
-                if (selection.giftOption) {
-                    resumen += `OPCIÓN DE REGALO: ${selection.giftOption.description}\n`;
-                }
-                
-                resumen += `\nTOTAL MENSUAL: $${selection.total}\n`;
-                
-                if (selection.streaming.price > 0 || selection.disney.price > 0 || selection.appPackage.price > 0 || selection.devices.length > 0) {
-                    resumen += `\nADICIONALES:\n`;
-                    
-                    if (selection.streaming.price > 0) {
-                        resumen += `- ${selection.streaming.tier ? `${selection.streaming.service} (${selection.streaming.tier})` : selection.streaming.service}: $${selection.streaming.price}/mes\n`;
-                    }
-                    
-                    if (selection.disney.price > 0) {
-                        resumen += `- ${selection.disney.tier ? `${selection.disney.service} (${selection.disney.tier})` : selection.disney.service}: $${selection.disney.price}/mes\n`;
-                    }
-                    
-                    if (selection.appPackage.price > 0) {
-                        resumen += `- ${selection.appPackage.data.name}: $${selection.appPackage.price}/mes\n`;
-                        if (selection.appPackage.selectedApps.length > 0) {
-                            selection.appPackage.selectedApps.forEach(app => {
-                                resumen += `  * ${app}\n`;
-                            });
-                        }
-                    }
-                    
-                    if (selection.devices.length > 0) {
-                        selection.devices.forEach(device => {
-                            resumen += `- ${device.name}: $${device.price}/mes\n`;
-                        });
-                    }
-                }
-                
-                resumen += `\nCOSTO DE INSTALACIÓN EXTRA: $0 (Valor $350)\n`;
-                
-                if (selection.portability && isPromoPeriod()) {
-                    const discountAmount = portabilityDiscount[selection.planType];
-                    resumen += `DESEO HACER PORTABILIDAD PARA EL DESCUENTO DE: $${discountAmount} EN MI SEGUNDA MENSUALIDAD\n`;
-                }
-                
-                resumen += `PAGO INICIAL: $${selection.installPrice}\n`;
-                resumen += `FECHA: ${new Date().toLocaleString('es-MX')}`;
-                
-                return resumen;
-            }
-
-            async function sendDataToMake(formData) {
-                try {
-                    // Preparar datos para Google Sheets según las columnas especificadas
-                    const sheetsData = {
-                        nombre: formData.nombre,
-                        correo: formData.correo,
-                        telefono: formData.telefono,
-                        servicio: formData.servicio,
-                        plan: formData.plan,
-                        adicionales: formatAdicionales(),
-                        opcion_regalo: selection.giftOption ? selection.giftOption.description : 'Ninguna',
-                        total_mensual: formData.total,
-                        pago_inicial: formData.installPrice,
-                        fecha: new Date().toLocaleString('es-MX'),
-                        resumen: crearResumenCompleto()
-                    };
-                    
-                    // Enviar datos a Make.com
-                    const response = await fetch(MAKE_WEBHOOK_URL, {
-                        method: 'POST',
-                        headers: { 
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(sheetsData),
-                    });
-                    
-                    if (!response.ok) {
-                        throw new Error(`Error HTTP: ${response.status}`);
-                    }
-                    
-                    return await response.json();
-                } catch (error) {
-                    console.error('Error enviando datos a Make.com:', error);
-                    return null;
-                }
-            }
-
-            async function submitAndRedirect() {
-                // Validar que el formulario esté completo antes de proceder
-                const isFormValid = Array.from(dom.formInputs).every(input => input.checkValidity());
-                if (!isFormValid) {
-                    alert('Por favor completa todos los campos requeridos antes de continuar.');
+        // **********************************************************************
+        // FUNCIÓN PARA ENVIAR A MAKE.COM - VERSIÓN SIMPLIFICADA Y EFECTIVA
+        // **********************************************************************
+        async function sendToMake(formData) {
+            try {
+                // Validar que tenemos los datos necesarios
+                if (!selection.tipoServicio || !selection.planName || !selection.price) {
+                    console.error("❌ Faltan datos del plan para enviar a Make.com");
                     return;
                 }
                 
-                dom.continueText.classList.add('hidden');
-                dom.continueLoader.classList.remove('hidden');
-                dom.btnContinue.disabled = true;
+                // LOS 7 CAMPOS QUE ENVIAREMOS A MAKE.COM - NOMBRES EXACTOS
+                const dataToSend = {
+                    "Nombre": formData.nombre || "",
+                    "Correo": formData.correo || "",
+                    "Telefono": formData.telefono || "",
+                    "TipoServicio": selection.tipoServicio || "",
+                    "Plan": selection.planName || "",
+                    "PrecioMensual": selection.price.toString() || "0",
+                    "Fecha": new Date().toLocaleDateString('es-MX')
+                };
                 
-                // Añadir clase de loading al formulario
-                dom.contactForm.classList.add('form-loading');
-
-                // Calcular precio con descuento del regalo
-                let planPrice = selection.plan.promoPrice;
-                if (selection.giftOption) {
-                    planPrice = selection.plan.promoPrice - selection.giftOption.discount;
-                }
-
-                const formData = {
-                    nombre: document.getElementById('nombre').value,
-                    correo: document.getElementById('correo').value,
-                    telefono: document.getElementById('telefono').value,
-                    servicio: selection.planType === 'internet' ? 'Solo Internet' : 'Internet + TV',
-                    plan: `${selection.plan.megas} MEGAS`,
-                    precio_plan: planPrice,
-                    adicionales: {
-                        streaming: selection.streaming.service ? {
-                            servicio: selection.streaming.service,
-                            plan: selection.streaming.tier,
-                            precio: selection.streaming.price
-                        } : null,
-                        disney: selection.disney.service ? {
-                            servicio: selection.disney.service,
-                            plan: selection.disney.tier,
-                            precio: selection.disney.price
-                        } : null,
-                        paquete_apps: selection.appPackage.data ? {
-                            nombre: selection.appPackage.data.name,
-                            apps_seleccionadas: selection.appPackage.selectedApps,
-                            precio: selection.appPackage.price
-                        } : null,
-                        dispositivos: selection.devices.length > 0 ? selection.devices.map(d => ({
-                            nombre: d.name,
-                            precio: d.price
-                        })) : []
+                console.log("📤 ENVIANDO A MAKE.COM:");
+                console.log("🔗 Webhook:", MAKE_WEBHOOK_URL);
+                console.log("📋 Datos:", JSON.stringify(dataToSend, null, 2));
+                
+                // Enviar usando fetch CON manejo de CORS
+                const response = await fetch(MAKE_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
                     },
-                    total: selection.total,
-                    installPrice: selection.installPrice,
-                    portability: selection.portability,
-                    portabilityDiscount: selection.portabilityDiscount
-                };
+                    body: JSON.stringify(dataToSend)
+                });
+                
+                console.log("📊 Respuesta Make.com - Status:", response.status);
+                
+                if (response.ok) {
+                    console.log("✅ Datos enviados exitosamente a Make.com");
+                    return true;
+                } else {
+                    console.error("❌ Error al enviar a Make.com:", response.status);
+                    return false;
+                }
+                
+            } catch (error) {
+                console.error("❌ Error de conexión con Make.com:", error);
+                return false;
+            }
+        }
 
-                // Track event for Facebook Pixel - Lead
-                trackFacebookEvent('Lead', {
-                    value: selection.total,
+        // FUNCIÓN PARA ABRIR WHATSAPP FORZADAMENTE
+        function forceOpenWhatsApp() {
+            const nombre = document.getElementById('nombre').value.trim();
+            const correo = document.getElementById('correo').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            
+            if (!nombre || !telefono) {
+                alert("Por favor completa tu nombre y teléfono primero.");
+                return;
+            }
+            
+            sendWhatsApp(nombre, correo, telefono);
+        }
+
+        // VALIDAR Y ENVIAR - VERSIÓN MEJORADA
+        async function validateAndSend() {
+            const nombre = document.getElementById('nombre').value.trim();
+            const correo = document.getElementById('correo').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            
+            // Validar
+            if (!nombre || !correo || !telefono) {
+                alert('Por favor completa todos los campos requeridos.');
+                return;
+            }
+            
+            if (!telefono.match(/^\d{10}$/)) {
+                alert('Por favor ingresa un número de teléfono válido de 10 dígitos.');
+                return;
+            }
+            
+            if (!correo.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                alert('Por favor ingresa un correo electrónico válido.');
+                return;
+            }
+            
+            // Verificar que hay un plan seleccionado
+            if (!selection.planName) {
+                alert('Por favor selecciona un plan primero.');
+                scrollToTop();
+                return;
+            }
+            
+            // Crear objeto con datos del formulario
+            const formData = {
+                nombre: nombre,
+                correo: correo,
+                telefono: telefono
+            };
+            
+            console.log("🔍 VERIFICACIÓN DE DATOS:");
+            console.log("📋 Formulario:", formData);
+            console.log("📊 Plan:", {
+                tipoServicio: selection.tipoServicio,
+                planName: selection.planName,
+                precio: selection.price
+            });
+            
+            // 1. PRIMERO enviar a Make.com
+            const makeSuccess = await sendToMake(formData);
+            
+            if (makeSuccess) {
+                console.log("✅ Make.com: Datos enviados correctamente");
+            } else {
+                console.log("⚠️ Make.com: Hubo un problema, pero continuamos con WhatsApp");
+            }
+            
+            // 2. LUEGO mostrar modal y abrir WhatsApp
+            showRedirectModal();
+        }
+
+        // MOSTRAR MODAL DE REDIRECCIÓN
+        function showRedirectModal() {
+            const modal = document.getElementById('redirectModal');
+            modal.classList.add('show');
+            
+            // Iniciar cuenta regresiva de 3 segundos
+            let countdown = 3;
+            const countdownElement = document.getElementById('countdown');
+            countdownElement.textContent = countdown;
+            
+            const countdownInterval = setInterval(() => {
+                countdown--;
+                countdownElement.textContent = countdown;
+                
+                if (countdown <= 0) {
+                    clearInterval(countdownInterval);
+                    modal.classList.remove('show');
+                    
+                    // Obtener datos y abrir WhatsApp
+                    const nombre = document.getElementById('nombre').value.trim();
+                    const correo = document.getElementById('correo').value.trim();
+                    const telefono = document.getElementById('telefono').value.trim();
+                    sendWhatsApp(nombre, correo, telefono);
+                }
+            }, 1000);
+        }
+
+        // ENVIAR WHATSAPP
+        function sendWhatsApp(nombre, correo, telefono) {
+            const phone = '5218131191393';
+            
+            // Crear mensaje
+            let message = `¡Hola! 👋\n\n`;
+            message += `Mi nombre es *${nombre}* y quiero contratar Totalplay.\n\n`;
+            message += `📋 *INFORMACIÓN DEL PLAN:*\n`;
+            message += `• *Servicio:* ${selection.tipoServicio}\n`;
+            message += `• *Plan:* ${selection.planName}\n`;
+            message += `• *Precio:* $${selection.price}/mes\n\n`;
+            
+            if (selection.netflixMonths > 0 && !selection.is100MbpsPlan) {
+                if (selection.netflixLifetime) {
+                    message += `🎬 *Beneficio:* Netflix Estándar con anuncios *GRATIS PARA SIEMPRE*\n\n`;
+                } else {
+                    message += `🎬 *Beneficio:* Netflix Estándar con anuncios *${selection.netflixMonths} MESES GRATIS*\n\n`;
+                }
+            }
+            
+            message += `📞 *MIS DATOS DE CONTACTO:*\n`;
+            message += `• *Nombre:* ${nombre}\n`;
+            message += `• *Correo:* ${correo}\n`;
+            message += `• *Teléfono:* ${telefono}\n\n`;
+            
+            message += `💰 *INVERSIÓN TOTAL:* $${selection.price} mensuales\n\n`;
+            message += `✅ *POR FAVOR CONTÁCTAME PARA COORDINAR LA INSTALACIÓN.*`;
+            
+            // Codificar el mensaje
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+            
+            // Track conversión
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    value: selection.price,
                     currency: 'MXN'
                 });
-
-                // Enviar datos a Make.com (en segundo plano, no esperamos la respuesta)
-                sendDataToMake(formData).then(result => {
-                    console.log('Datos enviados a Make.com:', result);
-                }).catch(error => {
-                    console.error('Error enviando a Make.com:', error);
-                });
-
-                // Construir mensaje para WhatsApp
-                let message = `Hola, mi nombre es ${formData.nombre}.\n\nQuiero contratar el siguiente paquete:\n`;
-                message += `*Servicio:* ${formData.servicio}\n`;
-                message += `*Plan:* ${formData.plan}\n`;
-                message += `*Precio Plan:* $${formData.precio_plan}\n`;
-                
-                // Añadir información del regalo seleccionado
-                if (selection.giftOption) {
-                    message += `*Opción de Regalo:* ${selection.giftOption.description}\n`;
-                }
-                
-                message += `\n*Total Mensual:*\n`;
-                message += `*$${formData.total} mensual por ${selection.giftOption ? selection.giftOption.months : '1'} ${selection.giftOption && selection.giftOption.months > 1 ? 'meses' : 'mes'}*\n\n`;
-                
-                if (formData.adicionales.streaming || formData.adicionales.disney || formData.adicionales.paquete_apps || formData.adicionales.dispositivos.length > 0) {
-                    message += "*Adicionales:*\n";
-                    
-                    if (formData.adicionales.streaming) {
-                        message += `- ${formData.adicionales.streaming.servicio}${formData.adicionales.streaming.plan ? ` (${formData.adicionales.streaming.plan})` : ''}: $${formData.adicionales.streaming.precio}\n`;
-                    }
-                    
-                    if (formData.adicionales.disney) {
-                        message += `- ${formData.adicionales.disney.servicio}${formData.adicionales.disney.plan ? ` (${formData.adicionales.disney.plan})` : ''}: $${formData.adicionales.disney.precio}\n`;
-                    }
-                    
-                    if (formData.adicionales.paquete_apps) {
-                        message += `- ${formData.adicionales.paquete_apps.nombre}: $${formData.adicionales.paquete_apps.precio}\n`;
-                        if (formData.adicionales.paquete_apps.apps_seleccionadas.length > 0) {
-                            formData.adicionales.paquete_apps.apps_seleccionadas.forEach(app => {
-                                message += `  - ${app}\n`;
-                            });
-                        }
-                    }
-                    
-                    if (formData.adicionales.dispositivos.length > 0) {
-                        formData.adicionales.dispositivos.forEach(d => {
-                            message += `- ${d.nombre}: $${d.precio}\n`;
-                        });
-                    }
-                    
-                    message += "\n";
-                }
-                
-                message += `*Costo de Instalación Extra:* *$0 (Valor $350)*\n`;
-                
-                if (formData.portability && isPromoPeriod()) {
-                    message += `*Deseo hacer portabilidad para el descuento de: $${formData.portabilityDiscount} en mi segunda mensualidad*\n`;
-                }
-                
-                message += `\n*Pago Inicial:* *$${formData.installPrice}*\n\n`;
-                message += `*Mis datos de contacto son:*\nCorreo: ${formData.correo}\nTeléfono: ${formData.telefono}`;
-                
-                // Redirigir a WhatsApp
-                const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-                window.location.href = whatsappURL;
             }
+            
+            // Abrir WhatsApp
+            window.open(whatsappUrl, '_blank');
+        }
 
-            // Función para manejar la contratación directa desde las nuevas promociones
-            function handleDirectPromoContract(e) {
-                if (!e.target.classList.contains('contratar-directo-btn')) return;
-                
-                const { plan, price, megas, promoMegas } = e.target.dataset;
-                
-                // Configurar la selección para la promoción directa
-                selection.plan = {
-                    megas: parseInt(megas),
-                    promoMegas: parseInt(promoMegas),
-                    regularPrice: parseInt(price),
-                    promoPrice: parseInt(price),
-                    lifetimeDiscount: 0
-                };
-                
-                selection.planType = plan.includes('Solo Internet') ? 'internet' : 'combo';
-                selection.giftOption = null; // No hay regalos en estas promociones
-                
-                // Track event for Facebook Pixel - AddToCart
-                trackFacebookEvent('AddToCart', {
-                    content_name: `Promoción Directa - ${plan}`,
-                    content_ids: [`direct_promo_${selection.planType}_${megas}`],
-                    content_type: 'product',
-                    value: parseInt(price),
-                    currency: 'MXN'
-                });
-                
-                // Ocultar secciones no relevantes
-                hideNonPlanSections();
-                dom.promocionesDirectasSection.classList.add('hidden');
-                
-                // Ir directamente al formulario de contacto
-                dom.contactSection.classList.remove('hidden');
-                dom.contactSection.scrollIntoView({ behavior: 'smooth' });
-                
-                // Actualizar el resumen
-                updateSummaryAndTotal();
+        // FUNCIONES AUXILIARES
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Redimensionar para responsive
+        window.addEventListener('resize', function() {
+            renderPlans(currentCategory);
+        });
+
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('redirectModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('show');
             }
-
-            // --- EVENT LISTENERS ---
-            
-            dom.planTypeButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    dom.planTypeButtons.forEach(btn => {
-                        btn.classList.remove('bg-[#2962FF]');
-                        btn.classList.add('bg-transparent', 'hover:bg-[#424242]');
-                    });
-                    button.classList.add('bg-[#2962FF]');
-                    button.classList.remove('bg-transparent', 'hover:bg-[#424242]');
-                    renderPlanCards(button.id.replace('btn-', ''));
-                });
-            });
-            
-            dom.planCardsContainer.addEventListener('click', handlePlanSelection);
-            
-            // Event listener para los botones de contratación directa
-            document.addEventListener('click', handleDirectPromoContract);
-            
-            // Event listener para continuar después de seleccionar regalo
-            dom.btnContinueGift.addEventListener('click', () => {
-                if (!selection.giftOption) {
-                    alert('Por favor selecciona una opción de regalo antes de continuar.');
-                    return;
-                }
-                
-                dom.giftSection.classList.add('hidden');
-                dom.addonsSection.classList.remove('hidden');
-                dom.addonsSection.scrollIntoView({ behavior: 'smooth' });
-            });
-            
-            document.getElementById('btn-addons-yes').addEventListener('click', () => {
-                // Track Personalizar producto event
-                trackFacebookEvent('Personalizar producto', {
-                    content_name: 'Add-ons Selection',
-                    content_category: 'Customization'
-                });
-                
-                dom.addonsIntro.classList.add('hidden');
-                renderAddonsOptions();
-                dom.contactSection.classList.remove('hidden');
-                dom.addonsOptionsContainer.scrollIntoView({ behavior: 'smooth' });
-            });
-            
-            document.getElementById('btn-addons-no').addEventListener('click', () => {
-                // Track event for Facebook Pixel - SkipAddons
-                trackFacebookEvent('SkipAddons', {
-                    content_name: 'No Additional Services',
-                    content_category: 'Customization'
-                });
-                
-                dom.addonsSection.classList.add('hidden');
-                dom.contactSection.classList.remove('hidden');
-                dom.contactSection.scrollIntoView({ behavior: 'smooth' });
-                
-                // Asegurarse de que el resumen se actualice para mostrar el regalo
-                updateSummaryAndTotal();
-            });
-
-            dom.addonsOptionsContainer.addEventListener('change', handleAddonsEvents);
-            dom.formInputs.forEach(input => input.addEventListener('input', validateForm));
-            dom.btnContinue.addEventListener('click', submitAndRedirect);
-            
-            // Event listener para el checkbox de portabilidad
-            dom.portabilityCheckbox.addEventListener('change', function() {
-                selection.portability = this.checked;
-                updateSummaryAndTotal();
-            });
-
-            // --- INICIALIZACIÓN ---
-            setPromoDate();
-            
-            // Inicializar los planes al cargar la página
-            // Por defecto muestra los planes de Internet + TV
-            renderPlanCards('combo');
-            
-            // Asegurarse de que el botón de Internet + TV esté activo
-            document.getElementById('btn-combo').classList.add('bg-[#2962FF]');
-            document.getElementById('btn-combo').classList.remove('bg-transparent', 'hover:bg-[#424242]');
-            document.getElementById('btn-internet').classList.remove('bg-[#2962FF]');
-            document.getElementById('btn-internet').classList.add('bg-transparent', 'hover:bg-[#424242]');
         });
     </script>
 </body>
