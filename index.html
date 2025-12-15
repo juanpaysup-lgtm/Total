@@ -303,28 +303,42 @@
             line-height: 1.3;
         }
 
-        .cta-buttons {
+        /* CONTENEDOR DE BOTONES - ORGANIZACIÓN CORREGIDA */
+        .cta-buttons-container {
             display: flex;
-            gap: 20px;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 40px;
             justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 50px;
+            align-items: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
             animation: fadeInUp 1s ease-out 1.2s both;
         }
 
+        .button-row {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .button-row-1 {
+            margin-bottom: 5px;
+        }
+
         .btn {
-            padding: 16px 35px;
-            border-radius: 10px;
+            padding: 14px 28px;
+            border-radius: 8px;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             cursor: pointer;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
             border: none;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            display: inline-block;
+            text-align: center;
             min-width: 200px;
             position: relative;
             overflow: hidden;
@@ -352,32 +366,34 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
         }
 
         .btn-secondary {
-            background: transparent;
+            background-color: transparent;
             color: #60a5fa;
             border: 2px solid #3B82F6;
         }
 
         .btn-secondary:hover {
-            background: rgba(59, 130, 246, 0.1);
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+            background-color: rgba(59, 130, 246, 0.1);
+            transform: translateY(-3px);
         }
 
         .btn-support {
-            background: linear-gradient(135deg, #EF4444, #DC2626);
+            background-color: #EF4444;
             color: white;
             border: 3px solid #F59E0B;
-            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+            font-weight: 700;
+            width: calc(100% - 15px);
+            max-width: 415px;
         }
 
         .btn-support:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.6);
+            background-color: #dc2626;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
         }
 
         /* Sección ¿Por qué Totalplay? - MANTENIENDO TAMAÑO ORIGINAL DE BENEFICIOS */
@@ -1098,14 +1114,19 @@
                 min-width: calc(50% - 10px);
             }
             
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+            .button-row {
+                flex-direction: row;
+                flex-wrap: wrap;
             }
             
             .btn {
-                width: 100%;
-                max-width: 300px;
+                min-width: 180px;
+                font-size: 0.95rem;
+            }
+            
+            .btn-support {
+                min-width: 180px;
+                max-width: 375px;
             }
             
             .why-title {
@@ -1284,6 +1305,15 @@
                 width: 100%;
                 max-width: 250px;
             }
+            
+            .button-row {
+                flex-direction: column;
+            }
+            
+            .btn, .btn-support {
+                width: 100%;
+                max-width: 300px;
+            }
         }
     </style>
 </head>
@@ -1362,16 +1392,24 @@
                 </div>
             </div>
             
-            <div class="cta-buttons">
-                <a href="#plans-section" class="btn btn-primary">
-                    <i class="fas fa-tv"></i> Ver Planes
-                </a>
-                <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20información%20sobre%20los%20planes" target="_blank" class="btn btn-secondary">
-                    <i class="fab fa-whatsapp"></i> Contactar Ahora
-                </a>
-                <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20ya%20soy%20cliente,%20requiero%20soporte" target="_blank" class="btn btn-support">
-                    <i class="fas fa-headset"></i> Ya soy cliente, requiero soporte
-                </a>
+            <!-- CONTENEDOR DE BOTONES CON ORGANIZACIÓN CORREGIDA -->
+            <div class="cta-buttons-container">
+                <!-- Fila 1: Dos botones centrados -->
+                <div class="button-row button-row-1">
+                    <a href="#plans-section" class="btn btn-primary">
+                        <i class="fas fa-tv"></i> Ver Planes
+                    </a>
+                    <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20información%20sobre%20los%20planes" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-whatsapp"></i> Contactar Ahora
+                    </a>
+                </div>
+                
+                <!-- Fila 2: Un botón más ancho centrado -->
+                <div class="button-row button-row-2">
+                    <a href="https://wa.link/gyb1ty" target="_blank" class="btn btn-support">
+                        <i class="fas fa-headset"></i> Ya soy cliente, requiero soporte
+                    </a>
+                </div>
             </div>
         </div>
     </section>
