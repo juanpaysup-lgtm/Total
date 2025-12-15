@@ -174,7 +174,7 @@
             animation: none;
         }
 
-        /* Hero Section con animaciones */
+        /* Hero Section con animaciones - MANTENIENDO LOS BENEFICIOS PEQUEÑOS */
         .hero {
             min-height: 100vh;
             padding: 120px 5% 60px;
@@ -252,25 +252,26 @@
             to { transform: scaleX(1); }
         }
 
+        /* BENEFICIOS HORIZONTALES COMPACTOS - MANTENIENDO TAMAÑO ORIGINAL */
         .benefits-horizontal-compact {
             display: flex;
-            gap: 20px;
-            margin: 40px auto;
+            gap: 15px;
+            margin: 30px auto;
             justify-content: center;
-            flex-wrap: wrap;
-            max-width: 900px;
+            max-width: 800px;
             animation: fadeInUp 1s ease-out 0.7s both;
         }
 
         .benefit-compact {
-            flex: 1;
-            min-width: 200px;
-            max-width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             background: rgba(30, 41, 59, 0.7);
-            padding: 25px 20px;
-            border-radius: 12px;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 15px 12px;
+            border-radius: 8px;
+            min-width: 140px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
             animation: slideIn 0.8s ease-out both;
         }
 
@@ -279,30 +280,27 @@
         .benefit-compact:nth-child(3) { animation-delay: 1s; }
 
         .benefit-compact:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            border-color: rgba(59, 130, 246, 0.5);
-            animation: glow 2s infinite;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
 
         .benefit-icon-compact {
-            font-size: 2.5rem;
+            font-size: 1.4rem;
             color: #60a5fa;
-            margin-bottom: 15px;
-            animation: float 3s ease-in-out infinite;
+            margin-bottom: 8px;
         }
 
         .benefit-compact h3 {
-            font-size: 1.2rem;
+            font-size: 0.95rem;
             color: white;
-            margin-bottom: 10px;
-            font-weight: 700;
+            margin-bottom: 4px;
+            font-weight: 600;
         }
 
         .benefit-compact p {
             color: #94a3b8;
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 0.75rem;
+            line-height: 1.3;
         }
 
         .cta-buttons {
@@ -382,12 +380,13 @@
             box-shadow: 0 10px 25px rgba(239, 68, 68, 0.6);
         }
 
-        /* Sección ¿Por qué Totalplay? */
+        /* Sección ¿Por qué Totalplay? - MANTENIENDO TAMAÑO ORIGINAL DE BENEFICIOS */
         .why-section {
-            padding: 100px 5%;
+            padding: 80px 5%;
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
 
         .why-container {
@@ -397,32 +396,34 @@
             z-index: 10;
         }
 
-        .section-title {
-            font-size: 3rem;
+        .why-title {
+            font-size: 2.8rem;
             color: white;
             margin-bottom: 20px;
             font-weight: 800;
             text-align: center;
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-bottom: 40px;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, #3B82F6, #10B981);
-            border-radius: 2px;
+        .why-title-totalplay {
+            font-weight: 900;
+            letter-spacing: -1px;
         }
 
-        .section-subtitle {
+        .why-title-totalplay span {
+            display: inline;
+            letter-spacing: -1px;
+        }
+        .why-title-t { color: white; }
+        .why-title-o { color: white; }
+        .why-title-t2 { color: white; }
+        .why-title-a1 { color: white; }
+        .why-title-l1 { color: white; }
+        .why-title-p { color: #3B82F6; }
+        .why-title-l2 { color: #10B981; }
+        .why-title-a2 { color: #F59E0B; }
+        .why-title-y { color: #EF4444; }
+
+        .why-subtitle {
             font-size: 1.3rem;
             color: #cbd5e1;
             margin-bottom: 60px;
@@ -433,21 +434,29 @@
             text-align: center;
         }
 
+        /* BENEFICIOS ORIGINALES PEQUEÑOS DEBAJO DEL SUBTÍTULO */
         .benefits-section2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px auto;
+            max-width: 1000px;
         }
 
         .benefit-section2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             background: rgba(30, 41, 59, 0.7);
-            padding: 30px 25px;
-            border-radius: 15px;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 20px 15px;
+            border-radius: 8px;
+            min-width: 220px;
+            max-width: 220px;
+            transition: transform 0.3s, box-shadow 0.3s;
             text-align: center;
-            animation: fadeInUp 0.8s ease-out both;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            animation: slideIn 0.8s ease-out both;
         }
 
         .benefit-section2:nth-child(1) { animation-delay: 0.2s; }
@@ -456,33 +465,32 @@
         .benefit-section2:nth-child(4) { animation-delay: 0.8s; }
 
         .benefit-section2:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(59, 130, 246, 0.3);
         }
 
         .benefit-icon-section2 {
-            font-size: 3rem;
+            font-size: 1.8rem;
             color: #60a5fa;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             display: inline-block;
-            height: 80px;
-            width: 80px;
+            height: 50px;
+            width: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: rgba(59, 130, 246, 0.1);
             border-radius: 50%;
-            margin: 0 auto 20px;
-            animation: float 4s ease-in-out infinite;
         }
 
         .benefit-section2 h3 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: white;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: 700;
-            min-height: 60px;
+            line-height: 1.3;
+            min-height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -490,13 +498,14 @@
 
         .benefit-section2 p {
             color: #94a3b8;
-            font-size: 1rem;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            flex: 1;
         }
 
         /* Sección de Planes */
         .plans-section {
-            padding: 100px 5%;
+            padding: 80px 5%;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             position: relative;
         }
@@ -504,6 +513,25 @@
         .plans-container {
             max-width: 1400px;
             margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+            text-align: center;
         }
 
         .plans-filter {
@@ -554,8 +582,8 @@
 
         .plan-card {
             background: rgba(30, 41, 59, 0.8);
-            border-radius: 15px;
-            padding: 30px 25px;
+            border-radius: 12px;
+            padding: 25px 20px;
             text-align: center;
             transition: all 0.4s ease;
             border: 1px solid rgba(59, 130, 246, 0.1);
@@ -589,11 +617,11 @@
 
         .plan-badge {
             display: inline-block;
-            padding: 8px 20px;
+            padding: 6px 15px;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             align-self: center;
         }
 
@@ -608,54 +636,54 @@
         }
 
         .plan-name {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #60a5fa;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 800;
             line-height: 1.2;
             animation: pulse 3s infinite;
         }
 
         .price-container {
-            margin: 20px 0;
-            padding: 20px;
+            margin: 15px 0;
+            padding: 10px;
             background: rgba(15, 23, 42, 0.5);
-            border-radius: 10px;
+            border-radius: 8px;
             border: 1px solid rgba(59, 130, 246, 0.2);
         }
 
         .plan-price {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: white;
             font-weight: 800;
             margin-bottom: 5px;
         }
 
         .plan-price-period {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #94a3b8;
             margin-bottom: 5px;
         }
 
         .price-note {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #10B981;
             font-weight: 600;
-            margin-top: 10px;
+            margin-top: 5px;
         }
 
         .plan-features {
             list-style: none;
             text-align: left;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             flex-grow: 1;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .plan-features li {
             color: #cbd5e1;
-            margin-bottom: 10px;
-            padding-left: 25px;
+            margin-bottom: 8px;
+            padding-left: 22px;
             position: relative;
             transition: transform 0.3s ease;
         }
@@ -675,10 +703,10 @@
         }
 
         .plan-button {
-            padding: 15px 25px;
-            border-radius: 10px;
+            padding: 12px 20px;
+            border-radius: 8px;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.4s ease;
             border: none;
@@ -702,7 +730,7 @@
 
         /* FAQ Section */
         .faq-section {
-            padding: 100px 5%;
+            padding: 80px 5%;
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
         }
 
@@ -717,7 +745,7 @@
 
         .faq-item {
             background: rgba(30, 41, 59, 0.7);
-            border-radius: 15px;
+            border-radius: 10px;
             margin-bottom: 15px;
             overflow: hidden;
             border: 1px solid rgba(59, 130, 246, 0.1);
@@ -730,8 +758,6 @@
         .faq-item:nth-child(3) { animation-delay: 0.3s; }
         .faq-item:nth-child(4) { animation-delay: 0.4s; }
         .faq-item:nth-child(5) { animation-delay: 0.5s; }
-        .faq-item:nth-child(6) { animation-delay: 0.6s; }
-        .faq-item:nth-child(7) { animation-delay: 0.7s; }
 
         .faq-item:hover {
             border-color: rgba(59, 130, 246, 0.3);
@@ -740,8 +766,8 @@
         }
 
         .faq-question {
-            padding: 25px 30px;
-            font-size: 1.2rem;
+            padding: 20px 25px;
+            font-size: 1.1rem;
             font-weight: 600;
             color: white;
             cursor: pointer;
@@ -757,14 +783,14 @@
         }
 
         .faq-answer {
-            padding: 0 30px;
+            padding: 0 25px;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease, padding 0.5s ease;
         }
 
         .faq-answer.active {
-            padding: 25px 30px;
+            padding: 20px 25px;
             max-height: 500px;
         }
 
@@ -786,7 +812,7 @@
 
         /* Contact Section */
         .contact-section {
-            padding: 100px 5%;
+            padding: 80px 5%;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
 
@@ -801,7 +827,7 @@
 
         .contact-info {
             background: rgba(30, 41, 59, 0.7);
-            border-radius: 20px;
+            border-radius: 15px;
             padding: 40px;
             border: 1px solid rgba(59, 130, 246, 0.1);
             animation: slideIn 0.8s ease-out 0.2s both;
@@ -814,7 +840,7 @@
         }
 
         .contact-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: white;
             margin-bottom: 30px;
             font-weight: 700;
@@ -833,9 +859,9 @@
         }
 
         .contact-icon {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #60a5fa;
-            width: 50px;
+            width: 40px;
             text-align: center;
             animation: float 3s ease-in-out infinite;
         }
@@ -849,11 +875,11 @@
 
         .contact-text p {
             color: #cbd5e1;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .contact-phone {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: white;
             font-weight: 700;
             margin-top: 5px;
@@ -863,7 +889,7 @@
         .contact-btn {
             display: inline-block;
             width: 100%;
-            padding: 18px;
+            padding: 16px;
             border-radius: 10px;
             font-weight: 700;
             font-size: 1.2rem;
@@ -874,7 +900,7 @@
             text-align: center;
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
-            margin-top: 30px;
+            margin-top: 20px;
             animation: glow 2s infinite;
         }
 
@@ -894,14 +920,14 @@
 
         .legal-info p {
             color: #94a3b8;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             line-height: 1.4;
             margin-bottom: 8px;
         }
 
         /* Footer */
         .footer {
-            padding: 60px 5% 30px;
+            padding: 50px 5% 30px;
             background: #0f172a;
             border-top: 1px solid #1e293b;
         }
@@ -936,8 +962,8 @@
 
         .footer-description {
             color: #94a3b8;
-            font-size: 1rem;
-            line-height: 1.6;
+            font-size: 0.95rem;
+            line-height: 1.5;
             margin-bottom: 20px;
         }
 
@@ -951,12 +977,12 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             background: rgba(30, 41, 59, 0.7);
             border-radius: 50%;
             color: #cbd5e1;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
         }
 
@@ -968,7 +994,7 @@
 
         .footer-links h4 {
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 20px;
             font-weight: 600;
         }
@@ -984,7 +1010,7 @@
         .footer-links a {
             color: #94a3b8;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
             display: inline-block;
         }
@@ -1015,16 +1041,15 @@
             .logo-hero {
                 font-size: 4rem;
             }
+            
+            .plan-category {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
         }
 
         @media (max-width: 992px) {
             .nav-links {
-                gap: 15px;
-            }
-            
-            .nav-links a {
-                font-size: 0.9rem;
-                padding: 6px 12px;
+                display: none;
             }
             
             .contact-container {
@@ -1032,12 +1057,14 @@
                 gap: 30px;
             }
             
-            .plan-name {
-                font-size: 1.8rem;
+            .benefits-section2 {
+                gap: 15px;
             }
             
-            .section-title {
-                font-size: 2.5rem;
+            .benefit-section2 {
+                min-width: 200px;
+                max-width: 200px;
+                padding: 18px 12px;
             }
         }
 
@@ -1048,10 +1075,6 @@
             
             .logo-header {
                 font-size: 1.5rem;
-            }
-            
-            .nav-links {
-                display: none;
             }
             
             .hero {
@@ -1066,8 +1089,13 @@
                 font-size: 1.5rem;
             }
             
+            .benefits-horizontal-compact {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
             .benefit-compact {
-                min-width: 100%;
+                min-width: calc(50% - 10px);
             }
             
             .cta-buttons {
@@ -1080,12 +1108,22 @@
                 max-width: 300px;
             }
             
+            .why-title {
+                font-size: 2rem;
+            }
+            
+            .why-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 40px;
+            }
+            
             .section-title {
                 font-size: 2rem;
             }
             
             .section-subtitle {
                 font-size: 1.1rem;
+                margin-bottom: 40px;
             }
             
             .plan-price {
@@ -1105,6 +1143,32 @@
                 height: 55px;
                 font-size: 1.5rem;
             }
+            
+            .benefits-section2 {
+                gap: 10px;
+            }
+            
+            .benefit-section2 {
+                min-width: calc(50% - 10px);
+                max-width: calc(50% - 10px);
+                padding: 15px 10px;
+            }
+            
+            .benefit-icon-section2 {
+                font-size: 1.5rem;
+                height: 40px;
+                width: 40px;
+                margin-bottom: 10px;
+            }
+            
+            .benefit-section2 h3 {
+                font-size: 1rem;
+                min-height: 40px;
+            }
+            
+            .benefit-section2 p {
+                font-size: 0.8rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1121,11 +1185,23 @@
             }
             
             .benefit-icon-compact {
-                font-size: 2rem;
+                font-size: 1.2rem;
             }
             
             .benefit-compact h3 {
-                font-size: 1.1rem;
+                font-size: 0.9rem;
+            }
+            
+            .benefit-compact p {
+                font-size: 0.7rem;
+            }
+            
+            .why-title {
+                font-size: 1.8rem;
+            }
+            
+            .why-subtitle {
+                font-size: 1rem;
             }
             
             .section-title {
@@ -1137,7 +1213,7 @@
             }
             
             .plan-card {
-                padding: 25px 20px;
+                padding: 22px 18px;
             }
             
             .plan-name {
@@ -1157,11 +1233,21 @@
             }
             
             .contact-phone {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
             
             .footer-logo {
                 font-size: 2rem;
+            }
+            
+            .benefits-section2 {
+                gap: 8px;
+            }
+            
+            .benefit-section2 {
+                min-width: 100%;
+                max-width: 100%;
+                padding: 15px;
             }
         }
 
@@ -1181,12 +1267,22 @@
             }
             
             .faq-question {
-                padding: 20px;
-                font-size: 1.1rem;
+                padding: 15px 20px;
+                font-size: 1rem;
             }
             
             .faq-answer.active {
-                padding: 20px;
+                padding: 15px 20px;
+            }
+            
+            .benefits-horizontal-compact {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .benefit-compact {
+                width: 100%;
+                max-width: 250px;
             }
         }
     </style>
@@ -1241,7 +1337,7 @@
                     </div>
                     <div class="benefit-content-compact">
                         <h3>Hasta 10 Gbps</h3>
-                        <p>Velocidad simétrica real de fibra óptica</p>
+                        <p>Velocidad máxima</p>
                     </div>
                 </div>
                 
@@ -1251,7 +1347,7 @@
                     </div>
                     <div class="benefit-content-compact">
                         <h3><span class="netflix-font netflix-red">NETFLIX</span> incluido</h3>
-                        <p>Mejor contenido en streaming incluido</p>
+                        <p>Mejor contenido</p>
                     </div>
                 </div>
                 
@@ -1261,7 +1357,7 @@
                     </div>
                     <div class="benefit-content-compact">
                         <h3>Soporte 24/7</h3>
-                        <p>Atención técnica especializada siempre</p>
+                        <p>Atención especializada</p>
                     </div>
                 </div>
             </div>
@@ -1274,7 +1370,7 @@
                     <i class="fab fa-whatsapp"></i> Contactar Ahora
                 </a>
                 <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20ya%20soy%20cliente,%20requiero%20soporte" target="_blank" class="btn btn-support">
-                    <i class="fas fa-headset"></i> Soporte Cliente
+                    <i class="fas fa-headset"></i> Ya soy cliente, requiero soporte
                 </a>
             </div>
         </div>
@@ -1283,10 +1379,24 @@
     <!-- Sección 2: ¿Por qué miles eligen Totalplay? -->
     <section class="why-section" id="why-totalplay">
         <div class="why-container">
-            <h2 class="section-title">¿Por qué elegir Totalplay?</h2>
+            <h2 class="why-title">
+                ¿Por qué miles eligen 
+                <span class="why-title-totalplay">
+                    <span class="why-title-t">T</span>
+                    <span class="why-title-o">o</span>
+                    <span class="why-title-t2">t</span>
+                    <span class="why-title-a1">a</span>
+                    <span class="why-title-l1">l</span>
+                    <span class="why-title-p">p</span>
+                    <span class="why-title-l2">l</span>
+                    <span class="why-title-a2">a</span>
+                    <span class="why-title-y">y</span>
+                </span>
+                ?
+            </h2>
             
-            <p class="section-subtitle">
-                La combinación perfecta entre tecnología de punta, precios competitivos y servicio excepcional
+            <p class="why-subtitle">
+                La combinación perfecta entre tecnología, precio y servicio
             </p>
             
             <div class="benefits-section2">
@@ -1295,7 +1405,7 @@
                         <i class="fas fa-sync-alt"></i>
                     </div>
                     <h3>Fibra 100% Simétrica</h3>
-                    <p>Misma velocidad de subida y bajada para trabajo remoto, streaming y gaming sin interrupciones</p>
+                    <p>Misma velocidad de subida y bajada para trabajo y streaming</p>
                 </div>
                 
                 <div class="benefit-section2">
@@ -1303,7 +1413,7 @@
                         <i class="fas fa-calendar-alt"></i>
                     </div>
                     <h3>Precio Fijo 12 Meses</h3>
-                    <p>Sin aumentos sorpresa. Tu precio se mantiene garantizado por un año completo</p>
+                    <p>Sin aumentos sorpresa. Tu precio se mantiene por un año</p>
                 </div>
                 
                 <div class="benefit-section2">
@@ -1311,7 +1421,7 @@
                         <i class="fas fa-headset"></i>
                     </div>
                     <h3>Soporte 24/7</h3>
-                    <p>Asistencia técnica especializada disponible siempre que la necesites</p>
+                    <p>Asistencia técnica siempre disponible cuando la necesites</p>
                 </div>
                 
                 <div class="benefit-section2">
@@ -1319,7 +1429,7 @@
                         <i class="fas fa-film"></i>
                     </div>
                     <h3><span class="netflix-font netflix-red">NETFLIX</span> Incluido</h3>
-                    <p>Disfruta de Netflix Standard con anuncios incluido permanentemente en planes seleccionados</p>
+                    <p>Disfruta de Netflix Standard con anuncios incluido en tu plan</p>
                 </div>
             </div>
         </div>
@@ -1328,10 +1438,10 @@
     <!-- Sección 3: Planes de Servicio -->
     <section class="plans-section" id="plans-section">
         <div class="plans-container">
-            <h2 class="section-title">Planes Totalplay</h2>
+            <h2 class="section-title">Nuestros Planes</h2>
             
             <p class="section-subtitle">
-                Elige el plan que mejor se adapte a tus necesidades. Todos incluyen instalación sin costo
+                Elige el plan perfecto para ti...
             </p>
             
             <div class="plans-filter">
@@ -1624,7 +1734,7 @@
                         <i class="fas fa-chevron-down faq-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>De hoy a mañana. Solo elige si te conviene horario de mañana o tarde. Nuestro equipo de instalación agenda citas según tu disponibilidad.</p>
+                        <p>De hoy a mañana. Solo elige si te conviene horario de mañana o tarde.</p>
                     </div>
                 </div>
                 
@@ -1635,7 +1745,7 @@
                         <i class="fas fa-chevron-down faq-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>No. La instalación no tiene costo adicional. Solo pagas tu primera mensualidad al instalar el servicio en tu domicilio.</p>
+                        <p>No. La instalación no tiene costo adicional. Solo pagas tu primera mensualidad al instalar.</p>
                     </div>
                 </div>
                 
@@ -1646,7 +1756,7 @@
                         <i class="fas fa-chevron-down faq-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>No hay plazos forzosos. Puedes cancelar en cualquier momento sin penalizaciones ni costos adicionales.</p>
+                        <p>No hay plazos forzosos. Puedes cancelar en cualquier momento.</p>
                     </div>
                 </div>
                 
@@ -1657,7 +1767,7 @@
                         <i class="fas fa-chevron-down faq-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Sí. Puedes subir o bajar de plan cuando lo necesites. Los cambios se reflejan en tu siguiente facturación.</p>
+                        <p>Sí. Puedes subir o bajar de plan cuando lo necesites.</p>
                     </div>
                 </div>
                 
@@ -1668,7 +1778,7 @@
                         <i class="fas fa-chevron-down faq-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Sí. Tenemos planes de solo internet y todos incluyen línea telefónica gratis (sin aparato físico).</p>
+                        <p>Sí. Todos los planes incluyen línea telefónica gratis (sin aparato físico).</p>
                     </div>
                 </div>
             </div>
@@ -1686,8 +1796,8 @@
                         <i class="fas fa-phone"></i>
                     </div>
                     <div class="contact-text">
-                        <h4>Teléfono directo:</h4>
-                        <span class="contact-phone">81 3119 1393</span>
+                        <h4>Teléfono:</h4>
+                        <p class="contact-phone">81 3119 1393</p>
                     </div>
                 </div>
                 
@@ -1722,7 +1832,7 @@
                 <div class="footer-about">
                     <div class="footer-logo">Totalplay</div>
                     <p class="footer-description">
-                        Internet Totalplay Fibra Óptica – Ofreciendo la mejor experiencia en conectividad con velocidad real, estabilidad y atención personalizada 24/7.
+                        Internet Totalplay Fibra Óptica – Ofreciendo la mejor experiencia en conectividad con velocidad real, estabilidad y atención personalizada.
                     </p>
                     <div class="social-links">
                         <a href="#" class="social-link">
@@ -1743,26 +1853,26 @@
                 <div class="footer-links">
                     <h4>Enlaces rápidos</h4>
                     <ul>
-                        <li><a href="#why-totalplay">Beneficios Totalplay</a></li>
-                        <li><a href="#plans-section">Planes y Precios</a></li>
-                        <li><a href="#faq">Preguntas Frecuentes</a></li>
-                        <li><a href="#contact">Contacto y Soporte</a></li>
+                        <li><a href="#why-totalplay">¿Por qué Totalplay?</a></li>
+                        <li><a href="#plans-section">Planes</a></li>
+                        <li><a href="#faq">Preguntas frecuentes</a></li>
+                        <li><a href="#contact">Contacto</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
-                    <h4>Información Legal</h4>
+                    <h4>Legal</h4>
                     <ul>
-                        <li><a href="#">Aviso de Privacidad</a></li>
-                        <li><a href="#">Términos y Condiciones</a></li>
-                        <li><a href="#">Contrato de Servicio</a></li>
+                        <li><a href="#">Aviso de privacidad</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Información corporativa</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p class="copyright">
-                    © 2025 Internet Express – Asesores Autorizados Totalplay
+                    © 2025 Internet Express – Asesores Totalplay
                 </p>
             </div>
         </div>
