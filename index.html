@@ -147,6 +147,40 @@
             width: 100%;
         }
 
+        /* Menú hamburguesa para móviles */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
         /* Botón WhatsApp flotante */
         .whatsapp-float {
             position: fixed;
@@ -174,7 +208,7 @@
             animation: none;
         }
 
-        /* Hero Section con animaciones - MANTENIENDO LOS BENEFICIOS PEQUEÑOS */
+        /* Hero Section con animaciones */
         .hero {
             min-height: 100vh;
             padding: 120px 5% 60px;
@@ -252,7 +286,7 @@
             to { transform: scaleX(1); }
         }
 
-        /* BENEFICIOS HORIZONTALES COMPACTOS - MANTENIENDO TAMAÑO ORIGINAL */
+        /* BENEFICIOS HORIZONTALES COMPACTOS */
         .benefits-horizontal-compact {
             display: flex;
             gap: 15px;
@@ -260,6 +294,7 @@
             justify-content: center;
             max-width: 800px;
             animation: fadeInUp 1s ease-out 0.7s both;
+            flex-wrap: wrap;
         }
 
         .benefit-compact {
@@ -269,6 +304,8 @@
             background: rgba(30, 41, 59, 0.7);
             padding: 15px 12px;
             border-radius: 8px;
+            min-width: 140px;
+            flex: 1;
             min-width: 140px;
             transition: transform 0.3s, box-shadow 0.3s;
             text-align: center;
@@ -303,7 +340,7 @@
             line-height: 1.3;
         }
 
-        /* CONTENEDOR DE BOTONES - ORGANIZACIÓN CORREGIDA */
+        /* CONTENEDOR DE BOTONES */
         .cta-buttons-container {
             display: flex;
             flex-direction: column;
@@ -322,6 +359,7 @@
             gap: 15px;
             width: 100%;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .button-row-1 {
@@ -396,7 +434,7 @@
             box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
         }
 
-        /* Sección ¿Por qué Totalplay? - MANTENIENDO TAMAÑO ORIGINAL DE BENEFICIOS */
+        /* Sección ¿Por qué Totalplay? */
         .why-section {
             padding: 80px 5%;
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -468,7 +506,8 @@
             padding: 20px 15px;
             border-radius: 8px;
             min-width: 220px;
-            max-width: 220px;
+            flex: 1;
+            min-width: 220px;
             transition: transform 0.3s, box-shadow 0.3s;
             text-align: center;
             border: 1px solid rgba(59, 130, 246, 0.1);
@@ -836,7 +875,7 @@
             max-width: 1000px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 40px;
             align-items: center;
         }
@@ -1048,7 +1087,18 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive Design */
+        /* =========================== */
+        /* RESPONSIVE DESIGN MEJORADO */
+        /* =========================== */
+
+        /* Dispositivos grandes (desktop) */
+        @media (min-width: 1201px) {
+            .contact-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Tablets y laptops pequeñas */
         @media (max-width: 1200px) {
             .hero-title {
                 font-size: 1.8rem;
@@ -1061,16 +1111,45 @@
             .plan-category {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
-        }
-
-        @media (max-width: 992px) {
-            .nav-links {
-                display: none;
-            }
             
             .contact-container {
                 grid-template-columns: 1fr;
-                gap: 30px;
+            }
+        }
+
+        /* Tablets medianas */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(15, 23, 42, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+                z-index: 999;
+                backdrop-filter: blur(10px);
+                border-top: 1px solid rgba(59, 130, 246, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.1rem;
+                padding: 12px 20px;
+                display: block;
+            }
+            
+            .menu-toggle {
+                display: flex;
             }
             
             .benefits-section2 {
@@ -1078,12 +1157,18 @@
             }
             
             .benefit-section2 {
-                min-width: 200px;
-                max-width: 200px;
+                min-width: calc(50% - 15px);
+                max-width: calc(50% - 15px);
                 padding: 18px 12px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
 
+        /* Tablets pequeñas y móviles grandes */
         @media (max-width: 768px) {
             header {
                 padding: 12px 5%;
@@ -1095,38 +1180,65 @@
             
             .hero {
                 padding: 100px 5% 40px;
+                min-height: auto;
             }
             
             .logo-hero {
                 font-size: 3rem;
+                margin-bottom: 15px;
             }
             
             .hero-title {
                 font-size: 1.5rem;
+                margin-bottom: 20px;
             }
             
             .benefits-horizontal-compact {
+                flex-direction: row;
                 flex-wrap: wrap;
                 gap: 10px;
+                margin: 20px auto;
             }
             
             .benefit-compact {
-                min-width: calc(50% - 10px);
+                min-width: calc(33.333% - 10px);
+                padding: 12px 8px;
+            }
+            
+            .benefit-icon-compact {
+                font-size: 1.2rem;
+                margin-bottom: 6px;
+            }
+            
+            .benefit-compact h3 {
+                font-size: 0.85rem;
+            }
+            
+            .benefit-compact p {
+                font-size: 0.7rem;
+            }
+            
+            .cta-buttons-container {
+                margin-top: 30px;
+                gap: 10px;
             }
             
             .button-row {
-                flex-direction: row;
-                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
             }
             
             .btn {
-                min-width: 180px;
+                min-width: 100%;
+                max-width: 300px;
+                padding: 12px 20px;
                 font-size: 0.95rem;
             }
             
             .btn-support {
-                min-width: 180px;
-                max-width: 375px;
+                min-width: 100%;
+                max-width: 300px;
             }
             
             .why-title {
@@ -1136,6 +1248,7 @@
             .why-subtitle {
                 font-size: 1.1rem;
                 margin-bottom: 40px;
+                padding: 0 10px;
             }
             
             .section-title {
@@ -1145,6 +1258,7 @@
             .section-subtitle {
                 font-size: 1.1rem;
                 margin-bottom: 40px;
+                padding: 0 10px;
             }
             
             .plan-price {
@@ -1190,59 +1304,14 @@
             .benefit-section2 p {
                 font-size: 0.8rem;
             }
-        }
-
-        @media (max-width: 576px) {
-            .hero {
-                padding: 90px 5% 30px;
-            }
             
-            .logo-hero {
-                font-size: 2.5rem;
-            }
-            
-            .hero-title {
-                font-size: 1.3rem;
-            }
-            
-            .benefit-icon-compact {
-                font-size: 1.2rem;
-            }
-            
-            .benefit-compact h3 {
-                font-size: 0.9rem;
-            }
-            
-            .benefit-compact p {
-                font-size: 0.7rem;
-            }
-            
-            .why-title {
-                font-size: 1.8rem;
-            }
-            
-            .why-subtitle {
+            .faq-question {
+                padding: 15px 20px;
                 font-size: 1rem;
             }
             
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .section-subtitle {
-                font-size: 1rem;
-            }
-            
-            .plan-card {
-                padding: 22px 18px;
-            }
-            
-            .plan-name {
-                font-size: 1.6rem;
-            }
-            
-            .plan-price {
-                font-size: 1.8rem;
+            .faq-answer.active {
+                padding: 15px 20px;
             }
             
             .contact-info {
@@ -1260,6 +1329,93 @@
             .footer-logo {
                 font-size: 2rem;
             }
+        }
+
+        /* Móviles medianos */
+        @media (max-width: 576px) {
+            .hero {
+                padding: 90px 5% 30px;
+            }
+            
+            .logo-hero {
+                font-size: 2.5rem;
+            }
+            
+            .hero-title {
+                font-size: 1.3rem;
+                line-height: 1.3;
+            }
+            
+            .hero-title .highlight {
+                display: block;
+                margin: 5px 0;
+            }
+            
+            .benefits-horizontal-compact {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .benefit-compact {
+                width: 100%;
+                max-width: 250px;
+                min-width: auto;
+                padding: 12px;
+            }
+            
+            .benefit-icon-compact {
+                font-size: 1.3rem;
+            }
+            
+            .benefit-compact h3 {
+                font-size: 0.9rem;
+            }
+            
+            .benefit-compact p {
+                font-size: 0.75rem;
+            }
+            
+            .btn {
+                font-size: 0.9rem;
+                padding: 12px 15px;
+            }
+            
+            .why-title {
+                font-size: 1.8rem;
+                padding: 0 10px;
+            }
+            
+            .why-subtitle {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                padding: 0 10px;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+            
+            .plan-card {
+                padding: 20px 15px;
+            }
+            
+            .plan-name {
+                font-size: 1.6rem;
+            }
+            
+            .plan-price {
+                font-size: 1.8rem;
+            }
+            
+            .plan-features li {
+                font-size: 0.85rem;
+            }
             
             .benefits-section2 {
                 gap: 8px;
@@ -1270,12 +1426,41 @@
                 max-width: 100%;
                 padding: 15px;
             }
+            
+            .contact-info {
+                padding: 25px 15px;
+            }
+            
+            .contact-title {
+                font-size: 1.5rem;
+            }
+            
+            .contact-detail {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .contact-phone {
+                font-size: 1.3rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-logo {
+                font-size: 1.8rem;
+            }
         }
 
+        /* Móviles pequeños */
         @media (max-width: 480px) {
             .plans-filter {
                 flex-direction: column;
                 align-items: center;
+                gap: 10px;
             }
             
             .filter-btn {
@@ -1287,32 +1472,139 @@
                 grid-template-columns: 1fr;
             }
             
+            .recomendado-badge {
+                right: 10px;
+                padding: 5px 15px;
+                font-size: 0.8rem;
+            }
+            
+            .plan-button {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+            
             .faq-question {
-                padding: 15px 20px;
-                font-size: 1rem;
+                padding: 12px 15px;
+                font-size: 0.95rem;
             }
             
             .faq-answer.active {
-                padding: 15px 20px;
+                padding: 12px 15px;
+            }
+            
+            .faq-answer p {
+                font-size: 0.9rem;
+            }
+            
+            .contact-btn {
+                font-size: 1rem;
+                padding: 14px;
+            }
+            
+            .legal-info {
+                padding: 15px;
+                font-size: 0.8rem;
+            }
+            
+            .whatsapp-float {
+                bottom: 15px;
+                right: 15px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .nav-links {
+                top: 60px;
+            }
+        }
+
+        /* Móviles muy pequeños */
+        @media (max-width: 360px) {
+            .logo-hero {
+                font-size: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 1.1rem;
+            }
+            
+            .why-title {
+                font-size: 1.6rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .plan-name {
+                font-size: 1.4rem;
+            }
+            
+            .plan-price {
+                font-size: 1.6rem;
+            }
+            
+            .btn {
+                min-width: 100%;
+                font-size: 0.85rem;
+            }
+            
+            .benefit-section2 h3 {
+                font-size: 0.9rem;
+                min-height: 35px;
+            }
+            
+            .contact-phone {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Mejoras de legibilidad en móviles */
+        @media (max-width: 768px) {
+            h1, h2, h3, h4 {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+            
+            p, li, span {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+            
+            .container, .hero-content, .why-container, .plans-container, .faq-container, .contact-container, .footer-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        /* Ajustes para orientación landscape en móviles */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding: 100px 5% 40px;
+            }
+            
+            .logo-hero {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+            }
+            
+            .hero-title {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
             }
             
             .benefits-horizontal-compact {
-                flex-direction: column;
-                align-items: center;
+                margin: 15px auto;
             }
             
             .benefit-compact {
-                width: 100%;
-                max-width: 250px;
+                padding: 8px 6px;
             }
             
-            .button-row {
-                flex-direction: column;
-            }
-            
-            .btn, .btn-support {
-                width: 100%;
-                max-width: 300px;
+            .cta-buttons-container {
+                margin-top: 20px;
             }
         }
     </style>
@@ -1333,8 +1625,15 @@
                 <span class="logo-y">y</span>
             </div>
             
+            <!-- Menú hamburguesa para móviles -->
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
             <!-- Navegación para desktop - Simplemente enlaces -->
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#why-totalplay">Beneficios</a></li>
                 <li><a href="#plans-section">Planes</a></li>
                 <li><a href="#faq">FAQ</a></li>
@@ -1927,6 +2226,33 @@
             }
         });
 
+        // Menú hamburguesa para móviles
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            
+            // Cerrar menú al hacer clic en un enlace
+            if (navLinks.classList.contains('active')) {
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuToggle.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    });
+                });
+            }
+        });
+
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+
         // Smooth scroll para navegación
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -1937,6 +2263,12 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    // Cerrar menú móvil si está abierto
+                    if (navLinks.classList.contains('active')) {
+                        menuToggle.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    }
+                    
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
@@ -2075,6 +2407,28 @@
 
         // Crear partículas flotantes cada 500ms
         setInterval(createFloatingElement, 500);
+
+        // Detectar orientación del dispositivo
+        function handleOrientationChange() {
+            if (window.innerHeight < window.innerWidth) {
+                // Landscape
+                document.body.classList.add('landscape');
+            } else {
+                // Portrait
+                document.body.classList.remove('landscape');
+            }
+        }
+        
+        window.addEventListener('resize', handleOrientationChange);
+        window.addEventListener('orientationchange', handleOrientationChange);
+        handleOrientationChange();
+
+        // Prevenir zoom en input en iOS
+        document.addEventListener('touchstart', function(e) {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') {
+                document.body.style.zoom = "100%";
+            }
+        }, { passive: true });
     </script>
 </body>
 </html>
