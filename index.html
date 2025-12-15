@@ -1,1575 +1,1932 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- =========================================== -->
-    <!-- SEO Y METADATA OPTIMIZADOS -->
-    <!-- =========================================== -->
-    <title>Totalplay Fibra Óptica | Internet 100% Fibra Óptica - Contrata en 1 Minuto</title>
-    <meta name="description" content="Contrata Totalplay Fibra Óptica al mejor precio. Internet + TV desde $390/mes. Instalación GRATIS, Netflix incluido. ¡Oferta especial!">
-    <meta name="keywords" content="totalplay, fibra optica, internet rápido, contratar totalplay, internet totalplay, tv totalplay, netflix gratis, instalación gratis, internet monterrey">
-    <meta name="author" content="Asesor Juan - Totalplay">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Totalplay Fibra Óptica | Contrata en 1 Minuto">
-    <meta property="og:description" content="Internet 100% Fibra Óptica al mejor precio. Instalación GRATIS y Netflix incluido.">
-    <meta property="og:image" content="https://totalplay.com.mx/images/og-totalplay.jpg">
-    <meta property="og:url" content="https://contrata.totalplay.com.mx">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Totalplay Fibra Óptica - Contrata en 1 Minuto">
-    <meta name="twitter:description" content="Internet más rápido con Totalplay. ¡Contrata ahora y lleva Netflix GRATIS!">
-    <meta name="twitter:image" content="https://totalplay.com.mx/images/twitter-totalplay.jpg">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="https://totalplay.com.mx/favicon.ico">
-    <link rel="apple-touch-icon" href="https://totalplay.com.mx/apple-touch-icon.png">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://contrata.totalplay.com.mx">
-    
-    <!-- Structured Data / Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Totalplay Fibra Óptica",
-      "description": "Servicio de Internet 100% Fibra Óptica con televisión por cable",
-      "provider": {
-        "@type": "Organization",
-        "name": "Totalplay",
-        "url": "https://totalplay.com.mx"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "México"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "390",
-        "priceCurrency": "MXN"
-      }
-    }
-    </script>
-    
-    <!-- =========================================== -->
-    <!-- STYLES Y SCRIPTS -->
-    <!-- =========================================== -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '763739910017100');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=763739910017100&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-    
+    <title>TotalPlay - Internet, Televisión y Telefonía</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Reset y estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
-            overflow-x: hidden;
-            color: #FFFFFF;
-            position: relative;
-            min-height: 100vh;
-        }
-        
-        /* Logo Totalplay con colores personalizados */
-        .logo-totalplay {
-            font-weight: 900;
-            font-size: 1.75rem;
-            letter-spacing: 0.5px;
-        }
-        
-        .logo-totalplay .t { color: #FFFFFF; }
-        .logo-totalplay .o { color: #FFFFFF; }
-        .logo-totalplay .t2 { color: #FFFFFF; }
-        .logo-totalplay .a { color: #FFFFFF; }
-        .logo-totalplay .l { color: #FFFFFF; }
-        .logo-totalplay .p { color: #3B82F6; } /* Azul */
-        .logo-totalplay .l2 { color: #10B981; } /* Verde */
-        .logo-totalplay .a2 { color: #F59E0B; } /* Naranja */
-        .logo-totalplay .y { color: #EF4444; } /* Rojo */
-        
-        /* Efectos de texto parpadeante */
-        .blink-text {
-            animation: blink 2s infinite;
-        }
-        
-        @keyframes blink {
-            0%, 50%, 100% { opacity: 1; }
-            25%, 75% { opacity: 0.7; }
-        }
-        
-        /* Efecto máquina de escribir */
-        .typewriter {
-            overflow: hidden;
-            border-right: .15em solid #00D4AA;
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .15em;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-        }
-        
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #00D4AA; }
-        }
-        
-        /* Efectos de botones mejorados */
-        .btn-glow {
-            background: linear-gradient(135deg, #00D4AA 0%, #00B894 100%);
+            background-color: #0f172a;
             color: white;
-            font-weight: 800;
-            transition: all 0.3s;
+            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Animaciones personalizadas */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Tipografía Netflix */
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+        .netflix-font {
+            font-family: 'Bebas Neue', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .netflix-red {
+            color: #e50914 !important;
+            animation: pulse 2s infinite;
+        }
+
+        /* Navegación simplificada y responsive */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 5%;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        header.scrolled {
+            padding: 10px 5%;
+            background: rgba(15, 23, 42, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-header {
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .logo-header span { display: inline; }
+        .logo-t { color: white; }
+        .logo-o { color: white; }
+        .logo-t2 { color: white; }
+        .logo-a1 { color: white; }
+        .logo-l1 { color: white; }
+        .logo-p { color: #3B82F6; animation: pulse 3s infinite; }
+        .logo-l2 { color: #10B981; animation: pulse 3s infinite 0.5s; }
+        .logo-a2 { color: #F59E0B; animation: pulse 3s infinite 1s; }
+        .logo-y { color: #EF4444; animation: pulse 3s infinite 1.5s; }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 6px;
             position: relative;
             overflow: hidden;
-            width: 100%;
-            box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
         }
-        
-        .btn-glow:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0, 212, 170, 0.4);
-        }
-        
-        .btn-glow:active {
-            transform: translateY(1px);
-        }
-        
-        .btn-glow::after {
+
+        .nav-links a::after {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                45deg,
-                transparent 30%,
-                rgba(255, 255, 255, 0.1) 50%,
-                transparent 70%
-            );
-            transform: rotate(45deg);
-            animation: shine 3s infinite linear;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3B82F6, #10B981);
+            transition: width 0.3s ease;
         }
-        
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+
+        .nav-links a:hover {
+            color: #60a5fa;
+            background: rgba(59, 130, 246, 0.1);
         }
-        
-        /* Botones de categoría mejorados */
-        .category-btn-enhanced {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid transparent;
-            border-radius: 12px;
-            padding: 12px 20px;
-            font-weight: 600;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            flex: 1;
-            min-width: 120px;
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Botón WhatsApp flotante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            z-index: 999;
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
+            animation: none;
+        }
+
+        /* Hero Section con animaciones */
+        .hero {
+            min-height: 100vh;
+            padding: 120px 5% 60px;
+            background: radial-gradient(ellipse at top, #1e293b, #0f172a);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
             text-align: center;
+            position: relative;
+            z-index: 10;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .logo-hero {
+            font-size: 4.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #3B82F6, #10B981, #F59E0B, #EF4444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: slideIn 1s ease-out 0.3s both;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #cbd5e1;
+            font-weight: 600;
+            line-height: 1.4;
+            animation: slideIn 1s ease-out 0.5s both;
+        }
+
+        .hero-title .highlight {
+            color: #60a5fa;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #3B82F6, transparent);
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: expandLine 2s ease-out 1s forwards;
+        }
+
+        @keyframes expandLine {
+            to { transform: scaleX(1); }
+        }
+
+        .benefits-horizontal-compact {
+            display: flex;
+            gap: 20px;
+            margin: 40px auto;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out 0.7s both;
+        }
+
+        .benefit-compact {
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            background: rgba(30, 41, 59, 0.7);
+            padding: 25px 20px;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            animation: slideIn 0.8s ease-out both;
+        }
+
+        .benefit-compact:nth-child(1) { animation-delay: 0.8s; }
+        .benefit-compact:nth-child(2) { animation-delay: 0.9s; }
+        .benefit-compact:nth-child(3) { animation-delay: 1s; }
+
+        .benefit-compact:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(59, 130, 246, 0.5);
+            animation: glow 2s infinite;
+        }
+
+        .benefit-icon-compact {
+            font-size: 2.5rem;
+            color: #60a5fa;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .benefit-compact h3 {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .benefit-compact p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            animation: fadeInUp 1s ease-out 1.2s both;
+        }
+
+        .btn {
+            padding: 16px 35px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-width: 200px;
             position: relative;
             overflow: hidden;
         }
-        
-        .category-btn-enhanced::before {
+
+        .btn::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.5s;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
         }
-        
-        .category-btn-enhanced:hover::before {
+
+        .btn:hover::before {
             left: 100%;
         }
-        
-        .category-btn-enhanced:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .category-btn-enhanced.active {
-            background: linear-gradient(135deg, rgba(0, 212, 170, 0.2) 0%, rgba(0, 184, 148, 0.2) 100%);
-            border-color: #00D4AA;
-            color: #00D4AA;
-            box-shadow: 0 0 20px rgba(0, 212, 170, 0.3);
-        }
-        
-        /* Badge recomendado mejorado - POSICIÓN CORREGIDA */
-        .plan-badge-enhanced {
-            position: absolute;
-            top: -15px;
-            right: 20px;
-            background: linear-gradient(135deg, #FF6B6B, #FF8E53, #FFD166);
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
             color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 900;
-            z-index: 50; /* Aumentado para estar por encima */
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-            animation: pulse-glow 2s infinite;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
         }
-        
-        @keyframes pulse-glow {
-            0%, 100% { 
-                box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-                transform: scale(1);
-            }
-            50% { 
-                box-shadow: 0 4px 25px rgba(255, 107, 107, 0.6);
-                transform: scale(1.05);
-            }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.6);
         }
-        
-        /* Banner de alerta mejorado con texto rojo */
-        .alert-banner {
-            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 2px solid #FFD166;
-            animation: alert-pulse 3s infinite;
+
+        .btn-secondary {
+            background: transparent;
+            color: #60a5fa;
+            border: 2px solid #3B82F6;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(59, 130, 246, 0.1);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-support {
+            background: linear-gradient(135deg, #EF4444, #DC2626);
+            color: white;
+            border: 3px solid #F59E0B;
+            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+        }
+
+        .btn-support:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.6);
+        }
+
+        /* Sección ¿Por qué Totalplay? */
+        .why-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             position: relative;
             overflow: hidden;
         }
-        
-        @keyframes alert-pulse {
-            0%, 100% { border-color: #FFD166; }
-            50% { border-color: #FF8E53; }
-        }
-        
-        .alert-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #FF6B6B, #FF8E53, #FFD166);
-            animation: slide 2s infinite linear;
-        }
-        
-        @keyframes slide {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-        /* Texto rojo para el banner */
-        .alert-title {
-            color: #FF0000 !important; /* Rojo puro */
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            font-weight: 900;
-        }
-        
-        /* Cards de planes mejoradas */
-        .plan-card-enhanced {
-            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+        .why-container {
+            max-width: 1200px;
+            margin: 0 auto;
             position: relative;
-            overflow: visible; /* Cambiado para que el badge se vea */
+            z-index: 10;
         }
-        
-        .plan-card-enhanced::before {
+
+        .section-title {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 40px;
+        }
+
+        .section-title::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
             height: 4px;
-            background: linear-gradient(90deg, #00D4AA, #00B894);
-            transform: scaleX(0);
-            transition: transform 0.3s;
+            background: linear-gradient(90deg, #3B82F6, #10B981);
+            border-radius: 2px;
         }
-        
-        .plan-card-enhanced:hover::before {
-            transform: scaleX(1);
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+            text-align: center;
         }
-        
-        .plan-card-enhanced:hover {
+
+        .benefits-section2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .benefit-section2 {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 30px 25px;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .benefit-section2:nth-child(1) { animation-delay: 0.2s; }
+        .benefit-section2:nth-child(2) { animation-delay: 0.4s; }
+        .benefit-section2:nth-child(3) { animation-delay: 0.6s; }
+        .benefit-section2:nth-child(4) { animation-delay: 0.8s; }
+
+        .benefit-section2:hover {
             transform: translateY(-10px);
-            border-color: #00D4AA;
-            box-shadow: 0 20px 40px rgba(0, 212, 170, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(59, 130, 246, 0.5);
         }
-        
-        /* Efectos minimalistas */
-        .pulse-simple {
-            animation: pulse-simple 2s infinite;
+
+        .benefit-icon-section2 {
+            font-size: 3rem;
+            color: #60a5fa;
+            margin-bottom: 20px;
+            display: inline-block;
+            height: 80px;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            animation: float 4s ease-in-out infinite;
         }
-        
-        @keyframes pulse-simple {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-        
-        .highlight-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid #00D4AA;
-            border-radius: 16px;
-            transition: all 0.3s;
-            height: 100%;
-        }
-        
-        .highlight-card:hover {
-            border-color: #00FFCC;
-            box-shadow: 0 10px 30px rgba(0, 212, 170, 0.2);
-        }
-        
-        .super-badge {
-            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+
+        .benefit-section2 h3 {
+            font-size: 1.3rem;
             color: white;
-            font-weight: 900;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            animation: bounce 2s infinite;
+            margin-bottom: 15px;
+            font-weight: 700;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+
+        .benefit-section2 p {
+            color: #94a3b8;
+            font-size: 1rem;
+            line-height: 1.6;
         }
-        
-        .fade-in {
-            animation: fadeIn 0.5s ease-out;
+
+        /* Sección de Planes */
+        .plans-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            position: relative;
         }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        .plans-container {
+            max-width: 1400px;
+            margin: 0 auto;
         }
-        
-        .loading-dots:after {
-            content: '.';
-            animation: dots 1.5s steps(5, end) infinite;
-        }
-        
-        @keyframes dots {
-            0%, 20% { content: '.'; }
-            40% { content: '..'; }
-            60% { content: '...'; }
-            80%, 100% { content: ''; }
-        }
-        
-        .redirect-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.95);
+
+        .plans-filter {
             display: flex;
             justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            padding: 20px;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
         }
-        
-        .redirect-modal.show {
-            opacity: 1;
-            visibility: visible;
+
+        .filter-btn {
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid #3B82F6;
+            background-color: transparent;
+            color: #60a5fa;
+            min-width: 180px;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .lifetime-netflix {
-            background: linear-gradient(135deg, #E50914, #B81D24);
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
             color: white;
-            padding: 6px 12px;
-            border-radius: 10px;
-            font-size: 0.8rem;
-            font-weight: bold;
+            border-color: #3B82F6;
+            animation: pulse 2s infinite;
+        }
+
+        .filter-btn:hover:not(.active) {
+            background-color: rgba(59, 130, 246, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .plan-category {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .plan-category.active {
+            display: grid;
+        }
+
+        .plan-card {
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            animation: slideIn 0.6s ease-out both;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .recomendado-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(135deg, #EF4444, #DC2626);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            z-index: 20;
+            animation: pulse 2s infinite;
+            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+        }
+
+        .plan-badge {
             display: inline-block;
-            margin-left: 8px;
-            animation: netflix-pulse 2s infinite;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            align-self: center;
         }
-        
-        @keyframes netflix-pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+        .badge-tv-internet {
+            background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+            color: white;
         }
-        
-        .countdown {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: #00D4AA;
+
+        .badge-internet {
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+        }
+
+        .plan-name {
+            font-size: 2rem;
+            color: #60a5fa;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+            animation: pulse 3s infinite;
+        }
+
+        .price-container {
             margin: 20px 0;
-            text-shadow: 0 0 10px rgba(0, 212, 170, 0.5);
-            animation: countdown-pulse 1s infinite;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 10px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
         }
-        
-        @keyframes countdown-pulse {
-            0%, 100% { text-shadow: 0 0 10px rgba(0, 212, 170, 0.5); }
-            50% { text-shadow: 0 0 20px rgba(0, 212, 170, 0.8); }
+
+        .plan-price {
+            font-size: 2.5rem;
+            color: white;
+            font-weight: 800;
+            margin-bottom: 5px;
         }
-        
-        .countdown-text {
-            font-size: 1.2rem;
-            color: #FFFFFF;
+
+        .plan-price-period {
+            font-size: 1rem;
+            color: #94a3b8;
+            margin-bottom: 5px;
+        }
+
+        .price-note {
+            font-size: 0.9rem;
+            color: #10B981;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .plan-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 30px;
+            flex-grow: 1;
+            font-size: 0.95rem;
+        }
+
+        .plan-features li {
+            color: #cbd5e1;
             margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            transition: transform 0.3s ease;
         }
-        
-        /* Responsive fixes */
-        @media (max-width: 640px) {
-            .super-badge {
-                font-size: 0.8rem;
-                padding: 6px 12px;
+
+        .plan-features li:hover {
+            transform: translateX(5px);
+            color: white;
+        }
+
+        .plan-features li:before {
+            content: "✓";
+            color: #10B981;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .plan-button {
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            width: 100%;
+            margin-top: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plan-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+
+        .faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-list {
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 15px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+            animation: slideIn 0.6s ease-out both;
+        }
+
+        .faq-item:nth-child(1) { animation-delay: 0.1s; }
+        .faq-item:nth-child(2) { animation-delay: 0.2s; }
+        .faq-item:nth-child(3) { animation-delay: 0.3s; }
+        .faq-item:nth-child(4) { animation-delay: 0.4s; }
+        .faq-item:nth-child(5) { animation-delay: 0.5s; }
+        .faq-item:nth-child(6) { animation-delay: 0.6s; }
+        .faq-item:nth-child(7) { animation-delay: 0.7s; }
+
+        .faq-item:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.5);
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+
+        .faq-answer.active {
+            padding: 25px 30px;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            color: #cbd5e1;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .faq-icon {
+            transition: transform 0.5s ease;
+            color: #60a5fa;
+        }
+
+        .faq-icon.active {
+            transform: rotate(180deg);
+            color: #10B981;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .contact-info {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            animation: slideIn 0.8s ease-out 0.2s both;
+        }
+
+        .contact-info:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-detail:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            color: #60a5fa;
+            width: 50px;
+            text-align: center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .contact-text h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .contact-text p {
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+
+        .contact-phone {
+            font-size: 1.8rem;
+            color: white;
+            font-weight: 700;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 18px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: none;
+            text-decoration: none;
+            text-align: center;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            margin-top: 30px;
+            animation: glow 2s infinite;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        .legal-info {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            border-left: 4px solid #EF4444;
+            animation: slideIn 0.8s ease-out 0.4s both;
+        }
+
+        .legal-info p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 5% 30px;
+            background: #0f172a;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about {
+            animation: slideIn 0.6s ease-out 0.1s both;
+        }
+
+        .footer-links {
+            animation: slideIn 0.6s ease-out 0.3s both;
+        }
+
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-description {
+            color: #94a3b8;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 50%;
+            color: #cbd5e1;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #3B82F6;
+            color: white;
+            transform: translateY(-5px) rotate(360deg);
+        }
+
+        .footer-links h4 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: #60a5fa;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid #1e293b;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .copyright {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 1.8rem;
             }
             
-            .category-btn-enhanced {
-                padding: 10px 12px;
+            .logo-hero {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .nav-links a {
                 font-size: 0.9rem;
-                min-width: 100px;
-            }
-            
-            .plan-badge-enhanced {
-                top: -12px;
-                right: 15px;
-                font-size: 0.7rem;
                 padding: 6px 12px;
             }
             
-            .countdown {
-                font-size: 2.8rem;
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
             
-            .countdown-text {
+            .plan-name {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 5%;
+            }
+            
+            .logo-header {
+                font-size: 1.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 100px 5% 40px;
+            }
+            
+            .logo-hero {
+                font-size: 3rem;
+            }
+            
+            .hero-title {
+                font-size: 1.5rem;
+            }
+            
+            .benefit-compact {
+                min-width: 100%;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .plan-price {
+                font-size: 2rem;
+            }
+            
+            .filter-btn {
+                min-width: 160px;
+                padding: 10px 20px;
                 font-size: 1rem;
             }
             
-            .typewriter {
-                white-space: normal;
-                border-right: none;
-                animation: none;
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 1.5rem;
             }
         }
-        
-        @media (max-width: 768px) {
-            .highlight-card, .plan-card {
-                padding: 1rem !important;
-            }
-            
-            .text-4xl, .text-5xl {
-                font-size: 2rem !important;
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 90px 5% 30px;
             }
             
-            .text-3xl, .text-4xl {
-                font-size: 1.75rem !important;
+            .logo-hero {
+                font-size: 2.5rem;
             }
             
-            .text-2xl {
-                font-size: 1.5rem !important;
+            .hero-title {
+                font-size: 1.3rem;
             }
             
-            .text-xl {
-                font-size: 1.25rem !important;
+            .benefit-icon-compact {
+                font-size: 2rem;
+            }
+            
+            .benefit-compact h3 {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .plan-card {
+                padding: 25px 20px;
+            }
+            
+            .plan-name {
+                font-size: 1.6rem;
+            }
+            
+            .plan-price {
+                font-size: 1.8rem;
+            }
+            
+            .contact-info {
+                padding: 30px 20px;
+            }
+            
+            .contact-title {
+                font-size: 1.6rem;
+            }
+            
+            .contact-phone {
+                font-size: 1.5rem;
+            }
+            
+            .footer-logo {
+                font-size: 2rem;
             }
         }
-        
-        /* Mobile-specific styles */
-        .mobile-optimized {
-            -webkit-tap-highlight-color: transparent;
-        }
-        
-        .mobile-optimized input,
-        .mobile-optimized button {
-            font-size: 16px; /* Prevents zoom on iOS */
-        }
-        
-        /* Touch-friendly buttons */
-        .touch-button {
-            min-height: 44px;
-            min-width: 44px;
-        }
-        
-        /* Prevent horizontal scrolling */
-        .no-horizontal-scroll {
-            overflow-x: hidden;
-            width: 100%;
-        }
-        
-        /* Gradient text */
-        .gradient-text {
-            background: linear-gradient(135deg, #00D4AA 0%, #00B894 25%, #00FFCC 50%, #00B894 75%, #00D4AA 100%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradient-shift 3s ease infinite;
-        }
-        
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% center; }
-            50% { background-position: 100% center; }
+
+        @media (max-width: 480px) {
+            .plans-filter {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .plan-category {
+                grid-template-columns: 1fr;
+            }
+            
+            .faq-question {
+                padding: 20px;
+                font-size: 1.1rem;
+            }
+            
+            .faq-answer.active {
+                padding: 20px;
+            }
         }
     </style>
 </head>
-<body class="min-h-screen mobile-optimized no-horizontal-scroll">
-
-    <!-- =========================================== -->
-    <!-- HEADER MEJORADO CON LOGO COLORIDO -->
-    <!-- =========================================== -->
-    <header class="bg-black/80 backdrop-blur-lg sticky top-0 z-50 border-b border-cyan-500/30 w-full shadow-2xl">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-                    <span class="text-white font-bold text-lg">TP</span>
-                </div>
-                <div class="logo-totalplay">
-                    <span class="t">T</span>
-                    <span class="o">o</span>
-                    <span class="t2">t</span>
-                    <span class="a">a</span>
-                    <span class="l">l</span>
-                    <span class="p">p</span>
-                    <span class="l2">l</span>
-                    <span class="a2">a</span>
-                    <span class="y">y</span>
-                </div>
+<body>
+    <!-- Header fijo -->
+    <header id="mainHeader">
+        <div class="nav-container">
+            <div class="logo-header">
+                <span class="logo-t">T</span>
+                <span class="logo-o">o</span>
+                <span class="logo-t2">t</span>
+                <span class="logo-a1">a</span>
+                <span class="logo-l1">l</span>
+                <span class="logo-p">p</span>
+                <span class="logo-l2">l</span>
+                <span class="logo-a2">a</span>
+                <span class="logo-y">y</span>
             </div>
-            <div class="text-right">
-                <div class="flex items-center justify-end">
-                    <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse mr-2"></div>
-                    <span class="text-cyan-400 font-bold text-sm sm:text-base">Asesor Juan</span>
-                </div>
-                <div class="text-xs text-gray-300 font-medium">Contrata en 1 minuto</div>
-            </div>
+            
+            <!-- Navegación para desktop - Simplemente enlaces -->
+            <ul class="nav-links">
+                <li><a href="#why-totalplay">Beneficios</a></li>
+                <li><a href="#plans-section">Planes</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
         </div>
     </header>
 
-    <!-- =========================================== -->
-    <!-- HERO SECTION CON EFECTOS -->
-    <!-- =========================================== -->
-    <main class="container mx-auto px-4 py-8 max-w-6xl w-full">
-        
-        <!-- Banner de Alerta Mejorado con texto rojo -->
-        <div class="mb-8 w-full">
-            <div class="alert-banner text-center">
-                <div class="flex flex-col items-center">
-                    <div class="super-badge inline-block mb-2">
-                        ⚡ OFERTA ESPECIAL ⚡
+    <!-- Botón de WhatsApp flotante -->
+    <a href="https://wa.me/528131191393" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo-hero">Totalplay</div>
+            
+            <h1 class="hero-title">
+                <span class="highlight">INTERNET</span> · 
+                <span class="highlight">TELEVISIÓN</span> · 
+                <span class="highlight">TELEFONÍA</span> · 
+                <span class="highlight">APPS</span>
+            </h1>
+            
+            <div class="benefits-horizontal-compact">
+                <div class="benefit-compact">
+                    <div class="benefit-icon-compact">
+                        <i class="fas fa-bolt"></i>
                     </div>
-                    <h3 class="text-lg font-bold mb-1 alert-title">⚠️ IMPORTANTE: SOLO CONTRATACIONES NUEVAS</h3>
-                    <p class="text-sm font-medium text-white">
-                        ✅ Clientes nuevos • ✅ Ya eres cliente • ✅ Si dejaste adeudo
-                    </p>
+                    <div class="benefit-content-compact">
+                        <h3>Hasta 10 Gbps</h3>
+                        <p>Velocidad simétrica real de fibra óptica</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-compact">
+                    <div class="benefit-icon-compact">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div class="benefit-content-compact">
+                        <h3><span class="netflix-font netflix-red">NETFLIX</span> incluido</h3>
+                        <p>Mejor contenido en streaming incluido</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-compact">
+                    <div class="benefit-icon-compact">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="benefit-content-compact">
+                        <h3>Soporte 24/7</h3>
+                        <p>Atención técnica especializada siempre</p>
+                    </div>
                 </div>
             </div>
-            <div class="text-center text-sm text-gray-300 px-2 mt-2">
-                Instalación GRATIS • Sin contratos forzosos • Precios con IVA incluido
+            
+            <div class="cta-buttons">
+                <a href="#plans-section" class="btn btn-primary">
+                    <i class="fas fa-tv"></i> Ver Planes
+                </a>
+                <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20información%20sobre%20los%20planes" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-whatsapp"></i> Contactar Ahora
+                </a>
+                <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20ya%20soy%20cliente,%20requiero%20soporte" target="_blank" class="btn btn-support">
+                    <i class="fas fa-headset"></i> Soporte Cliente
+                </a>
             </div>
         </div>
+    </section>
 
-        <!-- Título con efectos -->
-        <div class="text-center mb-12 w-full">
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-black mb-4 px-2">
-                <span class="gradient-text blink-text block md:inline">
-                    Internet Más Rápido
-                </span>
-                <br>
-                <span class="text-2xl md:text-3xl lg:text-4xl font-bold typewriter mt-4 block">
-                    Contrata en 1 Minuto
-                </span>
-            </h1>
-            <p class="text-gray-300 text-base md:text-lg max-w-2xl mx-auto px-4 mt-6">
-                Sin complicaciones. Sin formularios largos. Solo el mejor internet 100% fibra óptica al mejor precio garantizado.
+    <!-- Sección 2: ¿Por qué miles eligen Totalplay? -->
+    <section class="why-section" id="why-totalplay">
+        <div class="why-container">
+            <h2 class="section-title">¿Por qué elegir Totalplay?</h2>
+            
+            <p class="section-subtitle">
+                La combinación perfecta entre tecnología de punta, precios competitivos y servicio excepcional
             </p>
             
-            <!-- Indicador visual -->
-            <div class="flex justify-center items-center mt-6 space-x-2">
-                <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <div class="text-xs text-green-400 font-medium">En línea • Asesor disponible</div>
-                <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <div class="benefits-section2">
+                <div class="benefit-section2">
+                    <div class="benefit-icon-section2">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Fibra 100% Simétrica</h3>
+                    <p>Misma velocidad de subida y bajada para trabajo remoto, streaming y gaming sin interrupciones</p>
+                </div>
+                
+                <div class="benefit-section2">
+                    <div class="benefit-icon-section2">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Precio Fijo 12 Meses</h3>
+                    <p>Sin aumentos sorpresa. Tu precio se mantiene garantizado por un año completo</p>
+                </div>
+                
+                <div class="benefit-section2">
+                    <div class="benefit-icon-section2">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Soporte 24/7</h3>
+                    <p>Asistencia técnica especializada disponible siempre que la necesites</p>
+                </div>
+                
+                <div class="benefit-section2">
+                    <div class="benefit-icon-section2">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3><span class="netflix-font netflix-red">NETFLIX</span> Incluido</h3>
+                    <p>Disfruta de Netflix Standard con anuncios incluido permanentemente en planes seleccionados</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Botones de Categorías Mejorados -->
-        <div class="mb-10 w-full">
-            <div class="flex flex-wrap justify-center gap-3 md:gap-4 px-2">
-                <button onclick="showCategory('basico')" class="category-btn-enhanced touch-button">
-                    <span class="hidden sm:inline text-green-400">🟢</span> 
-                    <span class="font-bold">Básico</span>
-                    <div class="text-xs text-gray-400 mt-1">Desde $390/mes</div>
+    <!-- Sección 3: Planes de Servicio -->
+    <section class="plans-section" id="plans-section">
+        <div class="plans-container">
+            <h2 class="section-title">Planes Totalplay</h2>
+            
+            <p class="section-subtitle">
+                Elige el plan que mejor se adapte a tus necesidades. Todos incluyen instalación sin costo
+            </p>
+            
+            <div class="plans-filter">
+                <button class="filter-btn active" data-filter="tv-internet">
+                    <i class="fas fa-tv"></i> TV + Internet
                 </button>
-                <button onclick="showCategory('esencial')" class="category-btn-enhanced active touch-button">
-                    <span class="hidden sm:inline text-yellow-400">🟡</span> 
-                    <span class="font-bold">Esencial</span>
-                    <div class="text-xs text-cyan-400 mt-1">MÁS POPULAR</div>
-                </button>
-                <button onclick="showCategory('premium')" class="category-btn-enhanced touch-button">
-                    <span class="hidden sm:inline text-blue-400">🔵</span> 
-                    <span class="font-bold">Premium</span>
-                    <div class="text-xs text-gray-400 mt-1">Para exigentes</div>
-                </button>
-                <button onclick="showCategory('elite')" class="category-btn-enhanced touch-button">
-                    <span class="hidden sm:inline text-purple-400">🟣</span> 
-                    <span class="font-bold">Ultra Elite</span>
-                    <div class="text-xs text-gray-400 mt-1">Máxima velocidad</div>
+                <button class="filter-btn" data-filter="internet">
+                    <i class="fas fa-wifi"></i> Solo Internet
                 </button>
             </div>
+            
+            <!-- Planes TV + Internet -->
+            <div class="plan-category active" id="tv-internet-plans">
+                <!-- Plan 100 Mbps -->
+                <div class="plan-card">
+                    <div class="plan-badge badge-tv-internet">
+                        TV + Internet
+                    </div>
+                    <h3 class="plan-name">Plan 100 Mbps</h3>
+                    <div class="price-container">
+                        <div class="plan-price">$490</div>
+                        <div class="plan-price-period">Pronto pago /mes</div>
+                        <div class="price-note">$460 al 6to mes</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>185 canales HD/4K</li>
+                        <li>Totalplay TV 4K incluido</li>
+                        <li>Fibra 100% simétrica</li>
+                    </ul>
+                    <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20%2B%20TV%20de%20100%20Megas%20por%20%24490%2Fmensual" target="_blank" class="plan-button">
+                        <i class="fab fa-whatsapp"></i> Contratar este plan
+                    </a>
+                </div>
+                
+                <!-- Plan 150 Mbps -->
+                <div class="plan-card">
+                    <div class="plan-badge badge-tv-internet">
+                        TV + Internet
+                    </div>
+                    <h3 class="plan-name">Plan 150 Mbps</h3>
+                    <div class="price-container">
+                        <div class="plan-price">$599</div>
+                        <div class="plan-price-period">Pronto pago /mes</div>
+                        <div class="price-note">$569 al 6to mes</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>185 canales HD/4K</li>
+                        <li>Totalplay TV 4K incluido</li>
+                        <li><span class="netflix-font netflix-red">NETFLIX</span> Gratis 5 meses</li>
+                        <li>Fibra 100% simétrica</li>
+                    </ul>
+                    <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20%2B%20TV%20de%20150%20Megas%20por%20%24599%2Fmensual%20con%20NETFLIX%20Gratis%20por%205%20meses" target="_blank" class="plan-button">
+                        <i class="fab fa-whatsapp"></i> Contratar este plan
+                    </a>
+                </div>
+                
+                <!-- Plan 250 Mbps - RECOMENDADO -->
+                <div class="plan-card">
+                    <div class="recomendado-badge">RECOMENDADO</div>
+                    <div class="plan-badge badge-tv-internet">
+                        TV + Internet
+                    </div>
+                    <h3 class="plan-name">Plan 250 Mbps</h3>
+                    <div class="price-container">
+                        <div class="plan-price">$699</div>
+                        <div class="plan-price-period">Pronto pago /mes</div>
+                        <div class="price-note">$669 al 6to mes</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>185 canales HD/4K</li>
+                        <li>Totalplay TV 4K incluido</li>
+                        <li><span class="netflix-font netflix-red">NETFLIX</span> Gratis 5 meses</li>
+                        <li>Fibra 100% simétrica</li>
+                        <li>Soporte 24/7</li>
+                    </ul>
+                    <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20%2B%20TV%20de%20250%20Megas%20por%20%24699%2Fmensual%20con%20NETFLIX%20Gratis%20por%205%20meses" target="_blank" class="plan-button">
+                        <i class="fab fa-whatsapp"></i> Contratar este plan
+                    </a>
+                </div>
+                
+                <!-- Plan 350 Mbps -->
+                <div class="plan-card">
+                    <div class="plan-badge badge-tv-internet">
+                        TV + Internet
+                    </div>
+                    <h3 class="plan-name">Plan 350 Mbps</h3>
+                    <div class="price-container">
+                        <div class="plan-price">$799</div>
+                        <div class="plan-price-period">Pronto pago /mes</div>
+                        <div class="price-note">$759 al 6to mes</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>185 canales HD/4K</li>
+                        <li>Totalplay TV 4K incluido</li>
+                        <li><span class="netflix-font netflix-red">NETFLIX</span> Gratis 5 meses</li>
+                        <li>Fibra 100% simétrica</li>
+                        <li>Soporte 24/7</li>
+                    </ul>
+                    <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20%2B%20TV%20de%20350%20Megas%20por%20%24799%2Fmensual%20con%20NETFLIX%20Gratis%20por%205%20meses" target="_blank" class="plan-button">
+                        <i class="fab fa-whatsapp"></i> Contratar este plan
+                    </a>
+                </div>
+                
+                <!-- Plan 500 Mbps -->
+                <div class="plan-card">
+                    <div class="plan-badge badge-tv-internet">
+                        TV + Internet
+                    </div>
+                    <h3 class="plan-name">Plan 500 Mbps</h3>
+                    <div class="price-container">
+                        <div class="plan-price">$999</div>
+                        <div class="plan-price-period">Pronto pago /mes</div>
+                        <div class="price-note">$949 al 6to mes</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>185 canales HD/4K</li>
+                        <li>Nuevo Totalplay TV</li>
+                        <li>Totalplay Surround</li>
+                        <li><span class="netflix-font netflix-red">NETFLIX</span> Gratis 5 meses</li>
+                        <li>Soporte 24/7</li>
+                    </ul>
+                    <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20%2B%20TV%20de%20500%20Megas%20por%20%24999%2Fmensual%20con%20NETFLIX%20Gratis%20por%205%20meses" target="_blank" class="plan-button">
+                        <i class="fab fa-whatsapp"></i> Contratar este plan
+                    </a>
+                </div>
+                
+                <!-- Plan 1,200 Mbps -->
+                <div class="plan-card">
+                    <div class="plan-badge badge-tv-internet">
+                        TV + Internet
+                    </div>
+                    <h3 class="plan-name">Plan 1,200 Mbps</h3>
+                    <div class="price-container">
+                        <div class="plan-price">$1,640</div>
+                        <div class="plan-price-period">Pronto pago /mes</div>
+                        <div class="price-note">$1,540 al 6to mes</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>185 canales HD/4K</li>
+                        <li>Nuevo Totalplay TV</li>
+                        <li>Totalplay Surround</li>
+                        <li><span class="netflix-font netflix-red">NETFLIX</span> incluido permanentemente</li>
+                        <li>Soporte 24/7</li>
+                    </ul>
+                    <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20%2B%20TV%20de%201%2C200%20Megas%20por%20%241%2C640%2Fmensual%20con%20NETFLIX%20incluido%20permanentemente" target="_blank" class="plan-button">
+                        <i class="fab fa-whatsapp"></i> Contratar este plan
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Planes Solo Internet -->
+            <div class="plan-category" id="internet-plans">
+                <!-- Plan 100 Mbps -->
+                <div class="plan-card">
+                    <div class="plan-badge badge-internet">
+                        Solo Internet
+                    </div>
+                    <h3 class="plan-name">Plan 100 Mbps</h3>
+                    <div class="price-container">
+                        <div class="plan-price">$390</div>
+                        <div class="plan-price-period">Pronto pago /mes</div>
+                        <div class="price-note">$370 al 6to mes</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>Fibra 100% simétrica</li>
+                    </ul>
+                    <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20de%20100%20Megas%20por%20%24390%2Fmensual" target="_blank" class="plan-button">
+                        <i class="fab fa-whatsapp"></i> Contratar este plan
+                    </a>
+                </div>
+                
+                <!-- Plan 150 Mbps -->
+                <div class="plan-card">
+                    <div class="plan-badge badge-internet">
+                        Solo Internet
+                    </div>
+                    <h3 class="plan-name">Plan 150 Mbps</h3>
+                    <div class="price-container">
+                        <div class="plan-price">$460</div>
+                        <div class="plan-price-period">Pronto pago /mes</div>
+                        <div class="price-note">$440 al 6to mes</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>Fibra 100% simétrica</li>
+                        <li><span class="netflix-font netflix-red">NETFLIX</span> Gratis 3 meses</li>
+                    </ul>
+                    <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20de%20150%20Megas%20por%20%24460%2Fmensual%20con%20NETFLIX%20Gratis%20por%203%20meses" target="_blank" class="plan-button">
+                        <i class="fab fa-whatsapp"></i> Contratar este plan
+                    </a>
+                </div>
+                
+                <!-- Plan 250 Mbps - RECOMENDADO -->
+                <div class="plan-card">
+                    <div class="recomendado-badge">RECOMENDADO</div>
+                    <div class="plan-badge badge-internet">
+                        Solo Internet
+                    </div>
+                    <h3 class="plan-name">Plan 250 Mbps</h3>
+                    <div class="price-container">
+                        <div class="plan-price">$559</div>
+                        <div class="plan-price-period">Pronto pago /mes</div>
+                        <div class="price-note">$539 al 6to mes</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>Fibra 100% simétrica</li>
+                        <li><span class="netflix-font netflix-red">NETFLIX</span> Gratis 5 meses</li>
+                        <li>Soporte 24/7</li>
+                    </ul>
+                    <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20de%20250%20Megas%20por%20%24559%2Fmensual%20con%20NETFLIX%20Gratis%20por%205%20meses" target="_blank" class="plan-button">
+                        <i class="fab fa-whatsapp"></i> Contratar este plan
+                    </a>
+                </div>
+                
+                <!-- Plan 350 Mbps -->
+                <div class="plan-card">
+                    <div class="plan-badge badge-internet">
+                        Solo Internet
+                    </div>
+                    <h3 class="plan-name">Plan 350 Mbps</h3>
+                    <div class="price-container">
+                        <div class="plan-price">$669</div>
+                        <div class="plan-price-period">Pronto pago /mes</div>
+                        <div class="price-note">$639 al 6to mes</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>Fibra 100% simétrica</li>
+                        <li><span class="netflix-font netflix-red">NETFLIX</span> Gratis 5 meses</li>
+                        <li>Soporte 24/7</li>
+                    </ul>
+                    <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20de%20350%20Megas%20por%20%24669%2Fmensual%20con%20NETFLIX%20Gratis%20por%205%20meses" target="_blank" class="plan-button">
+                        <i class="fab fa-whatsapp"></i> Contratar este plan
+                    </a>
+                </div>
+                
+                <!-- Plan 500 Mbps -->
+                <div class="plan-card">
+                    <div class="plan-badge badge-internet">
+                        Solo Internet
+                    </div>
+                    <h3 class="plan-name">Plan 500 Mbps</h3>
+                    <div class="price-container">
+                        <div class="plan-price">$830</div>
+                        <div class="plan-price-period">Pronto pago /mes</div>
+                        <div class="price-note">$770 al 6to mes</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>Fibra 100% simétrica</li>
+                        <li><span class="netflix-font netflix-red">NETFLIX</span> Gratis 5 meses</li>
+                        <li>Soporte 24/7</li>
+                    </ul>
+                    <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20de%20500%20Megas%20por%20%24830%2Fmensual%20con%20NETFLIX%20Gratis%20por%205%20meses" target="_blank" class="plan-button">
+                        <i class="fab fa-whatsapp"></i> Contratar este plan
+                    </a>
+                </div>
+                
+                <!-- Plan 1,200 Mbps -->
+                <div class="plan-card">
+                    <div class="plan-badge badge-internet">
+                        Solo Internet
+                    </div>
+                    <h3 class="plan-name">Plan 1,200 Mbps</h3>
+                    <div class="price-container">
+                        <div class="plan-price">$1,470</div>
+                        <div class="plan-price-period">Pronto pago /mes</div>
+                        <div class="price-note">$1,390 al 6to mes</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>Fibra 100% simétrica</li>
+                        <li><span class="netflix-font netflix-red">NETFLIX</span> incluido permanentemente</li>
+                        <li>Soporte 24/7</li>
+                    </ul>
+                    <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20de%201%2C200%20Megas%20por%20%241%2C470%2Fmensual%20con%20NETFLIX%20incluido%20permanentemente" target="_blank" class="plan-button">
+                        <i class="fab fa-whatsapp"></i> Contratar este plan
+                    </a>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Contenedor de Planes -->
-        <div id="plans-container" class="mb-12 w-full">
-            <!-- Los planes se cargarán dinámicamente aquí -->
+    <!-- SECCIÓN 4: PREGUNTAS FRECUENTES -->
+    <section class="faq-section" id="faq">
+        <div class="faq-container">
+            <h2 class="section-title">Preguntas frecuentes</h2>
+            
+            <div class="faq-list">
+                <!-- Pregunta 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Cuánto tarda la instalación?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>De hoy a mañana. Solo elige si te conviene horario de mañana o tarde. Nuestro equipo de instalación agenda citas según tu disponibilidad.</p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Hay costo de instalación?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No. La instalación no tiene costo adicional. Solo pagas tu primera mensualidad al instalar el servicio en tu domicilio.</p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Hay plazos forzosos?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No hay plazos forzosos. Puedes cancelar en cualquier momento sin penalizaciones ni costos adicionales.</p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Puedo cambiar de plan después?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí. Puedes subir o bajar de plan cuando lo necesites. Los cambios se reflejan en tu siguiente facturación.</p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Puedo contratar solo internet?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí. Tenemos planes de solo internet y todos incluyen línea telefónica gratis (sin aparato físico).</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- PASO 2: Formulario Rápido -->
-        <section id="step2" class="hidden fade-in w-full">
-            <div class="plan-card-enhanced p-6 md:p-8 w-full">
-                <div class="text-center mb-8">
-                    <div class="inline-block bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-2 rounded-full font-bold mb-4">
-                        ✅ PLAN SELECCIONADO
+    <!-- SECCIÓN 5: CONTACTO -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2 class="contact-title">Contacta un Asesor Totalplay</h2>
+                
+                <div class="contact-detail">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
                     </div>
-                    <h2 class="text-2xl font-bold mb-2" id="selectedPlanText"></h2>
-                    <div class="text-4xl font-bold text-green-400 mt-2 flex items-center justify-center gap-2">
-                        <span id="selectedPriceText"></span>
-                        <span class="text-lg text-gray-400">/mes + IVA</span>
+                    <div class="contact-text">
+                        <h4>Teléfono directo:</h4>
+                        <span class="contact-phone">81 3119 1393</span>
                     </div>
                 </div>
                 
-                <!-- Formulario Rápido Mejorado -->
-                <div class="mb-8">
-                    <h3 class="text-xl font-bold mb-6 flex items-center">
-                        <span class="bg-cyan-500 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">1</span>
-                        Completa tus datos rápidamente:
-                    </h3>
-                    <div class="space-y-6">
-                        <div>
-                            <label class="block text-sm font-bold text-gray-300 mb-3 flex items-center">
-                                <span class="bg-blue-500 w-6 h-6 rounded-full flex items-center justify-center text-xs mr-2">✓</span>
-                                Nombre Completo *
-                            </label>
-                            <input type="text" id="nombre" 
-                                   class="w-full bg-gray-900 border-2 border-gray-700 rounded-xl px-5 py-4 text-white focus:border-cyan-500 focus:outline-none transition-all duration-300 touch-button placeholder-gray-500"
-                                   placeholder="Ej: Juan Pérez López"
-                                   required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold text-gray-300 mb-3 flex items-center">
-                                <span class="bg-blue-500 w-6 h-6 rounded-full flex items-center justify-center text-xs mr-2">✓</span>
-                                Correo Electrónico *
-                            </label>
-                            <input type="email" id="correo" 
-                                   class="w-full bg-gray-900 border-2 border-gray-700 rounded-xl px-5 py-4 text-white focus:border-cyan-500 focus:outline-none transition-all duration-300 touch-button placeholder-gray-500"
-                                   placeholder="Ej: juan.perez@email.com"
-                                   required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold text-gray-300 mb-3 flex items-center">
-                                <span class="bg-blue-500 w-6 h-6 rounded-full flex items-center justify-center text-xs mr-2">✓</span>
-                                Teléfono (10 dígitos) *
-                            </label>
-                            <input type="tel" id="telefono" 
-                                   class="w-full bg-gray-900 border-2 border-gray-700 rounded-xl px-5 py-4 text-white focus:border-cyan-500 focus:outline-none transition-all duration-300 touch-button placeholder-gray-500"
-                                   placeholder="Ej: 8123456789"
-                                   pattern="\d{10}"
-                                   required>
-                        </div>
+                <div class="contact-detail">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Horario de atención:</h4>
+                        <p>Lunes a Viernes: 9:00 AM - 8:00 PM</p>
+                        <p>Sábados: 9:00 AM - 2:00 PM</p>
                     </div>
                 </div>
                 
-                <!-- Resumen Mejorado -->
-                <div class="bg-gradient-to-r from-gray-900 to-black rounded-2xl p-6 mb-8 border border-gray-800">
-                    <h3 class="font-bold text-lg mb-4 flex items-center">
-                        <span class="bg-green-500 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">2</span>
-                        Resumen de tu pedido:
-                    </h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center py-3 border-b border-gray-800">
-                            <span class="text-gray-400">Plan seleccionado:</span>
-                            <span class="font-bold text-lg" id="summaryPlan"></span>
-                        </div>
-                        <div id="netflixIncluded" class="text-center py-3 bg-red-900/20 rounded-lg border border-red-900/30"></div>
-                        <div class="pt-4">
-                            <div class="flex justify-between items-center py-4 border-t border-gray-800">
-                                <div>
-                                    <div class="font-bold text-xl">Total mensual:</div>
-                                    <div class="text-sm text-gray-400">Precio fijo por 12 meses</div>
-                                </div>
-                                <div class="text-right">
-                                    <div class="text-3xl font-bold text-green-400" id="summaryTotal">$0</div>
-                                    <div class="text-xs text-gray-400" id="summaryDescription"></div>
-                                </div>
-                            </div>
-                        </div>
+                <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20información%20sobre%20los%20planes" target="_blank" class="contact-btn">
+                    <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                </a>
+                
+                <div class="legal-info">
+                    <p>• Vigencia de promociones: Sujeto a disponibilidad y cambios sin previo aviso.</p>
+                    <p>• Los precios mostrados son con pronto pago mensual.</p>
+                    <p>• Instalación sin costo adicional, sujeta a cobertura en tu área.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 6: FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Totalplay</div>
+                    <p class="footer-description">
+                        Internet Totalplay Fibra Óptica – Ofreciendo la mejor experiencia en conectividad con velocidad real, estabilidad y atención personalizada 24/7.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/528131191393" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
                 
-                <!-- Información importante - TEXTO CORREGIDO -->
-                <div class="bg-gradient-to-r from-blue-900/30 to-cyan-900/20 border-2 border-blue-700/30 rounded-2xl p-6 mb-8">
-                    <h4 class="font-bold text-blue-300 mb-4 flex items-center text-lg">
-                        <span class="text-2xl mr-3">📋</span>
-                        Requisitos para la instalación:
-                    </h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-1">1</span>
-                            <span class="text-blue-200">Identificación oficial vigente (INE/IFE)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-1">2</span>
-                            <span class="text-blue-200">Comprobante de domicilio (no mayor a 3 meses)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-1">3</span>
-                            <span class="text-blue-200">Tu primera mensualidad al término de la instalación</span>
-                        </li>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="#why-totalplay">Beneficios Totalplay</a></li>
+                        <li><a href="#plans-section">Planes y Precios</a></li>
+                        <li><a href="#faq">Preguntas Frecuentes</a></li>
+                        <li><a href="#contact">Contacto y Soporte</a></li>
                     </ul>
                 </div>
                 
-                <!-- Botón WhatsApp Mejorado -->
-                <div class="text-center">
-                    <button onclick="validateAndSend()" 
-                            class="btn-glow max-w-md mx-auto py-5 rounded-2xl text-xl font-black flex items-center justify-center gap-4 touch-button">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                        </svg>
-                        <span class="truncate">ENVIAR SOLICITUD POR WHATSAPP</span>
-                    </button>
-                    
-                    <p class="text-gray-400 text-sm mt-4 px-2 flex items-center justify-center">
-                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2"></span>
-                        Serás redirigido a WhatsApp para confirmar y coordinar instalación
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Beneficios Social Proof Mejorados -->
-        <section class="mt-20 w-full">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold mb-4">¿Por qué miles eligen Totalplay?</h2>
-                <p class="text-gray-300 text-lg max-w-2xl mx-auto">La combinación perfecta entre tecnología, precio y servicio</p>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="plan-card-enhanced p-6 text-center">
-                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
-                        ⚡
-                    </div>
-                    <div class="font-bold text-xl mb-2">Fibra 100% Simétrica</div>
-                    <div class="text-gray-300 text-sm">Misma velocidad de subida y bajada para trabajo y streaming</div>
-                </div>
-                
-                <div class="plan-card-enhanced p-6 text-center">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
-                        💰
-                    </div>
-                    <div class="font-bold text-xl mb-2">Precio Fijo 12 Meses</div>
-                    <div class="text-gray-300 text-sm">Sin aumentos sorpresa. Tu precio se mantiene por un año</div>
-                </div>
-                
-                <div class="plan-card-enhanced p-6 text-center">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
-                        📞
-                    </div>
-                    <div class="font-bold text-xl mb-2">Soporte 24/7</div>
-                    <div class="text-gray-300 text-sm">Asistencia técnica siempre disponible cuando la necesites</div>
-                </div>
-                
-                <div class="plan-card-enhanced p-6 text-center">
-                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
-                        🎬
-                    </div>
-                    <div class="font-bold text-xl mb-2">Netflix Incluido</div>
-                    <div class="text-gray-300 text-sm">Disfruta de Netflix Standard con anuncios incluido en tu plan</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Preguntas Frecuentes Mejoradas -->
-        <section class="mt-20 w-full max-w-3xl mx-auto">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold mb-4">Preguntas Frecuentes</h2>
-                <p class="text-gray-300 text-lg">Todo lo que necesitas saber antes de contratar</p>
-            </div>
-            
-            <div class="space-y-4">
-                <div class="plan-card-enhanced p-6">
-                    <div class="font-bold text-lg mb-3 flex items-center text-cyan-400">
-                        <span class="mr-3">⏱️</span>
-                        ¿Cuánto tarda realmente la instalación?
-                    </div>
-                    <div class="text-gray-300">
-                        <span class="text-green-400 font-bold">Entre 5 a 24 horas hábiles</span> después de confirmar tu solicitud. Trabajamos con equipos especializados para la instalación más rápida del mercado.
-                    </div>
-                </div>
-                
-                <div class="plan-card-enhanced p-6">
-                    <div class="font-bold text-lg mb-3 flex items-center text-cyan-400">
-                        <span class="mr-3">🛠️</span>
-                        ¿Qué equipo necesito y cuánto cuesta?
-                    </div>
-                    <div class="text-gray-300">
-                        <span class="text-green-400 font-bold">Todo el equipo viene incluido sin costo adicional:</span> Módem de última generación, cables de fibra óptica, decodificador 4K (si eliges TV) y configuración profesional.
-                    </div>
-                </div>
-                
-                <div class="plan-card-enhanced p-6">
-                    <div class="font-bold text-lg mb-3 flex items-center text-cyan-400">
-                        <span class="mr-3">🔄</span>
-                        ¿Puedo cambiar o cancelar después?
-                    </div>
-                    <div class="text-gray-300">
-                        <span class="text-green-400 font-bold">Sí, puedes cambiar de plan cuando quieras</span> sin penalizaciones. No hay contratos forzosos de permanencia. Para cancelaciones, solo requieres 30 días de anticipación.
-                    </div>
-                </div>
-                
-                <div class="plan-card-enhanced p-6">
-                    <div class="font-bold text-lg mb-3 flex items-center text-cyan-400">
-                        <span class="mr-3">💳</span>
-                        ¿Hay algún costo de instalación o activación?
-                    </div>
-                    <div class="text-gray-300">
-                        <span class="text-green-400 font-bold">Cero costo por instalación en esta promoción.</span> Solo pagas tu primera mensualidad al momento de la instalación. No hay cargos ocultos ni sorpresas.
-                    </div>
+                <div class="footer-links">
+                    <h4>Información Legal</h4>
+                    <ul>
+                        <li><a href="#">Aviso de Privacidad</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Contrato de Servicio</a></li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="mt-10 text-center">
-                <div class="inline-flex items-center justify-center bg-gradient-to-r from-gray-900 to-black border border-gray-800 rounded-2xl p-4">
-                    <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse mr-3"></div>
-                    <p class="text-gray-300">¿Otra pregunta? Escríbeme por WhatsApp y te respondo al instante</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Llamada a la acción final -->
-        <section class="mt-16 text-center w-full">
-            <div class="plan-card-enhanced p-8">
-                <h3 class="text-2xl font-bold mb-4">¿Listo para experimentar la verdadera velocidad?</h3>
-                <p class="text-gray-300 mb-6 text-lg">Elige tu plan ideal y contáctanos en menos de 1 minuto</p>
-                <button onclick="scrollToTop()" 
-                        class="btn-glow px-10 py-4 rounded-2xl text-xl font-black max-w-sm mx-auto touch-button flex items-center justify-center gap-3">
-                    <span>🚀</span>
-                    VER PLANES DISPONIBLES
-                </button>
-                <p class="text-gray-400 text-sm mt-4">Sin compromisos • Sin llamadas • Todo por WhatsApp</p>
-            </div>
-        </section>
-    </main>
-
-    <!-- Modal de Redirección Mejorado -->
-    <div id="redirectModal" class="redirect-modal">
-        <div class="plan-card-enhanced p-8 max-w-md w-full mx-4">
-            <div class="text-center">
-                <div class="text-6xl mb-6 animate-bounce">📱</div>
-                <h3 class="text-2xl font-bold mb-3">¡Excelente Decisión!</h3>
-                <p class="text-gray-300 mb-4">
-                    Tu solicitud ha sido procesada correctamente. Serás redirigido a WhatsApp para coordinar los detalles de instalación.
+            <div class="footer-bottom">
+                <p class="copyright">
+                    © 2025 Internet Express – Asesores Autorizados Totalplay
                 </p>
-                <p class="text-green-400 font-bold mb-6 text-lg bg-green-900/30 py-3 rounded-xl">
-                    ⚠️ Por favor, ten a la mano tu INE y comprobante de domicilio
-                </p>
-                
-                <!-- Cuenta regresiva mejorada -->
-                <div class="countdown-text">Redirigiendo en:</div>
-                <div class="countdown" id="countdown">3</div>
-                
-                <div class="text-sm text-gray-400 mt-6 p-4 bg-gray-900/50 rounded-xl">
-                    <p class="mb-2">Si no eres redirigido automáticamente:</p>
-                    <button onclick="forceOpenWhatsApp()" 
-                            class="btn-glow px-6 py-3 rounded-xl font-bold mt-2">
-                        📲 ABRIR WHATSAPP AHORA
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer Mejorado con Logo Colorido -->
-    <footer class="mt-20 border-t border-gray-800 pt-12 pb-8 w-full bg-gradient-to-b from-transparent to-black/50">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <div class="flex justify-center items-center mb-6">
-                    <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mr-3">
-                        <span class="text-white font-bold text-xl">TP</span>
-                    </div>
-                    <div class="logo-totalplay text-3xl">
-                        <span class="t">T</span>
-                        <span class="o">o</span>
-                        <span class="t2">t</span>
-                        <span class="a">a</span>
-                        <span class="l">l</span>
-                        <span class="p">p</span>
-                        <span class="l2">l</span>
-                        <span class="a2">a</span>
-                        <span class="y">y</span>
-                    </div>
-                </div>
-                
-                <p class="text-gray-400 text-sm mb-2">Asesor autorizado Juan Meléndez - Distribuidor Oficial Totalplay®</p>
-                <p class="text-gray-500 text-xs mb-4 max-w-2xl mx-auto">
-                    Este sitio es exclusivo para contratación de servicios nuevos. Totalplay es una marca registrada de Grupo Salinas.
-                    Los precios mostrados incluyen IVA.
-                </p>
-                
-                <div class="border-t border-gray-800 pt-6 mt-6">
-                    <p class="text-gray-400 text-sm">Contrata en 1 minuto • Sin complicaciones • Soporte 24/7</p>
-                    <p class="text-gray-500 text-xs mt-2">WhatsApp de atención: <span class="text-cyan-400">81 3119 1393</span></p>
-                    <p class="text-gray-600 text-xs mt-1">Horario de atención: Lunes a Domingo • 8:00 AM - 10:00 PM</p>
-                </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // DATOS DE PLANES
-        const plansData = {
-            basico: {
-                name: "🟢 BÁSICO",
-                plans: [
-                    {
-                        type: "tv",
-                        megas: 150,
-                        price: 599,
-                        name: "150 Mbps TV + Internet",
-                        description: "Perfecto para familias pequeñas",
-                        benefits: ["Totalplay TV 4K", "185 canales HD", "Fibra simétrica 150/150 Mbps"],
-                        recommended: true,
-                        netflixMonths: 5,
-                        netflixLifetime: false,
-                        is100Mbps: false,
-                        tipoServicio: "Internet + TV"
-                    },
-                    {
-                        type: "tv",
-                        megas: 100,
-                        price: 490,
-                        name: "100 Mbps TV + Internet",
-                        description: "Para uso personal básico",
-                        benefits: ["Totalplay TV Básica", "120 canales", "Fibra óptica 100 Mbps"],
-                        recommended: false,
-                        netflixMonths: 0,
-                        netflixLifetime: false,
-                        is100Mbps: true,
-                        tipoServicio: "Internet + TV"
-                    },
-                    {
-                        type: "internet",
-                        megas: 150,
-                        price: 460,
-                        name: "150 Mbps Solo Internet",
-                        description: "Internet rápido sin TV",
-                        benefits: ["Fibra simétrica 150/150 Mbps", "Conexión estable", "WiFi de última generación"],
-                        recommended: false,
-                        netflixMonths: 3,
-                        netflixLifetime: false,
-                        is100Mbps: false,
-                        tipoServicio: "Solo Internet"
-                    },
-                    {
-                        type: "internet",
-                        megas: 100,
-                        price: 390,
-                        name: "100 Mbps Solo Internet",
-                        description: "Internet básico sin TV",
-                        benefits: ["Fibra óptica 100 Mbps", "Ideal para estudiantes", "Conexión básica confiable"],
-                        recommended: false,
-                        netflixMonths: 0,
-                        netflixLifetime: false,
-                        is100Mbps: true,
-                        tipoServicio: "Solo Internet"
-                    }
-                ]
-            },
-            esencial: {
-                name: "🟡 ESENCIAL",
-                plans: [
-                    {
-                        type: "tv",
-                        megas: 350,
-                        price: 799,
-                        name: "350 Mbps TV + Internet",
-                        description: "Ideal para familias grandes",
-                        benefits: ["Totalplay TV 4K", "185 canales HD", "Fibra simétrica 350/350 Mbps"],
-                        recommended: true,
-                        netflixMonths: 5,
-                        netflixLifetime: false,
-                        is100Mbps: false,
-                        tipoServicio: "Internet + TV"
-                    },
-                    {
-                        type: "tv",
-                        megas: 250,
-                        price: 699,
-                        name: "250 Mbps TV + Internet",
-                        description: "Para múltiples dispositivos",
-                        benefits: ["Totalplay TV 4K", "185 canales HD", "Fibra simétrica 250/250 Mbps"],
-                        recommended: false,
-                        netflixMonths: 5,
-                        netflixLifetime: false,
-                        is100Mbps: false,
-                        tipoServicio: "Internet + TV"
-                    },
-                    {
-                        type: "internet",
-                        megas: 350,
-                        price: 669,
-                        name: "350 Mbps Solo Internet",
-                        description: "Internet ultra rápido",
-                        benefits: ["Fibra simétrica 350/350 Mbps", "Alta velocidad", "Perfecto para streaming"],
-                        recommended: false,
-                        netflixMonths: 5,
-                        netflixLifetime: false,
-                        is100Mbps: false,
-                        tipoServicio: "Solo Internet"
-                    },
-                    {
-                        type: "internet",
-                        megas: 250,
-                        price: 559,
-                        name: "250 Mbps Solo Internet",
-                        description: "Internet para trabajo/estudio",
-                        benefits: ["Fibra simétrica 250/250 Mbps", "Estable y confiable", "Ideal para home office"],
-                        recommended: false,
-                        netflixMonths: 5,
-                        netflixLifetime: false,
-                        is100Mbps: false,
-                        tipoServicio: "Solo Internet"
-                    }
-                ]
-            },
-            premium: {
-                name: "🔵 PREMIUM",
-                plans: [
-                    {
-                        type: "tv",
-                        megas: 1200,
-                        price: 1640,
-                        name: "1200 Mbps TV + Internet",
-                        description: "Para gamers y streamers profesionales",
-                        benefits: ["Nuevo Totalplay TV 4K", "Totalplay Surround Sound", "Fibra 1200/1200 Mbps"],
-                        recommended: true,
-                        netflixMonths: 5,
-                        netflixLifetime: true,
-                        is100Mbps: false,
-                        tipoServicio: "Internet + TV"
-                    },
-                    {
-                        type: "tv",
-                        megas: 500,
-                        price: 999,
-                        name: "500 Mbps TV + Internet",
-                        description: "Experiencia premium completa",
-                        benefits: ["Nuevo Totalplay TV 4K", "4K Ultra HD", "Fibra 500/500 Mbps"],
-                        recommended: false,
-                        netflixMonths: 5,
-                        netflixLifetime: false,
-                        is100Mbps: false,
-                        tipoServicio: "Internet + TV"
-                    },
-                    {
-                        type: "internet",
-                        megas: 1200,
-                        price: 1470,
-                        name: "1200 Mbps Solo Internet",
-                        description: "Internet empresarial",
-                        benefits: ["Fibra 1200/1200 Mbps", "Velocidad empresarial", "Soporte prioritario"],
-                        recommended: false,
-                        netflixMonths: 5,
-                        netflixLifetime: true,
-                        is100Mbps: false,
-                        tipoServicio: "Solo Internet"
-                    },
-                    {
-                        type: "internet",
-                        megas: 500,
-                        price: 830,
-                        name: "500 Mbps Solo Internet",
-                        description: "Internet para trabajo remoto",
-                        benefits: ["Fibra 500/500 Mbps", "Conexión premium", "Estabilidad garantizada"],
-                        recommended: false,
-                        netflixMonths: 5,
-                        netflixLifetime: false,
-                        is100Mbps: false,
-                        tipoServicio: "Solo Internet"
-                    }
-                ]
-            },
-            elite: {
-                name: "🟣 ULTRA ELITE",
-                plans: [
-                    {
-                        type: "tv",
-                        megas: 10000,
-                        price: 2999,
-                        name: "10 Gbps TV + Internet",
-                        description: "Velocidad extrema para exigentes",
-                        benefits: ["Nuevo Totalplay TV 4K Pro", "Totalplay Surround Pro", "Fibra 10 Gbps"],
-                        recommended: true,
-                        netflixMonths: 5,
-                        netflixLifetime: true,
-                        is100Mbps: false,
-                        tipoServicio: "Internet + TV"
-                    },
-                    {
-                        type: "tv",
-                        megas: 5000,
-                        price: 2499,
-                        name: "5 Gbps TV + Internet",
-                        description: "Para negocios y hogares premium",
-                        benefits: ["Nuevo Totalplay TV 4K", "Totalplay Surround", "Fibra 5 Gbps"],
-                        recommended: false,
-                        netflixMonths: 5,
-                        netflixLifetime: true,
-                        is100Mbps: false,
-                        tipoServicio: "Internet + TV"
-                    },
-                    {
-                        type: "internet",
-                        megas: 10000,
-                        price: 2499,
-                        name: "10 Gbps Solo Internet",
-                        description: "Internet de nivel empresarial",
-                        benefits: ["Fibra 10 Gbps", "Velocidad extrema", "Soporte VIP 24/7"],
-                        recommended: false,
-                        netflixMonths: 5,
-                        netflixLifetime: true,
-                        is100Mbps: false,
-                        tipoServicio: "Solo Internet"
-                    },
-                    {
-                        type: "internet",
-                        megas: 5000,
-                        price: 1999,
-                        name: "5 Gbps Solo Internet",
-                        description: "Internet para empresas",
-                        benefits: ["Fibra 5 Gbps", "Alto rendimiento", "Conectividad empresarial"],
-                        recommended: false,
-                        netflixMonths: 5,
-                        netflixLifetime: true,
-                        is100Mbps: false,
-                        tipoServicio: "Solo Internet"
-                    }
-                ]
-            }
-        };
-
-        // ESTADO GLOBAL
-        let currentCategory = 'esencial';
-        let selection = {
-            plan: null,
-            planName: '',
-            price: 0,
-            netflixMonths: 0,
-            netflixLifetime: false,
-            is100MbpsPlan: false,
-            tipoServicio: ''
-        };
-
-        // WEBHOOK DE MAKE.COM
-        const MAKE_WEBHOOK_URL = 'https://hook.eu2.make.com/jigm042t5atf3tci3j82n3cxysiva3f0';
-
-        // INICIALIZAR
-        document.addEventListener('DOMContentLoaded', function() {
-            renderPlans(currentCategory);
-            // Iniciar efectos de texto
-            startTextEffects();
-        });
-
-        // EFECTOS DE TEXTO
-        function startTextEffects() {
-            // Efecto parpadeante para títulos
-            const blinkElements = document.querySelectorAll('.blink-text');
-            blinkElements.forEach(el => {
-                setInterval(() => {
-                    el.style.opacity = el.style.opacity === '0.7' ? '1' : '0.7';
-                }, 2000);
-            });
-        }
-
-        // MOSTRAR CATEGORÍA
-        function showCategory(category) {
-            currentCategory = category;
-            
-            // Actualizar botones activos
-            document.querySelectorAll('.category-btn-enhanced').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.currentTarget.classList.add('active');
-            
-            // Renderizar planes
-            renderPlans(category);
-            
-            // Efecto de scroll suave
-            document.getElementById('plans-container').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-
-        // RENDERIZAR PLANES
-        function renderPlans(category) {
-            const container = document.getElementById('plans-container');
-            const categoryData = plansData[category];
-            const isMobile = window.innerWidth < 768;
-            
-            let html = `
-                <h2 class="text-3xl font-bold mb-8 text-center px-2 gradient-text">${categoryData.name}</h2>
-                <div class="grid grid-cols-1 ${isMobile ? '' : 'md:grid-cols-2'} gap-6 md:gap-8">
-            `;
-            
-            categoryData.plans.forEach(plan => {
-                const hasNetflix = plan.netflixMonths > 0;
-                const isRecommended = plan.recommended;
-                const isLifetimeNetflix = plan.netflixLifetime;
-                
-                html += `
-                    <div class="plan-card-enhanced p-6 relative ${isRecommended ? 'border-cyan-500' : ''}">
-                        ${isRecommended ? '<div class="plan-badge-enhanced">🔥 MÁS ELEGIDO</div>' : ''}
-                        
-                        <div class="flex justify-between items-start mb-4 md:mb-6">
-                            <div>
-                                <div class="text-2xl md:text-3xl font-black">${plan.megas} Mbps</div>
-                                <div class="text-xs md:text-sm ${plan.type === 'tv' ? 'text-cyan-400' : 'text-green-400'} font-bold mt-1">
-                                    ${plan.type === 'tv' ? '📺 TV + INTERNET' : '🌐 SOLO INTERNET'}
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-2xl md:text-3xl font-black">$${plan.price}</div>
-                                <div class="text-xs md:text-sm text-gray-400">mensual + IVA</div>
-                            </div>
-                        </div>
-                        
-                        <div class="text-gray-300 text-sm md:text-base mb-4 md:mb-6 font-medium">
-                            ${plan.description}
-                        </div>
-                        
-                        <div class="space-y-2 md:space-y-3 mb-6 md:mb-8">
-                            ${plan.benefits.map(benefit => `
-                                <div class="flex items-center text-xs md:text-sm">
-                                    <div class="w-2 h-2 ${isRecommended ? 'bg-cyan-500' : 'bg-green-500'} rounded-full mr-3 flex-shrink-0"></div>
-                                    <span class="break-words">${benefit}</span>
-                                </div>
-                            `).join('')}
-                            ${hasNetflix ? `
-                                <div class="flex items-center text-xs md:text-sm">
-                                    <div class="w-2 h-2 bg-red-500 rounded-full mr-3 flex-shrink-0"></div>
-                                    <span class="text-red-400 font-bold break-words">
-                                        Netflix Standard con anuncios 
-                                        ${isLifetimeNetflix ? 
-                                            '<span class="lifetime-netflix">GRATIS PARA SIEMPRE</span>' : 
-                                            `${plan.netflixMonths} MESES GRATIS`
-                                        }
-                                    </span>
-                                </div>
-                            ` : ''}
-                        </div>
-                        
-                        <button onclick="selectPlan(${plan.megas}, ${plan.price}, '${plan.name}', ${plan.netflixMonths}, ${plan.netflixLifetime}, ${plan.is100Mbps}, '${plan.tipoServicio}')" 
-                                class="w-full ${isRecommended ? 'btn-glow' : 'bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800'} text-white py-3 md:py-4 rounded-xl font-bold text-sm md:text-base transition-all duration-300 touch-button shadow-lg">
-                            ${isRecommended ? '✅ ELEGIR ESTE PLAN' : 'SELECCIONAR ESTE PLAN'}
-                        </button>
-                    </div>
-                `;
-            });
-            
-            html += `</div>`;
-            container.innerHTML = html;
-        }
-
-        // SELECCIONAR PLAN
-        function selectPlan(megas, price, name, netflixMonths, netflixLifetime, is100Mbps, tipoServicio) {
-            selection.plan = megas;
-            selection.planName = name;
-            selection.price = price;
-            selection.netflixMonths = netflixMonths;
-            selection.netflixLifetime = netflixLifetime;
-            selection.is100MbpsPlan = is100Mbps;
-            selection.tipoServicio = tipoServicio;
-            
-            updateSummary();
-            
-            // Mostrar paso 2 con efectos
-            const step2 = document.getElementById('step2');
-            step2.classList.remove('hidden');
-            step2.classList.add('fade-in');
-            
-            // Scroll suave al formulario
-            step2.scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'start' 
-            });
-            
-            // Actualizar textos
-            document.getElementById('selectedPlanText').textContent = name;
-            document.getElementById('selectedPriceText').textContent = `$${price}`;
-            
-            // Efecto visual de selección
-            const selectedElement = event.currentTarget;
-            selectedElement.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                selectedElement.style.transform = 'scale(1)';
-            }, 150);
-            
-            // Track Facebook
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'AddToCart', {
-                    content_name: name,
-                    value: price,
-                    currency: 'MXN'
-                });
-            }
-        }
-
-        // ACTUALIZAR RESUMEN
-        function updateSummary() {
-            document.getElementById('summaryPlan').textContent = selection.planName;
-            document.getElementById('summaryTotal').textContent = `$${selection.price}`;
-            
-            // Netflix info
-            const netflixElement = document.getElementById('netflixIncluded');
-            if (selection.netflixMonths > 0 && !selection.is100MbpsPlan) {
-                if (selection.netflixLifetime) {
-                    netflixElement.innerHTML = `
-                        <div class="flex items-center justify-center">
-                            <span class="text-2xl mr-2">🎬</span>
-                            <span class="font-bold">Netflix Standard con anuncios <span class="text-green-400">GRATIS PARA SIEMPRE</span></span>
-                        </div>
-                    `;
-                } else {
-                    netflixElement.innerHTML = `
-                        <div class="flex items-center justify-center">
-                            <span class="text-2xl mr-2">🎬</span>
-                            <span class="font-bold">Netflix Standard con anuncios <span class="text-green-400">${selection.netflixMonths} MESES GRATIS</span></span>
-                        </div>
-                    `;
-                }
-                netflixElement.classList.remove('hidden');
+        // Header scroll effect
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
             } else {
-                netflixElement.innerHTML = '';
-                netflixElement.classList.add('hidden');
-            }
-        }
-
-        // ENVIAR A MAKE.COM
-        async function sendToMake(formData) {
-            try {
-                // Validar datos
-                if (!selection.tipoServicio || !selection.planName || !selection.price) {
-                    console.error("❌ Faltan datos del plan");
-                    return false;
-                }
-                
-                // Datos para Make.com
-                const dataToSend = {
-                    "Nombre": formData.nombre || "",
-                    "Correo": formData.correo || "",
-                    "Telefono": formData.telefono || "",
-                    "TipoServicio": selection.tipoServicio || "",
-                    "Plan": selection.planName || "",
-                    "PrecioMensual": selection.price.toString() || "0",
-                    "Fecha": new Date().toLocaleDateString('es-MX')
-                };
-                
-                console.log("📤 ENVIANDO A MAKE.COM:", dataToSend);
-                
-                // Enviar datos
-                const response = await fetch(MAKE_WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(dataToSend)
-                });
-                
-                if (response.ok) {
-                    console.log("✅ Datos enviados a Make.com");
-                    return true;
-                } else {
-                    console.error("❌ Error Make.com:", response.status);
-                    return false;
-                }
-                
-            } catch (error) {
-                console.error("❌ Error conexión:", error);
-                return false;
-            }
-        }
-
-        // FORZAR APERTURA WHATSAPP
-        function forceOpenWhatsApp() {
-            const nombre = document.getElementById('nombre').value.trim();
-            const telefono = document.getElementById('telefono').value.trim();
-            
-            if (!nombre || !telefono) {
-                alert("Por favor completa los datos del formulario.");
-                return;
-            }
-            
-            sendWhatsApp(nombre, document.getElementById('correo').value.trim(), telefono);
-        }
-
-        // VALIDAR Y ENVIAR
-        async function validateAndSend() {
-            const nombre = document.getElementById('nombre').value.trim();
-            const correo = document.getElementById('correo').value.trim();
-            const telefono = document.getElementById('telefono').value.trim();
-            
-            // Validación
-            if (!nombre || !correo || !telefono) {
-                alert('Por favor completa todos los campos requeridos.');
-                return;
-            }
-            
-            if (!telefono.match(/^\d{10}$/)) {
-                alert('Ingresa un número de teléfono válido de 10 dígitos.');
-                return;
-            }
-            
-            if (!correo.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-                alert('Ingresa un correo electrónico válido.');
-                return;
-            }
-            
-            if (!selection.planName) {
-                alert('Por favor selecciona un plan primero.');
-                scrollToTop();
-                return;
-            }
-            
-            // Datos del formulario
-            const formData = {
-                nombre: nombre,
-                correo: correo,
-                telefono: telefono
-            };
-            
-            // Enviar a Make.com
-            await sendToMake(formData);
-            
-            // Mostrar modal
-            showRedirectModal();
-        }
-
-        // MODAL DE REDIRECCIÓN
-        function showRedirectModal() {
-            const modal = document.getElementById('redirectModal');
-            modal.classList.add('show');
-            
-            let countdown = 3;
-            const countdownElement = document.getElementById('countdown');
-            countdownElement.textContent = countdown;
-            
-            const countdownInterval = setInterval(() => {
-                countdown--;
-                countdownElement.textContent = countdown;
-                
-                if (countdown <= 0) {
-                    clearInterval(countdownInterval);
-                    modal.classList.remove('show');
-                    
-                    // Obtener datos y abrir WhatsApp
-                    const nombre = document.getElementById('nombre').value.trim();
-                    const correo = document.getElementById('correo').value.trim();
-                    const telefono = document.getElementById('telefono').value.trim();
-                    sendWhatsApp(nombre, correo, telefono);
-                }
-            }, 1000);
-        }
-
-        // ENVIAR WHATSAPP
-        function sendWhatsApp(nombre, correo, telefono) {
-            const phone = '5218131191393';
-            
-            // Crear mensaje CORREGIDO
-            let message = `¡Hola! 👋\n\n`;
-            message += `Mi nombre es *${nombre}* y quiero contratar Totalplay Fibra Óptica.\n\n`;
-            message += `📋 *INFORMACIÓN DEL PLAN SELECCIONADO:*\n`;
-            message += `• *Tipo de Servicio:* ${selection.tipoServicio}\n`;
-            message += `• *Plan Contratado:* ${selection.planName}\n`;
-            message += `• *Precio Mensual FIJO:* $${selection.price} MXN/mes + IVA\n\n`;
-            
-            if (selection.netflixMonths > 0 && !selection.is100MbpsPlan) {
-                if (selection.netflixLifetime) {
-                    message += `🎬 *Beneficio Incluido:* Netflix Standard con anuncios *GRATIS PARA SIEMPRE*\n\n`;
-                } else {
-                    message += `🎬 *Beneficio Incluido:* Netflix Standard con anuncios *${selection.netflixMonths} MESES GRATIS*\n\n`;
-                }
-            }
-            
-            message += `📞 *MIS DATOS DE CONTACTO:*\n`;
-            message += `• *Nombre Completo:* ${nombre}\n`;
-            message += `• *Correo Electrónico:* ${correo}\n`;
-            message += `• *Teléfono de Contacto:* ${telefono}\n\n`;
-            
-            message += `💼 *TIPO DE CONTRATACIÓN:*\n`;
-            message += `• *Cliente:* NUEVO CONTRATO\n`;
-            message += `• *Instalación:* GRATIS (promoción vigente)\n`;
-            message += `• *Requisitos:* INE y comprobante de domicilio listos\n\n`;
-            
-            message += `✅ *POR FAVOR CONTÁCTAME PARA COORDINAR LA INSTALACIÓN A LA BREVEDAD.*`;
-            
-            // Codificar mensaje
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
-            
-            // Track conversión
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead', {
-                    value: selection.price,
-                    currency: 'MXN'
-                });
-            }
-            
-            // Abrir WhatsApp
-            window.open(whatsappUrl, '_blank');
-        }
-
-        // SCROLL TO TOP
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // RESPONSIVE
-        window.addEventListener('resize', function() {
-            renderPlans(currentCategory);
-        });
-
-        // CERRAR MODAL
-        document.getElementById('redirectModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.classList.remove('show');
+                header.classList.remove('scrolled');
             }
         });
+
+        // Smooth scroll para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animación en scroll con Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animación
+        document.querySelectorAll('.benefit-section2, .plan-card, .faq-item, .contact-info').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Efecto de animación en hover para botones
+        document.querySelectorAll('.btn, .plan-button, .contact-btn').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.05)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Filtro de planes
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const planCategories = document.querySelectorAll('.plan-category');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                planCategories.forEach(category => {
+                    category.classList.remove('active');
+                });
+                
+                const filterValue = button.getAttribute('data-filter');
+                const categoryToShow = document.getElementById(`${filterValue}-plans`);
+                if (categoryToShow) {
+                    categoryToShow.classList.add('active');
+                }
+            });
+        });
+
+        // Sistema de FAQ (acordeón)
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('.faq-icon');
+                
+                // Cerrar otras respuestas
+                document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                    if (otherAnswer !== answer && otherAnswer.classList.contains('active')) {
+                        otherAnswer.classList.remove('active');
+                        otherAnswer.previousElementSibling.querySelector('.faq-icon').classList.remove('active');
+                    }
+                });
+                
+                // Alternar respuesta actual
+                answer.classList.toggle('active');
+                icon.classList.toggle('active');
+            });
+        });
+
+        // Efecto de onda en botones
+        document.querySelectorAll('.btn, .plan-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const x = e.clientX - e.target.getBoundingClientRect().left;
+                const y = e.clientY - e.target.getBoundingClientRect().top;
+                
+                const ripple = document.createElement('span');
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 1000);
+            });
+        });
+
+        // Animación de entrada para elementos principales
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroContent = document.querySelector('.hero-content');
+            heroContent.style.animation = 'fadeInUp 1s ease-out';
+        });
+
+        // Efecto de partículas flotantes
+        function createFloatingElement() {
+            const floating = document.createElement('div');
+            floating.style.position = 'fixed';
+            floating.style.width = Math.random() * 20 + 5 + 'px';
+            floating.style.height = floating.style.width;
+            floating.style.background = `rgba(${Math.random() * 100 + 155}, ${Math.random() * 100 + 155}, 255, ${Math.random() * 0.3 + 0.1})`;
+            floating.style.borderRadius = '50%';
+            floating.style.left = Math.random() * 100 + 'vw';
+            floating.style.top = '-20px';
+            floating.style.pointerEvents = 'none';
+            floating.style.zIndex = '1';
+            
+            document.body.appendChild(floating);
+            
+            const animation = floating.animate([
+                { transform: 'translateY(0) rotate(0deg)', opacity: 0 },
+                { transform: `translateY(${window.innerHeight + 20}px) rotate(${Math.random() * 360}deg)`, opacity: 0.5 }
+            ], {
+                duration: Math.random() * 5000 + 5000,
+                easing: 'linear'
+            });
+            
+            animation.onfinish = () => floating.remove();
+        }
+
+        // Crear partículas flotantes cada 500ms
+        setInterval(createFloatingElement, 500);
     </script>
 </body>
 </html>
