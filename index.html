@@ -434,7 +434,7 @@
             box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
         }
 
-        /* Sección ¿Por qué Totalplay? */
+        /* Sección ¿Por qué miles eligen Totalplay? - CORREGIDO PARA MÓVILES */
         .why-section {
             padding: 80px 5%;
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -450,17 +450,32 @@
             z-index: 10;
         }
 
-        .why-title {
+        /* TÍTULO PARA DESKTOP - con letras de colores */
+        .why-title-desktop {
             font-size: 2.8rem;
             color: white;
             margin-bottom: 20px;
             font-weight: 800;
             text-align: center;
+            line-height: 1.3;
+        }
+
+        /* TÍTULO PARA MÓVILES - simplificado */
+        .why-title-mobile {
+            display: none;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-align: center;
+            line-height: 1.3;
         }
 
         .why-title-totalplay {
             font-weight: 900;
             letter-spacing: -1px;
+            display: inline-block;
+            white-space: nowrap;
         }
 
         .why-title-totalplay span {
@@ -476,6 +491,17 @@
         .why-title-l2 { color: #10B981; }
         .why-title-a2 { color: #F59E0B; }
         .why-title-y { color: #EF4444; }
+
+        /* Versión simplificada para móviles */
+        .totalplay-simple {
+            display: inline-block;
+            font-weight: 900;
+            background: linear-gradient(90deg, #3B82F6, #10B981, #F59E0B, #EF4444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            white-space: nowrap;
+        }
 
         .why-subtitle {
             font-size: 1.3rem;
@@ -1096,6 +1122,14 @@
             .contact-container {
                 grid-template-columns: 1fr 1fr;
             }
+            
+            .why-title-desktop {
+                display: block;
+            }
+            
+            .why-title-mobile {
+                display: none;
+            }
         }
 
         /* Tablets y laptops pequeñas */
@@ -1114,6 +1148,10 @@
             
             .contact-container {
                 grid-template-columns: 1fr;
+            }
+            
+            .why-title-desktop {
+                font-size: 2.5rem;
             }
         }
 
@@ -1165,6 +1203,20 @@
             .contact-container {
                 grid-template-columns: 1fr;
                 gap: 30px;
+            }
+            
+            /* Mostrar título móvil en tablets */
+            .why-title-desktop {
+                display: none;
+            }
+            
+            .why-title-mobile {
+                display: block;
+                font-size: 2.2rem;
+            }
+            
+            .why-title-totalplay {
+                white-space: normal;
             }
         }
 
@@ -1241,8 +1293,9 @@
                 max-width: 300px;
             }
             
-            .why-title {
-                font-size: 2rem;
+            .why-title-mobile {
+                font-size: 1.8rem;
+                padding: 0 10px;
             }
             
             .why-subtitle {
@@ -1381,9 +1434,17 @@
                 padding: 12px 15px;
             }
             
-            .why-title {
-                font-size: 1.8rem;
+            .why-title-mobile {
+                font-size: 1.6rem;
                 padding: 0 10px;
+                line-height: 1.2;
+            }
+            
+            .totalplay-simple {
+                display: block;
+                margin: 5px 0;
+                font-size: 2rem;
+                white-space: nowrap;
             }
             
             .why-subtitle {
@@ -1517,6 +1578,14 @@
             .nav-links {
                 top: 60px;
             }
+            
+            .why-title-mobile {
+                font-size: 1.4rem;
+            }
+            
+            .totalplay-simple {
+                font-size: 1.8rem;
+            }
         }
 
         /* Móviles muy pequeños */
@@ -1529,7 +1598,11 @@
                 font-size: 1.1rem;
             }
             
-            .why-title {
+            .why-title-mobile {
+                font-size: 1.3rem;
+            }
+            
+            .totalplay-simple {
                 font-size: 1.6rem;
             }
             
@@ -1713,10 +1786,11 @@
         </div>
     </section>
 
-    <!-- Sección 2: ¿Por qué miles eligen Totalplay? -->
+    <!-- Sección 2: ¿Por qué miles eligen Totalplay? - VERSIÓN CORREGIDA -->
     <section class="why-section" id="why-totalplay">
         <div class="why-container">
-            <h2 class="why-title">
+            <!-- Título para desktop (con letras de colores) -->
+            <h2 class="why-title-desktop">
                 ¿Por qué miles eligen 
                 <span class="why-title-totalplay">
                     <span class="why-title-t">T</span>
@@ -1730,6 +1804,12 @@
                     <span class="why-title-y">y</span>
                 </span>
                 ?
+            </h2>
+            
+            <!-- Título para móviles (simplificado) -->
+            <h2 class="why-title-mobile">
+                ¿Por qué miles eligen
+                <span class="totalplay-simple">Totalplay</span>?
             </h2>
             
             <p class="why-subtitle">
@@ -2190,7 +2270,7 @@
                 <div class="footer-links">
                     <h4>Enlaces rápidos</h4>
                     <ul>
-                        <li><a href="#why-totalplay">¿Por qué Totalplay?</a></li>
+                        <li><a href="#why-totalplay">Beneficios</a></li>
                         <li><a href="#plans-section">Planes</a></li>
                         <li><a href="#faq">Preguntas frecuentes</a></li>
                         <li><a href="#contact">Contacto</a></li>
