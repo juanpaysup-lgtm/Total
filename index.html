@@ -129,20 +129,6 @@
             border-bottom: 2px solid #3B82F6;
         }
 
-        /* Tipografía Netflix */
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-        .netflix-font {
-            font-family: 'Bebas Neue', sans-serif;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .netflix-red {
-            color: #e50914 !important;
-            animation: pulse 2s infinite;
-        }
-
         /* Navegación simplificada y responsive */
         header {
             position: fixed;
@@ -863,79 +849,6 @@
             font-size: 1.1rem;
         }
 
-        /* Contenedor de Promociones */
-        .promo-selector {
-            margin: 15px 0;
-            padding: 12px;
-            background: rgba(15, 23, 42, 0.6);
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .promo-title {
-            font-size: 0.8rem;
-            color: #ffffff;
-            text-transform: uppercase;
-            font-weight: 800;
-            margin-bottom: 10px;
-            display: block;
-            text-align: center;
-            letter-spacing: 1px;
-        }
-
-        .promo-options {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        /* Estilo Base de las etiquetas */
-        .promo-label {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 15px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            background: #1e293b;
-            color: #94a3b8;
-        }
-
-        /* Escondemos el radio button */
-        .promo-option input[type="radio"] {
-            display: none;
-        }
-
-        /* --- PROMOCIÓN 1: Estilo NETFLIX (Rojo) --- */
-        .promo-netflix input[type="radio"]:checked + .promo-label {
-            border-color: #E50914;
-            background: rgba(229, 9, 20, 0.15);
-            color: #ffffff;
-            box-shadow: 0 0 15px rgba(229, 9, 20, 0.3);
-        }
-
-        /* --- PROMOCIÓN 2: Estilo DESCUENTO (Amarillo/Dorado) --- */
-        .promo-discount input[type="radio"]:checked + .promo-label {
-            border-color: #f59e0b;
-            background: rgba(245, 158, 11, 0.15);
-            color: #ffffff;
-            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
-        }
-
-        /* Iconos */
-        .promo-label i {
-            font-size: 1.1rem;
-        }
-
-        .promo-label small {
-            font-size: 0.75rem;
-            opacity: 0.9;
-        }
-
         .plan-button {
             padding: 12px 20px;
             border-radius: 8px;
@@ -1527,20 +1440,6 @@
             .plan-card.premium::before {
                 display: none; /* Simplificar en móviles */
             }
-            
-            /* Ajustes para selectores de promoción en móviles */
-            .promo-selector {
-                padding: 10px;
-            }
-            
-            .promo-label {
-                padding: 8px 12px;
-                font-size: 0.8rem;
-            }
-            
-            .promo-label small {
-                font-size: 0.7rem;
-            }
         }
 
         /* Móviles medianos */
@@ -1910,7 +1809,7 @@
                         <i class="fas fa-film"></i>
                     </div>
                     <div class="benefit-content-compact">
-                        <h3><span class="netflix-font netflix-red">NETFLIX</span> incluido</h3>
+                        <h3>Entretenimiento Premium</h3>
                         <p>Mejor contenido</p>
                     </div>
                 </div>
@@ -1997,8 +1896,8 @@
                     <div class="benefit-icon-section2">
                         <i class="fas fa-film"></i>
                     </div>
-                    <h3><span class="netflix-font netflix-red">NETFLIX</span> Incluido</h3>
-                    <p>Disfruta de Netflix Standard con anuncios incluido en tu plan</p>
+                    <h3>Entretenimiento Premium</h3>
+                    <p>Disfruta del mejor contenido en tu hogar</p>
                 </div>
             </div>
         </div>
@@ -2024,32 +1923,6 @@
             
             <!-- Planes TV + Internet -->
             <div class="plan-category active" id="tv-internet-plans">
-                <!-- Plan 100 Mbps - CORREGIDO -->
-                <div class="plan-card">
-                    <div class="plan-badge badge-tv-internet">
-                        TV + Internet
-                    </div>
-                    <h3 class="plan-name">Plan 100 Mbps</h3>
-                    <div class="price-container">
-                        <div class="plan-price">$490</div>
-                        <div class="plan-price-period">Pronto pago /mes</div>
-                        <div class="price-note blink">$460 al 6to mes</div>
-                    </div>
-                    <ul class="plan-features">
-                        <li>185 canales HD/4K</li>
-                        <li>Totalplay TV 4K incluido</li>
-                        <li>Fibra 100% simétrica
-                            <span class="info-icon">
-                                <i class="fas fa-info-circle"></i>
-                                <span class="tooltip-text">Misma velocidad para subir y descargar archivos</span>
-                            </span>
-                        </li>
-                    </ul>
-                    <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20%2B%20TV%20de%20100%20Megas%20por%20%24490%2Fmensual" target="_blank" class="plan-button">
-                        <i class="fab fa-whatsapp"></i> Contratar este plan
-                    </a>
-                </div>
-                
                 <!-- Plan 150 Mbps -->
                 <div class="plan-card">
                     <div class="plan-badge badge-tv-internet">
@@ -2071,27 +1944,6 @@
                             </span>
                         </li>
                     </ul>
-                    
-                    <!-- Selector de Promoción para Plan 150 Mbps TV+Internet -->
-                    <div class="promo-selector">
-                        <span class="promo-title">ELIGE TU PROMOCIÓN</span>
-                        <div class="promo-options">
-                            <label class="promo-option promo-netflix">
-                                <input type="radio" name="promo_150_tv" value="Netflix 5 meses sin costo" checked>
-                                <span class="promo-label">
-                                    <span><i class="fab fa-netflix"></i> NETFLIX SIN COSTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                            <label class="promo-option promo-discount">
-                                <input type="radio" name="promo_150_tv" value="$60 descuento x 5 meses">
-                                <span class="promo-label">
-                                    <span><i class="fas fa-tag"></i> $60 DE DESCUENTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                        </div>
-                    </div>
                     
                     <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20%2B%20TV%20de%20150%20Megas%20por%20%24599%2Fmensual" target="_blank" class="plan-button">
                         <i class="fab fa-whatsapp"></i> Contratar este plan
@@ -2122,27 +1974,6 @@
                         <li>Soporte 24/7</li>
                     </ul>
                     
-                    <!-- Selector de Promoción para Plan 250 Mbps TV+Internet -->
-                    <div class="promo-selector">
-                        <span class="promo-title">ELIGE TU PROMOCIÓN</span>
-                        <div class="promo-options">
-                            <label class="promo-option promo-netflix">
-                                <input type="radio" name="promo_250_tv" value="Netflix 5 meses sin costo" checked>
-                                <span class="promo-label">
-                                    <span><i class="fab fa-netflix"></i> NETFLIX SIN COSTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                            <label class="promo-option promo-discount">
-                                <input type="radio" name="promo_250_tv" value="$60 descuento x 5 meses">
-                                <span class="promo-label">
-                                    <span><i class="fas fa-tag"></i> $60 DE DESCUENTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-                    
                     <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20%2B%20TV%20de%20250%20Megas%20por%20%24699%2Fmensual" target="_blank" class="plan-button">
                         <i class="fab fa-whatsapp"></i> Contratar este plan
                     </a>
@@ -2171,27 +2002,6 @@
                         <li>Soporte 24/7</li>
                     </ul>
                     
-                    <!-- Selector de Promoción para Plan 350 Mbps TV+Internet -->
-                    <div class="promo-selector">
-                        <span class="promo-title">ELIGE TU PROMOCIÓN</span>
-                        <div class="promo-options">
-                            <label class="promo-option promo-netflix">
-                                <input type="radio" name="promo_350_tv" value="Netflix 5 meses sin costo" checked>
-                                <span class="promo-label">
-                                    <span><i class="fab fa-netflix"></i> NETFLIX SIN COSTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                            <label class="promo-option promo-discount">
-                                <input type="radio" name="promo_350_tv" value="$60 descuento x 5 meses">
-                                <span class="promo-label">
-                                    <span><i class="fas fa-tag"></i> $60 DE DESCUENTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-                    
                     <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20%2B%20TV%20de%20350%20Megas%20por%20%24799%2Fmensual" target="_blank" class="plan-button">
                         <i class="fab fa-whatsapp"></i> Contratar este plan
                     </a>
@@ -2219,27 +2029,6 @@
                             </span>
                         </li>
                     </ul>
-                    
-                    <!-- Selector de Promoción para Plan 500 Mbps TV+Internet -->
-                    <div class="promo-selector">
-                        <span class="promo-title">ELIGE TU PROMOCIÓN</span>
-                        <div class="promo-options">
-                            <label class="promo-option promo-netflix">
-                                <input type="radio" name="promo_500_tv" value="Netflix 5 meses sin costo" checked>
-                                <span class="promo-label">
-                                    <span><i class="fab fa-netflix"></i> NETFLIX SIN COSTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                            <label class="promo-option promo-discount">
-                                <input type="radio" name="promo_500_tv" value="$60 descuento x 5 meses">
-                                <span class="promo-label">
-                                    <span><i class="fas fa-tag"></i> $60 DE DESCUENTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                        </div>
-                    </div>
                     
                     <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20%2B%20TV%20de%20500%20Megas%20por%20%24999%2Fmensual" target="_blank" class="plan-button">
                         <i class="fab fa-whatsapp"></i> Contratar este plan
@@ -2275,27 +2064,6 @@
                         </li>
                     </ul>
                     
-                    <!-- Selector de Promoción para Plan 1200 Mbps TV+Internet -->
-                    <div class="promo-selector">
-                        <span class="promo-title">ELIGE TU PROMOCIÓN</span>
-                        <div class="promo-options">
-                            <label class="promo-option promo-netflix">
-                                <input type="radio" name="promo_1200_tv" value="Netflix 5 meses sin costo" checked>
-                                <span class="promo-label">
-                                    <span><i class="fab fa-netflix"></i> NETFLIX SIN COSTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                            <label class="promo-option promo-discount">
-                                <input type="radio" name="promo_1200_tv" value="$60 descuento x 5 meses">
-                                <span class="promo-label">
-                                    <span><i class="fas fa-tag"></i> $60 DE DESCUENTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-                    
                     <a href="https://wa.me/528131191393?text=Me%20interesa%20el%20plan%201200%20Mbps%20de%20TV%20%2B%20Internet" target="_blank" class="plan-button">
                         <i class="fab fa-whatsapp"></i> Contratar ahora
                     </a>
@@ -2304,30 +2072,6 @@
             
             <!-- Planes Solo Internet -->
             <div class="plan-category" id="internet-plans">
-                <!-- Plan 100 Mbps -->
-                <div class="plan-card">
-                    <div class="plan-badge badge-internet">
-                        Solo Internet
-                    </div>
-                    <h3 class="plan-name">Plan 100 Mbps</h3>
-                    <div class="price-container">
-                        <div class="plan-price">$390</div>
-                        <div class="plan-price-period">Pronto pago /mes</div>
-                        <div class="price-note blink">$370 al 6to mes</div>
-                    </div>
-                    <ul class="plan-features">
-                        <li>Fibra 100% simétrica
-                            <span class="info-icon">
-                                <i class="fas fa-info-circle"></i>
-                                <span class="tooltip-text">Velocidad simétrica para videollamadas y trabajo remoto</span>
-                            </span>
-                        </li>
-                    </ul>
-                    <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20de%20100%20Megas%20por%20%24390%2Fmensual" target="_blank" class="plan-button">
-                        <i class="fab fa-whatsapp"></i> Contratar este plan
-                    </a>
-                </div>
-                
                 <!-- Plan 150 Mbps -->
                 <div class="plan-card">
                     <div class="plan-badge badge-internet">
@@ -2347,27 +2091,6 @@
                             </span>
                         </li>
                     </ul>
-                    
-                    <!-- Selector de Promoción para Plan 150 Mbps Solo Internet -->
-                    <div class="promo-selector">
-                        <span class="promo-title">ELIGE TU PROMOCIÓN</span>
-                        <div class="promo-options">
-                            <label class="promo-option promo-netflix">
-                                <input type="radio" name="promo_150_s" value="Netflix 3 meses sin costo" checked>
-                                <span class="promo-label">
-                                    <span><i class="fab fa-netflix"></i> NETFLIX SIN COSTO</span>
-                                    <small>3 MESES</small>
-                                </span>
-                            </label>
-                            <label class="promo-option promo-discount">
-                                <input type="radio" name="promo_150_s" value="$60 descuento x 5 meses">
-                                <span class="promo-label">
-                                    <span><i class="fas fa-tag"></i> $60 DE DESCUENTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                        </div>
-                    </div>
                     
                     <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20de%20150%20Megas%20por%20%24460%2Fmensual" target="_blank" class="plan-button">
                         <i class="fab fa-whatsapp"></i> Contratar este plan
@@ -2396,27 +2119,6 @@
                         <li>Soporte 24/7</li>
                     </ul>
                     
-                    <!-- Selector de Promoción para Plan 250 Mbps Solo Internet -->
-                    <div class="promo-selector">
-                        <span class="promo-title">ELIGE TU PROMOCIÓN</span>
-                        <div class="promo-options">
-                            <label class="promo-option promo-netflix">
-                                <input type="radio" name="promo_250_s" value="Netflix 5 meses sin costo" checked>
-                                <span class="promo-label">
-                                    <span><i class="fab fa-netflix"></i> NETFLIX SIN COSTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                            <label class="promo-option promo-discount">
-                                <input type="radio" name="promo_250_s" value="$60 descuento x 5 meses">
-                                <span class="promo-label">
-                                    <span><i class="fas fa-tag"></i> $60 DE DESCUENTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-                    
                     <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20de%20250%20Megas%20por%20%24559%2Fmensual" target="_blank" class="plan-button">
                         <i class="fab fa-whatsapp"></i> Contratar este plan
                     </a>
@@ -2443,27 +2145,6 @@
                         <li>Soporte 24/7</li>
                     </ul>
                     
-                    <!-- Selector de Promoción para Plan 350 Mbps Solo Internet -->
-                    <div class="promo-selector">
-                        <span class="promo-title">ELIGE TU PROMOCIÓN</span>
-                        <div class="promo-options">
-                            <label class="promo-option promo-netflix">
-                                <input type="radio" name="promo_350_s" value="Netflix 5 meses sin costo" checked>
-                                <span class="promo-label">
-                                    <span><i class="fab fa-netflix"></i> NETFLIX SIN COSTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                            <label class="promo-option promo-discount">
-                                <input type="radio" name="promo_350_s" value="$60 descuento x 5 meses">
-                                <span class="promo-label">
-                                    <span><i class="fas fa-tag"></i> $60 DE DESCUENTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-                    
                     <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20de%20350%20Megas%20por%20%24669%2Fmensual" target="_blank" class="plan-button">
                         <i class="fab fa-whatsapp"></i> Contratar este plan
                     </a>
@@ -2489,27 +2170,6 @@
                         </li>
                         <li>Soporte 24/7</li>
                     </ul>
-                    
-                    <!-- Selector de Promoción para Plan 500 Mbps Solo Internet -->
-                    <div class="promo-selector">
-                        <span class="promo-title">ELIGE TU PROMOCIÓN</span>
-                        <div class="promo-options">
-                            <label class="promo-option promo-netflix">
-                                <input type="radio" name="promo_500_s" value="Netflix 5 meses sin costo" checked>
-                                <span class="promo-label">
-                                    <span><i class="fab fa-netflix"></i> NETFLIX SIN COSTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                            <label class="promo-option promo-discount">
-                                <input type="radio" name="promo_500_s" value="$60 descuento x 5 meses">
-                                <span class="promo-label">
-                                    <span><i class="fas fa-tag"></i> $60 DE DESCUENTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                        </div>
-                    </div>
                     
                     <a href="https://wa.me/528131191393?text=Hola,%20vengo%20de%20la%20pagina%20Internet%20Express%20y%20me%20interesa%20el%20plan%20Internet%20de%20500%20Megas%20por%20%24830%2Fmensual" target="_blank" class="plan-button">
                         <i class="fab fa-whatsapp"></i> Contratar este plan
@@ -2542,27 +2202,6 @@
                             </span>
                         </li>
                     </ul>
-                    
-                    <!-- Selector de Promoción para Plan 1200 Mbps Solo Internet -->
-                    <div class="promo-selector">
-                        <span class="promo-title">ELIGE TU PROMOCIÓN</span>
-                        <div class="promo-options">
-                            <label class="promo-option promo-netflix">
-                                <input type="radio" name="promo_1200_s" value="Netflix 5 meses sin costo" checked>
-                                <span class="promo-label">
-                                    <span><i class="fab fa-netflix"></i> NETFLIX SIN COSTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                            <label class="promo-option promo-discount">
-                                <input type="radio" name="promo_1200_s" value="$60 descuento x 5 meses">
-                                <span class="promo-label">
-                                    <span><i class="fas fa-tag"></i> $60 DE DESCUENTO</span>
-                                    <small>5 MESES</small>
-                                </span>
-                            </label>
-                        </div>
-                    </div>
                     
                     <a href="https://wa.me/528131191393?text=Me%20interesa%20el%20plan%201200%20Mbps%20Solo%20Internet" target="_blank" class="plan-button">
                         <i class="fab fa-whatsapp"></i> Contratar ahora
@@ -2968,12 +2607,10 @@
         document.querySelectorAll('.plan-button').forEach(button => {
             button.addEventListener('click', function(e) {
                 const card = this.closest('.plan-card');
-                const selectedPromo = card.querySelector('input[type="radio"]:checked');
                 const baseHref = this.getAttribute('href');
                 
-                if (selectedPromo) {
-                    e.preventDefault();
-                    // Eliminar cualquier parámetro existente y construir el nuevo mensaje
+                if (baseHref) {
+                    // Construir el mensaje limpio
                     const baseUrl = baseHref.split('?')[0];
                     const planText = this.closest('.plan-card').querySelector('.plan-name').textContent;
                     const priceText = this.closest('.plan-card').querySelector('.plan-price').textContent;
@@ -2983,25 +2620,9 @@
                     const planType = isTV ? 'Internet + TV' : 'Internet';
                     
                     // Construir el mensaje limpio
-                    let message = `Hola, vengo de la pagina Internet Express y me interesa el plan ${planType} de ${planText} por ${priceText}/mensual con la promoción: ${selectedPromo.value}`;
+                    let message = `Hola, vengo de la pagina Internet Express y me interesa el plan ${planType} de ${planText} por ${priceText}/mensual`;
                     
                     window.open(baseUrl + '?text=' + encodeURIComponent(message), '_blank');
-                }
-            });
-        });
-
-        // Añadir efecto de hover a los selectores de promoción
-        document.querySelectorAll('.promo-label').forEach(label => {
-            label.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-2px)';
-                this.style.boxShadow = '0 5px 10px rgba(0, 0, 0, 0.2)';
-            });
-            
-            label.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                const input = this.previousElementSibling;
-                if (!input.checked) {
-                    this.style.boxShadow = 'none';
                 }
             });
         });
