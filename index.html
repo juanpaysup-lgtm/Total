@@ -55,6 +55,11 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        @keyframes fadeOut {
+            from { opacity: 1; transform: translateX(0); }
+            to { opacity: 0; transform: translateX(100px); }
+        }
+
         /* 1. Animación de Brillo (Shimmer) */
         @keyframes shine-card {
             0% { left: -100%; }
@@ -637,6 +642,18 @@
             text-align: center;
         }
 
+        /* ALERTA PARA CLIENTES EXISTENTES */
+        .existing-customer-alert {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1));
+            border: 2px solid #10B981;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 20px auto 30px;
+            max-width: 800px;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
         .plans-filter {
             display: flex;
             justify-content: center;
@@ -1104,6 +1121,32 @@
         .plan-button:hover {
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* MODAL PARA CLIENTES EXISTENTES */
+        .existing-customer-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 4000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .existing-customer-content {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            border: 2px solid #10B981;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            position: relative;
         }
 
         /* FAQ Section */
@@ -2055,6 +2098,118 @@
         </div>
     </div>
 
+    <!-- Modal para clientes existentes -->
+    <div class="existing-customer-modal" id="existingCustomerModal">
+        <div class="existing-customer-content">
+            <button class="close-existing-modal" style="
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                background: none;
+                border: none;
+                color: #94a3b8;
+                font-size: 1.5rem;
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            ">&times;</button>
+            
+            <h3 style="color: #10B981; font-size: 1.8rem; margin-bottom: 20px; text-align: center;">
+                <i class="fas fa-user-check" style="margin-right: 10px;"></i>
+                Cambio de Plan para Cliente Existente
+            </h3>
+            
+            <div class="customer-options" style="margin-bottom: 30px;">
+                <div class="option-group" style="
+                    margin-bottom: 20px;
+                    padding: 15px;
+                    background: rgba(30, 41, 59, 0.7);
+                    border-radius: 10px;
+                    border: 1px solid rgba(59, 130, 246, 0.2);
+                ">
+                    <h4 style="color: white; margin-bottom: 10px; display: flex; align-items: center;">
+                        <i class="fas fa-sync-alt" style="color: #3B82F6; margin-right: 10px;"></i>
+                        Cambio de Plan Simple
+                    </h4>
+                    <p style="color: #cbd5e1; margin-bottom: 15px; font-size: 0.95rem;">
+                        Ya eres cliente y solo quieres cambiar a un plan diferente.
+                    </p>
+                    <a href="https://wa.link/gyb1ty" target="_blank" style="
+                        background: linear-gradient(135deg, #10B981, #059669);
+                        color: white;
+                        border: 2px solid #10B981;
+                        padding: 10px 20px;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        font-weight: 600;
+                        width: 100%;
+                        transition: all 0.3s;
+                        text-decoration: none;
+                        display: inline-block;
+                        text-align: center;
+                    ">
+                        <i class="fab fa-whatsapp"></i> Solicitar Cambio de Plan
+                    </a>
+                </div>
+                
+                <div class="option-group" style="
+                    padding: 15px;
+                    background: rgba(30, 41, 59, 0.7);
+                    border-radius: 10px;
+                    border: 1px solid rgba(59, 130, 246, 0.2);
+                ">
+                    <h4 style="color: white; margin-bottom: 10px; display: flex; align-items: center;">
+                        <i class="fas fa-plus-circle" style="color: #3B82F6; margin-right: 10px;"></i>
+                        Nuevo Contrato con Migración
+                    </h4>
+                    <p style="color: #cbd5e1; margin-bottom: 15px; font-size: 0.95rem;">
+                        Eres cliente pero necesitas un nuevo contrato (Quiera ambos activos u otro servicio con diferente nombre).
+                    </p>
+                    <a href="#plans-section" style="
+                        background: linear-gradient(135deg, #F59E0B, #D97706);
+                        color: white;
+                        border: 2px solid #F59E0B;
+                        padding: 10px 20px;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        font-weight: 600;
+                        width: 100%;
+                        transition: all 0.3s;
+                        text-decoration: none;
+                        display: inline-block;
+                        text-align: center;
+                    ">
+                        <i class="fas fa-arrow-down"></i> Ver Planes para Nuevo Contrato
+                    </a>
+                </div>
+            </div>
+            
+            <div class="existing-customer-buttons" style="
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+            ">
+                <button id="cancelExisting" style="
+                    background: transparent;
+                    color: #94a3b8;
+                    border: 2px solid #64748b;
+                    padding: 12px 25px;
+                    border-radius: 8px;
+                    font-weight: 700;
+                    cursor: pointer;
+                    min-width: 150px;
+                    transition: all 0.3s;
+                ">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -2185,6 +2340,30 @@
             <p class="section-subtitle">
                 Elige el plan perfecto para ti...
             </p>
+            
+            <!-- ALERTA PARA CLIENTES EXISTENTES -->
+            <div class="existing-customer-alert">
+                <h3 style="color: white; margin-bottom: 10px; font-size: 1.2rem;">
+                    <i class="fas fa-user-check" style="color: #10B981; margin-right: 8px;"></i>
+                    ¿Ya eres cliente de Totalplay?
+                </h3>
+                <p style="color: #cbd5e1; margin-bottom: 15px; font-size: 0.95rem;">
+                    Si ya tienes Totalplay y solo quieres cambiar de plan, haz clic aquí para evitar contratación como nuevo cliente
+                </p>
+                <button id="existingCustomerBtn" style="
+                    background: linear-gradient(135deg, #10B981, #059669);
+                    color: white;
+                    border: none;
+                    padding: 10px 25px;
+                    border-radius: 8px;
+                    font-weight: 700;
+                    cursor: pointer;
+                    font-size: 0.9rem;
+                    transition: all 0.3s ease;
+                ">
+                    <i class="fas fa-sync-alt"></i> Solo cambiar de plan
+                </button>
+            </div>
             
             <div class="plans-filter">
                 <button class="filter-btn active" data-filter="tv-internet">
@@ -2615,6 +2794,12 @@
         let addAlexa = false;
         let addTV = false;
 
+        // Elementos del modal para clientes existentes
+        const existingCustomerModal = document.getElementById('existingCustomerModal');
+        const existingCustomerBtn = document.getElementById('existingCustomerBtn');
+        const closeExistingModal = document.querySelector('.close-existing-modal');
+        const cancelExistingBtn = document.getElementById('cancelExisting');
+
         // Header scroll effect
         const header = document.getElementById('mainHeader');
         window.addEventListener('scroll', () => {
@@ -2803,6 +2988,38 @@
                 }
             });
         };
+
+        // =============================================
+        // FUNCIONES PARA CLIENTES EXISTENTES (SIMPLIFICADO)
+        // =============================================
+
+        // Abrir modal para clientes existentes
+        existingCustomerBtn.addEventListener('click', () => {
+            existingCustomerModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Cerrar modal de cliente existente
+        closeExistingModal.addEventListener('click', () => {
+            existingCustomerModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        cancelExistingBtn.addEventListener('click', () => {
+            existingCustomerModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        existingCustomerModal.addEventListener('click', (e) => {
+            if (e.target === existingCustomerModal) {
+                existingCustomerModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // =============================================
+        // SISTEMA DE PROMOCIONES
+        // =============================================
 
         // Sistema de promociones
         const promotionModal = document.getElementById('promotionModal');
@@ -3218,7 +3435,7 @@
         }
 
         // Confirmar selección de promoción
-        function confirmPromotionSelection() {
+        confirmPromotion.addEventListener('click', function() {
             if (!selectedPromotion) {
                 alert('Por favor, selecciona una promoción antes de continuar.');
                 return;
@@ -3268,12 +3485,11 @@
             
             // Cerrar modal
             closePromotionModal();
-        }
+        });
 
         // Event listeners para el modal
         closeModal.addEventListener('click', closePromotionModal);
         cancelPromotion.addEventListener('click', closePromotionModal);
-        confirmPromotion.addEventListener('click', confirmPromotionSelection);
 
         // Cerrar modal al hacer clic fuera del contenido
         promotionModal.addEventListener('click', function(e) {
