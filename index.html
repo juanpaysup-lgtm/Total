@@ -60,11 +60,10 @@
             to { opacity: 0; transform: translateX(100px); }
         }
 
-        /* 1. Animación de Brillo (Shimmer) */
+        /* 1. Animación de Brillo (Shimmer) - MODIFICADA PARA EVITAR PARPADEO */
         @keyframes shine-card {
-            0% { left: -100%; }
-            20% { left: 100%; }
-            100% { left: 100%; }
+            0% { left: -150%; }
+            100% { left: 150%; }
         }
 
         /* 2. Animación de Parpadeo (Blink) */
@@ -700,10 +699,10 @@
             display: grid;
         }
 
-        /* NUEVO CONTENEDOR PARA BADGES - POSICIONADO ARRIBA DE LAS TARJETAS */
+        /* NUEVO CONTENEDOR PARA BADGES - POSICIONADO MITAD DENTRO, MITAD FUERA */
         .plan-card-badges-container {
             position: absolute;
-            top: -45px;
+            top: -15px; /* REDUCIDO PARA QUE ESTÉ MITAD DENTRO, MITAD FUERA */
             left: 0;
             width: 100%;
             display: flex;
@@ -712,7 +711,7 @@
             pointer-events: none;
         }
 
-        /* ESTILOS MODIFICADOS PARA BADGES - AHORA ESTÁN ARRIBA */
+        /* ESTILOS MODIFICADOS PARA BADGES - AHORA ESTÁN MEJOR POSICIONADOS */
         .recomendado-badge {
             background: linear-gradient(135deg, #EF4444, #DC2626);
             color: white;
@@ -753,19 +752,21 @@
             position: relative;
             animation: slideIn 0.6s ease-out both;
             overflow: visible;
-            margin-top: 60px; /* ESPACIO PARA LOS BADGES ARRIBA */
+            margin-top: 30px; /* REDUCIDO PARA LOS BADGES */
         }
 
-        /* Efecto de brillo en las tarjetas */
+        /* Efecto de brillo en las tarjetas - MODIFICADO PARA EVITAR PARPADEO */
         .plan-card::after {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
+            left: -150%;
             width: 50%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            animation: shine-card 3s infinite;
+            animation: shine-card 8s ease-in-out infinite;
+            opacity: 0.5;
+            pointer-events: none;
         }
 
         .plan-card:hover {
@@ -1744,6 +1745,16 @@
             .promotion-btn {
                 min-width: 100%;
             }
+            
+            /* ELIMINAR LA ANIMACIÓN DE BRILLO EN MÓVILES PARA EVITAR PARPADEO */
+            .plan-card::after {
+                display: none !important;
+                animation: none !important;
+            }
+            
+            .plan-card:hover::after {
+                display: none !important;
+            }
         }
 
         /* Móviles medianos */
@@ -2006,7 +2017,7 @@
             
             /* Ajustes específicos para badges en móviles */
             .plan-card-badges-container {
-                top: -35px;
+                top: -12px; /* Ajustado para móviles */
             }
             
             .recomendado-badge,
@@ -2017,7 +2028,7 @@
             }
             
             .plan-card {
-                margin-top: 50px; /* Reducir espacio para móviles */
+                margin-top: 25px; /* Reducido para móviles */
             }
         }
 
@@ -2393,7 +2404,7 @@
             <div class="plan-category active" id="tv-internet-plans">
                 <!-- Plan 100 Mbps (SIN PROMOCIONES) -->
                 <div class="plan-card">
-                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <!-- BADGES ARRIBA DE LA TARJETA - MITAD DENTRO, MITAD FUERA -->
                     <div class="plan-card-badges-container">
                         <!-- Sin badges para este plan -->
                     </div>
@@ -2421,7 +2432,7 @@
                 
                 <!-- Plan 150 Mbps -->
                 <div class="plan-card">
-                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <!-- BADGES ARRIBA DE LA TARJETA - MITAD DENTRO, MITAD FUERA -->
                     <div class="plan-card-badges-container">
                         <div class="month-promotion-badge">PROMO FEB</div>
                     </div>
@@ -2451,7 +2462,7 @@
                 
                 <!-- Plan 250 Mbps - RECOMENDADO -->
                 <div class="plan-card">
-                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <!-- BADGES ARRIBA DE LA TARJETA - MITAD DENTRO, MITAD FUERA -->
                     <div class="plan-card-badges-container">
                         <div class="recomendado-badge">RECOMENDADO</div>
                         <div class="month-promotion-badge">PROMO FEB</div>
@@ -2483,7 +2494,7 @@
                 
                 <!-- Plan 350 Mbps -->
                 <div class="plan-card">
-                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <!-- BADGES ARRIBA DE LA TARJETA - MITAD DENTRO, MITAD FUERA -->
                     <div class="plan-card-badges-container">
                         <div class="month-promotion-badge">PROMO FEB</div>
                     </div>
@@ -2514,7 +2525,7 @@
                 
                 <!-- Plan 500 Mbps -->
                 <div class="plan-card">
-                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <!-- BADGES ARRIBA DE LA TARJETA - MITAD DENTRO, MITAD FUERA -->
                     <div class="plan-card-badges-container">
                         <div class="month-promotion-badge">PROMO FEB</div>
                     </div>
@@ -2548,7 +2559,7 @@
             <div class="plan-category" id="internet-plans">
                 <!-- Plan 100 Mbps (SIN PROMOCIONES) -->
                 <div class="plan-card">
-                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <!-- BADGES ARRIBA DE LA TARJETA - MITAD DENTRO, MITAD FUERA -->
                     <div class="plan-card-badges-container">
                         <!-- Sin badges para este plan -->
                     </div>
@@ -2574,7 +2585,7 @@
                 
                 <!-- Plan 150 Mbps -->
                 <div class="plan-card">
-                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <!-- BADGES ARRIBA DE LA TARJETA - MITAD DENTRO, MITAD FUERA -->
                     <div class="plan-card-badges-container">
                         <div class="month-promotion-badge">PROMO FEB</div>
                     </div>
@@ -2602,7 +2613,7 @@
                 
                 <!-- Plan 250 Mbps - RECOMENDADO -->
                 <div class="plan-card">
-                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <!-- BADGES ARRIBA DE LA TARJETA - MITAD DENTRO, MITAD FUERA -->
                     <div class="plan-card-badges-container">
                         <div class="recomendado-badge">RECOMENDADO</div>
                         <div class="month-promotion-badge">PROMO FEB</div>
@@ -2632,7 +2643,7 @@
                 
                 <!-- Plan 350 Mbps -->
                 <div class="plan-card">
-                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <!-- BADGES ARRIBA DE LA TARJETA - MITAD DENTRO, MITAD FUERA -->
                     <div class="plan-card-badges-container">
                         <div class="month-promotion-badge">PROMO FEB</div>
                     </div>
@@ -2661,7 +2672,7 @@
                 
                 <!-- Plan 500 Mbps -->
                 <div class="plan-card">
-                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <!-- BADGES ARRIBA DE LA TARJETA - MITAD DENTRO, MITAD FUERA -->
                     <div class="plan-card-badges-container">
                         <div class="month-promotion-badge">PROMO FEB</div>
                     </div>
@@ -2918,10 +2929,10 @@
             });
         });
 
-        // Animación en scroll con Intersection Observer
+        // Animación en scroll con Intersection Observer - MODIFICADO PARA EVITAR PARPADEO
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.15, // Aumentado para evitar activaciones prematuras
+            rootMargin: '0px 0px -100px 0px' // Aumentado margen negativo
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -2929,15 +2940,17 @@
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
+                    // Una vez animado, desconectar el observer para evitar re-animaciones
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        // Observar elementos para animación
+        // Observar elementos para animación - SOLO UNA VEZ
         document.querySelectorAll('.benefit-section2, .plan-card, .faq-item, .contact-info').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
             observer.observe(el);
         });
 
