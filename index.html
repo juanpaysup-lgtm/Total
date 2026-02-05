@@ -700,6 +700,46 @@
             display: grid;
         }
 
+        /* NUEVO CONTENEDOR PARA BADGES - POSICIONADO ARRIBA DE LAS TARJETAS */
+        .plan-card-badges-container {
+            position: absolute;
+            top: -45px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            z-index: 30;
+            pointer-events: none;
+        }
+
+        /* ESTILOS MODIFICADOS PARA BADGES - AHORA ESTÁN ARRIBA */
+        .recomendado-badge {
+            background: linear-gradient(135deg, #EF4444, #DC2626);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            z-index: 30;
+            animation: pulse 2s infinite;
+            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .month-promotion-badge {
+            background: linear-gradient(135deg, #EC4899, #DB2777);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            z-index: 30;
+            animation: pulse 2s infinite;
+            box-shadow: 0 5px 15px rgba(236, 72, 153, 0.4);
+            display: inline-block;
+        }
+
         .plan-card {
             background: rgba(30, 41, 59, 0.8);
             border-radius: 12px;
@@ -712,7 +752,8 @@
             height: 100%;
             position: relative;
             animation: slideIn 0.6s ease-out both;
-            overflow: hidden;
+            overflow: visible;
+            margin-top: 60px; /* ESPACIO PARA LOS BADGES ARRIBA */
         }
 
         /* Efecto de brillo en las tarjetas */
@@ -756,21 +797,6 @@
         @keyframes rotate {
             0% { filter: hue-rotate(0deg); }
             100% { filter: hue-rotate(360deg); }
-        }
-
-        .recomendado-badge {
-            position: absolute;
-            top: -12px;
-            right: 20px;
-            background: linear-gradient(135deg, #EF4444, #DC2626);
-            color: white;
-            padding: 6px 20px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            z-index: 20;
-            animation: pulse 2s infinite;
-            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
         }
 
         .plan-badge {
@@ -1080,21 +1106,6 @@
         .close-modal:hover {
             background: rgba(239, 68, 68, 0.1);
             color: #EF4444;
-        }
-
-        .month-promotion-badge {
-            position: absolute;
-            top: -12px;
-            left: 20px;
-            background: linear-gradient(135deg, #EC4899, #DB2777);
-            color: white;
-            padding: 6px 20px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            z-index: 20;
-            animation: pulse 2s infinite;
-            box-shadow: 0 5px 15px rgba(236, 72, 153, 0.4);
         }
 
         .plan-button {
@@ -1884,18 +1895,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .recomendado-badge {
-                right: 10px;
-                padding: 5px 15px;
-                font-size: 0.8rem;
-            }
-            
-            .month-promotion-badge {
-                left: 10px;
-                padding: 5px 15px;
-                font-size: 0.8rem;
-            }
-            
             .plan-button {
                 font-size: 0.9rem;
                 padding: 10px 15px;
@@ -2004,6 +2003,22 @@
                 font-size: 0.7rem;
                 padding: 6px;
             }
+            
+            /* Ajustes específicos para badges en móviles */
+            .plan-card-badges-container {
+                top: -35px;
+            }
+            
+            .recomendado-badge,
+            .month-promotion-badge {
+                font-size: 0.7rem !important;
+                padding: 5px 12px !important;
+                white-space: nowrap;
+            }
+            
+            .plan-card {
+                margin-top: 50px; /* Reducir espacio para móviles */
+            }
         }
 
         /* Ajustes para orientación landscape en móviles */
@@ -2085,7 +2100,7 @@
         <div class="promotion-content">
             <button class="close-modal" id="closeModal">&times;</button>
             <h3 class="promotion-title">Elige tu promoción especial</h3>
-            <p class="promotion-subtitle">Mes del Amor y la Amistad - Febrero 2025</p>
+            <p class="promotion-subtitle">Mes del Amor y la Amistad - Febrero 2026</p>
             
             <div class="promotion-options" id="promotionOptions">
                 <!-- Las opciones se cargarán dinámicamente según el plan -->
@@ -2167,7 +2182,7 @@
                         Nuevo Contrato con Migración
                     </h4>
                     <p style="color: #cbd5e1; margin-bottom: 15px; font-size: 0.95rem;">
-                        Eres cliente pero necesitas un nuevo contrato (Quieres ambos servicios activos u otro servicio con diferente nombre).
+                        Eres cliente pero necesitas un nuevo contrato (Quiera ambos activos u otro servicio con diferente nombre).
                     </p>
                     <a href="#plans-section" style="
                         background: linear-gradient(135deg, #F59E0B, #D97706);
@@ -2309,7 +2324,7 @@
                     <div class="benefit-icon-section2">
                         <i class="fas fa-calendar-alt"></i>
                     </div>
-                    <h3>Precio Fijo en pago puntual</h3>
+                    <h3>Precio Fijo 12 Meses</h3>
                     <p>Sin aumentos sorpresa. Tu precio se mantiene por un año</p>
                 </div>
                 
@@ -2378,6 +2393,11 @@
             <div class="plan-category active" id="tv-internet-plans">
                 <!-- Plan 100 Mbps (SIN PROMOCIONES) -->
                 <div class="plan-card">
+                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <div class="plan-card-badges-container">
+                        <!-- Sin badges para este plan -->
+                    </div>
+                    
                     <div class="plan-badge badge-tv-internet">
                         TV + Internet
                     </div>
@@ -2401,7 +2421,11 @@
                 
                 <!-- Plan 150 Mbps -->
                 <div class="plan-card">
-                    <div class="month-promotion-badge">PROMOCIÓN FEBRERO</div>
+                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <div class="plan-card-badges-container">
+                        <div class="month-promotion-badge">PROMO FEB</div>
+                    </div>
+                    
                     <div class="plan-badge badge-tv-internet">
                         TV + Internet
                     </div>
@@ -2427,8 +2451,12 @@
                 
                 <!-- Plan 250 Mbps - RECOMENDADO -->
                 <div class="plan-card">
-                    <div class="recomendado-badge">RECOMENDADO</div>
-                    <div class="month-promotion-badge">PROMOCIÓN FEBRERO</div>
+                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <div class="plan-card-badges-container">
+                        <div class="recomendado-badge">RECOMENDADO</div>
+                        <div class="month-promotion-badge">PROMO FEB</div>
+                    </div>
+                    
                     <div class="plan-badge badge-tv-internet">
                         TV + Internet
                     </div>
@@ -2455,7 +2483,11 @@
                 
                 <!-- Plan 350 Mbps -->
                 <div class="plan-card">
-                    <div class="month-promotion-badge">PROMOCIÓN FEBRERO</div>
+                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <div class="plan-card-badges-container">
+                        <div class="month-promotion-badge">PROMO FEB</div>
+                    </div>
+                    
                     <div class="plan-badge badge-tv-internet">
                         TV + Internet
                     </div>
@@ -2482,7 +2514,11 @@
                 
                 <!-- Plan 500 Mbps -->
                 <div class="plan-card">
-                    <div class="month-promotion-badge">PROMOCIÓN FEBRERO</div>
+                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <div class="plan-card-badges-container">
+                        <div class="month-promotion-badge">PROMO FEB</div>
+                    </div>
+                    
                     <div class="plan-badge badge-tv-internet">
                         TV + Internet
                     </div>
@@ -2512,6 +2548,11 @@
             <div class="plan-category" id="internet-plans">
                 <!-- Plan 100 Mbps (SIN PROMOCIONES) -->
                 <div class="plan-card">
+                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <div class="plan-card-badges-container">
+                        <!-- Sin badges para este plan -->
+                    </div>
+                    
                     <div class="plan-badge badge-internet">
                         Solo Internet
                     </div>
@@ -2533,7 +2574,11 @@
                 
                 <!-- Plan 150 Mbps -->
                 <div class="plan-card">
-                    <div class="month-promotion-badge">PROMOCIÓN FEBRERO</div>
+                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <div class="plan-card-badges-container">
+                        <div class="month-promotion-badge">PROMO FEB</div>
+                    </div>
+                    
                     <div class="plan-badge badge-internet">
                         Solo Internet
                     </div>
@@ -2557,8 +2602,12 @@
                 
                 <!-- Plan 250 Mbps - RECOMENDADO -->
                 <div class="plan-card">
-                    <div class="recomendado-badge">RECOMENDADO</div>
-                    <div class="month-promotion-badge">PROMOCIÓN FEBRERO</div>
+                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <div class="plan-card-badges-container">
+                        <div class="recomendado-badge">RECOMENDADO</div>
+                        <div class="month-promotion-badge">PROMO FEB</div>
+                    </div>
+                    
                     <div class="plan-badge badge-internet">
                         Solo Internet
                     </div>
@@ -2583,7 +2632,11 @@
                 
                 <!-- Plan 350 Mbps -->
                 <div class="plan-card">
-                    <div class="month-promotion-badge">PROMOCIÓN FEBRERO</div>
+                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <div class="plan-card-badges-container">
+                        <div class="month-promotion-badge">PROMO FEB</div>
+                    </div>
+                    
                     <div class="plan-badge badge-internet">
                         Solo Internet
                     </div>
@@ -2608,7 +2661,11 @@
                 
                 <!-- Plan 500 Mbps -->
                 <div class="plan-card">
-                    <div class="month-promotion-badge">PROMOCIÓN FEBRERO</div>
+                    <!-- BADGES ARRIBA DE LA TARJETA -->
+                    <div class="plan-card-badges-container">
+                        <div class="month-promotion-badge">PROMO FEB</div>
+                    </div>
+                    
                     <div class="plan-badge badge-internet">
                         Solo Internet
                     </div>
@@ -3446,10 +3503,7 @@
             const planName = planData.name;
             let price = parseInt(selectedPlanPrice);
             
-            let message = `Hola, vengo de la página Internet Express y me interesa:\n\n`;
-            Plan ${planName} \n\n`;
-            Precio: $${price}/mensual \n\n`;
-            con la siguiente promoción:\n\n`;
+            let message = `Hola, vengo de la página Internet Express y me interesa el plan ${planName} por $${price}/mensual con la siguiente promoción:\n\n`;
             
             // Agregar detalles de la promoción seleccionada
             const promo = planData.promotions.find(p => p.id === selectedPromotion);
